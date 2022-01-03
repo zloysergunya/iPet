@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B927F87CA22CD5C025E3F72 /* Pods_iPet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137E1A45FC5FB849D6E6C76A /* Pods_iPet.framework */; };
 		C4A0E9662782DB48005D6662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9652782DB48005D6662 /* AppDelegate.swift */; };
 		C4A0E96F2782DB49005D6662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A0E96E2782DB49005D6662 /* Assets.xcassets */; };
 		C4A0E9802782DEA6005D6662 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E97F2782DEA6005D6662 /* LaunchViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		137E1A45FC5FB849D6E6C76A /* Pods_iPet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8BB7D5D564207E8E6D279EA /* Pods-iPet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPet.release.xcconfig"; path = "Target Support Files/Pods-iPet/Pods-iPet.release.xcconfig"; sourceTree = "<group>"; };
+		BCDB67425DC14DD1605A7426 /* Pods-iPet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPet.debug.xcconfig"; path = "Target Support Files/Pods-iPet/Pods-iPet.debug.xcconfig"; sourceTree = "<group>"; };
 		C4A0E9622782DB48005D6662 /* iPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A0E9652782DB48005D6662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4A0E96E2782DB49005D6662 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B927F87CA22CD5C025E3F72 /* Pods_iPet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD63C7E1DE7D155D0AB3F1F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BCDB67425DC14DD1605A7426 /* Pods-iPet.debug.xcconfig */,
+				B8BB7D5D564207E8E6D279EA /* Pods-iPet.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C4A0E9592782DB48005D6662 = {
 			isa = PBXGroup;
 			children = (
 				C4A0E9642782DB48005D6662 /* iPet */,
 				C4A0E9632782DB48005D6662 /* Products */,
+				AD63C7E1DE7D155D0AB3F1F8 /* Pods */,
+				CECE3000E4268E8D7E347DA6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +164,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		CECE3000E4268E8D7E347DA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				137E1A45FC5FB849D6E6C76A /* Pods_iPet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4A0E9762782DB49005D6662 /* Build configuration list for PBXNativeTarget "iPet" */;
 			buildPhases = (
+				33C13FDDA3B0218E01B7011B /* [CP] Check Pods Manifest.lock */,
 				C4A0E95E2782DB48005D6662 /* Sources */,
 				C4A0E95F2782DB48005D6662 /* Frameworks */,
 				C4A0E9602782DB48005D6662 /* Resources */,
+				44262F7AD0062443EF039BC6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,6 +237,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33C13FDDA3B0218E01B7011B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iPet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44262F7AD0062443EF039BC6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iPet/Pods-iPet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iPet/Pods-iPet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iPet/Pods-iPet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C4A0E95E2782DB48005D6662 /* Sources */ = {
@@ -345,6 +414,7 @@
 		};
 		C4A0E9772782DB49005D6662 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCDB67425DC14DD1605A7426 /* Pods-iPet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -374,6 +444,7 @@
 		};
 		C4A0E9782782DB49005D6662 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8BB7D5D564207E8E6D279EA /* Pods-iPet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
