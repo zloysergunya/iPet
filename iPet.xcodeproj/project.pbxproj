@@ -23,6 +23,9 @@
 		C4A0E9A12782EC0F005D6662 /* MontserratMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A0E99D2782EC0F005D6662 /* MontserratMedium.ttf */; };
 		C4A0E9A22782EC0F005D6662 /* MontserratRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A0E99E2782EC0F005D6662 /* MontserratRegular.ttf */; };
 		C4A0E9A32782EC0F005D6662 /* MontserratSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A0E99F2782EC0F005D6662 /* MontserratSemiBold.ttf */; };
+		C4A0E9A62782F2B3005D6662 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9A52782F2B3005D6662 /* RegisterViewController.swift */; };
+		C4A0E9A92782F2C6005D6662 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9A82782F2C6005D6662 /* RegisterView.swift */; };
+		C4A0E9AD2782F534005D6662 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9AC2782F534005D6662 /* UIColor+Hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		C4A0E99D2782EC0F005D6662 /* MontserratMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratMedium.ttf; sourceTree = "<group>"; };
 		C4A0E99E2782EC0F005D6662 /* MontserratRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratRegular.ttf; sourceTree = "<group>"; };
 		C4A0E99F2782EC0F005D6662 /* MontserratSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratSemiBold.ttf; sourceTree = "<group>"; };
+		C4A0E9A52782F2B3005D6662 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C4A0E9A82782F2C6005D6662 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		C4A0E9AC2782F534005D6662 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,7 @@
 		C4A0E97C2782DE4F005D6662 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C4A0E9A42782F2A3005D6662 /* Register */,
 				C4A0E98D2782E772005D6662 /* Onboarding */,
 				C4A0E97E2782DE94005D6662 /* Launch */,
 			);
@@ -140,6 +147,7 @@
 		C4A0E97D2782DE64005D6662 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C4A0E9AA2782F521005D6662 /* Extension */,
 				C4A0E9972782E91F005D6662 /* Helpers */,
 				C4A0E9822782E08C005D6662 /* UI */,
 			);
@@ -228,6 +236,39 @@
 				C4A0E9982782E93C005D6662 /* LaunchHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C4A0E9A42782F2A3005D6662 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0E9A72782F2BA005D6662 /* View */,
+				C4A0E9A52782F2B3005D6662 /* RegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		C4A0E9A72782F2BA005D6662 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0E9A82782F2C6005D6662 /* RegisterView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C4A0E9AA2782F521005D6662 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0E9AB2782F528005D6662 /* UIKit */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C4A0E9AB2782F528005D6662 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0E9AC2782F534005D6662 /* UIColor+Hex.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		CECE3000E4268E8D7E347DA6 /* Frameworks */ = {
@@ -376,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4A0E9892782E0E4005D6662 /* RootView.swift in Sources */,
+				C4A0E9A62782F2B3005D6662 /* RegisterViewController.swift in Sources */,
 				C4A0E98F2782E783005D6662 /* OnboardingViewController.swift in Sources */,
 				C4A0E98B2782E144005D6662 /* LaunchView.swift in Sources */,
 				C4A0E9662782DB48005D6662 /* AppDelegate.swift in Sources */,
@@ -383,6 +425,8 @@
 				C4A0E9852782E0A6005D6662 /* RootViewController.swift in Sources */,
 				C4A0E9992782E93C005D6662 /* LaunchHelper.swift in Sources */,
 				C4A0E99B2782E9BF005D6662 /* R.generated.swift in Sources */,
+				C4A0E9AD2782F534005D6662 /* UIColor+Hex.swift in Sources */,
+				C4A0E9A92782F2C6005D6662 /* RegisterView.swift in Sources */,
 				C4A0E9952782E858005D6662 /* SwipeNavigationController.swift in Sources */,
 				C4A0E9922782E79F005D6662 /* OnboardingView.swift in Sources */,
 			);

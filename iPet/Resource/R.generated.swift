@@ -307,12 +307,25 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 5 images.
   struct image {
+    /// Image `appleLogo`.
+    static let appleLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "appleLogo")
     /// Image `foxMascote`.
     static let foxMascote = Rswift.ImageResource(bundle: R.hostingBundle, name: "foxMascote")
+    /// Image `googleLogo`.
+    static let googleLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "googleLogo")
     /// Image `petPageContollStep1`.
     static let petPageContollStep1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "petPageContollStep1")
+    /// Image `petPageContollStep2`.
+    static let petPageContollStep2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "petPageContollStep2")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "appleLogo", bundle: ..., traitCollection: ...)`
+    static func appleLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.appleLogo, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "foxMascote", bundle: ..., traitCollection: ...)`
@@ -322,9 +335,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "googleLogo", bundle: ..., traitCollection: ...)`
+    static func googleLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.googleLogo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "petPageContollStep1", bundle: ..., traitCollection: ...)`
     static func petPageContollStep1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.petPageContollStep1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "petPageContollStep2", bundle: ..., traitCollection: ...)`
+    static func petPageContollStep2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.petPageContollStep2, compatibleWith: traitCollection)
     }
     #endif
 

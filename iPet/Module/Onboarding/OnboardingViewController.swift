@@ -5,7 +5,17 @@ class OnboardingViewController: ViewController<OnboardingView> {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        mainView.continueButton.addTarget(self, action: #selector(nextStep), for: .touchUpInside)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    @objc private func nextStep() {
+        navigationController?.pushViewController(RegisterViewController(), animated: true)
     }
     
 }
