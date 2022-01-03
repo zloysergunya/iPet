@@ -14,6 +14,15 @@
 		C4A0E9852782E0A6005D6662 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9842782E0A6005D6662 /* RootViewController.swift */; };
 		C4A0E9892782E0E4005D6662 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9882782E0E4005D6662 /* RootView.swift */; };
 		C4A0E98B2782E144005D6662 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E98A2782E144005D6662 /* LaunchView.swift */; };
+		C4A0E98F2782E783005D6662 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E98E2782E783005D6662 /* OnboardingViewController.swift */; };
+		C4A0E9922782E79F005D6662 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9912782E79F005D6662 /* OnboardingView.swift */; };
+		C4A0E9952782E858005D6662 /* SwipeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9942782E858005D6662 /* SwipeNavigationController.swift */; };
+		C4A0E9992782E93C005D6662 /* LaunchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9982782E93C005D6662 /* LaunchHelper.swift */; };
+		C4A0E99B2782E9BF005D6662 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E99A2782E9BF005D6662 /* R.generated.swift */; };
+		C4A0E9A02782EC0F005D6662 /* MontserratBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A0E99C2782EC0F005D6662 /* MontserratBold.ttf */; };
+		C4A0E9A12782EC0F005D6662 /* MontserratMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A0E99D2782EC0F005D6662 /* MontserratMedium.ttf */; };
+		C4A0E9A22782EC0F005D6662 /* MontserratRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A0E99E2782EC0F005D6662 /* MontserratRegular.ttf */; };
+		C4A0E9A32782EC0F005D6662 /* MontserratSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A0E99F2782EC0F005D6662 /* MontserratSemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +37,15 @@
 		C4A0E9842782E0A6005D6662 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		C4A0E9882782E0E4005D6662 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		C4A0E98A2782E144005D6662 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		C4A0E98E2782E783005D6662 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		C4A0E9912782E79F005D6662 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		C4A0E9942782E858005D6662 /* SwipeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeNavigationController.swift; sourceTree = "<group>"; };
+		C4A0E9982782E93C005D6662 /* LaunchHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchHelper.swift; sourceTree = "<group>"; };
+		C4A0E99A2782E9BF005D6662 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		C4A0E99C2782EC0F005D6662 /* MontserratBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratBold.ttf; sourceTree = "<group>"; };
+		C4A0E99D2782EC0F005D6662 /* MontserratMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratMedium.ttf; sourceTree = "<group>"; };
+		C4A0E99E2782EC0F005D6662 /* MontserratRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratRegular.ttf; sourceTree = "<group>"; };
+		C4A0E99F2782EC0F005D6662 /* MontserratSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratSemiBold.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,23 +109,29 @@
 		C4A0E97A2782DDDC005D6662 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				C4A0E97B2782DE46005D6662 /* Font */,
+				C4A0E99A2782E9BF005D6662 /* R.generated.swift */,
+				C4A0E97B2782DE46005D6662 /* Fonts */,
 				C4A0E96E2782DB49005D6662 /* Assets.xcassets */,
 				C4A0E9732782DB49005D6662 /* Info.plist */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		C4A0E97B2782DE46005D6662 /* Font */ = {
+		C4A0E97B2782DE46005D6662 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				C4A0E99C2782EC0F005D6662 /* MontserratBold.ttf */,
+				C4A0E99D2782EC0F005D6662 /* MontserratMedium.ttf */,
+				C4A0E99E2782EC0F005D6662 /* MontserratRegular.ttf */,
+				C4A0E99F2782EC0F005D6662 /* MontserratSemiBold.ttf */,
 			);
-			path = Font;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		C4A0E97C2782DE4F005D6662 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C4A0E98D2782E772005D6662 /* Onboarding */,
 				C4A0E97E2782DE94005D6662 /* Launch */,
 			);
 			path = Module;
@@ -116,6 +140,7 @@
 		C4A0E97D2782DE64005D6662 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C4A0E9972782E91F005D6662 /* Helpers */,
 				C4A0E9822782E08C005D6662 /* UI */,
 			);
 			path = Common;
@@ -141,7 +166,7 @@
 		C4A0E9822782E08C005D6662 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				C4A0E9832782E093005D6662 /* RootViewController */,
+				C4A0E9932782E844005D6662 /* Controllers */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -163,6 +188,48 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C4A0E98D2782E772005D6662 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0E9902782E78D005D6662 /* View */,
+				C4A0E98E2782E783005D6662 /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		C4A0E9902782E78D005D6662 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0E9912782E79F005D6662 /* OnboardingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C4A0E9932782E844005D6662 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0E9962782E85D005D6662 /* SwipeNavigationController */,
+				C4A0E9832782E093005D6662 /* RootViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C4A0E9962782E85D005D6662 /* SwipeNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0E9942782E858005D6662 /* SwipeNavigationController.swift */,
+			);
+			path = SwipeNavigationController;
+			sourceTree = "<group>";
+		};
+		C4A0E9972782E91F005D6662 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0E9982782E93C005D6662 /* LaunchHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		CECE3000E4268E8D7E347DA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +246,7 @@
 			buildConfigurationList = C4A0E9762782DB49005D6662 /* Build configuration list for PBXNativeTarget "iPet" */;
 			buildPhases = (
 				33C13FDDA3B0218E01B7011B /* [CP] Check Pods Manifest.lock */,
+				C4A0E98C2782E5EB005D6662 /* ShellScript */,
 				C4A0E95E2782DB48005D6662 /* Sources */,
 				C4A0E95F2782DB48005D6662 /* Frameworks */,
 				C4A0E9602782DB48005D6662 /* Resources */,
@@ -231,7 +299,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4A0E9A12782EC0F005D6662 /* MontserratMedium.ttf in Resources */,
+				C4A0E9A02782EC0F005D6662 /* MontserratBold.ttf in Resources */,
+				C4A0E9A22782EC0F005D6662 /* MontserratRegular.ttf in Resources */,
 				C4A0E96F2782DB49005D6662 /* Assets.xcassets in Resources */,
+				C4A0E9A32782EC0F005D6662 /* MontserratSemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +349,25 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iPet/Pods-iPet-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C4A0E98C2782E5EB005D6662 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/$PROJECT_NAME/Resource/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/$PROJECT_NAME/Resource/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -285,10 +376,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4A0E9892782E0E4005D6662 /* RootView.swift in Sources */,
+				C4A0E98F2782E783005D6662 /* OnboardingViewController.swift in Sources */,
 				C4A0E98B2782E144005D6662 /* LaunchView.swift in Sources */,
 				C4A0E9662782DB48005D6662 /* AppDelegate.swift in Sources */,
 				C4A0E9802782DEA6005D6662 /* LaunchViewController.swift in Sources */,
 				C4A0E9852782E0A6005D6662 /* RootViewController.swift in Sources */,
+				C4A0E9992782E93C005D6662 /* LaunchHelper.swift in Sources */,
+				C4A0E99B2782E9BF005D6662 /* R.generated.swift in Sources */,
+				C4A0E9952782E858005D6662 /* SwipeNavigationController.swift in Sources */,
+				C4A0E9922782E79F005D6662 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

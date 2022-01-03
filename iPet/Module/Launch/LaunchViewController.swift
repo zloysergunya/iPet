@@ -2,9 +2,11 @@ import UIKit
 
 class LaunchViewController: ViewController<LaunchView> {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        LaunchHelper.selectViewController()
     }
     
 }
