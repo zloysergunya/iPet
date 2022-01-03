@@ -1,4 +1,4 @@
-platform :ios, '13.0'
+platform :ios, '13.2'
 
 target 'iPet' do
   use_frameworks!
