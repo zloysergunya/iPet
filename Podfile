@@ -2,6 +2,9 @@ platform :ios, '13.2'
 
 target 'iPet' do
   use_frameworks!
+  
+  # Services
+  pod 'GoogleSignIn'
 
   # Interface
   pod 'IQKeyboardManagerSwift'
@@ -13,5 +16,6 @@ target 'iPet' do
   
   # Utilities
   pod 'R.swift', '~> 5.4.0'
+  pod 'Alamofire', '~> 4.9.0'
 
 end

@@ -1,6 +1,6 @@
 import UIKit
 
-class RegisterViewController: ViewController<RegisterView> {
+class RegisterUserInputViewController: ViewController<RegisterUserInputView> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,5 +12,5 @@ class RegisterViewController: ViewController<RegisterView> {
         
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-
+    
 }

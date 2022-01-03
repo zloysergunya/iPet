@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-class RegisterView: RootView {
+class SignInView: RootView {
 
     private let maskotImageView = UIImageView(image: R.image.foxMascote())
     

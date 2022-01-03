@@ -23,9 +23,28 @@
 		C4A0E9A12782EC0F005D6662 /* MontserratMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A0E99D2782EC0F005D6662 /* MontserratMedium.ttf */; };
 		C4A0E9A22782EC0F005D6662 /* MontserratRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A0E99E2782EC0F005D6662 /* MontserratRegular.ttf */; };
 		C4A0E9A32782EC0F005D6662 /* MontserratSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4A0E99F2782EC0F005D6662 /* MontserratSemiBold.ttf */; };
-		C4A0E9A62782F2B3005D6662 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9A52782F2B3005D6662 /* RegisterViewController.swift */; };
-		C4A0E9A92782F2C6005D6662 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9A82782F2C6005D6662 /* RegisterView.swift */; };
+		C4A0E9A62782F2B3005D6662 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9A52782F2B3005D6662 /* SignInViewController.swift */; };
+		C4A0E9A92782F2C6005D6662 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9A82782F2C6005D6662 /* SignInView.swift */; };
 		C4A0E9AD2782F534005D6662 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9AC2782F534005D6662 /* UIColor+Hex.swift */; };
+		C4A0E9B12782F85D005D6662 /* RegisterUserInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9B02782F85D005D6662 /* RegisterUserInputViewController.swift */; };
+		C4A0E9B42782F87D005D6662 /* RegisterUserInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9B32782F87D005D6662 /* RegisterUserInputView.swift */; };
+		C4A0E9B727834617005D6662 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4A0E9B627834617005D6662 /* GoogleService-Info.plist */; };
+		C4A0E9BA27834BBE005D6662 /* SignInProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9B927834BBE005D6662 /* SignInProvider.swift */; };
+		C4A0E9BC27834CC3005D6662 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9BB27834CC3005D6662 /* Utils.swift */; };
+		C4A0E9CA2783505D005D6662 /* JSONEncodingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9BE2783505D005D6662 /* JSONEncodingHelper.swift */; };
+		C4A0E9CB2783505D005D6662 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9BF2783505D005D6662 /* APIHelper.swift */; };
+		C4A0E9CC2783505D005D6662 /* JSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9C02783505D005D6662 /* JSONValue.swift */; };
+		C4A0E9CD2783505D005D6662 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9C12783505D005D6662 /* Models.swift */; };
+		C4A0E9CE2783505D005D6662 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9C22783505D005D6662 /* Extensions.swift */; };
+		C4A0E9CF2783505D005D6662 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9C32783505D005D6662 /* APIs.swift */; };
+		C4A0E9D02783505D005D6662 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9C52783505D005D6662 /* Configuration.swift */; };
+		C4A0E9D12783505D005D6662 /* CodableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9C62783505D005D6662 /* CodableHelper.swift */; };
+		C4A0E9D22783505D005D6662 /* JSONEncodableEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9C72783505D005D6662 /* JSONEncodableEncoding.swift */; };
+		C4A0E9D32783505D005D6662 /* AlamofireImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9C82783505D005D6662 /* AlamofireImplementations.swift */; };
+		C4A0E9D5278350C7005D6662 /* AuthGoggleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9D4278350C7005D6662 /* AuthGoggleResponse.swift */; };
+		C4A0E9D7278350E9005D6662 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9D6278350E9005D6662 /* User.swift */; };
+		C4A0E9D9278350FD005D6662 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9D8278350FD005D6662 /* Pet.swift */; };
+		C4A0E9DB2783516A005D6662 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9DA2783516A005D6662 /* AuthAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,9 +68,29 @@
 		C4A0E99D2782EC0F005D6662 /* MontserratMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratMedium.ttf; sourceTree = "<group>"; };
 		C4A0E99E2782EC0F005D6662 /* MontserratRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratRegular.ttf; sourceTree = "<group>"; };
 		C4A0E99F2782EC0F005D6662 /* MontserratSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MontserratSemiBold.ttf; sourceTree = "<group>"; };
-		C4A0E9A52782F2B3005D6662 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		C4A0E9A82782F2C6005D6662 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		C4A0E9A52782F2B3005D6662 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		C4A0E9A82782F2C6005D6662 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		C4A0E9AC2782F534005D6662 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		C4A0E9B02782F85D005D6662 /* RegisterUserInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInputViewController.swift; sourceTree = "<group>"; };
+		C4A0E9B32782F87D005D6662 /* RegisterUserInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInputView.swift; sourceTree = "<group>"; };
+		C4A0E9B527831991005D6662 /* iPet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iPet.entitlements; sourceTree = "<group>"; };
+		C4A0E9B627834617005D6662 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C4A0E9B927834BBE005D6662 /* SignInProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInProvider.swift; sourceTree = "<group>"; };
+		C4A0E9BB27834CC3005D6662 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		C4A0E9BE2783505D005D6662 /* JSONEncodingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONEncodingHelper.swift; sourceTree = "<group>"; };
+		C4A0E9BF2783505D005D6662 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		C4A0E9C02783505D005D6662 /* JSONValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONValue.swift; sourceTree = "<group>"; };
+		C4A0E9C12783505D005D6662 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		C4A0E9C22783505D005D6662 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C4A0E9C32783505D005D6662 /* APIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
+		C4A0E9C52783505D005D6662 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		C4A0E9C62783505D005D6662 /* CodableHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableHelper.swift; sourceTree = "<group>"; };
+		C4A0E9C72783505D005D6662 /* JSONEncodableEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONEncodableEncoding.swift; sourceTree = "<group>"; };
+		C4A0E9C82783505D005D6662 /* AlamofireImplementations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireImplementations.swift; sourceTree = "<group>"; };
+		C4A0E9D4278350C7005D6662 /* AuthGoggleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGoggleResponse.swift; sourceTree = "<group>"; };
+		C4A0E9D6278350E9005D6662 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C4A0E9D8278350FD005D6662 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		C4A0E9DA2783516A005D6662 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +135,8 @@
 		C4A0E9642782DB48005D6662 /* iPet */ = {
 			isa = PBXGroup;
 			children = (
+				C4A0E9BD27834FF7005D6662 /* Network */,
+				C4A0E9B527831991005D6662 /* iPet.entitlements */,
 				C4A0E97D2782DE64005D6662 /* Common */,
 				C4A0E97C2782DE4F005D6662 /* Module */,
 				C4A0E97A2782DDDC005D6662 /* Resource */,
@@ -115,6 +156,7 @@
 		C4A0E97A2782DDDC005D6662 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				C4A0E9B627834617005D6662 /* GoogleService-Info.plist */,
 				C4A0E99A2782E9BF005D6662 /* R.generated.swift */,
 				C4A0E97B2782DE46005D6662 /* Fonts */,
 				C4A0E96E2782DB49005D6662 /* Assets.xcassets */,
@@ -233,6 +275,7 @@
 		C4A0E9972782E91F005D6662 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C4A0E9BB27834CC3005D6662 /* Utils.swift */,
 				C4A0E9982782E93C005D6662 /* LaunchHelper.swift */,
 			);
 			path = Helpers;
@@ -241,8 +284,8 @@
 		C4A0E9A42782F2A3005D6662 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				C4A0E9A72782F2BA005D6662 /* View */,
-				C4A0E9A52782F2B3005D6662 /* RegisterViewController.swift */,
+				C4A0E9AF2782F844005D6662 /* RegisterUserInput */,
+				C4A0E9AE2782F827005D6662 /* SignIn */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -250,7 +293,7 @@
 		C4A0E9A72782F2BA005D6662 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C4A0E9A82782F2C6005D6662 /* RegisterView.swift */,
+				C4A0E9A82782F2C6005D6662 /* SignInView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -269,6 +312,78 @@
 				C4A0E9AC2782F534005D6662 /* UIColor+Hex.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		C4A0E9AE2782F827005D6662 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0E9B827834ACA005D6662 /* Provider */,
+				C4A0E9A72782F2BA005D6662 /* View */,
+				C4A0E9A52782F2B3005D6662 /* SignInViewController.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		C4A0E9AF2782F844005D6662 /* RegisterUserInput */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0E9B22782F870005D6662 /* View */,
+				C4A0E9B02782F85D005D6662 /* RegisterUserInputViewController.swift */,
+			);
+			path = RegisterUserInput;
+			sourceTree = "<group>";
+		};
+		C4A0E9B22782F870005D6662 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0E9B32782F87D005D6662 /* RegisterUserInputView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C4A0E9B827834ACA005D6662 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0E9B927834BBE005D6662 /* SignInProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		C4A0E9BD27834FF7005D6662 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0E9C82783505D005D6662 /* AlamofireImplementations.swift */,
+				C4A0E9BF2783505D005D6662 /* APIHelper.swift */,
+				C4A0E9C32783505D005D6662 /* APIs.swift */,
+				C4A0E9C62783505D005D6662 /* CodableHelper.swift */,
+				C4A0E9C52783505D005D6662 /* Configuration.swift */,
+				C4A0E9C22783505D005D6662 /* Extensions.swift */,
+				C4A0E9C72783505D005D6662 /* JSONEncodableEncoding.swift */,
+				C4A0E9BE2783505D005D6662 /* JSONEncodingHelper.swift */,
+				C4A0E9C02783505D005D6662 /* JSONValue.swift */,
+				C4A0E9C12783505D005D6662 /* Models.swift */,
+				C4A0E9C92783505D005D6662 /* APIs */,
+				C4A0E9C42783505D005D6662 /* Models */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C4A0E9C42783505D005D6662 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0E9D4278350C7005D6662 /* AuthGoggleResponse.swift */,
+				C4A0E9D6278350E9005D6662 /* User.swift */,
+				C4A0E9D8278350FD005D6662 /* Pet.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C4A0E9C92783505D005D6662 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0E9DA2783516A005D6662 /* AuthAPI.swift */,
+			);
+			path = APIs;
 			sourceTree = "<group>";
 		};
 		CECE3000E4268E8D7E347DA6 /* Frameworks */ = {
@@ -345,6 +460,7 @@
 				C4A0E9A22782EC0F005D6662 /* MontserratRegular.ttf in Resources */,
 				C4A0E96F2782DB49005D6662 /* Assets.xcassets in Resources */,
 				C4A0E9A32782EC0F005D6662 /* MontserratSemiBold.ttf in Resources */,
+				C4A0E9B727834617005D6662 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,18 +532,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4A0E9B42782F87D005D6662 /* RegisterUserInputView.swift in Sources */,
 				C4A0E9892782E0E4005D6662 /* RootView.swift in Sources */,
-				C4A0E9A62782F2B3005D6662 /* RegisterViewController.swift in Sources */,
+				C4A0E9DB2783516A005D6662 /* AuthAPI.swift in Sources */,
+				C4A0E9BA27834BBE005D6662 /* SignInProvider.swift in Sources */,
+				C4A0E9A62782F2B3005D6662 /* SignInViewController.swift in Sources */,
 				C4A0E98F2782E783005D6662 /* OnboardingViewController.swift in Sources */,
+				C4A0E9CB2783505D005D6662 /* APIHelper.swift in Sources */,
+				C4A0E9D02783505D005D6662 /* Configuration.swift in Sources */,
+				C4A0E9CD2783505D005D6662 /* Models.swift in Sources */,
+				C4A0E9D7278350E9005D6662 /* User.swift in Sources */,
 				C4A0E98B2782E144005D6662 /* LaunchView.swift in Sources */,
 				C4A0E9662782DB48005D6662 /* AppDelegate.swift in Sources */,
+				C4A0E9CE2783505D005D6662 /* Extensions.swift in Sources */,
 				C4A0E9802782DEA6005D6662 /* LaunchViewController.swift in Sources */,
+				C4A0E9CC2783505D005D6662 /* JSONValue.swift in Sources */,
 				C4A0E9852782E0A6005D6662 /* RootViewController.swift in Sources */,
+				C4A0E9D9278350FD005D6662 /* Pet.swift in Sources */,
+				C4A0E9BC27834CC3005D6662 /* Utils.swift in Sources */,
+				C4A0E9D32783505D005D6662 /* AlamofireImplementations.swift in Sources */,
+				C4A0E9B12782F85D005D6662 /* RegisterUserInputViewController.swift in Sources */,
 				C4A0E9992782E93C005D6662 /* LaunchHelper.swift in Sources */,
 				C4A0E99B2782E9BF005D6662 /* R.generated.swift in Sources */,
 				C4A0E9AD2782F534005D6662 /* UIColor+Hex.swift in Sources */,
-				C4A0E9A92782F2C6005D6662 /* RegisterView.swift in Sources */,
+				C4A0E9CA2783505D005D6662 /* JSONEncodingHelper.swift in Sources */,
+				C4A0E9D22783505D005D6662 /* JSONEncodableEncoding.swift in Sources */,
+				C4A0E9CF2783505D005D6662 /* APIs.swift in Sources */,
+				C4A0E9A92782F2C6005D6662 /* SignInView.swift in Sources */,
 				C4A0E9952782E858005D6662 /* SwipeNavigationController.swift in Sources */,
+				C4A0E9D5278350C7005D6662 /* AuthGoggleResponse.swift in Sources */,
+				C4A0E9D12783505D005D6662 /* CodableHelper.swift in Sources */,
 				C4A0E9922782E79F005D6662 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,9 +691,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iPet/iPet.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZDQ89335V8;
+				DEVELOPMENT_TEAM = EU9TQLF5BQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iPet/Resource/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = iPet;
@@ -573,7 +708,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kotov.ipet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abs.ipet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -587,9 +722,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iPet/iPet.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZDQ89335V8;
+				DEVELOPMENT_TEAM = EU9TQLF5BQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iPet/Resource/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = iPet;
@@ -603,7 +739,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kotov.ipet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abs.ipet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

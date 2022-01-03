@@ -15,7 +15,7 @@ class OnboardingViewController: ViewController<OnboardingView> {
     }
     
     @objc private func nextStep() {
-        navigationController?.pushViewController(RegisterViewController(), animated: true)
+        navigationController?.pushViewController(SignInViewController(), animated: true)
     }
     
 }
