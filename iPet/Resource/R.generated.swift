@@ -326,7 +326,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 5 images.
+  /// This `R.image` struct is generated, and contains static references to 6 images.
   struct image {
     /// Image `appleLogo`.
     static let appleLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "appleLogo")
@@ -338,6 +338,8 @@ struct R: Rswift.Validatable {
     static let petPageContollStep1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "petPageContollStep1")
     /// Image `petPageContollStep2`.
     static let petPageContollStep2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "petPageContollStep2")
+    /// Image `registerAddPhoto`.
+    static let registerAddPhoto = Rswift.ImageResource(bundle: R.hostingBundle, name: "registerAddPhoto")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "appleLogo", bundle: ..., traitCollection: ...)`
@@ -371,6 +373,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "petPageContollStep2", bundle: ..., traitCollection: ...)`
     static func petPageContollStep2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.petPageContollStep2, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "registerAddPhoto", bundle: ..., traitCollection: ...)`
+    static func registerAddPhoto(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.registerAddPhoto, compatibleWith: traitCollection)
     }
     #endif
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1B927F87CA22CD5C025E3F72 /* Pods_iPet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137E1A45FC5FB849D6E6C76A /* Pods_iPet.framework */; };
+		C48D2929278369DA00BC23F2 /* UIView+Underlined.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D2928278369DA00BC23F2 /* UIView+Underlined.swift */; };
+		C48D292B278372BD00BC23F2 /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D292A278372BD00BC23F2 /* UIViewController+HideKeyboard.swift */; };
 		C4A0E9662782DB48005D6662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9652782DB48005D6662 /* AppDelegate.swift */; };
 		C4A0E96F2782DB49005D6662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A0E96E2782DB49005D6662 /* Assets.xcassets */; };
 		C4A0E9802782DEA6005D6662 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E97F2782DEA6005D6662 /* LaunchViewController.swift */; };
@@ -51,6 +53,8 @@
 		137E1A45FC5FB849D6E6C76A /* Pods_iPet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8BB7D5D564207E8E6D279EA /* Pods-iPet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPet.release.xcconfig"; path = "Target Support Files/Pods-iPet/Pods-iPet.release.xcconfig"; sourceTree = "<group>"; };
 		BCDB67425DC14DD1605A7426 /* Pods-iPet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPet.debug.xcconfig"; path = "Target Support Files/Pods-iPet/Pods-iPet.debug.xcconfig"; sourceTree = "<group>"; };
+		C48D2928278369DA00BC23F2 /* UIView+Underlined.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Underlined.swift"; sourceTree = "<group>"; };
+		C48D292A278372BD00BC23F2 /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		C4A0E9622782DB48005D6662 /* iPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A0E9652782DB48005D6662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4A0E96E2782DB49005D6662 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,12 +139,12 @@
 		C4A0E9642782DB48005D6662 /* iPet */ = {
 			isa = PBXGroup;
 			children = (
-				C4A0E9BD27834FF7005D6662 /* Network */,
 				C4A0E9B527831991005D6662 /* iPet.entitlements */,
+				C4A0E9792782DDBD005D6662 /* App */,
 				C4A0E97D2782DE64005D6662 /* Common */,
 				C4A0E97C2782DE4F005D6662 /* Module */,
+				C4A0E9BD27834FF7005D6662 /* Network */,
 				C4A0E97A2782DDDC005D6662 /* Resource */,
-				C4A0E9792782DDBD005D6662 /* App */,
 			);
 			path = iPet;
 			sourceTree = "<group>";
@@ -310,6 +314,8 @@
 			isa = PBXGroup;
 			children = (
 				C4A0E9AC2782F534005D6662 /* UIColor+Hex.swift */,
+				C48D2928278369DA00BC23F2 /* UIView+Underlined.swift */,
+				C48D292A278372BD00BC23F2 /* UIViewController+HideKeyboard.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -559,9 +565,11 @@
 				C4A0E9D22783505D005D6662 /* JSONEncodableEncoding.swift in Sources */,
 				C4A0E9CF2783505D005D6662 /* APIs.swift in Sources */,
 				C4A0E9A92782F2C6005D6662 /* SignInView.swift in Sources */,
+				C48D292B278372BD00BC23F2 /* UIViewController+HideKeyboard.swift in Sources */,
 				C4A0E9952782E858005D6662 /* SwipeNavigationController.swift in Sources */,
 				C4A0E9D5278350C7005D6662 /* AuthGoggleResponse.swift in Sources */,
 				C4A0E9D12783505D005D6662 /* CodableHelper.swift in Sources */,
+				C48D2929278369DA00BC23F2 /* UIView+Underlined.swift in Sources */,
 				C4A0E9922782E79F005D6662 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -43,7 +43,8 @@ class SignInViewController: ViewController<SignInView> {
         provider.authGooglePost(token: token) { [weak self] result in
             switch result {
             case .success(let authGoogleResponse):
-                print(authGoogleResponse.token)
+                print(authGoogleResponse)
+                self?.navigationController?.pushViewController(RegisterUserInputViewController(), animated: true)
                 
             case .failure(let error):
                 print("Google authorization failed with error: ", error.localizedDescription)
