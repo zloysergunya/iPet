@@ -24,9 +24,12 @@ class SignInProvider {
     func authGooglePost(token: String, completion: @escaping(Result<AuthGoggleResponse, Error>) -> Void) {
         AuthAPI.authGooglePost(token: token) { response, error in
             if let response = response {
+                UserSettings.token = response.token
+                UserSettings.user = response.user
+                
                 completion(.success(response))
             } else if let error = error {
-                completion(.failure(error))
+                completion(.failure(ModelError(err: error)))
             } else {
                 completion(.failure(NSError()))
             }

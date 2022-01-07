@@ -9,7 +9,7 @@ class AuthAPI {
         }
     }
     
-    class func authApplePostWithRequestBuilder(token: String) -> RequestBuilder<AuthGoggleResponse> {
+    private class func authApplePostWithRequestBuilder(token: String) -> RequestBuilder<AuthGoggleResponse> {
         let path = "/auth/apple"
         let URLString = iPetAPI.basePath + path
         let parameters: [String:Any]? = nil
@@ -30,7 +30,7 @@ class AuthAPI {
         }
     }
     
-    class func authGooglePostWithRequestBuilder(token: String) -> RequestBuilder<AuthGoggleResponse> {
+    private class func authGooglePostWithRequestBuilder(token: String) -> RequestBuilder<AuthGoggleResponse> {
         let path = "/auth/google"
         let URLString = iPetAPI.basePath + path
         let parameters: [String:Any]? = nil

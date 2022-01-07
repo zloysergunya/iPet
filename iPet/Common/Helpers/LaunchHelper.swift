@@ -3,6 +3,7 @@ import UIKit
 class LaunchHelper {
     
     static func selectViewController() {
+        iPetAPI.customHeaders["X-Token"] = UserSettings.token
         
         let navigationController: UINavigationController
         

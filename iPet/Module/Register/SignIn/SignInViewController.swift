@@ -19,12 +19,13 @@ class SignInViewController: ViewController<SignInView> {
     }
     
     @objc private func signInWithApple() {
-        let request = ASAuthorizationAppleIDProvider().createRequest()
-        request.requestedScopes = [.fullName, .email]
-
-        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-        authorizationController.delegate = self
-        authorizationController.performRequests()
+        navigationController?.pushViewController(RegisterUserInputViewController(), animated: true)
+//        let request = ASAuthorizationAppleIDProvider().createRequest()
+//        request.requestedScopes = [.fullName, .email]
+//
+//        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+//        authorizationController.delegate = self
+//        authorizationController.performRequests()
     }
     
     @objc private func signInWithGoogle() {
@@ -47,7 +48,9 @@ class SignInViewController: ViewController<SignInView> {
                 self?.navigationController?.pushViewController(RegisterUserInputViewController(), animated: true)
                 
             case .failure(let error):
-                print("Google authorization failed with error: ", error.localizedDescription)
+                if let error = error as? ModelError {
+                    print(error.message())
+                }
             }
         }
     }

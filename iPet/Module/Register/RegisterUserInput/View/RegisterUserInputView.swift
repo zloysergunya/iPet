@@ -26,28 +26,22 @@ class RegisterUserInputView: RootView {
         return label
     }()
     
-    let nameField: UITextField = {
-        let textField = UITextField()
-        textField.textAlignment = .center
-        textField.textColor = R.color.blueAccent()
-        textField.placeholder = "Имя"
-        textField.font = R.font.montserratRegular(size: 16.0)
-        textField.tintColor = R.color.blueAccent()
+    let nameInputView: RegisterInputView = {
+        let inputView = RegisterInputView()
+        inputView.textField.placeholder = "Имя"
         
-        return textField
+        return inputView
     }()
     
-    let usernameField: UITextField = {
-        let textField = UITextField()
-        textField.textAlignment = .center
-        textField.textColor = R.color.blueAccent()
-        textField.placeholder = "Юзернейм"
-        textField.font = R.font.montserratRegular(size: 16.0)
-        textField.tintColor = R.color.blueAccent()
-        
-        return textField
+    let usernameInputView: RegisterInputView = {
+        let inputView = RegisterInputView()
+        inputView.textField.autocapitalizationType = .none
+        inputView.textField.keyboardType = .asciiCapable
+        inputView.textField.placeholder = "Юзернейм"
+                
+        return inputView
     }()
-    
+
     let continueButton: UIButton = {
         let button = UIButton()
         button.setTitle("Далее", for: .normal)
@@ -66,18 +60,11 @@ class RegisterUserInputView: RootView {
         addSubview(addPhotoImageView)
         addSubview(titleLabel)
         addSubview(subtitleLabel)
-        addSubview(nameField)
-        addSubview(usernameField)
+        addSubview(nameInputView)
+        addSubview(usernameInputView)
         addSubview(continueButton)
         
         setupConstraints()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        nameField.underlined(color: R.color.blueAccent() ?? .blue)
-        usernameField.underlined(color: R.color.blueAccent() ?? .blue)
     }
     
     func updateButtonBottomConstraint(duration: Double, _ offset: Double = -56.0) {
@@ -107,21 +94,19 @@ class RegisterUserInputView: RootView {
         subtitleLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16.0)
             make.right.equalToSuperview().offset(-16.0)
-            make.bottom.equalTo(nameField.snp.top).offset(-20.0)
+            make.bottom.equalTo(nameInputView.snp.top).offset(-20.0)
         }
         
-        nameField.snp.makeConstraints { make in
+        nameInputView.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16.0)
             make.right.equalToSuperview().offset(-16.0)
-            make.bottom.equalTo(usernameField.snp.top).offset(-12.0)
-            make.height.equalTo(56.0)
+            make.bottom.equalTo(usernameInputView.snp.top).offset(-12.0)
         }
         
-        usernameField.snp.makeConstraints { make in
+        usernameInputView.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16.0)
             make.right.equalToSuperview().offset(-16.0)
             make.bottom.equalTo(continueButton.snp.top).offset(-12.0)
-            make.height.equalTo(56.0)
         }
         
         continueButton.snp.makeConstraints { make in

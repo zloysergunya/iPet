@@ -1,25 +1,25 @@
 import Foundation
 
 struct User: Codable {
-    let id: Int
-    let name: String
-    let username: String
-    let email: String
-    let emailVerified: Bool
-    let gender: String
-    let stepsCount: Int
-    let coins: Int
-    let height: Int
-    let age: Int
-    let weight, chillDay: Int
-    let inviteLink: String
-    let countInvited: Int
-    let countFollowers: Int
-    let countFollowing: Int
-    let pet: Pet?
-    let lvlActivity: Int
-    let avatarURL: String
-    let lastVisit: Int
+    var id: Int
+    var name: String
+    var username: String
+    var email: String
+    var emailVerified: Bool
+    var gender: String
+    var stepsCount: Int
+    var coins: Int
+    var height: Int
+    var age: Int
+    var weight, chillDay: Int
+    var inviteLink: String
+    var countInvited: Int
+    var countFollowers: Int
+    var countFollowing: Int
+    var pet: Pet?
+    var lvlActivity: Int
+    var avatarURL: String
+    var lastVisit: Int
 
     enum CodingKeys: String, CodingKey {
         case id
