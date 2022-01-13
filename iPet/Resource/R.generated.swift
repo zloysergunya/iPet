@@ -326,8 +326,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 6 images.
+  /// This `R.image` struct is generated, and contains static references to 7 images.
   struct image {
+    /// Image `add_30`.
+    static let add_30 = Rswift.ImageResource(bundle: R.hostingBundle, name: "add_30")
     /// Image `appleLogo`.
     static let appleLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "appleLogo")
     /// Image `foxMascote`.
@@ -338,8 +340,15 @@ struct R: Rswift.Validatable {
     static let petPageContollStep1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "petPageContollStep1")
     /// Image `petPageContollStep2`.
     static let petPageContollStep2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "petPageContollStep2")
-    /// Image `registerAddPhoto`.
-    static let registerAddPhoto = Rswift.ImageResource(bundle: R.hostingBundle, name: "registerAddPhoto")
+    /// Image `photoPlaceholder`.
+    static let photoPlaceholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "photoPlaceholder")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "add_30", bundle: ..., traitCollection: ...)`
+    static func add_30(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.add_30, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "appleLogo", bundle: ..., traitCollection: ...)`
@@ -377,9 +386,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "registerAddPhoto", bundle: ..., traitCollection: ...)`
-    static func registerAddPhoto(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.registerAddPhoto, compatibleWith: traitCollection)
+    /// `UIImage(named: "photoPlaceholder", bundle: ..., traitCollection: ...)`
+    static func photoPlaceholder(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.photoPlaceholder, compatibleWith: traitCollection)
     }
     #endif
 

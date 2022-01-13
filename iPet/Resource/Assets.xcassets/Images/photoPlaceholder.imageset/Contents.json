@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "registerAddPhoto.png",
+      "filename" : "photoPlaceholder.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "registerAddPhoto@2x.png",
+      "filename" : "photoPlaceholder@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "registerAddPhoto@3x.png",
+      "filename" : "photoPlaceholder@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

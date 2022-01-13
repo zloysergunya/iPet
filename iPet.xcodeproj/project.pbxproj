@@ -18,6 +18,7 @@
 		C4190F4C2788944400C005C7 /* UserCheckUsernameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4190F4B2788944400C005C7 /* UserCheckUsernameRequest.swift */; };
 		C4190F4E2788947500C005C7 /* UserUsernameTranslitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4190F4D2788947500C005C7 /* UserUsernameTranslitRequest.swift */; };
 		C4190F50278899AB00C005C7 /* UserMeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4190F4F278899AB00C005C7 /* UserMeRequest.swift */; };
+		C4242DB7279000BA002B99E9 /* UserAvatarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DB6279000BA002B99E9 /* UserAvatarResponse.swift */; };
 		C48D2929278369DA00BC23F2 /* UIView+Underlined.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D2928278369DA00BC23F2 /* UIView+Underlined.swift */; };
 		C48D292B278372BD00BC23F2 /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D292A278372BD00BC23F2 /* UIViewController+HideKeyboard.swift */; };
 		C4A0E9662782DB48005D6662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9652782DB48005D6662 /* AppDelegate.swift */; };
@@ -75,6 +76,7 @@
 		C4190F4B2788944400C005C7 /* UserCheckUsernameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCheckUsernameRequest.swift; sourceTree = "<group>"; };
 		C4190F4D2788947500C005C7 /* UserUsernameTranslitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUsernameTranslitRequest.swift; sourceTree = "<group>"; };
 		C4190F4F278899AB00C005C7 /* UserMeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMeRequest.swift; sourceTree = "<group>"; };
+		C4242DB6279000BA002B99E9 /* UserAvatarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatarResponse.swift; sourceTree = "<group>"; };
 		C48D2928278369DA00BC23F2 /* UIView+Underlined.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Underlined.swift"; sourceTree = "<group>"; };
 		C48D292A278372BD00BC23F2 /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		C4A0E9622782DB48005D6662 /* iPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +168,7 @@
 				C4190F4227888A8000C005C7 /* UserUsernameTranslitResponse.swift */,
 				C4190F4D2788947500C005C7 /* UserUsernameTranslitRequest.swift */,
 				C4190F4F278899AB00C005C7 /* UserMeRequest.swift */,
+				C4242DB6279000BA002B99E9 /* UserAvatarResponse.swift */,
 			);
 			path = UserAPI;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 				C4A0E9D12783505D005D6662 /* CodableHelper.swift in Sources */,
 				C48D2929278369DA00BC23F2 /* UIView+Underlined.swift in Sources */,
 				C4A0E9922782E79F005D6662 /* OnboardingView.swift in Sources */,
+				C4242DB7279000BA002B99E9 /* UserAvatarResponse.swift in Sources */,
 				C4DD24432786DF03006D2EE5 /* UserSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -3,7 +3,18 @@ import SnapKit
 
 class RegisterUserInputView: RootView {
     
-    private let addPhotoImageView = UIImageView(image: R.image.registerAddPhoto())
+    private let addImageView = UIImageView(image: R.image.add_30())
+    
+    let photoPlaceholderImageView: UIImageView = {
+        let imageView = UIImageView(image: R.image.photoPlaceholder())
+        imageView.isUserInteractionEnabled = true
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 52.0
+        imageView.layer.borderColor = UIColor(hex: 0xFF6B00).cgColor
+        imageView.layer.borderWidth = 2.0
+        
+        return imageView
+    }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -57,7 +68,8 @@ class RegisterUserInputView: RootView {
         
         backgroundColor = R.color.background()
 
-        addSubview(addPhotoImageView)
+        addSubview(photoPlaceholderImageView)
+        addSubview(addImageView)
         addSubview(titleLabel)
         addSubview(subtitleLabel)
         addSubview(nameInputView)
@@ -79,10 +91,16 @@ class RegisterUserInputView: RootView {
     
     private func setupConstraints() {
         
-        addPhotoImageView.snp.makeConstraints { make in
+        addImageView.snp.makeConstraints { make in
+            make.right.equalTo(photoPlaceholderImageView.snp.right).offset(-8.0)
+            make.bottom.equalTo(photoPlaceholderImageView.snp.bottom).offset(4.0)
+            make.size.equalTo(30.0)
+        }
+        
+        photoPlaceholderImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(titleLabel.snp.top).offset(-134.0)
-            make.size.equalTo(108.0)
+            make.size.equalTo(104.0)
         }
         
         titleLabel.snp.makeConstraints { make in

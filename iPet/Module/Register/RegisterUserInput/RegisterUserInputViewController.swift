@@ -13,6 +13,8 @@ class RegisterUserInputViewController: ViewController<RegisterUserInputView> {
 
         mainView.continueButton.addTarget(self, action: #selector(save), for: .touchUpInside)
         
+        mainView.photoPlaceholderImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pickPhoto)))
+        
         mainView.nameInputView.textField.delegate = self
         mainView.usernameInputView.textField.delegate = self
         
@@ -140,8 +142,30 @@ class RegisterUserInputViewController: ViewController<RegisterUserInputView> {
         provider.patchUser(userMe: userMe) { [weak self] result in
             switch result {
             case .success(let user):
-                print("new user", user)
                 UserSettings.user = user
+                
+            case .failure(let error):
+                if let error = error as? ModelError {
+                    print(error.message())
+                }
+            }
+        }
+    }
+    
+    private func uploadUserPhoto() {
+        guard let image = mainView.photoPlaceholderImageView.image else {
+            return
+        }
+        
+        let data = image.jpegData(compressionQuality: 0.8)
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let filename = paths[0].appendingPathComponent("image.jpg")
+        try? data?.write(to: filename)
+        
+        provider.uploadUserPhoto(photo: filename) { result in
+            switch result {
+            case .success(let url):
+                print("url", url)
                 
             case .failure(let error):
                 if let error = error as? ModelError {
@@ -155,6 +179,7 @@ class RegisterUserInputViewController: ViewController<RegisterUserInputView> {
         Animations.press(view: sender)
         
         sendMe()
+        uploadUserPhoto()
     }
     
     @objc private func keyboardWillShow(_ notification: NSNotification) {
@@ -176,6 +201,15 @@ class RegisterUserInputViewController: ViewController<RegisterUserInputView> {
         }
         
         mainView.updateButtonBottomConstraint(duration: duration)
+    }
+    
+    @objc private func pickPhoto() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = false
+        
+        present(imagePicker, animated: true)
     }
     
 }
@@ -218,5 +252,23 @@ extension RegisterUserInputViewController: UITextFieldDelegate {
 
         return true
     }
+    
+}
+
+// MARK: - UIImagePickerControllerDelegate
+extension RegisterUserInputViewController: UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            mainView.photoPlaceholderImageView.image = image
+            
+            picker.dismiss(animated: true)
+        }
+    }
+    
+}
+
+// MARK: - UINavigationControllerDelegate
+extension RegisterUserInputViewController: UINavigationControllerDelegate {
     
 }
