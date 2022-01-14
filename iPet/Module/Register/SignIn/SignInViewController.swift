@@ -45,6 +45,7 @@ class SignInViewController: ViewController<SignInView> {
             switch result {
             case .success(let authGoogleResponse):
                 print(authGoogleResponse)
+                iPetAPI.customHeaders["X-Token"] = authGoogleResponse.token
                 self?.navigationController?.pushViewController(RegisterUserInputViewController(), animated: true)
                 
             case .failure(let error):

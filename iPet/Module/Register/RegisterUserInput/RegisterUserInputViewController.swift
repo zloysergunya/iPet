@@ -143,6 +143,7 @@ class RegisterUserInputViewController: ViewController<RegisterUserInputView> {
             switch result {
             case .success(let user):
                 UserSettings.user = user
+                self?.navigationController?.pushViewController(RegisterPickPetViewController(), animated: true)
                 
             case .failure(let error):
                 if let error = error as? ModelError {
@@ -165,7 +166,7 @@ class RegisterUserInputViewController: ViewController<RegisterUserInputView> {
         provider.uploadUserPhoto(photo: filename) { result in
             switch result {
             case .success(let url):
-                print("url", url)
+                UserSettings.user?.avatarURL = url
                 
             case .failure(let error):
                 if let error = error as? ModelError {

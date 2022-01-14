@@ -16,7 +16,7 @@ struct User: Codable {
     var countInvited: Int
     var countFollowers: Int
     var countFollowing: Int
-    var pet: Pet?
+    var pet: UserPet?
     var lvlActivity: Int
     var avatarURL: String
     var lastVisit: Int

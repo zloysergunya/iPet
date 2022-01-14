@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1B927F87CA22CD5C025E3F72 /* Pods_iPet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137E1A45FC5FB849D6E6C76A /* Pods_iPet.framework */; };
+		C4024EB427915A0A00248854 /* UserPetUserPetIdRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4024EB327915A0A00248854 /* UserPetUserPetIdRequest.swift */; };
+		C4024EB627915B5500248854 /* OkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4024EB527915B5500248854 /* OkResponse.swift */; };
+		C4024EB92791726200248854 /* RegisterStepsInputProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4024EB82791726200248854 /* RegisterStepsInputProvider.swift */; };
+		C4024EBB27917C1B00248854 /* UserPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4024EBA27917C1B00248854 /* UserPet.swift */; };
 		C4190F3B2786E6DD00C005C7 /* RegisterUserInputProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4190F3A2786E6DD00C005C7 /* RegisterUserInputProvider.swift */; };
 		C4190F3D2786E7B300C005C7 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4190F3C2786E7B300C005C7 /* UserAPI.swift */; };
 		C4190F3F2786E89E00C005C7 /* UserCheckUsernameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4190F3E2786E89E00C005C7 /* UserCheckUsernameResponse.swift */; };
@@ -19,6 +23,21 @@
 		C4190F4E2788947500C005C7 /* UserUsernameTranslitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4190F4D2788947500C005C7 /* UserUsernameTranslitRequest.swift */; };
 		C4190F50278899AB00C005C7 /* UserMeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4190F4F278899AB00C005C7 /* UserMeRequest.swift */; };
 		C4242DB7279000BA002B99E9 /* UserAvatarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DB6279000BA002B99E9 /* UserAvatarResponse.swift */; };
+		C4242DBA27900AA8002B99E9 /* RegisterStepsInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DB927900AA8002B99E9 /* RegisterStepsInputViewController.swift */; };
+		C4242DBD27900AC3002B99E9 /* RegisterStepsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DBC27900AC3002B99E9 /* RegisterStepsInputView.swift */; };
+		C4242DC027900B10002B99E9 /* RegisterPickPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DBF27900B10002B99E9 /* RegisterPickPetViewController.swift */; };
+		C4242DC327900B2A002B99E9 /* RegisterPickPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DC227900B2A002B99E9 /* RegisterPickPetView.swift */; };
+		C4242DC627900E0B002B99E9 /* PetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DC527900E0B002B99E9 /* PetAPI.swift */; };
+		C4242DC927900E5F002B99E9 /* RegisterPickPetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DC827900E5F002B99E9 /* RegisterPickPetProvider.swift */; };
+		C4242DCB27900F83002B99E9 /* PetRandomNameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DCA27900F83002B99E9 /* PetRandomNameResponse.swift */; };
+		C4242DCD279025BE002B99E9 /* PetAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DCC279025BE002B99E9 /* PetAnimation.swift */; };
+		C4242DD0279029BB002B99E9 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DCF279029BB002B99E9 /* LoadingState.swift */; };
+		C4242DD427902A1F002B99E9 /* PetSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DD327902A1F002B99E9 /* PetSectionModel.swift */; };
+		C4242DD627902A9E002B99E9 /* RegisterPetSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DD527902A9E002B99E9 /* RegisterPetSectionController.swift */; };
+		C4242DDD27902BB7002B99E9 /* ListCollectionContext+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DDC27902BB7002B99E9 /* ListCollectionContext+Dequeue.swift */; };
+		C4242DDF279031B9002B99E9 /* PetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DDE279031B9002B99E9 /* PetResponse.swift */; };
+		C4242DE1279087CC002B99E9 /* RegisterPickPetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DE0279087CC002B99E9 /* RegisterPickPetCell.swift */; };
+		C4242DE4279095D5002B99E9 /* PagingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DE3279095D5002B99E9 /* PagingFlowLayout.swift */; };
 		C48D2929278369DA00BC23F2 /* UIView+Underlined.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D2928278369DA00BC23F2 /* UIView+Underlined.swift */; };
 		C48D292B278372BD00BC23F2 /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D292A278372BD00BC23F2 /* UIViewController+HideKeyboard.swift */; };
 		C4A0E9662782DB48005D6662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9652782DB48005D6662 /* AppDelegate.swift */; };
@@ -66,6 +85,10 @@
 		137E1A45FC5FB849D6E6C76A /* Pods_iPet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8BB7D5D564207E8E6D279EA /* Pods-iPet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPet.release.xcconfig"; path = "Target Support Files/Pods-iPet/Pods-iPet.release.xcconfig"; sourceTree = "<group>"; };
 		BCDB67425DC14DD1605A7426 /* Pods-iPet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPet.debug.xcconfig"; path = "Target Support Files/Pods-iPet/Pods-iPet.debug.xcconfig"; sourceTree = "<group>"; };
+		C4024EB327915A0A00248854 /* UserPetUserPetIdRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPetUserPetIdRequest.swift; sourceTree = "<group>"; };
+		C4024EB527915B5500248854 /* OkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkResponse.swift; sourceTree = "<group>"; };
+		C4024EB82791726200248854 /* RegisterStepsInputProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStepsInputProvider.swift; sourceTree = "<group>"; };
+		C4024EBA27917C1B00248854 /* UserPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPet.swift; sourceTree = "<group>"; };
 		C4190F3A2786E6DD00C005C7 /* RegisterUserInputProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInputProvider.swift; sourceTree = "<group>"; };
 		C4190F3C2786E7B300C005C7 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		C4190F3E2786E89E00C005C7 /* UserCheckUsernameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCheckUsernameResponse.swift; sourceTree = "<group>"; };
@@ -77,6 +100,21 @@
 		C4190F4D2788947500C005C7 /* UserUsernameTranslitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUsernameTranslitRequest.swift; sourceTree = "<group>"; };
 		C4190F4F278899AB00C005C7 /* UserMeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMeRequest.swift; sourceTree = "<group>"; };
 		C4242DB6279000BA002B99E9 /* UserAvatarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatarResponse.swift; sourceTree = "<group>"; };
+		C4242DB927900AA8002B99E9 /* RegisterStepsInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStepsInputViewController.swift; sourceTree = "<group>"; };
+		C4242DBC27900AC3002B99E9 /* RegisterStepsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStepsInputView.swift; sourceTree = "<group>"; };
+		C4242DBF27900B10002B99E9 /* RegisterPickPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPickPetViewController.swift; sourceTree = "<group>"; };
+		C4242DC227900B2A002B99E9 /* RegisterPickPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPickPetView.swift; sourceTree = "<group>"; };
+		C4242DC527900E0B002B99E9 /* PetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAPI.swift; sourceTree = "<group>"; };
+		C4242DC827900E5F002B99E9 /* RegisterPickPetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPickPetProvider.swift; sourceTree = "<group>"; };
+		C4242DCA27900F83002B99E9 /* PetRandomNameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRandomNameResponse.swift; sourceTree = "<group>"; };
+		C4242DCC279025BE002B99E9 /* PetAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAnimation.swift; sourceTree = "<group>"; };
+		C4242DCF279029BB002B99E9 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
+		C4242DD327902A1F002B99E9 /* PetSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSectionModel.swift; sourceTree = "<group>"; };
+		C4242DD527902A9E002B99E9 /* RegisterPetSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPetSectionController.swift; sourceTree = "<group>"; };
+		C4242DDC27902BB7002B99E9 /* ListCollectionContext+Dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListCollectionContext+Dequeue.swift"; sourceTree = "<group>"; };
+		C4242DDE279031B9002B99E9 /* PetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetResponse.swift; sourceTree = "<group>"; };
+		C4242DE0279087CC002B99E9 /* RegisterPickPetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPickPetCell.swift; sourceTree = "<group>"; };
+		C4242DE3279095D5002B99E9 /* PagingFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingFlowLayout.swift; sourceTree = "<group>"; };
 		C48D2928278369DA00BC23F2 /* UIView+Underlined.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Underlined.swift"; sourceTree = "<group>"; };
 		C48D292A278372BD00BC23F2 /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		C4A0E9622782DB48005D6662 /* iPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +182,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C4024EB72791725200248854 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				C4024EB82791726200248854 /* RegisterStepsInputProvider.swift */,
+			);
+			name = Provider;
+			sourceTree = "<group>";
+		};
 		C4190F392786E6D200C005C7 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +215,7 @@
 				C4190F4D2788947500C005C7 /* UserUsernameTranslitRequest.swift */,
 				C4190F4F278899AB00C005C7 /* UserMeRequest.swift */,
 				C4242DB6279000BA002B99E9 /* UserAvatarResponse.swift */,
+				C4024EB327915A0A00248854 /* UserPetUserPetIdRequest.swift */,
 			);
 			path = UserAPI;
 			sourceTree = "<group>";
@@ -179,8 +226,115 @@
 				C4A0E9D8278350FD005D6662 /* Pet.swift */,
 				C4A0E9D4278350C7005D6662 /* AuthGoggleResponse.swift */,
 				C4A0E9D6278350E9005D6662 /* User.swift */,
+				C4024EBA27917C1B00248854 /* UserPet.swift */,
 			);
 			path = AuthAPI;
+			sourceTree = "<group>";
+		};
+		C4242DB827900A8F002B99E9 /* RegisterStepsInput */ = {
+			isa = PBXGroup;
+			children = (
+				C4024EB72791725200248854 /* Provider */,
+				C4242DBB27900AB7002B99E9 /* View */,
+				C4242DB927900AA8002B99E9 /* RegisterStepsInputViewController.swift */,
+			);
+			path = RegisterStepsInput;
+			sourceTree = "<group>";
+		};
+		C4242DBB27900AB7002B99E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C4242DBC27900AC3002B99E9 /* RegisterStepsInputView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C4242DBE27900AF8002B99E9 /* RegisterPickPet */ = {
+			isa = PBXGroup;
+			children = (
+				C4242DD227902A07002B99E9 /* Section */,
+				C4242DD127902A02002B99E9 /* Model */,
+				C4242DC427900DF8002B99E9 /* Provider */,
+				C4242DC127900B13002B99E9 /* View */,
+				C4242DBF27900B10002B99E9 /* RegisterPickPetViewController.swift */,
+			);
+			path = RegisterPickPet;
+			sourceTree = "<group>";
+		};
+		C4242DC127900B13002B99E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C4242DD827902B33002B99E9 /* Cell */,
+				C4242DC227900B2A002B99E9 /* RegisterPickPetView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C4242DC427900DF8002B99E9 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				C4242DC827900E5F002B99E9 /* RegisterPickPetProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		C4242DC727900E28002B99E9 /* PetAPI */ = {
+			isa = PBXGroup;
+			children = (
+				C4242DCA27900F83002B99E9 /* PetRandomNameResponse.swift */,
+				C4242DCC279025BE002B99E9 /* PetAnimation.swift */,
+				C4242DDE279031B9002B99E9 /* PetResponse.swift */,
+			);
+			path = PetAPI;
+			sourceTree = "<group>";
+		};
+		C4242DCE279029A5002B99E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C4190F402786E91300C005C7 /* ModelError.swift */,
+				C4242DCF279029BB002B99E9 /* LoadingState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C4242DD127902A02002B99E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C4242DD327902A1F002B99E9 /* PetSectionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C4242DD227902A07002B99E9 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				C4242DD527902A9E002B99E9 /* RegisterPetSectionController.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		C4242DD827902B33002B99E9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C4242DE0279087CC002B99E9 /* RegisterPickPetCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C4242DDB27902BA4002B99E9 /* IGListKit */ = {
+			isa = PBXGroup;
+			children = (
+				C4242DDC27902BB7002B99E9 /* ListCollectionContext+Dequeue.swift */,
+			);
+			path = IGListKit;
+			sourceTree = "<group>";
+		};
+		C4242DE2279095CA002B99E9 /* CollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				C4242DE3279095D5002B99E9 /* PagingFlowLayout.swift */,
+			);
+			path = CollectionViewLayout;
 			sourceTree = "<group>";
 		};
 		C4A0E9592782DB48005D6662 = {
@@ -258,6 +412,7 @@
 		C4A0E97D2782DE64005D6662 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C4242DCE279029A5002B99E9 /* Model */,
 				C4A0E9AA2782F521005D6662 /* Extension */,
 				C4A0E9972782E91F005D6662 /* Helpers */,
 				C4A0E9822782E08C005D6662 /* UI */,
@@ -285,6 +440,7 @@
 		C4A0E9822782E08C005D6662 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C4242DE2279095CA002B99E9 /* CollectionViewLayout */,
 				C4A0E9932782E844005D6662 /* Controllers */,
 			);
 			path = UI;
@@ -355,6 +511,8 @@
 		C4A0E9A42782F2A3005D6662 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				C4242DBE27900AF8002B99E9 /* RegisterPickPet */,
+				C4242DB827900A8F002B99E9 /* RegisterStepsInput */,
 				C4A0E9AF2782F844005D6662 /* RegisterUserInput */,
 				C4A0E9AE2782F827005D6662 /* SignIn */,
 			);
@@ -372,6 +530,7 @@
 		C4A0E9AA2782F521005D6662 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				C4242DDB27902BA4002B99E9 /* IGListKit */,
 				C4DD24442786E029006D2EE5 /* Foundation */,
 				C4A0E9AB2782F528005D6662 /* UIKit */,
 			);
@@ -447,9 +606,10 @@
 		C4A0E9C42783505D005D6662 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C4242DC727900E28002B99E9 /* PetAPI */,
 				C4190F4A2788940D00C005C7 /* AuthAPI */,
 				C4190F492788940600C005C7 /* UserAPI */,
-				C4190F402786E91300C005C7 /* ModelError.swift */,
+				C4024EB527915B5500248854 /* OkResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -459,6 +619,7 @@
 			children = (
 				C4A0E9DA2783516A005D6662 /* AuthAPI.swift */,
 				C4190F3C2786E7B300C005C7 /* UserAPI.swift */,
+				C4242DC527900E0B002B99E9 /* PetAPI.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -617,11 +778,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4242DC927900E5F002B99E9 /* RegisterPickPetProvider.swift in Sources */,
 				C4A0E9B42782F87D005D6662 /* RegisterUserInputView.swift in Sources */,
 				C4A0E9892782E0E4005D6662 /* RootView.swift in Sources */,
 				C4190F4627888B4200C005C7 /* RegisterInputView.swift in Sources */,
 				C4A0E9DB2783516A005D6662 /* AuthAPI.swift in Sources */,
 				C4A0E9BA27834BBE005D6662 /* SignInProvider.swift in Sources */,
+				C4242DDD27902BB7002B99E9 /* ListCollectionContext+Dequeue.swift in Sources */,
 				C4A0E9A62782F2B3005D6662 /* SignInViewController.swift in Sources */,
 				C4A0E98F2782E783005D6662 /* OnboardingViewController.swift in Sources */,
 				C4190F4E2788947500C005C7 /* UserUsernameTranslitRequest.swift in Sources */,
@@ -631,8 +794,12 @@
 				C4190F50278899AB00C005C7 /* UserMeRequest.swift in Sources */,
 				C4A0E9CD2783505D005D6662 /* Models.swift in Sources */,
 				C4A0E9D7278350E9005D6662 /* User.swift in Sources */,
+				C4242DDF279031B9002B99E9 /* PetResponse.swift in Sources */,
+				C4242DC327900B2A002B99E9 /* RegisterPickPetView.swift in Sources */,
 				C4A0E98B2782E144005D6662 /* LaunchView.swift in Sources */,
 				C4190F4C2788944400C005C7 /* UserCheckUsernameRequest.swift in Sources */,
+				C4024EB92791726200248854 /* RegisterStepsInputProvider.swift in Sources */,
+				C4242DD627902A9E002B99E9 /* RegisterPetSectionController.swift in Sources */,
 				C4A0E9662782DB48005D6662 /* AppDelegate.swift in Sources */,
 				C4A0E9CE2783505D005D6662 /* Extensions.swift in Sources */,
 				C4190F412786E91300C005C7 /* ModelError.swift in Sources */,
@@ -641,26 +808,39 @@
 				C4A0E9852782E0A6005D6662 /* RootViewController.swift in Sources */,
 				C4A0E9D9278350FD005D6662 /* Pet.swift in Sources */,
 				C4190F4827888CF800C005C7 /* Animations.swift in Sources */,
+				C4024EB627915B5500248854 /* OkResponse.swift in Sources */,
 				C4190F3B2786E6DD00C005C7 /* RegisterUserInputProvider.swift in Sources */,
+				C4242DBA27900AA8002B99E9 /* RegisterStepsInputViewController.swift in Sources */,
 				C4190F4327888A8000C005C7 /* UserUsernameTranslitResponse.swift in Sources */,
+				C4242DC027900B10002B99E9 /* RegisterPickPetViewController.swift in Sources */,
 				C4A0E9BC27834CC3005D6662 /* Utils.swift in Sources */,
+				C4242DD427902A1F002B99E9 /* PetSectionModel.swift in Sources */,
 				C4190F3F2786E89E00C005C7 /* UserCheckUsernameResponse.swift in Sources */,
+				C4242DD0279029BB002B99E9 /* LoadingState.swift in Sources */,
+				C4242DCB27900F83002B99E9 /* PetRandomNameResponse.swift in Sources */,
 				C4A0E9D32783505D005D6662 /* AlamofireImplementations.swift in Sources */,
 				C4A0E9B12782F85D005D6662 /* RegisterUserInputViewController.swift in Sources */,
 				C4A0E9992782E93C005D6662 /* LaunchHelper.swift in Sources */,
 				C4A0E99B2782E9BF005D6662 /* R.generated.swift in Sources */,
 				C4A0E9AD2782F534005D6662 /* UIColor+Hex.swift in Sources */,
+				C4024EB427915A0A00248854 /* UserPetUserPetIdRequest.swift in Sources */,
 				C4A0E9CA2783505D005D6662 /* JSONEncodingHelper.swift in Sources */,
 				C4A0E9D22783505D005D6662 /* JSONEncodableEncoding.swift in Sources */,
+				C4242DCD279025BE002B99E9 /* PetAnimation.swift in Sources */,
+				C4242DE4279095D5002B99E9 /* PagingFlowLayout.swift in Sources */,
+				C4024EBB27917C1B00248854 /* UserPet.swift in Sources */,
 				C4A0E9CF2783505D005D6662 /* APIs.swift in Sources */,
 				C4DD24462786E036006D2EE5 /* UserDefaults+SaveStruct.swift in Sources */,
+				C4242DBD27900AC3002B99E9 /* RegisterStepsInputView.swift in Sources */,
 				C4A0E9A92782F2C6005D6662 /* SignInView.swift in Sources */,
 				C48D292B278372BD00BC23F2 /* UIViewController+HideKeyboard.swift in Sources */,
 				C4A0E9952782E858005D6662 /* SwipeNavigationController.swift in Sources */,
 				C4A0E9D5278350C7005D6662 /* AuthGoggleResponse.swift in Sources */,
+				C4242DC627900E0B002B99E9 /* PetAPI.swift in Sources */,
 				C4A0E9D12783505D005D6662 /* CodableHelper.swift in Sources */,
 				C48D2929278369DA00BC23F2 /* UIView+Underlined.swift in Sources */,
 				C4A0E9922782E79F005D6662 /* OnboardingView.swift in Sources */,
+				C4242DE1279087CC002B99E9 /* RegisterPickPetCell.swift in Sources */,
 				C4242DB7279000BA002B99E9 /* UserAvatarResponse.swift in Sources */,
 				C4DD24432786DF03006D2EE5 /* UserSettings.swift in Sources */,
 			);

@@ -13,6 +13,7 @@ target 'iPet' do
   pod 'PinLayout', '~> 1.8'
   pod 'SnapKit', '~> 5.0.0'
   pod 'Atributika', '~> 4.9.0'
+  pod 'lottie-ios', '~> 3.2.3'
   
   # Utilities
   pod 'R.swift', '~> 5.4.0'

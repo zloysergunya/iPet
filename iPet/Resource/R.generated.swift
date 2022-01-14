@@ -326,7 +326,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 7 images.
+  /// This `R.image` struct is generated, and contains static references to 12 images.
   struct image {
     /// Image `add_30`.
     static let add_30 = Rswift.ImageResource(bundle: R.hostingBundle, name: "add_30")
@@ -336,12 +336,22 @@ struct R: Rswift.Validatable {
     static let foxMascote = Rswift.ImageResource(bundle: R.hostingBundle, name: "foxMascote")
     /// Image `googleLogo`.
     static let googleLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "googleLogo")
+    /// Image `minusButton`.
+    static let minusButton = Rswift.ImageResource(bundle: R.hostingBundle, name: "minusButton")
     /// Image `petPageContollStep1`.
     static let petPageContollStep1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "petPageContollStep1")
     /// Image `petPageContollStep2`.
     static let petPageContollStep2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "petPageContollStep2")
+    /// Image `petPageContollStep4`.
+    static let petPageContollStep4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "petPageContollStep4")
+    /// Image `petRandomNameIcon`.
+    static let petRandomNameIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "petRandomNameIcon")
     /// Image `photoPlaceholder`.
     static let photoPlaceholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "photoPlaceholder")
+    /// Image `plusButton`.
+    static let plusButton = Rswift.ImageResource(bundle: R.hostingBundle, name: "plusButton")
+    /// Image `stepCountFox`.
+    static let stepCountFox = Rswift.ImageResource(bundle: R.hostingBundle, name: "stepCountFox")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "add_30", bundle: ..., traitCollection: ...)`
@@ -372,6 +382,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "minusButton", bundle: ..., traitCollection: ...)`
+    static func minusButton(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.minusButton, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "petPageContollStep1", bundle: ..., traitCollection: ...)`
     static func petPageContollStep1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.petPageContollStep1, compatibleWith: traitCollection)
@@ -386,9 +403,37 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "petPageContollStep4", bundle: ..., traitCollection: ...)`
+    static func petPageContollStep4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.petPageContollStep4, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "petRandomNameIcon", bundle: ..., traitCollection: ...)`
+    static func petRandomNameIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.petRandomNameIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "photoPlaceholder", bundle: ..., traitCollection: ...)`
     static func photoPlaceholder(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.photoPlaceholder, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "plusButton", bundle: ..., traitCollection: ...)`
+    static func plusButton(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.plusButton, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "stepCountFox", bundle: ..., traitCollection: ...)`
+    static func stepCountFox(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.stepCountFox, compatibleWith: traitCollection)
     }
     #endif
 

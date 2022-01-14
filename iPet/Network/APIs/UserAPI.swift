@@ -63,7 +63,7 @@ class UserAPI {
         }
     }
 
-    class func userAvatarPostWithRequestBuilder(photo: URL? = nil) -> RequestBuilder<UserAvatarResponse> {
+    private class func userAvatarPostWithRequestBuilder(photo: URL? = nil) -> RequestBuilder<UserAvatarResponse> {
         let path = "/user/avatar"
         let URLString = iPetAPI.basePath + path
         let formParams: [String:Any?] = [
@@ -78,6 +78,48 @@ class UserAPI {
         let requestBuilder: RequestBuilder<UserAvatarResponse>.Type = iPetAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+    
+    class func userPetChoicePetIdPatch(petId: Int, completion: @escaping ((_ data: OkResponse?,_ error: ErrorResponse?) -> Void)) {
+        userPetChoicePetIdPatchWithRequestBuilder(petId: petId).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+    private class func userPetChoicePetIdPatchWithRequestBuilder(petId: Int) -> RequestBuilder<OkResponse> {
+        var path = "/user/pet/choice/{pet_id}"
+        let _idPreEscape = "\(petId)"
+        let _idPostEscape = _idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pet_id}", with: _idPostEscape, options: .literal, range: nil)
+        let URLString = iPetAPI.basePath + path
+        let parameters: [String:Any]? = nil
+
+        let url = URLComponents(string: URLString)
+
+        let requestBuilder: RequestBuilder<OkResponse>.Type = iPetAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PATCH", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+    
+    class func userPetUserPetIdPatch(userPetId: Int, userPetUserPetIdRequest: UserPetUserPetIdRequest, completion: @escaping ((_ data: OkResponse?,_ error: ErrorResponse?) -> Void)) {
+        userPetUserPetIdPatchWithRequestBuilder(userPetId: userPetId, userPetUserPetIdRequest: userPetUserPetIdRequest).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+    private class func userPetUserPetIdPatchWithRequestBuilder(userPetId: Int, userPetUserPetIdRequest: UserPetUserPetIdRequest) -> RequestBuilder<OkResponse> {
+        var path = "/user/pet/{user_pet_id}"
+        let _idPreEscape = "\(userPetId)"
+        let _idPostEscape = _idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{user_pet_id}", with: _idPostEscape, options: .literal, range: nil)
+        let URLString = iPetAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: userPetUserPetIdRequest)
+
+        let url = URLComponents(string: URLString)
+
+        let requestBuilder: RequestBuilder<OkResponse>.Type = iPetAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PATCH", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }
     
 }

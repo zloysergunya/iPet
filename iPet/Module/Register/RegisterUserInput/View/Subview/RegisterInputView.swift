@@ -45,8 +45,8 @@ class RegisterInputView: UIView {
         
         textField.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10.0)
-            make.left.equalToSuperview().offset(20.0)
-            make.right.equalToSuperview().offset(-20.0)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
             make.height.equalTo(56.0)
         }
             

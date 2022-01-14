@@ -7,6 +7,8 @@ import Foundation
     fileprivate enum Keys: String {
         case token
         case user
+        case pets
+        case petAnimations
     }
     
     static var token: String? {
@@ -24,6 +26,24 @@ import Foundation
         }
         set {
             try? defaults.set(object: newValue, forKey: Keys.user.rawValue)
+        }
+    }
+    
+    static var pets: [Pet]? {
+        get {
+            return try? defaults.get(objectType: [Pet].self, forKey: Keys.pets.rawValue)
+        }
+        set {
+            try? defaults.set(object: newValue, forKey: Keys.pets.rawValue)
+        }
+    }
+    
+    static var petAnimations: [PetAnimation]? {
+        get {
+            return try? defaults.get(objectType: [PetAnimation].self, forKey: Keys.petAnimations.rawValue)
+        }
+        set {
+            try? defaults.set(object: newValue, forKey: Keys.petAnimations.rawValue)
         }
     }
     
