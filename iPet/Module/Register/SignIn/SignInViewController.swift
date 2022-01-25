@@ -19,13 +19,12 @@ class SignInViewController: ViewController<SignInView> {
     }
     
     @objc private func signInWithApple() {
-        navigationController?.pushViewController(RegisterUserInputViewController(), animated: true)
-//        let request = ASAuthorizationAppleIDProvider().createRequest()
-//        request.requestedScopes = [.fullName, .email]
-//
-//        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-//        authorizationController.delegate = self
-//        authorizationController.performRequests()
+        let request = ASAuthorizationAppleIDProvider().createRequest()
+        request.requestedScopes = [.fullName, .email]
+
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.performRequests()
     }
     
     @objc private func signInWithGoogle() {
@@ -55,6 +54,23 @@ class SignInViewController: ViewController<SignInView> {
             }
         }
     }
+    
+    private func authApple(token: String) {
+        provider.authApplePost(token: token) { [weak self] result in
+            switch result {
+            case .success(let authGoogleResponse):
+                print(authGoogleResponse)
+                iPetAPI.customHeaders["X-Token"] = authGoogleResponse.token
+                self?.navigationController?.pushViewController(RegisterUserInputViewController(), animated: true)
+                
+            case .failure(let error):
+                if let error = error as? ModelError {
+                    print(error.message())
+                }
+            }
+        }
+    }
+
 
 }
 
@@ -69,13 +85,7 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
             return
         }
         
-        let email = appleIDCredential.email
-        let firstName = appleIDCredential.fullName?.givenName
-        let lastName = appleIDCredential.fullName?.familyName
-        // создать или залогиниться в своей системе с помощью кода авторизации codeStr
-        
-        print(email, firstName, lastName, codeStr)
-        navigationController?.pushViewController(RegisterUserInputViewController(), animated: true)
+        authApple(token: codeStr)
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {

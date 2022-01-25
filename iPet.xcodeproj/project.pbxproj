@@ -648,7 +648,7 @@
 			buildConfigurationList = C4A0E9762782DB49005D6662 /* Build configuration list for PBXNativeTarget "iPet" */;
 			buildPhases = (
 				33C13FDDA3B0218E01B7011B /* [CP] Check Pods Manifest.lock */,
-				C4A0E98C2782E5EB005D6662 /* ShellScript */,
+				C4A0E98C2782E5EB005D6662 /* R.swift codegen */,
 				C4A0E95E2782DB48005D6662 /* Sources */,
 				C4A0E95F2782DB48005D6662 /* Frameworks */,
 				C4A0E9602782DB48005D6662 /* Resources */,
@@ -752,7 +752,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iPet/Pods-iPet-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C4A0E98C2782E5EB005D6662 /* ShellScript */ = {
+		C4A0E98C2782E5EB005D6662 /* R.swift codegen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -762,6 +762,7 @@
 			inputPaths = (
 				"$TEMP_DIR/rswift-lastrun",
 			);
+			name = "R.swift codegen";
 			outputFileListPaths = (
 			);
 			outputPaths = (

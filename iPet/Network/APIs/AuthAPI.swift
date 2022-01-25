@@ -16,7 +16,7 @@ class AuthAPI {
         
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
-            "token": token
+            "apple_token": token
         ])
 
         let requestBuilder: RequestBuilder<AuthGoggleResponse>.Type = iPetAPI.requestBuilderFactory.getBuilder()
