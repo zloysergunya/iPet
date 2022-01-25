@@ -4,14 +4,13 @@ struct User: Codable {
     var id: Int
     var name: String
     var username: String
-    var email: String
-    var emailVerified: Bool
     var gender: String
     var stepsCount: Int
     var coins: Int
     var height: Int
     var age: Int
-    var weight, chillDay: Int
+    var weight: Int
+    var chillDay: Int
     var inviteLink: String
     var countInvited: Int
     var countFollowers: Int
@@ -25,8 +24,6 @@ struct User: Codable {
         case id
         case name
         case username
-        case email
-        case emailVerified = "email_verified"
         case gender
         case stepsCount = "steps_count"
         case coins
