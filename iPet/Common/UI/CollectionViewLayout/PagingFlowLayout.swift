@@ -43,6 +43,10 @@ class PagingFlowLayout: UICollectionViewFlowLayout {
                 
                 attributes.transform3D = CATransform3DMakeScale(zoom, zoom, zoom)
             }
+            
+            let ratio = distance / collectionView.bounds.width            
+            let alpha = max(min(cos(ratio * 2.5), 1), 0.3)
+            attributes.alpha = alpha
         }
         
         return rectAttributes
