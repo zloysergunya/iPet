@@ -978,7 +978,9 @@
 				DEVELOPMENT_TEAM = EU9TQLF5BQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iPet/Resource/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = iPet;
+				INFOPLIST_KEY_CFBundleDisplayName = Steppy;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need your cam!";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need your photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1009,7 +1011,9 @@
 				DEVELOPMENT_TEAM = EU9TQLF5BQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iPet/Resource/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = iPet;
+				INFOPLIST_KEY_CFBundleDisplayName = Steppy;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need your cam!";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need your photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
