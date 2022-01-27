@@ -9,6 +9,8 @@ import Foundation
         case user
         case pets
         case petAnimations
+        case userReady
+        case isKeychainFirstLaunch
     }
     
     static var token: String? {
@@ -44,6 +46,24 @@ import Foundation
         }
         set {
             try? defaults.set(object: newValue, forKey: Keys.petAnimations.rawValue)
+        }
+    }
+    
+    static var userReady: Bool {
+        get {
+            return defaults.bool(forKey: Keys.userReady.rawValue)
+        }
+        set {
+            defaults.set(newValue, forKey: Keys.userReady.rawValue)
+        }
+    }
+    
+    static var isKeychainFirstLaunch: Bool {
+        get {
+            return defaults.bool(forKey: Keys.isKeychainFirstLaunch.rawValue)
+        }
+        set {
+            defaults.set(newValue, forKey: Keys.isKeychainFirstLaunch.rawValue)
         }
     }
     

@@ -33,10 +33,14 @@ class SignInViewController: ViewController<SignInView> {
     
     private func authGoogle(token: String) {
         provider.authGooglePost(token: token) { [weak self] result in
+            guard let self = self else {
+                return
+            }
+            
             switch result {
-            case .success(let authGoogleResponse):
-                iPetAPI.customHeaders["X-Token"] = authGoogleResponse.token
-                self?.navigationController?.pushViewController(RegisterUserInputViewController(), animated: true)
+            case .success(let authResponse):
+                self.authorize(token: authResponse.token, currentUserId: authResponse.user.id)
+                self.navigationController?.pushViewController(RegisterUserInputViewController(), animated: true)
                 
             case .failure(let error):
                 if let error = error as? ModelError {
@@ -48,10 +52,14 @@ class SignInViewController: ViewController<SignInView> {
     
     private func authApple(token: String) {
         provider.authApplePost(token: token) { [weak self] result in
+            guard let self = self else {
+                return
+            }
+            
             switch result {
-            case .success(let authGoogleResponse):
-                iPetAPI.customHeaders["X-Token"] = authGoogleResponse.token
-                self?.navigationController?.pushViewController(RegisterUserInputViewController(), animated: true)
+            case .success(let authResponse):
+                self.authorize(token: authResponse.token, currentUserId: authResponse.user.id)
+                self.navigationController?.pushViewController(RegisterUserInputViewController(), animated: true)
                 
             case .failure(let error):
                 if let error = error as? ModelError {
@@ -61,6 +69,10 @@ class SignInViewController: ViewController<SignInView> {
         }
     }
 
+    private func authorize(token: String, currentUserId: Int) {
+        let authService: AuthService? = ServiceLocator.getService()
+        authService?.authorize(with: token, currentUserId: currentUserId)
+    }
 
 }
 

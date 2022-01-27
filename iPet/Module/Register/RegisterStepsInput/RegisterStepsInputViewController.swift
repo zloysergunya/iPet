@@ -55,6 +55,8 @@ class RegisterStepsInputViewController: ViewController<RegisterStepsInputView> {
             switch result {
             case .success(let user):
                 UserSettings.user = user
+                UserSettings.userReady = true
+                self?.navigationController?.pushViewController(TabBarController(), animated: true)
                 
             case .failure(let error):
                 if let error = error as? ModelError {

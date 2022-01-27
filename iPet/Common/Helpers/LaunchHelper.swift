@@ -1,21 +1,42 @@
 import UIKit
 
-class LaunchHelper {
+class LaunchService {
     
-    static func selectViewController() {
-        iPetAPI.customHeaders["X-Token"] = UserSettings.token
+    private func setWindowRoot(viewController: UIViewController) {
+        let root = navController(viewController)
         
-        let navigationController: UINavigationController
-        
-        navigationController = SwipeNavigationController(rootViewController: OnboardingViewController())
-        navigationController.setNavigationBarHidden(true, animated: false)
-        
-        UIApplication.shared.delegate?.window??.rootViewController = navigationController
+        UIApplication.shared.delegate?.window??.rootViewController = root
     }
     
-    static func logout() {
-        DispatchQueue.main.async {
-            LaunchHelper.selectViewController()
+    private func navController(_ root: UIViewController) -> UINavigationController {
+        let navigationController = SwipeNavigationController(rootViewController: root)
+        navigationController.isNavigationBarHidden = true
+        
+        return navigationController
+    }
+    
+    private func openAuth() {
+        setWindowRoot(viewController: OnboardingViewController())
+    }
+    
+    private func openAccountSetup() {
+        setWindowRoot(viewController: RegisterUserInputViewController())
+    }
+    
+    private func openMain() {
+        setWindowRoot(viewController: TabBarController())
+    }
+    
+    func selectViewController() {
+        let authService: AuthService? = ServiceLocator.getService()
+        authService?.updateApi()
+        
+        if authService?.authStatus == .unauthorized {
+            openAuth()
+        } else if !UserSettings.userReady {
+            openAccountSetup()
+        } else {
+            openMain()
         }
     }
     

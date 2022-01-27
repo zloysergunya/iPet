@@ -24,6 +24,15 @@
 		C4190F50278899AB00C005C7 /* UserMeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4190F4F278899AB00C005C7 /* UserMeRequest.swift */; };
 		C41E1D8A27A27A5700AA773B /* AppleSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E1D8927A27A5700AA773B /* AppleSignInService.swift */; };
 		C41E1D8C27A27BA700AA773B /* GoogleSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E1D8B27A27BA700AA773B /* GoogleSignInService.swift */; };
+		C41E1D9027A27F1300AA773B /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E1D8F27A27F1300AA773B /* KeychainService.swift */; };
+		C41E1D9427A27F4600AA773B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E1D9327A27F4600AA773B /* AuthService.swift */; };
+		C41E1D9727A27F7F00AA773B /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E1D9627A27F7F00AA773B /* ServiceLocator.swift */; };
+		C41E1D9927A27F8B00AA773B /* Autowired.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E1D9827A27F8B00AA773B /* Autowired.swift */; };
+		C41E1D9B27A27FBA00AA773B /* LoggerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E1D9A27A27FBA00AA773B /* LoggerService.swift */; };
+		C41E1D9D27A27FEE00AA773B /* Bundle+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E1D9C27A27FEE00AA773B /* Bundle+Version.swift */; };
+		C41E1DA027A2802D00AA773B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E1D9F27A2802D00AA773B /* Constants.swift */; };
+		C41E1DA227A2805200AA773B /* Bundle+Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E1DA127A2805200AA773B /* Bundle+Current.swift */; };
+		C41E1DA527A284EA00AA773B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E1DA427A284EA00AA773B /* TabBarController.swift */; };
 		C4242DB7279000BA002B99E9 /* UserAvatarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DB6279000BA002B99E9 /* UserAvatarResponse.swift */; };
 		C4242DBA27900AA8002B99E9 /* RegisterStepsInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DB927900AA8002B99E9 /* RegisterStepsInputViewController.swift */; };
 		C4242DBD27900AC3002B99E9 /* RegisterStepsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DBC27900AC3002B99E9 /* RegisterStepsInputView.swift */; };
@@ -103,6 +112,15 @@
 		C4190F4F278899AB00C005C7 /* UserMeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMeRequest.swift; sourceTree = "<group>"; };
 		C41E1D8927A27A5700AA773B /* AppleSignInService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleSignInService.swift; sourceTree = "<group>"; };
 		C41E1D8B27A27BA700AA773B /* GoogleSignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInService.swift; sourceTree = "<group>"; };
+		C41E1D8F27A27F1300AA773B /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		C41E1D9327A27F4600AA773B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		C41E1D9627A27F7F00AA773B /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		C41E1D9827A27F8B00AA773B /* Autowired.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autowired.swift; sourceTree = "<group>"; };
+		C41E1D9A27A27FBA00AA773B /* LoggerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerService.swift; sourceTree = "<group>"; };
+		C41E1D9C27A27FEE00AA773B /* Bundle+Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Version.swift"; sourceTree = "<group>"; };
+		C41E1D9F27A2802D00AA773B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C41E1DA127A2805200AA773B /* Bundle+Current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Current.swift"; sourceTree = "<group>"; };
+		C41E1DA427A284EA00AA773B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C4242DB6279000BA002B99E9 /* UserAvatarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatarResponse.swift; sourceTree = "<group>"; };
 		C4242DB927900AA8002B99E9 /* RegisterStepsInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStepsInputViewController.swift; sourceTree = "<group>"; };
 		C4242DBC27900AC3002B99E9 /* RegisterStepsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStepsInputView.swift; sourceTree = "<group>"; };
@@ -244,6 +262,49 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		C41E1D8D27A27DA300AA773B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C41E1DA327A284DA00AA773B /* TabBar */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C41E1D8E27A27E8800AA773B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C41E1D8F27A27F1300AA773B /* KeychainService.swift */,
+				C41E1D9327A27F4600AA773B /* AuthService.swift */,
+				C41E1D9A27A27FBA00AA773B /* LoggerService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C41E1D9527A27F7800AA773B /* ServiceLocator */ = {
+			isa = PBXGroup;
+			children = (
+				C41E1D9627A27F7F00AA773B /* ServiceLocator.swift */,
+				C41E1D9827A27F8B00AA773B /* Autowired.swift */,
+			);
+			path = ServiceLocator;
+			sourceTree = "<group>";
+		};
+		C41E1D9E27A2800D00AA773B /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0E99A2782E9BF005D6662 /* R.generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		C41E1DA327A284DA00AA773B /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C41E1DA427A284EA00AA773B /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		C4242DB827900A8F002B99E9 /* RegisterStepsInput */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,7 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				C4A0E9B527831991005D6662 /* iPet.entitlements */,
-				C4A0E9792782DDBD005D6662 /* App */,
+				C4A0E9792782DDBD005D6662 /* Application */,
 				C4A0E97D2782DE64005D6662 /* Common */,
 				C4A0E97C2782DE4F005D6662 /* Module */,
 				C4A0E9BD27834FF7005D6662 /* Network */,
@@ -381,22 +442,25 @@
 			path = iPet;
 			sourceTree = "<group>";
 		};
-		C4A0E9792782DDBD005D6662 /* App */ = {
+		C4A0E9792782DDBD005D6662 /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				C4A0E9652782DB48005D6662 /* AppDelegate.swift */,
+				C41E1D9527A27F7800AA773B /* ServiceLocator */,
+				C41E1D8E27A27E8800AA773B /* Services */,
 			);
-			path = App;
+			path = Application;
 			sourceTree = "<group>";
 		};
 		C4A0E97A2782DDDC005D6662 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				C41E1D9E27A2800D00AA773B /* Generated */,
 				C4A0E9B627834617005D6662 /* GoogleService-Info.plist */,
-				C4A0E99A2782E9BF005D6662 /* R.generated.swift */,
 				C4A0E97B2782DE46005D6662 /* Fonts */,
 				C4A0E96E2782DB49005D6662 /* Assets.xcassets */,
 				C4A0E9732782DB49005D6662 /* Info.plist */,
+				C41E1D9F27A2802D00AA773B /* Constants.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -415,6 +479,7 @@
 		C4A0E97C2782DE4F005D6662 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C41E1D8D27A27DA300AA773B /* Main */,
 				C4A0E9A42782F2A3005D6662 /* Register */,
 				C4A0E98D2782E772005D6662 /* Onboarding */,
 				C4A0E97E2782DE94005D6662 /* Launch */,
@@ -642,6 +707,8 @@
 			isa = PBXGroup;
 			children = (
 				C4DD24452786E036006D2EE5 /* UserDefaults+SaveStruct.swift */,
+				C41E1D9C27A27FEE00AA773B /* Bundle+Version.swift */,
+				C41E1DA127A2805200AA773B /* Bundle+Current.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -807,6 +874,8 @@
 				C4190F3D2786E7B300C005C7 /* UserAPI.swift in Sources */,
 				C4A0E9D02783505D005D6662 /* Configuration.swift in Sources */,
 				C4190F50278899AB00C005C7 /* UserMeRequest.swift in Sources */,
+				C41E1D9D27A27FEE00AA773B /* Bundle+Version.swift in Sources */,
+				C41E1D9927A27F8B00AA773B /* Autowired.swift in Sources */,
 				C41E1D8C27A27BA700AA773B /* GoogleSignInService.swift in Sources */,
 				C4A0E9CD2783505D005D6662 /* Models.swift in Sources */,
 				C4A0E9D7278350E9005D6662 /* User.swift in Sources */,
@@ -820,6 +889,8 @@
 				C4A0E9CE2783505D005D6662 /* Extensions.swift in Sources */,
 				C4190F412786E91300C005C7 /* ModelError.swift in Sources */,
 				C4A0E9802782DEA6005D6662 /* LaunchViewController.swift in Sources */,
+				C41E1DA527A284EA00AA773B /* TabBarController.swift in Sources */,
+				C41E1D9427A27F4600AA773B /* AuthService.swift in Sources */,
 				C4A0E9CC2783505D005D6662 /* JSONValue.swift in Sources */,
 				C4A0E9852782E0A6005D6662 /* RootViewController.swift in Sources */,
 				C4A0E9D9278350FD005D6662 /* Pet.swift in Sources */,
@@ -839,13 +910,17 @@
 				C4A0E9992782E93C005D6662 /* LaunchHelper.swift in Sources */,
 				C4A0E99B2782E9BF005D6662 /* R.generated.swift in Sources */,
 				C41E1D8A27A27A5700AA773B /* AppleSignInService.swift in Sources */,
+				C41E1DA027A2802D00AA773B /* Constants.swift in Sources */,
 				C4A0E9AD2782F534005D6662 /* UIColor+Hex.swift in Sources */,
 				C4024EB427915A0A00248854 /* UserPetUserPetIdRequest.swift in Sources */,
 				C4A0E9CA2783505D005D6662 /* JSONEncodingHelper.swift in Sources */,
 				C4A0E9D22783505D005D6662 /* JSONEncodableEncoding.swift in Sources */,
+				C41E1DA227A2805200AA773B /* Bundle+Current.swift in Sources */,
 				C4242DCD279025BE002B99E9 /* PetAnimation.swift in Sources */,
 				C4242DE4279095D5002B99E9 /* PagingFlowLayout.swift in Sources */,
 				C4024EBB27917C1B00248854 /* UserPet.swift in Sources */,
+				C41E1D9B27A27FBA00AA773B /* LoggerService.swift in Sources */,
+				C41E1D9027A27F1300AA773B /* KeychainService.swift in Sources */,
 				C4A0E9CF2783505D005D6662 /* APIs.swift in Sources */,
 				C4DD24462786E036006D2EE5 /* UserDefaults+SaveStruct.swift in Sources */,
 				C4242DBD27900AC3002B99E9 /* RegisterStepsInputView.swift in Sources */,
@@ -855,6 +930,7 @@
 				C4A0E9D5278350C7005D6662 /* AuthGoggleResponse.swift in Sources */,
 				C4242DC627900E0B002B99E9 /* PetAPI.swift in Sources */,
 				C4A0E9D12783505D005D6662 /* CodableHelper.swift in Sources */,
+				C41E1D9727A27F7F00AA773B /* ServiceLocator.swift in Sources */,
 				C48D2929278369DA00BC23F2 /* UIView+Underlined.swift in Sources */,
 				C4A0E9922782E79F005D6662 /* OnboardingView.swift in Sources */,
 				C4242DE1279087CC002B99E9 /* RegisterPickPetCell.swift in Sources */,

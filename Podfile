@@ -5,6 +5,12 @@ target 'iPet' do
   
   # Services
   pod 'GoogleSignIn'
+  
+  # Network
+  pod 'Alamofire', '~> 4.9.0'
+  
+  # Storage
+  pod 'KeychainAccess'
 
   # Interface
   pod 'IQKeyboardManagerSwift'
@@ -17,6 +23,6 @@ target 'iPet' do
   
   # Utilities
   pod 'R.swift', '~> 5.4.0'
-  pod 'Alamofire', '~> 4.9.0'
+  pod 'SwiftyBeaver'
 
 end
