@@ -22,6 +22,8 @@
 		C4190F4C2788944400C005C7 /* UserCheckUsernameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4190F4B2788944400C005C7 /* UserCheckUsernameRequest.swift */; };
 		C4190F4E2788947500C005C7 /* UserUsernameTranslitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4190F4D2788947500C005C7 /* UserUsernameTranslitRequest.swift */; };
 		C4190F50278899AB00C005C7 /* UserMeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4190F4F278899AB00C005C7 /* UserMeRequest.swift */; };
+		C41E1D8A27A27A5700AA773B /* AppleSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E1D8927A27A5700AA773B /* AppleSignInService.swift */; };
+		C41E1D8C27A27BA700AA773B /* GoogleSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E1D8B27A27BA700AA773B /* GoogleSignInService.swift */; };
 		C4242DB7279000BA002B99E9 /* UserAvatarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DB6279000BA002B99E9 /* UserAvatarResponse.swift */; };
 		C4242DBA27900AA8002B99E9 /* RegisterStepsInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DB927900AA8002B99E9 /* RegisterStepsInputViewController.swift */; };
 		C4242DBD27900AC3002B99E9 /* RegisterStepsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DBC27900AC3002B99E9 /* RegisterStepsInputView.swift */; };
@@ -99,6 +101,8 @@
 		C4190F4B2788944400C005C7 /* UserCheckUsernameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCheckUsernameRequest.swift; sourceTree = "<group>"; };
 		C4190F4D2788947500C005C7 /* UserUsernameTranslitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUsernameTranslitRequest.swift; sourceTree = "<group>"; };
 		C4190F4F278899AB00C005C7 /* UserMeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMeRequest.swift; sourceTree = "<group>"; };
+		C41E1D8927A27A5700AA773B /* AppleSignInService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleSignInService.swift; sourceTree = "<group>"; };
+		C41E1D8B27A27BA700AA773B /* GoogleSignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInService.swift; sourceTree = "<group>"; };
 		C4242DB6279000BA002B99E9 /* UserAvatarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatarResponse.swift; sourceTree = "<group>"; };
 		C4242DB927900AA8002B99E9 /* RegisterStepsInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStepsInputViewController.swift; sourceTree = "<group>"; };
 		C4242DBC27900AC3002B99E9 /* RegisterStepsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStepsInputView.swift; sourceTree = "<group>"; };
@@ -229,6 +233,15 @@
 				C4024EBA27917C1B00248854 /* UserPet.swift */,
 			);
 			path = AuthAPI;
+			sourceTree = "<group>";
+		};
+		C41E1D8827A27A5700AA773B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C41E1D8927A27A5700AA773B /* AppleSignInService.swift */,
+				C41E1D8B27A27BA700AA773B /* GoogleSignInService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		C4242DB827900A8F002B99E9 /* RegisterStepsInput */ = {
@@ -550,6 +563,7 @@
 		C4A0E9AE2782F827005D6662 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				C41E1D8827A27A5700AA773B /* Service */,
 				C4A0E9B827834ACA005D6662 /* Provider */,
 				C4A0E9A72782F2BA005D6662 /* View */,
 				C4A0E9A52782F2B3005D6662 /* SignInViewController.swift */,
@@ -793,6 +807,7 @@
 				C4190F3D2786E7B300C005C7 /* UserAPI.swift in Sources */,
 				C4A0E9D02783505D005D6662 /* Configuration.swift in Sources */,
 				C4190F50278899AB00C005C7 /* UserMeRequest.swift in Sources */,
+				C41E1D8C27A27BA700AA773B /* GoogleSignInService.swift in Sources */,
 				C4A0E9CD2783505D005D6662 /* Models.swift in Sources */,
 				C4A0E9D7278350E9005D6662 /* User.swift in Sources */,
 				C4242DDF279031B9002B99E9 /* PetResponse.swift in Sources */,
@@ -823,6 +838,7 @@
 				C4A0E9B12782F85D005D6662 /* RegisterUserInputViewController.swift in Sources */,
 				C4A0E9992782E93C005D6662 /* LaunchHelper.swift in Sources */,
 				C4A0E99B2782E9BF005D6662 /* R.generated.swift in Sources */,
+				C41E1D8A27A27A5700AA773B /* AppleSignInService.swift in Sources */,
 				C4A0E9AD2782F534005D6662 /* UIColor+Hex.swift in Sources */,
 				C4024EB427915A0A00248854 /* UserPetUserPetIdRequest.swift in Sources */,
 				C4A0E9CA2783505D005D6662 /* JSONEncodingHelper.swift in Sources */,

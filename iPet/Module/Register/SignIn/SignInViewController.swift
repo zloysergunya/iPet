@@ -4,9 +4,14 @@ import AuthenticationServices
 class SignInViewController: ViewController<SignInView> {
     
     private let provider = SignInProvider()
+    private lazy var appleSignInService = AppleSignInService(viewController: self)
+    private lazy var googleSignInService = GoogleSignInService(viewController: self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        appleSignInService.output = self
+        googleSignInService.output = self
         
         mainView.appleAuthButton.addTarget(self, action: #selector(signInWithApple), for: .touchUpInside)
         mainView.googleAuthButton.addTarget(self, action: #selector(signInWithGoogle), for: .touchUpInside)
@@ -19,24 +24,11 @@ class SignInViewController: ViewController<SignInView> {
     }
     
     @objc private func signInWithApple() {
-        let request = ASAuthorizationAppleIDProvider().createRequest()
-        request.requestedScopes = [.fullName, .email]
-
-        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-        authorizationController.delegate = self
-        authorizationController.performRequests()
+        appleSignInService.performRequest()
     }
     
     @objc private func signInWithGoogle() {
-        provider.signInWithGoogle { [weak self] result in
-            switch result {
-            case .success(let googleUser):
-                self?.authGoogle(token: googleUser.authentication.accessToken)
-                
-            case .failure(let error):
-                print("Google sign in failed with error: ", error.localizedDescription)
-            }
-        }
+        googleSignInService.performRequest()
     }
     
     private func authGoogle(token: String) {
@@ -72,22 +64,28 @@ class SignInViewController: ViewController<SignInView> {
 
 }
 
-// MARK: - ASAuthorizationControllerDelegate
-extension SignInViewController: ASAuthorizationControllerDelegate {
+// MARK: - AppleSignInServiceOutput
+extension SignInViewController: AppleSignInServiceOutput {
     
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential,
-              let code = appleIDCredential.authorizationCode,
-              let codeStr = String(data: code, encoding: .utf8)
-        else {
-            return
-        }
-        
-        authApple(token: codeStr)
+    func appleSignIn(didFailWith error: Error) {
+        //todo
     }
     
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        print("Apple sign in failed with error: ", error.localizedDescription)
+    func appleSignIn(didSucceedWith token: String) {
+        authApple(token: token)
+    }
+        
+}
+
+// MARK: - GoogleSignInServiceOutput
+extension SignInViewController: GoogleSignInServiceOutput {
+    
+    func googleSignIn(didFailWith error: Error) {
+        // todo
+    }
+    
+    func googleSignIn(didSucceedWith token: String) {
+        authGoogle(token: token)
     }
     
 }
