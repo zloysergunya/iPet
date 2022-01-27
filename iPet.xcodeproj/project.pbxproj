@@ -33,6 +33,9 @@
 		C41E1DA027A2802D00AA773B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E1D9F27A2802D00AA773B /* Constants.swift */; };
 		C41E1DA227A2805200AA773B /* Bundle+Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E1DA127A2805200AA773B /* Bundle+Current.swift */; };
 		C41E1DA527A284EA00AA773B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E1DA427A284EA00AA773B /* TabBarController.swift */; };
+		C41E1DA827A2886800AA773B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C41E1DA727A2886800AA773B /* HealthKit.framework */; };
+		C41E1DAA27A288A600AA773B /* HealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E1DA927A288A600AA773B /* HealthService.swift */; };
+		C41E1DAC27A28B2B00AA773B /* NotificationsAccessService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41E1DAB27A28B2B00AA773B /* NotificationsAccessService.swift */; };
 		C4242DB7279000BA002B99E9 /* UserAvatarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DB6279000BA002B99E9 /* UserAvatarResponse.swift */; };
 		C4242DBA27900AA8002B99E9 /* RegisterStepsInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DB927900AA8002B99E9 /* RegisterStepsInputViewController.swift */; };
 		C4242DBD27900AC3002B99E9 /* RegisterStepsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DBC27900AC3002B99E9 /* RegisterStepsInputView.swift */; };
@@ -121,6 +124,9 @@
 		C41E1D9F27A2802D00AA773B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C41E1DA127A2805200AA773B /* Bundle+Current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Current.swift"; sourceTree = "<group>"; };
 		C41E1DA427A284EA00AA773B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C41E1DA727A2886800AA773B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		C41E1DA927A288A600AA773B /* HealthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthService.swift; sourceTree = "<group>"; };
+		C41E1DAB27A28B2B00AA773B /* NotificationsAccessService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsAccessService.swift; sourceTree = "<group>"; };
 		C4242DB6279000BA002B99E9 /* UserAvatarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatarResponse.swift; sourceTree = "<group>"; };
 		C4242DB927900AA8002B99E9 /* RegisterStepsInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStepsInputViewController.swift; sourceTree = "<group>"; };
 		C4242DBC27900AC3002B99E9 /* RegisterStepsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStepsInputView.swift; sourceTree = "<group>"; };
@@ -189,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B927F87CA22CD5C025E3F72 /* Pods_iPet.framework in Frameworks */,
+				C41E1DA827A2886800AA773B /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,9 +307,19 @@
 		C41E1DA327A284DA00AA773B /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				C41E1DA627A287F500AA773B /* Service */,
 				C41E1DA427A284EA00AA773B /* TabBarController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		C41E1DA627A287F500AA773B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C41E1DA927A288A600AA773B /* HealthService.swift */,
+				C41E1DAB27A28B2B00AA773B /* NotificationsAccessService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		C4242DB827900A8F002B99E9 /* RegisterStepsInput */ = {
@@ -716,6 +733,7 @@
 		CECE3000E4268E8D7E347DA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C41E1DA727A2886800AA773B /* HealthKit.framework */,
 				137E1A45FC5FB849D6E6C76A /* Pods_iPet.framework */,
 			);
 			name = Frameworks;
@@ -902,6 +920,7 @@
 				C4242DC027900B10002B99E9 /* RegisterPickPetViewController.swift in Sources */,
 				C4A0E9BC27834CC3005D6662 /* Utils.swift in Sources */,
 				C4242DD427902A1F002B99E9 /* PetSectionModel.swift in Sources */,
+				C41E1DAC27A28B2B00AA773B /* NotificationsAccessService.swift in Sources */,
 				C4190F3F2786E89E00C005C7 /* UserCheckUsernameResponse.swift in Sources */,
 				C4242DD0279029BB002B99E9 /* LoadingState.swift in Sources */,
 				C4242DCB27900F83002B99E9 /* PetRandomNameResponse.swift in Sources */,
@@ -920,6 +939,7 @@
 				C4242DE4279095D5002B99E9 /* PagingFlowLayout.swift in Sources */,
 				C4024EBB27917C1B00248854 /* UserPet.swift in Sources */,
 				C41E1D9B27A27FBA00AA773B /* LoggerService.swift in Sources */,
+				C41E1DAA27A288A600AA773B /* HealthService.swift in Sources */,
 				C41E1D9027A27F1300AA773B /* KeychainService.swift in Sources */,
 				C4A0E9CF2783505D005D6662 /* APIs.swift in Sources */,
 				C4DD24462786E036006D2EE5 /* UserDefaults+SaveStruct.swift in Sources */,
