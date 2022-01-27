@@ -43,7 +43,6 @@ class SignInViewController: ViewController<SignInView> {
         provider.authGooglePost(token: token) { [weak self] result in
             switch result {
             case .success(let authGoogleResponse):
-                print(authGoogleResponse)
                 iPetAPI.customHeaders["X-Token"] = authGoogleResponse.token
                 self?.navigationController?.pushViewController(RegisterUserInputViewController(), animated: true)
                 
@@ -59,7 +58,6 @@ class SignInViewController: ViewController<SignInView> {
         provider.authApplePost(token: token) { [weak self] result in
             switch result {
             case .success(let authGoogleResponse):
-                print(authGoogleResponse)
                 iPetAPI.customHeaders["X-Token"] = authGoogleResponse.token
                 self?.navigationController?.pushViewController(RegisterUserInputViewController(), animated: true)
                 
