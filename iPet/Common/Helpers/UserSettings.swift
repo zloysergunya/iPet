@@ -10,7 +10,7 @@ import Foundation
         case pets
         case petAnimations
         case userReady
-        case isKeychainFirstLaunch
+        case isLaunchedBefore
     }
     
     static var token: String? {
@@ -58,12 +58,12 @@ import Foundation
         }
     }
     
-    static var isKeychainFirstLaunch: Bool {
+    static var isLaunchedBefore: Bool {
         get {
-            return defaults.bool(forKey: Keys.isKeychainFirstLaunch.rawValue)
+            return defaults.bool(forKey: Keys.isLaunchedBefore.rawValue)
         }
         set {
-            defaults.set(newValue, forKey: Keys.isKeychainFirstLaunch.rawValue)
+            defaults.set(newValue, forKey: Keys.isLaunchedBefore.rawValue)
         }
     }
     

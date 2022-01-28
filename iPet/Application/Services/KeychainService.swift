@@ -18,10 +18,10 @@ final class KeychainService: NSObject {
     }
 
     func cleanIfNeeded() {
-        guard UserSettings.isKeychainFirstLaunch else { return }
+        guard !UserSettings.isLaunchedBefore else { return }
 
         try? storage.removeAll()
-        UserSettings.isKeychainFirstLaunch = false
+        UserSettings.isLaunchedBefore = true
     }
 }
 
