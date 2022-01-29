@@ -58,8 +58,11 @@ class SignInViewController: ViewController<SignInView> {
             
             switch result {
             case .success(let authResponse):
+                UserSettings.userReady = !authResponse.new
                 self.authorize(token: authResponse.token, currentUserId: authResponse.user.id)
-                self.navigationController?.pushViewController(RegisterUserInputViewController(), animated: true)
+                
+                let launchService: LaunchService? = ServiceLocator.getService()
+                launchService?.selectViewController()
                 
             case .failure(let error):
                 if let error = error as? ModelError {
