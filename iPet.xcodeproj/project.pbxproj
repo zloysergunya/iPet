@@ -93,6 +93,7 @@
 		C4A0E9DB2783516A005D6662 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9DA2783516A005D6662 /* AuthAPI.swift */; };
 		C4DD24432786DF03006D2EE5 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DD24422786DF03006D2EE5 /* UserSettings.swift */; };
 		C4DD24462786E036006D2EE5 /* UserDefaults+SaveStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DD24452786E036006D2EE5 /* UserDefaults+SaveStruct.swift */; };
+		C4FB55B927A53F91006CBFF7 /* UIButton+BackgroundColoroForState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FB55B827A53F91006CBFF7 /* UIButton+BackgroundColoroForState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -187,6 +188,7 @@
 		C4A0E9DA2783516A005D6662 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		C4DD24422786DF03006D2EE5 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		C4DD24452786E036006D2EE5 /* UserDefaults+SaveStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+SaveStruct.swift"; sourceTree = "<group>"; };
+		C4FB55B827A53F91006CBFF7 /* UIButton+BackgroundColoroForState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+BackgroundColoroForState.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -638,6 +640,7 @@
 				C4A0E9AC2782F534005D6662 /* UIColor+Hex.swift */,
 				C48D2928278369DA00BC23F2 /* UIView+Underlined.swift */,
 				C48D292A278372BD00BC23F2 /* UIViewController+HideKeyboard.swift */,
+				C4FB55B827A53F91006CBFF7 /* UIButton+BackgroundColoroForState.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -853,7 +856,7 @@
 		};
 		C4A0E98C2782E5EB005D6662 /* R.swift codegen */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -865,11 +868,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/$PROJECT_NAME/Resource/R.generated.swift,
+				$SRCROOT/$PROJECT_NAME/Resource/Generated/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/$PROJECT_NAME/Resource/R.generated.swift\"\n";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/$PROJECT_NAME/Resource/Generated/R.generated.swift\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -935,6 +938,7 @@
 				C4A0E9CA2783505D005D6662 /* JSONEncodingHelper.swift in Sources */,
 				C4A0E9D22783505D005D6662 /* JSONEncodableEncoding.swift in Sources */,
 				C41E1DA227A2805200AA773B /* Bundle+Current.swift in Sources */,
+				C4FB55B927A53F91006CBFF7 /* UIButton+BackgroundColoroForState.swift in Sources */,
 				C4242DCD279025BE002B99E9 /* PetAnimation.swift in Sources */,
 				C4242DE4279095D5002B99E9 /* PagingFlowLayout.swift in Sources */,
 				C4024EBB27917C1B00248854 /* UserPet.swift in Sources */,

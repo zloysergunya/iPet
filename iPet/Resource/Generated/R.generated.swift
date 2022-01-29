@@ -89,16 +89,20 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
 
-  /// This `R.color` struct is generated, and contains static references to 7 colors.
+  /// This `R.color` struct is generated, and contains static references to 9 colors.
   struct color {
     /// Color `AccentColor`.
     static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
     /// Color `background`.
     static let background = Rswift.ColorResource(bundle: R.hostingBundle, name: "background")
+    /// Color `blueAccentDarker`.
+    static let blueAccentDarker = Rswift.ColorResource(bundle: R.hostingBundle, name: "blueAccentDarker")
     /// Color `blueAccent`.
     static let blueAccent = Rswift.ColorResource(bundle: R.hostingBundle, name: "blueAccent")
     /// Color `grayColor`.
     static let grayColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayColor")
+    /// Color `orangeAccentDarker`.
+    static let orangeAccentDarker = Rswift.ColorResource(bundle: R.hostingBundle, name: "orangeAccentDarker")
     /// Color `orangeAccent`.
     static let orangeAccent = Rswift.ColorResource(bundle: R.hostingBundle, name: "orangeAccent")
     /// Color `textPrimary`.
@@ -134,6 +138,15 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "blueAccentDarker", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func blueAccentDarker(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.blueAccentDarker, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "grayColor", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
@@ -148,6 +161,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func orangeAccent(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.orangeAccent, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "orangeAccentDarker", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func orangeAccentDarker(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.orangeAccentDarker, compatibleWith: traitCollection)
     }
     #endif
 
@@ -194,6 +216,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
+    /// `UIColor(named: "blueAccentDarker", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func blueAccentDarker(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.blueAccentDarker.name)
+    }
+    #endif
+
+    #if os(watchOS)
     /// `UIColor(named: "grayColor", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
     static func grayColor(_: Void = ()) -> UIKit.UIColor? {
@@ -206,6 +236,14 @@ struct R: Rswift.Validatable {
     @available(watchOSApplicationExtension 4.0, *)
     static func orangeAccent(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.orangeAccent.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "orangeAccentDarker", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func orangeAccentDarker(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.orangeAccentDarker.name)
     }
     #endif
 
@@ -228,11 +266,18 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.entitlements` struct is generated, and contains static references to 1 properties.
+  /// This `R.entitlements` struct is generated, and contains static references to 4 properties.
   struct entitlements {
+    static let comAppleDeveloperHealthkit = true
+    static let comAppleDeveloperHealthkitBackgroundDelivery = true
+
     struct comAppleDeveloperApplesignin {
       static let `default` = infoPlistString(path: ["com.apple.developer.applesignin"], key: "Default") ?? "Default"
 
+      fileprivate init() {}
+    }
+
+    struct comAppleDeveloperHealthkitAccess {
       fileprivate init() {}
     }
 

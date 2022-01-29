@@ -44,8 +44,11 @@ class SignInView: RootView {
         button.setTitle("Войти с помощью Apple", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = R.font.montserratSemiBold(size: 17.0)
-        button.backgroundColor = .black
+        button.setBackgroundColor(.black, for: .normal)
+        button.setBackgroundColor(.black.withAlphaComponent(0.8), for: .highlighted)
+        button.layer.masksToBounds = true
         button.layer.cornerRadius = 10.0
+        button.adjustsImageWhenHighlighted = false
         
         return button
     }()
@@ -57,8 +60,11 @@ class SignInView: RootView {
         button.setTitle("Войти с помощью Google", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = R.font.montserratSemiBold(size: 17.0)
-        button.backgroundColor = UIColor(hex: 0xE95144)
+        button.setBackgroundColor(UIColor(hex: 0xE95144), for: .normal)
+        button.setBackgroundColor(UIColor(hex: 0xAA4037), for: .highlighted)
+        button.layer.masksToBounds = true
         button.layer.cornerRadius = 10.0
+        button.adjustsImageWhenHighlighted = false
         
         return button
     }()

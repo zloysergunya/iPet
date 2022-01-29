@@ -70,7 +70,9 @@ class RegisterStepsInputView: RootView {
         button.setTitle("Далее", for: .normal)
         button.setTitleColor(R.color.textSecondary(), for: .normal)
         button.titleLabel?.font = R.font.montserratSemiBold(size: 17.0)
-        button.backgroundColor = R.color.blueAccent()
+        button.setBackgroundColor(R.color.blueAccent(), for: .normal)
+        button.setBackgroundColor(R.color.blueAccentDarker(), for: .highlighted)
+        button.layer.masksToBounds = true
         button.layer.cornerRadius = 10.0
         
         return button
