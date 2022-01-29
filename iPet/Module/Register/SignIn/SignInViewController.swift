@@ -58,7 +58,7 @@ class SignInViewController: ViewController<SignInView> {
             
             switch result {
             case .success(let authResponse):
-                UserSettings.userReady = !authResponse.new
+//                UserSettings.userReady = !authResponse.new
                 self.authorize(token: authResponse.token, currentUserId: authResponse.user.id)
                 
                 let launchService: LaunchService? = ServiceLocator.getService()

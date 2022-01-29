@@ -40,7 +40,7 @@ class RegisterPickPetSectionController: ListSectionController {
             Animation.loadedFrom(url: url, closure: { animation in
                 cell.petAnimationView.animation = animation
                 cell.petAnimationView.play()
-            }, animationCache: nil)
+            }, animationCache: LRUAnimationCache.sharedCache)
         }
         
         return cell

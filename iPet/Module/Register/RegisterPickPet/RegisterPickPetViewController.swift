@@ -6,8 +6,8 @@ class RegisterPickPetViewController: ViewController<RegisterPickPetView> {
     private let provider = RegisterPickPetProvider()
     
     private var loadingState: LoadingState = .none
-    private var pets: [Pet] = []
-    private var petAnimations: [PetAnimation] = []
+    private var pets: [Pet] = UserSettings.pets ?? []
+    private var petAnimations: [PetAnimation] = UserSettings.petAnimations ?? []
     private var objects: [PetSectionModel] = []
     private var selectedPet: Pet?
     
@@ -23,6 +23,7 @@ class RegisterPickPetViewController: ViewController<RegisterPickPetView> {
         adapter.dataSource = self
         adapter.scrollViewDelegate = self
         
+        updateObjects()
         getPets()
         hideKeyboardWhenTappedAround()
         bindEvents()
@@ -75,12 +76,7 @@ class RegisterPickPetViewController: ViewController<RegisterPickPetView> {
                 UserSettings.petAnimations = petAnimations
                 self.petAnimations = petAnimations
                 
-                self.objects.removeAll()
-                self.pets.forEach { pet in
-                    let petAnimation = self.petAnimations.first(where: { $0.id == pet.id })
-                    self.objects.append(PetSectionModel(pet: pet, petAnimation: petAnimation))
-                }
-                self.adapter.performUpdates(animated: true)
+                self.updateObjects()
                 
             case .failure(let error):
                 if let error = error as? ModelError {
@@ -88,6 +84,16 @@ class RegisterPickPetViewController: ViewController<RegisterPickPetView> {
                 }
             }
         }
+    }
+    
+    private func updateObjects() {
+        objects.removeAll()
+        pets.forEach { pet in
+            let petAnimation = self.petAnimations.first(where: { $0.id == pet.id })
+            objects.append(PetSectionModel(pet: pet, petAnimation: petAnimation))
+        }
+        
+        adapter.performUpdates(animated: true)
     }
     
     private func petRandomName() {

@@ -18,6 +18,8 @@ class RegisterUserInputViewController: ViewController<RegisterUserInputView> {
         mainView.nameInputView.textField.delegate = self
         mainView.usernameInputView.textField.delegate = self
         
+        getPets()
+        downloadPets()
         hideKeyboardWhenTappedAround()
         bindEvents()
     }
@@ -211,6 +213,34 @@ class RegisterUserInputViewController: ViewController<RegisterUserInputView> {
         imagePicker.allowsEditing = false
         
         present(imagePicker, animated: true)
+    }
+    
+    private func getPets() {
+        provider.getPets(free: true) { result in
+            switch result {
+            case .success(let pets):
+                UserSettings.pets = pets
+                
+            case .failure(let error):
+                if let error = error as? ModelError {
+                    print(error.message())
+                }
+            }
+        }
+    }
+    
+    private func downloadPets() {
+        provider.downloadPets { result in
+            switch result {
+            case .success(let petAnimations):
+                UserSettings.petAnimations = petAnimations
+
+            case .failure(let error):
+                if let error = error as? ModelError {
+                    print(error.message())
+                }
+            }
+        }
     }
     
 }

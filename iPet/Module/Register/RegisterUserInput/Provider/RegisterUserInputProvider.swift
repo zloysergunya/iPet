@@ -1,4 +1,5 @@
 import Foundation
+import Lottie
 
 class RegisterUserInputProvider {
     
@@ -42,6 +43,37 @@ class RegisterUserInputProvider {
         UserAPI.userAvatarPost(photo: photo) { response, error in
             if let url = response?.url {
                 completion(.success(url))
+            } else if let error = error {
+                completion(.failure(ModelError(err: error)))
+            } else {
+                completion(.failure(NSError()))
+            }
+        }
+    }
+    
+    func getPets(free: Bool? = nil, myPets: Bool? = nil, completion: @escaping(Result<[Pet], Error>) -> Void) {
+        PetAPI.petGet(free: free, myPets: myPets) { pets, error in
+            if let pets = pets?.items {
+                completion(.success(pets))
+            } else if let error = error {
+                completion(.failure(ModelError(err: error)))
+            } else {
+                completion(.failure(NSError()))
+            }
+        }
+    }
+    
+    func downloadPets(completion: @escaping(Result<[PetAnimation], Error>) -> Void) {
+        PetAPI.petDownloads { response, error in
+            if let response = response {
+                response.forEach { petAnimation in
+                    if let urlString = petAnimation.animations.registration?.replacingOccurrences(of: "pet_state", with: "\(1)"),
+                       let url = URL(string: urlString) {
+                        Animation.loadedFrom(url: url, closure: { _ in }, animationCache: LRUAnimationCache.sharedCache)
+                    }
+                }
+                
+                completion(.success(response))
             } else if let error = error {
                 completion(.failure(ModelError(err: error)))
             } else {
