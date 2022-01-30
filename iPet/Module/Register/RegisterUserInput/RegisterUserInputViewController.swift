@@ -178,9 +178,7 @@ class RegisterUserInputViewController: ViewController<RegisterUserInputView> {
         }
     }
     
-    @objc private func save(_ sender: UIButton) {
-        Animations.press(view: sender)
-        
+    @objc private func save(_ sender: UIButton) {        
         sendMe()
         uploadUserPhoto()
     }
