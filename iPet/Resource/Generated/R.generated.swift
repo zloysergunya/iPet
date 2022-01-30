@@ -89,7 +89,7 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
 
-  /// This `R.color` struct is generated, and contains static references to 9 colors.
+  /// This `R.color` struct is generated, and contains static references to 10 colors.
   struct color {
     /// Color `AccentColor`.
     static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
@@ -99,6 +99,8 @@ struct R: Rswift.Validatable {
     static let blueAccentDarker = Rswift.ColorResource(bundle: R.hostingBundle, name: "blueAccentDarker")
     /// Color `blueAccent`.
     static let blueAccent = Rswift.ColorResource(bundle: R.hostingBundle, name: "blueAccent")
+    /// Color `disabled`.
+    static let disabled = Rswift.ColorResource(bundle: R.hostingBundle, name: "disabled")
     /// Color `grayColor`.
     static let grayColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayColor")
     /// Color `orangeAccentDarker`.
@@ -143,6 +145,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func blueAccentDarker(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.blueAccentDarker, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "disabled", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func disabled(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.disabled, compatibleWith: traitCollection)
     }
     #endif
 
@@ -220,6 +231,14 @@ struct R: Rswift.Validatable {
     @available(watchOSApplicationExtension 4.0, *)
     static func blueAccentDarker(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.blueAccentDarker.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "disabled", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func disabled(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.disabled.name)
     }
     #endif
 

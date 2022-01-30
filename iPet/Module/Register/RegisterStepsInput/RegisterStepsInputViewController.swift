@@ -4,7 +4,7 @@ class RegisterStepsInputViewController: ViewController<RegisterStepsInputView> {
     
     private let provider = RegisterStepsInputProvider()
     
-    private var stepsCount = 4000
+    private var stepsCount = 5000
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +34,18 @@ class RegisterStepsInputViewController: ViewController<RegisterStepsInputView> {
     private func updateStepsCount(_ count: Int) {
         stepsCount = count
         
-        let s: Float = 80.0 // Average pitch length, cm
-        let r: Float = (Float(count) * s) / 100000.0
-        mainView.aboutKilometersLabel.text = "≈ \(String(format: "%.2f", r)) км"
+        if stepsCount >= 5000 {
+            let s: Float = 80.0 // Average pitch length, cm
+            let r: Float = (Float(count) * s) / 100000.0
+            mainView.aboutKilometersLabel.text = "≈ \(String(format: "%.2f", r)) км"
+            mainView.continueButton.setBackgroundColor(R.color.blueAccent(), for: .normal)
+            mainView.continueButton.isUserInteractionEnabled = true
+            
+        } else {
+            mainView.aboutKilometersLabel.text = "Не менее 5000 шагов"
+            mainView.continueButton.setBackgroundColor(R.color.disabled(), for: .normal)
+            mainView.continueButton.isUserInteractionEnabled = false
+        }
     }
     
     private func sendMe() {
@@ -67,7 +76,11 @@ class RegisterStepsInputViewController: ViewController<RegisterStepsInputView> {
     }
     
     @objc private func changeStepsCount(_ sender: UIButton) {
-        let count = stepsCount + sender.tag
+        var count = stepsCount + sender.tag
+        
+        if count < 0 {
+            count = 0
+        }
         
         mainView.stepsCountField.delegate = self
         mainView.stepsCountField.text = "\(count)"
@@ -112,12 +125,14 @@ extension RegisterStepsInputViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let replacedText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
         
-        guard let count = Int(replacedText), replacedText.count < 7 else {
+        guard replacedText.count < 7 else {
             Animations.shake(view: mainView.stepsCountField)
             UINotificationFeedbackGenerator().notificationOccurred(.error)
             
             return false
         }
+        
+        let count = Int(replacedText) ?? 0
         
         updateStepsCount(count)
 
