@@ -268,7 +268,7 @@ extension RegisterUserInputViewController: UITextFieldDelegate {
                 }
 
                 pendingTranslitNameRequestWorkItem = requestWorkItem
-                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200), execute: requestWorkItem)
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: requestWorkItem)
             }
             
         case mainView.usernameInputView.textField:
