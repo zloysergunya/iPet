@@ -35,6 +35,7 @@ extension AuthService {
     
     func updateApi() {
         iPetAPI.customHeaders["X-Token"] = KeychainService().token
+        iPetAPI.customHeaders["User-Agent"] = Constants.userAgent
     }
 
     func deauthorize() {

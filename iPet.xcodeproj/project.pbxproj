@@ -51,6 +51,7 @@
 		C4242DDF279031B9002B99E9 /* PetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DDE279031B9002B99E9 /* PetResponse.swift */; };
 		C4242DE1279087CC002B99E9 /* RegisterPickPetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DE0279087CC002B99E9 /* RegisterPickPetCell.swift */; };
 		C4242DE4279095D5002B99E9 /* PagingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242DE3279095D5002B99E9 /* PagingFlowLayout.swift */; };
+		C489F83F27A994D700354C1F /* UIDevice+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C489F83E27A994D700354C1F /* UIDevice+Model.swift */; };
 		C48D2929278369DA00BC23F2 /* UIView+Underlined.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D2928278369DA00BC23F2 /* UIView+Underlined.swift */; };
 		C48D292B278372BD00BC23F2 /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D292A278372BD00BC23F2 /* UIViewController+HideKeyboard.swift */; };
 		C4A0E9662782DB48005D6662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9652782DB48005D6662 /* AppDelegate.swift */; };
@@ -142,6 +143,7 @@
 		C4242DDE279031B9002B99E9 /* PetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetResponse.swift; sourceTree = "<group>"; };
 		C4242DE0279087CC002B99E9 /* RegisterPickPetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPickPetCell.swift; sourceTree = "<group>"; };
 		C4242DE3279095D5002B99E9 /* PagingFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingFlowLayout.swift; sourceTree = "<group>"; };
+		C489F83E27A994D700354C1F /* UIDevice+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Model.swift"; sourceTree = "<group>"; };
 		C48D2928278369DA00BC23F2 /* UIView+Underlined.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Underlined.swift"; sourceTree = "<group>"; };
 		C48D292A278372BD00BC23F2 /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		C4A0E9622782DB48005D6662 /* iPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -536,6 +538,7 @@
 			children = (
 				C4242DE2279095CA002B99E9 /* CollectionViewLayout */,
 				C4A0E9932782E844005D6662 /* Controllers */,
+				C489F83E27A994D700354C1F /* UIDevice+Model.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -946,6 +949,7 @@
 				C4242DBD27900AC3002B99E9 /* RegisterStepsInputView.swift in Sources */,
 				C4A0E9A92782F2C6005D6662 /* SignInView.swift in Sources */,
 				C48D292B278372BD00BC23F2 /* UIViewController+HideKeyboard.swift in Sources */,
+				C489F83F27A994D700354C1F /* UIDevice+Model.swift in Sources */,
 				C4A0E9952782E858005D6662 /* SwipeNavigationController.swift in Sources */,
 				C4A0E9D5278350C7005D6662 /* AuthGoggleResponse.swift in Sources */,
 				C4242DC627900E0B002B99E9 /* PetAPI.swift in Sources */,
