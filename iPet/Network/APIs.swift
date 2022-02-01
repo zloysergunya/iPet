@@ -7,7 +7,7 @@
 import Foundation
 
 open class iPetAPI {
-    public static var basePath = "http://64.225.34.86:8080/api"
+    public static var basePath = "https://dev.steppy.org/api"
     public static var credential: URLCredential?
     public static var customHeaders: [String:String] = [:]
     public static var requestBuilderFactory: RequestBuilderFactory = AlamofireRequestBuilderFactory()
