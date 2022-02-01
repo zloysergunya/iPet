@@ -20,6 +20,8 @@ target 'iPet' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'Atributika', '~> 4.9.0'
   pod 'lottie-ios', '~> 3.2.3'
+  pod 'SPPermissions/Notification'
+  pod 'SPPermissions/Health'
   
   # Utilities
   pod 'R.swift', '~> 5.4.0'

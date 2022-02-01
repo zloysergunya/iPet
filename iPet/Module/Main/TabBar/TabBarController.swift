@@ -1,31 +1,43 @@
 import UIKit
+import SPPermissions
 
 class TabBarController: UITabBarController {
     
-    private let notificationsAccessService = NotificationsAccessService()
     private let healthService = HealthService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        notificationsAccessService.output = self
-        notificationsAccessService.requestAccess()
-        
         healthService.output = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !SPPermissions.Permission.notification.authorized {
+            let permissions: [SPPermissions.Permission] = [.notification, .health]
+            let permissionsController = SPPermissions.list(permissions)
+            permissionsController.allowSwipeDismiss = false
+            permissionsController.delegate = self
+            permissionsController.present(on: self)
+        }
     }
     
 }
 
-// MARK: - NotificationsAccessServiceOutput
-extension TabBarController: NotificationsAccessServiceOutput {
+// MARK: - SPPermissionsDelegate
+extension TabBarController: SPPermissionsDelegate {
     
-    func successNotificationsAccessRequest(granted: Bool) {
-        print("granted \(granted)")
-        healthService.requestAccess()
+    func didAllowPermission(_ permission: SPPermissions.Permission) {
+        if permission == .notification {
+            healthService.requestAccess()
+        }
     }
     
-    func failureNotificationsAccessRequest(error: Error) {
-        healthService.requestAccess()
+    func didDeniedPermission(_ permission: SPPermissions.Permission) {
+        if permission == .notification {
+            healthService.requestAccess()
+        }
     }
     
 }
