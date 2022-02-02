@@ -27,7 +27,7 @@ class RegisterPickPetView: RootView {
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Выбери питомца\nи назови его"
+        label.text = "Твой друг"
         label.textColor = R.color.textPrimary()
         label.font = R.font.montserratBold(size: 28.0)
         label.textAlignment = .center
@@ -38,7 +38,7 @@ class RegisterPickPetView: RootView {
     
     private let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Выбери питомца и введи его кличку"
+        label.text = "Выбери питомца и назови его"
         label.textColor = R.color.textPrimary()
         label.font = R.font.montserratRegular(size: 16.0)
         label.textAlignment = .center

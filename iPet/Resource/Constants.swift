@@ -14,8 +14,7 @@ enum Constants {
     static var userAgent: String? = {
         if let lang = Locale.current.languageCode {
 
-            // {Api version} {platform}/{version}/{build} {language} {device}
-            print("userAgent \(iPetAPI.apiVersion) ios/\(Constants.releaseVersion)/\(Constants.buildNumber) \(lang) \(deviceModelName)")
+            // {Api version} {platform}/{version}/{build} {language} {device} 1 ios/1.0/1 en iPhone12,1
             return "\(iPetAPI.apiVersion) ios/\(Constants.releaseVersion)/\(Constants.buildNumber) \(lang) \(deviceModelName)"
         }
 
