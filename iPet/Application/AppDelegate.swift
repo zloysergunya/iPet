@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ServiceLocator.shared.add(service: authService)
         
         let loggerService = LoggerService()
+        LoggerService.setup()
         ServiceLocator.shared.add(service: loggerService)
         
         let launchService = LaunchService()
