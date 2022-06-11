@@ -1,5 +1,6 @@
 import UIKit
 import SnapKit
+import Atributika
 
 class SignInView: RootView {
 
@@ -69,6 +70,14 @@ class SignInView: RootView {
         return button
     }()
     
+    let privacyLabel: AttributedLabel = {
+        let label = AttributedLabel()
+        label.font = R.font.montserratRegular(size: 14.0) ?? .systemFont(ofSize: 14.0, weight: .regular)
+        label.textColor = R.color.textPrimary() ?? .black
+        
+        return label
+    }()
+    
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -80,13 +89,14 @@ class SignInView: RootView {
         
         return stackView
     }()
-
+    
     override func setup() {
         
         backgroundColor = R.color.background()
 
         addSubview(containerView)
         addSubview(stackView)
+        addSubview(privacyLabel)
         
         setupConstraints()
     }
@@ -135,6 +145,10 @@ class SignInView: RootView {
             make.bottom.equalToSuperview().offset(-56.0)
         }
         
+        privacyLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(stackView.snp.bottom).offset(20.0)
+        }
     }
 
 }
