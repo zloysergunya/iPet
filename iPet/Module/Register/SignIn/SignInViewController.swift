@@ -1,5 +1,6 @@
 import UIKit
 import AuthenticationServices
+import Atributika
 
 class SignInViewController: ViewController<SignInView> {
     
@@ -15,6 +16,8 @@ class SignInViewController: ViewController<SignInView> {
         
         mainView.appleAuthButton.addTarget(self, action: #selector(signInWithApple), for: .touchUpInside)
         mainView.googleAuthButton.addTarget(self, action: #selector(signInWithGoogle), for: .touchUpInside)
+        
+        privacyPolicy()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,7 +81,25 @@ class SignInViewController: ViewController<SignInView> {
         let authService: AuthService? = ServiceLocator.getService()
         authService?.authorize(with: token, currentUserId: currentUserId)
     }
-
+    
+     private func privacyPolicy() {
+        mainView.privacyLabel.attributedText =
+        "<a href=\"https://github.com/psharanda/Atributika\">Term of Use</a> и <a href=\"https://github.com/psharanda/Atributika\">Privacy policy</a>"
+             .style(tags: mainView.link)
+             .styleAll(mainView.all)
+        
+         mainView.privacyLabel.onClick = { label, detection in
+            switch detection.type {
+            case .tag(let tag):
+                if tag.name == "a", let href = tag.attributes["href"], let url = URL(string: href) {
+                    UIApplication.shared.open(url)
+                }
+            default:
+                break
+            }
+        }
+    }
+    
 }
 
 // MARK: - AppleSignInServiceOutput
