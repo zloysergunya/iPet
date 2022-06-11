@@ -8,6 +8,11 @@ class SignInViewController: ViewController<SignInView> {
     private lazy var appleSignInService = AppleSignInService(viewController: self)
     private lazy var googleSignInService = GoogleSignInService(viewController: self)
 
+    private let link = Style("a")
+        .foregroundColor(.black, .normal)
+        .foregroundColor(.gray, .highlighted)
+        .underlineStyle(.single)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,7 +22,7 @@ class SignInViewController: ViewController<SignInView> {
         mainView.appleAuthButton.addTarget(self, action: #selector(signInWithApple), for: .touchUpInside)
         mainView.googleAuthButton.addTarget(self, action: #selector(signInWithGoogle), for: .touchUpInside)
         
-        privacyPolicy()
+        configurePrivacyPolicy()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,11 +87,10 @@ class SignInViewController: ViewController<SignInView> {
         authService?.authorize(with: token, currentUserId: currentUserId)
     }
     
-     private func privacyPolicy() {
+     private func configurePrivacyPolicy() {
         mainView.privacyLabel.attributedText =
         "<a href=\"https://github.com/psharanda/Atributika\">Term of Use</a> и <a href=\"https://github.com/psharanda/Atributika\">Privacy policy</a>"
-             .style(tags: mainView.link)
-             .styleAll(mainView.all)
+             .style(tags: link)
         
          mainView.privacyLabel.onClick = { label, detection in
             switch detection.type {

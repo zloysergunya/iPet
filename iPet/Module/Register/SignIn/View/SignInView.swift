@@ -70,12 +70,13 @@ class SignInView: RootView {
         return button
     }()
     
-    let privacyLabel = AttributedLabel()
-    let all = Style.font(.systemFont(ofSize: 14)).foregroundColor(.black)
-    let link = Style("a")
-        .foregroundColor(.black, .normal)
-        .foregroundColor(.gray, .highlighted)
-        .underlineStyle(.single)
+    let privacyLabel: AttributedLabel = {
+        let label = AttributedLabel()
+        label.font = R.font.montserratRegular(size: 14.0) ?? .systemFont(ofSize: 14.0, weight: .regular)
+        label.textColor = R.color.textPrimary() ?? .black
+        
+        return label
+    }()
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
@@ -146,7 +147,7 @@ class SignInView: RootView {
         
         privacyLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(stackView.snp.bottom).offset(20)
+            make.top.equalTo(stackView.snp.bottom).offset(20.0)
         }
     }
 
