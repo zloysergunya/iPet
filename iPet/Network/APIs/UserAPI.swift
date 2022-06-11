@@ -122,4 +122,22 @@ class UserAPI {
         return requestBuilder.init(method: "PATCH", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }
     
+    class func userConfigPatch(userConfig: UserConfig, completion: @escaping ((_ data: OkResponse?,_ error: ErrorResponse?) -> Void)) {
+        userConfigPatch(userConfig: userConfig).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+    private class func userConfigPatch(userConfig: UserConfig) -> RequestBuilder<OkResponse> {
+        let path = "/user/config"
+        let URLString = iPetAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: userConfig)
+
+        let url = URLComponents(string: URLString)
+
+        let requestBuilder: RequestBuilder<OkResponse>.Type = iPetAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PATCH", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+    
 }

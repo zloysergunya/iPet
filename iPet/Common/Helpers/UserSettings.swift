@@ -3,67 +3,76 @@ import Foundation
 @objc class UserSettings: NSObject {
 
     static let defaults = UserDefaults.standard
-
-    fileprivate enum Keys: String {
-        case token
-        case user
-        case pets
-        case petAnimations
-        case userReady
-        case isLaunchedBefore
-    }
     
     static var token: String? {
         get {
-            return defaults.string(forKey: Keys.token.rawValue)
+            return defaults.string(forKey: #function)
         }
         set {
-            defaults.set(newValue, forKey: Keys.token.rawValue)
+            defaults.set(newValue, forKey: #function)
         }
     }
     
     static var user: User? {
         get {
-            return try? defaults.get(objectType: User.self, forKey: Keys.user.rawValue)
+            return try? defaults.get(objectType: User.self, forKey: #function)
         }
         set {
-            try? defaults.set(object: newValue, forKey: Keys.user.rawValue)
+            try? defaults.set(object: newValue, forKey: #function)
         }
     }
     
     static var pets: [Pet]? {
         get {
-            return try? defaults.get(objectType: [Pet].self, forKey: Keys.pets.rawValue)
+            return try? defaults.get(objectType: [Pet].self, forKey: #function)
         }
         set {
-            try? defaults.set(object: newValue, forKey: Keys.pets.rawValue)
+            try? defaults.set(object: newValue, forKey: #function)
         }
     }
     
     static var petAnimations: [PetAnimation]? {
         get {
-            return try? defaults.get(objectType: [PetAnimation].self, forKey: Keys.petAnimations.rawValue)
+            return try? defaults.get(objectType: [PetAnimation].self, forKey: #function)
         }
         set {
-            try? defaults.set(object: newValue, forKey: Keys.petAnimations.rawValue)
+            try? defaults.set(object: newValue, forKey: #function)
         }
     }
     
     static var userReady: Bool {
         get {
-            return defaults.bool(forKey: Keys.userReady.rawValue)
+            return defaults.bool(forKey: #function)
         }
         set {
-            defaults.set(newValue, forKey: Keys.userReady.rawValue)
+            defaults.set(newValue, forKey: #function)
         }
     }
     
     static var isLaunchedBefore: Bool {
         get {
-            return defaults.bool(forKey: Keys.isLaunchedBefore.rawValue)
+            return defaults.bool(forKey: #function)
         }
         set {
-            defaults.set(newValue, forKey: Keys.isLaunchedBefore.rawValue)
+            defaults.set(newValue, forKey: #function)
+        }
+    }
+    
+    static var lastSendActivityDate: Date? {
+        get {
+            return defaults.object(forKey: #function) as? Date
+        }
+        set {
+            defaults.set(newValue, forKey: #function)
+        }
+    }
+    
+    static var stats: Stats? {
+        get {
+            return try? defaults.get(objectType: Stats.self, forKey: #function)
+        }
+        set {
+            try? defaults.set(object: newValue, forKey: #function)
         }
     }
     

@@ -7,9 +7,9 @@ class SignInProvider {
             if let response = response {
                 UserSettings.token = response.token
                 UserSettings.user = response.user
-                
                 completion(.success(response))
             } else if let error = error {
+                log.error(ModelError(err: error).message())
                 completion(.failure(ModelError(err: error)))
             } else {
                 completion(.failure(NSError()))
@@ -22,9 +22,9 @@ class SignInProvider {
             if let response = response {
                 UserSettings.token = response.token
                 UserSettings.user = response.user
-                
                 completion(.success(response))
             } else if let error = error {
+                log.error(ModelError(err: error).message())
                 completion(.failure(ModelError(err: error)))
             } else {
                 completion(.failure(NSError()))

@@ -7,6 +7,7 @@ target 'iPet' do
   pod 'GoogleSignIn'
   
   # Network
+  pod 'Kingfisher'
   pod 'Alamofire', '~> 4.9.0'
   
   # Storage

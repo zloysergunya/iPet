@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSHealthShareUsageDescription</key>
-	<string>We will use your health information to better track Prancercise workouts</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -17,10 +15,15 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>SFUIText-Semibold.ttf</string>
+		<string>SFUIText-Regular.ttf</string>
+		<string>SFUIText-Medium.ttf</string>
+		<string>SFUIText-Light.ttf</string>
+		<string>SFUIText-Bold.ttf</string>
 		<string>MontserratSemiBold.ttf</string>
-		<string>MontserratBold.ttf</string>
 		<string>MontserratRegular.ttf</string>
 		<string>MontserratMedium.ttf</string>
+		<string>MontserratBold.ttf</string>
 	</array>
 </dict>
 </plist>

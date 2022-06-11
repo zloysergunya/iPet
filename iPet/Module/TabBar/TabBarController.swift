@@ -9,6 +9,8 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         healthService.output = self
+        
+        configure()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -21,6 +23,18 @@ class TabBarController: UITabBarController {
             permissionsController.delegate = self
             permissionsController.present(on: self)
         }
+    }
+    
+    private func configure() {
+        let generalViewController = GeneralViewController()
+        generalViewController.tabBarItem.image = R.image.tabBarActivity()
+        generalViewController.tabBarItem.title = "Активность"
+        
+        viewControllers = [UINavigationController(rootViewController: generalViewController)]
+        
+        tabBar.backgroundColor = .white
+        tabBar.tintColor = .black
+        tabBar.unselectedItemTintColor = .init(hex: 0x979797)
     }
     
 }

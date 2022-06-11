@@ -1,54 +1,61 @@
 import Foundation
 
-enum ApiErrorCode: String {
-    case unknown
-    case decode
-    case token
+fileprivate struct DecodableError: Codable {
+    let desc: String
+    let code: String
 }
 
-struct ModelError: Error, CustomDebugStringConvertible {
-    let err: ErrorResponse
-
-    func message() -> String {
-        switch err {
-        case .error( _, let data?, _):
-            do {
-                let json = try JSONSerialization.jsonObject(with: data) as! [String:Any]
-                print("json error", json)
-                if let code = json["code"] as? String, code == "token" {
-                    return "Session lost"
-                } else {
-                    return json["desc"] as! String
-                }
-            } catch {
-                return "Server error"
-            }
-        default:
-            return "Server error"
-        }
+struct ModelError: Error {
+    var err: ErrorResponse?
+    var text: String?
+    
+    init() {
+        
+    }
+    
+    init(err: ErrorResponse?) {
+        self.err = err
+    }
+    
+    init(text: String) {
+        self.text = text
     }
 
-    public var code: String {
-        get {
-            switch err {
-            case .error( _, let data?, _):
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data) as! [String:Any]
-                    if let code = json["code"] as? String, code == "token" {
-                        return ApiErrorCode.token.rawValue
-                    } else {
-                        return json["code"] as! String
-                    }
-                } catch {
-                    return ApiErrorCode.unknown.rawValue
-                }
-            default:
-                return ApiErrorCode.unknown.rawValue
-            }
+    func message() -> String {
+        if let text = text {
+            return text
         }
-    } 
-    
-    var debugDescription: String {
+        
+        if case .error(let status, let data?, let error) = err {
+            if let decodeError = CodableHelper.decode(DecodableError.self, from: data).decodableObj {
+                return decodeError.desc
+            }
+            
+            log.error("Error \(status): \(error.localizedDescription)")
+            
+//            let message = "Error \(status): "
+//            switch status {
+//            case 401:
+//                let authService: AuthService? = ServiceLocator.getService()
+//                authService?.deauthorize()
+//                
+//                return message + "Ошибка авторизации. Пожалуйста, войдите в свой аккаунт заново"
+//                
+//            case 403: return message + "Доступ запрещён"
+//            case 404: return message + "Данные не найдены"
+//            case 400...499: return message + "Ошибка в запросе на сервер"
+//            case 500...599: return message + "Сервер временно недоступен. Попробуйте позднее"
+//            case 1000: return message + "Проверьте доступ к интернету"
+//            default: return message + "Неизвестная ошибка (не удалось декодировать ошибку)"
+//            }
+            
+            return "Unknown error (failed to decode error)"
+        }
+        
+        return "Failed to decode server response"
+    }
+
+    var localizedDescription: String {
         return message()
     }
     

@@ -18,7 +18,7 @@ struct PetAnimationTypes: Codable {
     let heart: String?
     let sleeping: String?
     let thinking: String?
-    let tears : String?
+    let tears: String?
     let moveTears: String?
 
     enum CodingKeys: String, CodingKey {

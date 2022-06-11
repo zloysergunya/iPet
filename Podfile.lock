@@ -19,6 +19,7 @@ PODS:
     - IGListDiffKit (= 4.0.0)
   - IQKeyboardManagerSwift (6.5.9)
   - KeychainAccess (4.2.2)
+  - Kingfisher (7.1.2)
   - lottie-ios (3.2.3)
   - OverlayContainer (3.5.2)
   - PinLayout (1.10.0)
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - IGListKit (~> 4.0)
   - IQKeyboardManagerSwift
   - KeychainAccess
+  - Kingfisher
   - lottie-ios (~> 3.2.3)
   - OverlayContainer
   - PinLayout (~> 1.8)
@@ -61,6 +63,7 @@ SPEC REPOS:
     - IGListKit
     - IQKeyboardManagerSwift
     - KeychainAccess
+    - Kingfisher
     - lottie-ios
     - OverlayContainer
     - PinLayout
@@ -81,6 +84,7 @@ SPEC CHECKSUMS:
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   OverlayContainer: 6b2727437ee7d76dc22b00d0275a94c9191f962a
   PinLayout: e50e9a748b632905fca6e67043ea4b05d6c92186
@@ -90,6 +94,6 @@ SPEC CHECKSUMS:
   SPPermissions: 2998578132f05b0093028a1fad193ad086b63188
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
 
-PODFILE CHECKSUM: bac05b773480cf63100e44c27b5415e8d0376d2f
+PODFILE CHECKSUM: 51c3c202840d5adf971758e448bff0a5f78ea8d5
 
 COCOAPODS: 1.11.2

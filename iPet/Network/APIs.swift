@@ -7,6 +7,7 @@
 import Foundation
 
 open class iPetAPI {
+    public static var serverUrl = "https://dev.steppy.org"
     public static var basePath = "https://dev.steppy.org/api"
     public static var credential: URLCredential?
     public static var customHeaders: [String:String] = [:]
