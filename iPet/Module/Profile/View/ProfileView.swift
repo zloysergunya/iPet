@@ -13,14 +13,14 @@ class ProfileView: RootView {
         let label = UILabel()
         label.text = "Приложение"
         label.font = R.font.sfuiTextMedium(size: 18.0)
-        label.textColor = UIColor(hex: 0x5A5856)
+        label.textColor = R.color.darkGray()
         
         return label
     }()
     
     private let socialNetworksImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "socialNetworks")
+        imageView.image = UIImage(named: R.image.socialNetworks.name)
         
         return imageView
     }()
@@ -38,7 +38,7 @@ class ProfileView: RootView {
         let label = UILabel()
         label.text = "230"
         label.font = R.font.sfuiTextRegular(size: 9)
-        label.textColor = UIColor(hex: 0x5A5856)
+        label.textColor = R.color.darkGray()
         
         return label
     }()

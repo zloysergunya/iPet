@@ -34,7 +34,7 @@ class HeaderProfileView: RootView {
     
     private let editProfileButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "editButton"), for: .normal)
+        button.setImage(UIImage(named: R.image.editButton.name), for: .normal)
         
         return button
     }()

@@ -23,7 +23,7 @@ class UserMetricView: RootView {
     let unitLabel: UILabel = {
         let label = UILabel()
         label.font = R.font.sfuiTextMedium(size: 13.0)
-        label.textColor = .gray
+        label.textColor = R.color.darkGray()
         label.textAlignment = .right
         
         return label
