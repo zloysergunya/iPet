@@ -108,6 +108,7 @@
 		C4A0E9D7278350E9005D6662 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9D6278350E9005D6662 /* User.swift */; };
 		C4A0E9D9278350FD005D6662 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9D8278350FD005D6662 /* Pet.swift */; };
 		C4A0E9DB2783516A005D6662 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9DA2783516A005D6662 /* AuthAPI.swift */; };
+		C4B86BC428550C6C00D58863 /* UIStackView+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B86BC328550C6C00D58863 /* UIStackView+Init.swift */; };
 		C4C6189227B947170009AA1C /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C6189027B947170009AA1C /* GeneralViewController.swift */; };
 		C4C6189327B947170009AA1C /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C6189127B947170009AA1C /* GeneralView.swift */; };
 		C4C6189727B947380009AA1C /* GeneralProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C6189627B947380009AA1C /* GeneralProvider.swift */; };
@@ -122,6 +123,8 @@
 		C4C618AC27B95C850009AA1C /* ActivityProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C618AB27B95C850009AA1C /* ActivityProgressView.swift */; };
 		C4DD24432786DF03006D2EE5 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DD24422786DF03006D2EE5 /* UserSettings.swift */; };
 		C4DD24462786E036006D2EE5 /* UserDefaults+SaveStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DD24452786E036006D2EE5 /* UserDefaults+SaveStruct.swift */; };
+		C4E0D3FD28587513004CFD8D /* ModalPetStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E0D3FB28587513004CFD8D /* ModalPetStateViewController.swift */; };
+		C4E0D3FE28587513004CFD8D /* ModalPetStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E0D3FC28587513004CFD8D /* ModalPetStateView.swift */; };
 		C4FB55B927A53F91006CBFF7 /* UIButton+BackgroundColoroForState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FB55B827A53F91006CBFF7 /* UIButton+BackgroundColoroForState.swift */; };
 /* End PBXBuildFile section */
 
@@ -232,6 +235,7 @@
 		C4A0E9D6278350E9005D6662 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C4A0E9D8278350FD005D6662 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		C4A0E9DA2783516A005D6662 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
+		C4B86BC328550C6C00D58863 /* UIStackView+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Init.swift"; sourceTree = "<group>"; };
 		C4C6189027B947170009AA1C /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
 		C4C6189127B947170009AA1C /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		C4C6189627B947380009AA1C /* GeneralProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralProvider.swift; sourceTree = "<group>"; };
@@ -246,6 +250,8 @@
 		C4C618AB27B95C850009AA1C /* ActivityProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityProgressView.swift; sourceTree = "<group>"; };
 		C4DD24422786DF03006D2EE5 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		C4DD24452786E036006D2EE5 /* UserDefaults+SaveStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+SaveStruct.swift"; sourceTree = "<group>"; };
+		C4E0D3FB28587513004CFD8D /* ModalPetStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPetStateViewController.swift; sourceTree = "<group>"; };
+		C4E0D3FC28587513004CFD8D /* ModalPetStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPetStateView.swift; sourceTree = "<group>"; };
 		C4FB55B827A53F91006CBFF7 /* UIButton+BackgroundColoroForState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+BackgroundColoroForState.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -616,6 +622,7 @@
 		C4A0E97C2782DE4F005D6662 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C4E0D3F9285874A9004CFD8D /* Modals */,
 				C41E1DA327A284DA00AA773B /* TabBar */,
 				C41E1D8D27A27DA300AA773B /* General */,
 				C4A0E9A42782F2A3005D6662 /* Register */,
@@ -659,7 +666,6 @@
 				C42624A62854680E001EF653 /* Views */,
 				C4242DE2279095CA002B99E9 /* CollectionViewLayout */,
 				C4A0E9932782E844005D6662 /* Controllers */,
-				C489F83E27A994D700354C1F /* UIDevice+Model.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -759,10 +765,12 @@
 		C4A0E9AB2782F528005D6662 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C489F83E27A994D700354C1F /* UIDevice+Model.swift */,
 				C4A0E9AC2782F534005D6662 /* UIColor+Hex.swift */,
 				C48D2928278369DA00BC23F2 /* UIView+Underlined.swift */,
 				C48D292A278372BD00BC23F2 /* UIViewController+HideKeyboard.swift */,
 				C4FB55B827A53F91006CBFF7 /* UIButton+BackgroundColoroForState.swift */,
+				C4B86BC328550C6C00D58863 /* UIStackView+Init.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -898,6 +906,31 @@
 				C42624AA2854691A001EF653 /* String+Base64.swift */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		C4E0D3F9285874A9004CFD8D /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				C4E0D3FA285874B1004CFD8D /* ModalPetState */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		C4E0D3FA285874B1004CFD8D /* ModalPetState */ = {
+			isa = PBXGroup;
+			children = (
+				C4E0D3FF28587540004CFD8D /* View */,
+				C4E0D3FB28587513004CFD8D /* ModalPetStateViewController.swift */,
+			);
+			path = ModalPetState;
+			sourceTree = "<group>";
+		};
+		C4E0D3FF28587540004CFD8D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C4E0D3FC28587513004CFD8D /* ModalPetStateView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		CECE3000E4268E8D7E347DA6 /* Frameworks */ = {
@@ -1092,10 +1125,12 @@
 				C4C618A727B95BBB0009AA1C /* RadialGradientView.swift in Sources */,
 				C4190F50278899AB00C005C7 /* UserMeRequest.swift in Sources */,
 				C41E1D9D27A27FEE00AA773B /* Bundle+Version.swift in Sources */,
+				C4E0D3FD28587513004CFD8D /* ModalPetStateViewController.swift in Sources */,
 				C49D40AC283DD1C800F42B2F /* HealthServiceProvider.swift in Sources */,
 				C485FBFA27BCB8FA0057C290 /* HoursStat.swift in Sources */,
 				C41E1D9927A27F8B00AA773B /* Autowired.swift in Sources */,
 				C41E1D8C27A27BA700AA773B /* GoogleSignInService.swift in Sources */,
+				C4B86BC428550C6C00D58863 /* UIStackView+Init.swift in Sources */,
 				C4A0E9CD2783505D005D6662 /* Models.swift in Sources */,
 				C4A0E9D7278350E9005D6662 /* User.swift in Sources */,
 				C4242DDF279031B9002B99E9 /* PetResponse.swift in Sources */,
@@ -1146,6 +1181,7 @@
 				C4024EB427915A0A00248854 /* UserPetUserPetIdRequest.swift in Sources */,
 				C4A0E9CA2783505D005D6662 /* JSONEncodingHelper.swift in Sources */,
 				C4A0E9D22783505D005D6662 /* JSONEncodableEncoding.swift in Sources */,
+				C4E0D3FE28587513004CFD8D /* ModalPetStateView.swift in Sources */,
 				C41E1DA227A2805200AA773B /* Bundle+Current.swift in Sources */,
 				C4FB55B927A53F91006CBFF7 /* UIButton+BackgroundColoroForState.swift in Sources */,
 				C4242DCD279025BE002B99E9 /* PetAnimation.swift in Sources */,
