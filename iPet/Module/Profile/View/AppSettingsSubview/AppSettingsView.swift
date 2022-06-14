@@ -14,6 +14,7 @@ class AppSettingsView: RootView {
     let settingSwitch: UISwitch = {
         let settingSwitch = UISwitch()
         settingSwitch.onTintColor = R.color.blueAccent()
+        settingSwitch.isOn = false
         
         return settingSwitch
     }()

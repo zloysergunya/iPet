@@ -24,7 +24,6 @@ class AppSettingsContentView: RootView {
     private let closedProfileView: AppSettingsView = {
         let view = AppSettingsView()
         view.titleLabel.text = "Зыкрытый профиль"
-        view.settingSwitch.isOn = false
         
         return view
     }()
@@ -32,7 +31,6 @@ class AppSettingsContentView: RootView {
     private let distanceView: AppSettingsView = {
         let view = AppSettingsView()
         view.titleLabel.text = "Отображать километры"
-        view.settingSwitch.isOn = false
         
         return view
     }()
@@ -40,7 +38,6 @@ class AppSettingsContentView: RootView {
     private let notificationsView: AppSettingsView = {
         let view = AppSettingsView()
         view.titleLabel.text = "Уведомления"
-        view.settingSwitch.isOn = false
 
         return view
     }()

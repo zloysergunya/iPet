@@ -2,7 +2,13 @@ import UIKit
 
 class HeaderProfileView: RootView {
     
-    private let gradientView = GradientView(from: .top, to: .bottom, startColor: #colorLiteral(red: 1, green: 0.3625222445, blue: 0, alpha: 1), endColor: #colorLiteral(red: 1, green: 0, blue: 0.01371841878, alpha: 1))
+    private let gradientView = GradientView(
+        from: .top,
+        to: .bottom,
+        startColor: .init(hex: 0xFF5C00),
+        endColor: .init(hex: 0xFF0003)
+    )
+    
     private let imageView = AnimalPhotoView()
     
     private let userNameLabel: UILabel = {

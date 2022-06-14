@@ -37,7 +37,7 @@ class ProfileView: RootView {
     let distanceNumberLabel: UILabel = {
         let label = UILabel()
         label.text = "230"
-        label.font = R.font.sfuiTextRegular(size: 9)
+        label.font = R.font.sfuiTextRegular(size: 9.0)
         label.textColor = R.color.darkGray()
         
         return label

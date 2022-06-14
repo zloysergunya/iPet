@@ -4,13 +4,12 @@ import SnapKit
 class AnimalPhotoView: UIView {
     
     var circleImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = R.image.foxMascote()
+        let imageView = UIImageView(image: R.image.foxMascote())
         imageView.backgroundColor = .white
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.layer.borderColor = UIColor.white.cgColor
-        imageView.layer.borderWidth = 3
+        imageView.layer.borderWidth = 3.0
         
         return imageView
     }()
@@ -35,7 +34,7 @@ class AnimalPhotoView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         circleImageView.layer.masksToBounds = true
-        circleImageView.layer.cornerRadius = circleImageView.frame.width / 2
+        circleImageView.layer.cornerRadius = circleImageView.frame.width / 2.0
     }
     
 }
