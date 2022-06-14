@@ -34,7 +34,7 @@ class ProfileView: RootView {
         return label
     }()
     
-    let distanceNumberLabel: UILabel = {
+    private let distanceNumberLabel: UILabel = {
         let label = UILabel()
         label.text = "230"
         label.font = R.font.sfuiTextRegular(size: 9.0)

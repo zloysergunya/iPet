@@ -2,6 +2,8 @@ import UIKit
 
 class HeaderProfileView: RootView {
     
+    private let imageView = AnimalPhotoView()
+    
     private let gradientView = GradientView(
         from: .top,
         to: .bottom,
@@ -9,20 +11,18 @@ class HeaderProfileView: RootView {
         endColor: .init(hex: 0xFF0003)
     )
     
-    private let imageView = AnimalPhotoView()
-    
-    private let userNameLabel: UILabel = {
+    private let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Иван"
+        label.text = UserSettings.user?.name
         label.font = R.font.sfuiTextBold(size: 24.0)
         label.textColor = R.color.textSecondary()
         
         return label
     }()
     
-    private let niknameLabel: UILabel = {
+    private let userNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Coala_034"
+        label.text = UserSettings.user?.username
         label.font = R.font.sfuiTextSemibold(size: 18.0)
         label.textColor = R.color.textSecondary()
         
@@ -31,7 +31,7 @@ class HeaderProfileView: RootView {
     
     private let petNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Лиснок Пуфик"
+        label.text = UserSettings.user?.pet?.name
         label.font = R.font.sfuiTextSemibold(size: 18.0)
         label.textColor = R.color.textSecondary()
         
@@ -46,7 +46,7 @@ class HeaderProfileView: RootView {
     }()
     
     private(set) lazy var rootStackView = UIStackView(views: [
-        niknameLabel,
+        userNameLabel,
         petNameLabel
     ], axis: .vertical, spacing: 7.0, distribution: .fillProportionally)
     
@@ -56,7 +56,7 @@ class HeaderProfileView: RootView {
         addSubview(gradientView)
         
         gradientView.addSubview(editProfileButton)
-        gradientView.addSubview(userNameLabel)
+        gradientView.addSubview(nameLabel)
         gradientView.addSubview(imageView)
         gradientView.addSubview(rootStackView)
         
@@ -84,14 +84,14 @@ class HeaderProfileView: RootView {
             make.width.height.equalTo(87.0)
         }
         
-        userNameLabel.snp.makeConstraints { make in
+        nameLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(12.0)
             make.left.equalTo(imageView.snp.right).offset(16.0)
             make.right.equalTo(editProfileButton).offset(-10.0)
         }
         
         rootStackView.snp.makeConstraints { make in
-            make.top.equalTo(userNameLabel.snp.bottom).offset(14.0)
+            make.top.equalTo(nameLabel.snp.bottom).offset(14.0)
             make.left.equalTo(imageView.snp.right).offset(16.0)
             make.right.equalToSuperview().offset(-16.0)
             make.bottom.equalToSuperview().offset(-16.0)

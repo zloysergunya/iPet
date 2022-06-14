@@ -6,7 +6,7 @@ class UserSettingsContentView: RootView {
     private let dailyGoalMetricView: UserMetricView = {
         let view = UserMetricView()
         view.titleLabel.text = "Ежедневная цель:"
-        view.metricLabel.text = "2000"
+        view.metricLabel.text = "\(UserSettings.user?.stepsCount ?? 0)"
         view.unitLabel.text = "шагов"
         
         return view
@@ -15,7 +15,7 @@ class UserSettingsContentView: RootView {
     private let ageMetricView: UserMetricView = {
         let view = UserMetricView()
         view.titleLabel.text = "Возраст:"
-        view.metricLabel.text = "27"
+        view.metricLabel.text = "\(UserSettings.user?.age ?? 0)"
         view.unitLabel.text = "лет"
         
         return view
@@ -24,7 +24,7 @@ class UserSettingsContentView: RootView {
     private let heightMetricView: UserMetricView = {
         let view = UserMetricView()
         view.titleLabel.text = "Рост:"
-        view.metricLabel.text = "186"
+        view.metricLabel.text = "\(UserSettings.user?.height ?? 0)"
         view.unitLabel.text = "см"
         
         return view
@@ -33,7 +33,7 @@ class UserSettingsContentView: RootView {
     private let weightMetricView: UserMetricView = {
         let view = UserMetricView()
         view.titleLabel.text = "Вес:"
-        view.metricLabel.text = "81"
+        view.metricLabel.text = "\(UserSettings.user?.weight ?? 0)"
         view.unitLabel.text = "кг"
         
         return view
@@ -42,7 +42,7 @@ class UserSettingsContentView: RootView {
     private let sexMetricView: UserMetricView = {
         let view = UserMetricView()
         view.titleLabel.text = "Пол:"
-        view.metricLabel.text = "М"
+        view.metricLabel.text = UserSettings.user?.gender
         view.unitLabel.text = ""
         
         return view
