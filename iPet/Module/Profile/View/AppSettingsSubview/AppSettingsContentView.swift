@@ -14,7 +14,7 @@ class AppSettingsContentView: RootView {
     
     private let languageButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Русский", for: .normal)
+        button.setTitle("Русский / Английский", for: .normal)
         button.setTitleColor(R.color.textPrimary(), for: .normal)
         button.titleLabel?.font = R.font.sfuiTextMedium(size: 18.0)
         
@@ -42,15 +42,6 @@ class AppSettingsContentView: RootView {
         return view
     }()
     
-    private let faqLabel: UILabel = {
-        let label = UILabel()
-        label.text = "FAQ"
-        label.font = R.font.sfuiTextMedium(size: 18.0)
-        label.textColor = R.color.textPrimary()
-        
-        return label
-    }()
-    
     private(set) lazy var languageSettingStackView = UIStackView(views: [
         languageLabel,
         languageButton
@@ -60,8 +51,7 @@ class AppSettingsContentView: RootView {
         languageSettingStackView,
         closedProfileView,
         distanceView,
-        notificationsView,
-        faqLabel
+        notificationsView
     ], spacing: 19.0)
     
     override func setup() {
