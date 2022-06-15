@@ -12,6 +12,7 @@ class GeneralViewController: ViewController<GeneralView> {
         super.viewDidLoad()
         
         mainView.animatedPetView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapOnPet)))
+        mainView.petStateLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openModalPetState)))
         
         healthService?.output = self
         healthService?.requestAccess()
@@ -108,7 +109,7 @@ class GeneralViewController: ViewController<GeneralView> {
         
         if let petObesityLevel = user?.pet?.petObesityLevel, let state = PetState(rawValue: petObesityLevel) {
             let grayStyle = Style("gray").foregroundColor(.init(hex: 0x5A5856))
-            mainView.petStateLabel.attributedText = "<gray>состояние:</gray> \(state.description)".style(tags: grayStyle).attributedString
+            mainView.petStateLabel.attributedText = "<gray>состояние:</gray> \(state.name.lowercased())".style(tags: grayStyle).attributedString
         }
         
         mainView.achivmentsView.drawFilledLayer(completed: 3)
@@ -172,6 +173,16 @@ class GeneralViewController: ViewController<GeneralView> {
                 self?.updatePet()
             }
         }
+    }
+    
+    @objc private func openModalPetState() {
+        guard let petObesityLevel = UserSettings.user?.pet?.petObesityLevel,
+              let petState = PetState(rawValue: petObesityLevel) else {
+            return
+        }
+        
+        let viewController = ModalPetStateViewController(petState: petState)
+        present(viewController, animated: true)
     }
     
 }

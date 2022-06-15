@@ -53,6 +53,7 @@ class GeneralView: RootView {
         label.font = R.font.sfuiTextMedium(size: 11.0)
         label.textColor = .black
         label.textAlignment = .center
+        label.isUserInteractionEnabled = true
         
         return label
     }()
