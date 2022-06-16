@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-class RecalView: RootView {
+class RecallView: RootView {
     
     let recallLabel: UILabel = {
         let label = UILabel()

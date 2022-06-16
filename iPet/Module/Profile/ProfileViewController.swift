@@ -5,15 +5,15 @@ class ProfileViewController: ViewController<ProfileView> {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        mainView.appSettingsContentView.closedProfileView.settingSwitch.addTarget(
+        mainView.contentView.appSettingsContentView.closedProfileView.settingSwitch.addTarget(
             self,
             action: #selector(closedProfileSwitchPressed),
             for: .touchUpInside)
-        mainView.appSettingsContentView.notificationsView.settingSwitch.addTarget(
+        mainView.contentView.appSettingsContentView.notificationsView.settingSwitch.addTarget(
             self,
             action: #selector(notificationSwitchPressed),
             for: .touchUpInside)
-        mainView.headerProfileView.editProfileButton.addTarget(
+        mainView.contentView.headerProfileView.editProfileButton.addTarget(
             self,
             action: #selector(editProfileButtonPressed),
             for: .touchUpInside)
@@ -26,22 +26,22 @@ class ProfileViewController: ViewController<ProfileView> {
     
     private func languageTapRecognize() {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(setLanguageTapGesture))
-        mainView.appSettingsContentView.languageSetting.addGestureRecognizer(tapRecognizer)
+        mainView.contentView.appSettingsContentView.languageSetting.addGestureRecognizer(tapRecognizer)
     }
     
     private func recallTapRecognize() {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(recallTapGesture))
-        mainView.appSettingsContentView.recallView.addGestureRecognizer(tapRecognizer)
+        mainView.contentView.appSettingsContentView.recallView.addGestureRecognizer(tapRecognizer)
     }
     
     private func socialNetworksTapRecognize() {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(socialNetworksTapGesture))
-        mainView.appSettingsContentView.socialNetworksView.addGestureRecognizer(tapRecognizer)
+        mainView.contentView.appSettingsContentView.socialNetworksView.addGestureRecognizer(tapRecognizer)
     }
     
     private func exitTapRecognize() {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(exitTapGesture))
-        mainView.exitAccountContainerView.exitAccountView.addGestureRecognizer(tapRecognizer)
+        mainView.contentView.exitAccountContainerView.exitAccountView.addGestureRecognizer(tapRecognizer)
     }
     
     @objc private func setLanguageTapGesture() {

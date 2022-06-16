@@ -25,8 +25,8 @@ class AppSettingsContentView: RootView {
         return view
     }()
     
-    let recallView: RecalView = {
-        let view = RecalView()
+    let recallView: RecallView = {
+        let view = RecallView()
         view.recallLabel.text = "Оставить отзыв"
         view.recallImage.image = R.image.recall()
         
