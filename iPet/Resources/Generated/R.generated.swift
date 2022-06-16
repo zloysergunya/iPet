@@ -89,7 +89,7 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
 
-  /// This `R.color` struct is generated, and contains static references to 14 colors.
+  /// This `R.color` struct is generated, and contains static references to 15 colors.
   struct color {
     /// Color `AccentColor`.
     static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
@@ -115,6 +115,8 @@ struct R: Rswift.Validatable {
     static let orangeAccentDarker = Rswift.ColorResource(bundle: R.hostingBundle, name: "orangeAccentDarker")
     /// Color `orangeAccent`.
     static let orangeAccent = Rswift.ColorResource(bundle: R.hostingBundle, name: "orangeAccent")
+    /// Color `secondBackground`.
+    static let secondBackground = Rswift.ColorResource(bundle: R.hostingBundle, name: "secondBackground")
     /// Color `textPrimary`.
     static let textPrimary = Rswift.ColorResource(bundle: R.hostingBundle, name: "textPrimary")
     /// Color `textSecondary`.
@@ -229,6 +231,15 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "secondBackground", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func secondBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.secondBackground, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "textPrimary", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
@@ -339,6 +350,14 @@ struct R: Rswift.Validatable {
     @available(watchOSApplicationExtension 4.0, *)
     static func orangeAccentDarker(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.orangeAccentDarker.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "secondBackground", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func secondBackground(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.secondBackground.name)
     }
     #endif
 
@@ -546,7 +565,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 18 images.
+  /// This `R.image` struct is generated, and contains static references to 21 images.
   struct image {
     /// Image `add_30`.
     static let add_30 = Rswift.ImageResource(bundle: R.hostingBundle, name: "add_30")
@@ -556,10 +575,14 @@ struct R: Rswift.Validatable {
     static let completedAchivment = Rswift.ImageResource(bundle: R.hostingBundle, name: "completedAchivment")
     /// Image `editButton`.
     static let editButton = Rswift.ImageResource(bundle: R.hostingBundle, name: "editButton")
+    /// Image `exitAccount`.
+    static let exitAccount = Rswift.ImageResource(bundle: R.hostingBundle, name: "exitAccount")
     /// Image `foxMascote`.
     static let foxMascote = Rswift.ImageResource(bundle: R.hostingBundle, name: "foxMascote")
     /// Image `googleLogo`.
     static let googleLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "googleLogo")
+    /// Image `manGender`.
+    static let manGender = Rswift.ImageResource(bundle: R.hostingBundle, name: "manGender")
     /// Image `minusButton`.
     static let minusButton = Rswift.ImageResource(bundle: R.hostingBundle, name: "minusButton")
     /// Image `missedAchivment`.
@@ -578,6 +601,8 @@ struct R: Rswift.Validatable {
     static let photoPlaceholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "photoPlaceholder")
     /// Image `plusButton`.
     static let plusButton = Rswift.ImageResource(bundle: R.hostingBundle, name: "plusButton")
+    /// Image `recall`.
+    static let recall = Rswift.ImageResource(bundle: R.hostingBundle, name: "recall")
     /// Image `socialNetworks`.
     static let socialNetworks = Rswift.ImageResource(bundle: R.hostingBundle, name: "socialNetworks")
     /// Image `stepCountFox`.
@@ -614,6 +639,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "exitAccount", bundle: ..., traitCollection: ...)`
+    static func exitAccount(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.exitAccount, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "foxMascote", bundle: ..., traitCollection: ...)`
     static func foxMascote(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.foxMascote, compatibleWith: traitCollection)
@@ -624,6 +656,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "googleLogo", bundle: ..., traitCollection: ...)`
     static func googleLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.googleLogo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "manGender", bundle: ..., traitCollection: ...)`
+    static func manGender(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.manGender, compatibleWith: traitCollection)
     }
     #endif
 
@@ -687,6 +726,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "plusButton", bundle: ..., traitCollection: ...)`
     static func plusButton(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.plusButton, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "recall", bundle: ..., traitCollection: ...)`
+    static func recall(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.recall, compatibleWith: traitCollection)
     }
     #endif
 

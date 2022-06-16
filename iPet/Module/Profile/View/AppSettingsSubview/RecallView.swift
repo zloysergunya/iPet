@@ -1,9 +1,9 @@
 import UIKit
 import SnapKit
 
-class UserMetricView: RootView {
+class RecalView: RootView {
     
-    let titleLabel: UILabel = {
+    let recallLabel: UILabel = {
         let label = UILabel()
         label.font = R.font.sfuiTextRegular(size: 18.0)
         label.textColor = R.color.textPrimary()
@@ -11,22 +11,11 @@ class UserMetricView: RootView {
         return label
     }()
     
-    let metricLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.sfuiTextSemibold(size: 18.0)
-        label.textColor = R.color.orangeAccent()
-        label.textAlignment = .right
+    let recallImage: UIImageView = {
+        let image = UIImageView()
+        image.sizeToFit()
         
-        return label
-    }()
-    
-    let unitLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.sfuiTextMedium(size: 13.0)
-        label.textColor = R.color.darkGray()
-        label.textAlignment = .right
-        
-        return label
+        return image
     }()
     
     let borderView: UIView = {
@@ -45,29 +34,24 @@ class UserMetricView: RootView {
         
         backgroundColor = R.color.secondBackground()
         
-        addSubview(titleLabel)
-        addSubview(metricLabel)
-        addSubview(unitLabel)
         addSubview(borderView)
+        addSubview(recallLabel)
+        addSubview(recallImage)
         
         setupConstraints()
     }
     
     private func setupConstraints() {
         
-        titleLabel.snp.makeConstraints { make in
+        recallLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16.0)
             make.centerY.equalToSuperview()
         }
         
-        metricLabel.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-69.0)
-            make.centerY.equalToSuperview()
-        }
-        
-        unitLabel.snp.makeConstraints { make in
+        recallImage.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-16.0)
             make.centerY.equalToSuperview()
+            make.width.height.equalTo(20.0)
         }
         
         borderView.snp.makeConstraints { make in
@@ -79,3 +63,4 @@ class UserMetricView: RootView {
     }
     
 }
+  

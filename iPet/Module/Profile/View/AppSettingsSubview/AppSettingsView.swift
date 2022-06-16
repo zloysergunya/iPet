@@ -5,7 +5,7 @@ class AppSettingsView: RootView {
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.sfuiTextMedium(size: 18.0)
+        label.font = R.font.sfuiTextRegular(size: 18.0)
         label.textColor = R.color.textPrimary()
         
         return label
@@ -13,32 +13,52 @@ class AppSettingsView: RootView {
     
     let settingSwitch: UISwitch = {
         let settingSwitch = UISwitch()
-        settingSwitch.onTintColor = R.color.blueAccent()
+        settingSwitch.onTintColor = R.color.orangeAccent()
         settingSwitch.isOn = false
         
         return settingSwitch
     }()
     
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIView.noIntrinsicMetric, height: 31.0)
-    }
+    let borderView: UIView = {
+        let view = UIView()
+        view.backgroundColor = R.color.disabled()
+        
+        return view
+    }()
     
-    private(set) lazy var rootStackView = UIStackView(views: [
-        titleLabel,
-        settingSwitch,
-    ], axis: .horizontal, distribution: .equalSpacing)
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: UIView.noIntrinsicMetric, height: 48.0)
+    }
 
     override func setup() {
         super.setup()
         
-        addSubview(rootStackView)
+        backgroundColor = R.color.secondBackground()
+        
+        addSubview(borderView)
+        addSubview(titleLabel)
+        addSubview(settingSwitch)
         
         setupConstraints()
     }
     
     private func setupConstraints() {
-        rootStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        
+        titleLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(16.0)
+            make.centerY.equalToSuperview()
+        }
+        
+        settingSwitch.snp.makeConstraints { make in
+            make.right.equalToSuperview().offset(-16.0)
+            make.centerY.equalToSuperview()
+        }
+        
+        borderView.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(16.0)
+            make.right.equalToSuperview().offset(-16.0)
+            make.bottom.equalToSuperview()
+            make.height.equalTo(1.0)
         }
     }
     

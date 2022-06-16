@@ -3,69 +3,68 @@ import SnapKit
 
 class AppSettingsContentView: RootView {
     
-    private let languageLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Язык:"
-        label.font = R.font.sfuiTextMedium(size: 18.0)
-        label.textColor = R.color.textPrimary()
-        
-        return label
-    }()
-    
-    private let languageButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Русский / Английский", for: .normal)
-        button.setTitleColor(R.color.textPrimary(), for: .normal)
-        button.titleLabel?.font = R.font.sfuiTextMedium(size: 18.0)
-        
-        return button
-    }()
-    
-    private let closedProfileView: AppSettingsView = {
+    let closedProfileView: AppSettingsView = {
         let view = AppSettingsView()
         view.titleLabel.text = "Зыкрытый профиль"
         
         return view
     }()
     
-    private let distanceView: AppSettingsView = {
-        let view = AppSettingsView()
-        view.titleLabel.text = "Отображать километры"
-        
-        return view
-    }()
-    
-    private let notificationsView: AppSettingsView = {
+    let notificationsView: AppSettingsView = {
         let view = AppSettingsView()
         view.titleLabel.text = "Уведомления"
 
         return view
     }()
     
-    private(set) lazy var languageSettingStackView = UIStackView(views: [
-        languageLabel,
-        languageButton
-    ], axis: .horizontal, distribution: .equalSpacing)
+    let languageSetting: LanguageSetting = {
+        let view = LanguageSetting()
+        view.languagelabel.text = "Язык:"
+        view.languageButton.setTitle("Русский", for: .normal)
+        
+        return view
+    }()
+    
+    let recallView: RecalView = {
+        let view = RecalView()
+        view.recallLabel.text = "Оставить отзыв"
+        view.recallImage.image = R.image.recall()
+        
+        return view
+    }()
+    
+    let socialNetworksView: SocialNetworksView = {
+        let view = SocialNetworksView()
+        view.socialNetworksLabel.text = "Наши соцсети"
+        view.socialNetworksImage.image = R.image.socialNetworks()
+        
+        return view
+    }()
     
     private(set) lazy var appSettingsStackView = UIStackView(views: [
-        languageSettingStackView,
         closedProfileView,
-        distanceView,
-        notificationsView
-    ], spacing: 19.0)
+        notificationsView,
+        languageSetting,
+        recallView,
+        socialNetworksView
+    ])
     
     override func setup() {
         super.setup()
-
+        
+        appSettingsStackView.layer.cornerRadius = 10.0
+        appSettingsStackView.clipsToBounds = true
+        
         addSubview(appSettingsStackView)
         
         setupConstraints()
     }
     
     private func setupConstraints() {
+        
         appSettingsStackView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.left.right.equalToSuperview().inset(24.0)
+            make.left.right.equalToSuperview().inset(16.0)
         }
     }
     

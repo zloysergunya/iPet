@@ -38,7 +38,7 @@ class HeaderProfileView: RootView {
         return label
     }()
     
-    private let editProfileButton: UIButton = {
+    let editProfileButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: R.image.editButton.name), for: .normal)
         
@@ -100,7 +100,7 @@ class HeaderProfileView: RootView {
         editProfileButton.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(12.0)
             make.right.equalToSuperview().offset(-10.0)
-            make.width.height.equalTo(20)
+            make.width.height.equalTo(20.0)
         }
     }
     

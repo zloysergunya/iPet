@@ -3,57 +3,56 @@ import SnapKit
 
 class ProfileView: RootView {
     
-    private let scrollView = UIScrollView()
+    private lazy var scrollView = UIScrollView()
     
-    private let headerProfileView = HeaderProfileView()
+    let headerProfileView = HeaderProfileView()
     private let userSettingsContentView = UserSettingsContentView()
-    private let appSettingsContentView = AppSettingsContentView()
+    let appSettingsContentView = AppSettingsContentView()
+    let exitAccountContainerView = ExitContainerView()
     
     private let appLabel: UILabel = {
         let label = UILabel()
         label.text = "Приложение"
-        label.font = R.font.sfuiTextMedium(size: 18.0)
-        label.textColor = R.color.darkGray()
+        label.font = R.font.sfuiTextBold(size: 17.0)
+        label.textColor = R.color.textPrimary()
         
         return label
     }()
-    
-    private let socialNetworksImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: R.image.socialNetworks.name)
-        
-        return imageView
-    }()
-    
+
     private lazy var allDistanceLabel: UILabel = {
         let label = UILabel()
-        label.text = "За время нашего знакомства мы прошли \(distanceNumberLabel.text ?? "много") км!"
-        label.font = R.font.sfuiTextRegular(size: 9)
-        label.textColor = UIColor(hex: 0x5A5856)
+        label.text = "Всего пройдено:"
+        label.font = R.font.sfuiTextMedium(size: 14.0)
+        label.textColor = R.color.darkGray()
         
         return label
     }()
     
     private let distanceNumberLabel: UILabel = {
         let label = UILabel()
-        label.text = "230"
-        label.font = R.font.sfuiTextRegular(size: 9.0)
-        label.textColor = R.color.darkGray()
+        label.text =  "\(230) км"
+        label.font = R.font.sfuiTextMedium(size: 14.0)
+        label.textColor = R.color.orangeAccent()
         
         return label
     }()
+    
+    private(set) lazy var allDistanceStack = UIStackView(views: [
+        allDistanceLabel,
+        distanceNumberLabel
+    ], axis: .horizontal, spacing: 2.0, alignment: .center)
     
     override func setup() {
         super.setup()
         
         addSubview(scrollView)
         
-        scrollView.addSubview(allDistanceLabel)
-        scrollView.addSubview(socialNetworksImage)
         scrollView.addSubview(headerProfileView)
         scrollView.addSubview(userSettingsContentView)
         scrollView.addSubview(appLabel)
         scrollView.addSubview(appSettingsContentView)
+        scrollView.addSubview(allDistanceStack)
+        scrollView.addSubview(exitAccountContainerView)
         
         scrollView.backgroundColor = R.color.background()
         
@@ -72,30 +71,28 @@ class ProfileView: RootView {
         }
         
         userSettingsContentView.snp.makeConstraints { make in
-            make.top.equalTo(headerProfileView.snp.bottom).offset(16.0)
+            make.top.equalTo(headerProfileView.snp.bottom).offset(20.0)
             make.width.equalToSuperview()
         }
         
         appLabel.snp.makeConstraints { make in
-            make.top.equalTo(userSettingsContentView.snp.bottom).offset(14.0)
+            make.top.equalTo(userSettingsContentView.snp.bottom).offset(20.0)
             make.centerX.equalToSuperview()
         }
         
         appSettingsContentView.snp.makeConstraints { make in
-            make.top.equalTo(appLabel.snp.bottom).offset(15.0)
+            make.top.equalTo(appLabel.snp.bottom).offset(20.0)
             make.width.equalToSuperview()
         }
         
-        socialNetworksImage.snp.makeConstraints { make in
-            make.top.equalTo(appSettingsContentView.snp.bottom).offset(14.0)
-            make.centerX.equalToSuperview()
-            make.width.equalTo(186.0)
-            make.height.equalTo(35.0)
+        allDistanceStack.snp.makeConstraints { make in
+            make.top.equalTo(appSettingsContentView.snp.bottom).offset(20.0)
+            make.centerX.equalToSuperview().offset(35.0)
         }
         
-        allDistanceLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(socialNetworksImage.snp.bottom).offset(8.0)
+        exitAccountContainerView.snp.makeConstraints { make in
+            make.top.equalTo(allDistanceStack.snp.bottom).offset(20.0)
+            make.width.equalToSuperview()
         }
     }
 

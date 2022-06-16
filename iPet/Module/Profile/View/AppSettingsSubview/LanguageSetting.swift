@@ -1,9 +1,9 @@
 import UIKit
 import SnapKit
 
-class UserMetricView: RootView {
+class LanguageSetting: RootView {
     
-    let titleLabel: UILabel = {
+    let languagelabel: UILabel = {
         let label = UILabel()
         label.font = R.font.sfuiTextRegular(size: 18.0)
         label.textColor = R.color.textPrimary()
@@ -11,22 +11,12 @@ class UserMetricView: RootView {
         return label
     }()
     
-    let metricLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.sfuiTextSemibold(size: 18.0)
-        label.textColor = R.color.orangeAccent()
-        label.textAlignment = .right
+    let languageButton: UIButton = {
+        let button = UIButton()
+        button.setTitleColor(R.color.orangeAccent(), for: .normal)
+        button.titleLabel?.font = R.font.sfuiTextSemibold(size: 18.0)
         
-        return label
-    }()
-    
-    let unitLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.sfuiTextMedium(size: 13.0)
-        label.textColor = R.color.darkGray()
-        label.textAlignment = .right
-        
-        return label
+        return button
     }()
     
     let borderView: UIView = {
@@ -42,30 +32,24 @@ class UserMetricView: RootView {
     
     override func setup() {
         super.setup()
-        
+
         backgroundColor = R.color.secondBackground()
         
-        addSubview(titleLabel)
-        addSubview(metricLabel)
-        addSubview(unitLabel)
         addSubview(borderView)
+        addSubview(languagelabel)
+        addSubview(languageButton)
         
         setupConstraints()
     }
     
     private func setupConstraints() {
         
-        titleLabel.snp.makeConstraints { make in
+        languagelabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16.0)
             make.centerY.equalToSuperview()
         }
         
-        metricLabel.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-69.0)
-            make.centerY.equalToSuperview()
-        }
-        
-        unitLabel.snp.makeConstraints { make in
+        languageButton.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-16.0)
             make.centerY.equalToSuperview()
         }

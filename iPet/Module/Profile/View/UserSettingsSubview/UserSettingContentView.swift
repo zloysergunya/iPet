@@ -39,37 +39,38 @@ class UserSettingsContentView: RootView {
         return view
     }()
     
-    private let sexMetricView: UserMetricView = {
-        let view = UserMetricView()
-        view.titleLabel.text = "Пол:"
-        view.metricLabel.text = UserSettings.user?.gender
-        view.unitLabel.text = ""
+    private let sexView: GenderView = {
+        let view = GenderView()
+        view.genderLabel.text = "Пол:"
+        view.genderImage.image = R.image.manGender()
         
         return view
     }()
-    
+
     private(set) lazy var metricStackView = UIStackView(views: [
         dailyGoalMetricView,
         ageMetricView,
         heightMetricView,
         weightMetricView,
-        sexMetricView
-    ], spacing: 14.0)
+        sexView
+    ])
     
     override func setup() {
         super.setup()
         
-        backgroundColor = R.color.background()
-        
         addSubview(metricStackView)
+        
+        metricStackView.layer.cornerRadius = 10.0
+        metricStackView.clipsToBounds = true
         
         setupConstraints()
     }
     
     private func setupConstraints() {
+        
         metricStackView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top)
-            make.left.right.equalToSuperview().inset(24.0)
+            make.top.equalToSuperview()
+            make.left.right.equalToSuperview().inset(16.0)
             make.bottom.equalToSuperview()
         }
     }
