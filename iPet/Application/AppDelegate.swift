@@ -14,18 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let keychainService = KeychainService()
         ServiceLocator.shared.add(service: keychainService)
-        
+
         let authService = AuthService(keychainService: keychainService)
         ServiceLocator.shared.add(service: authService)
-        
+
         let loggerService = LoggerService()
         LoggerService.setup()
         ServiceLocator.shared.add(service: loggerService)
-        
+
         let launchService = LaunchService()
         launchService.selectViewController()
         ServiceLocator.shared.add(service: launchService)
-                        
+
         return true
     }
 

@@ -8,6 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		1B927F87CA22CD5C025E3F72 /* Pods_iPet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137E1A45FC5FB849D6E6C76A /* Pods_iPet.framework */; };
+		9C6F3F702854D88B009A1C4F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3F6E2854D88B009A1C4F /* ProfileViewController.swift */; };
+		9C6F3F712854D88B009A1C4F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3F6F2854D88B009A1C4F /* ProfileView.swift */; };
+		9C6F3F862855E226009A1C4F /* UserMetricView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3F852855E226009A1C4F /* UserMetricView.swift */; };
+		9C6F3F882855E302009A1C4F /* UIStackView + Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3F872855E302009A1C4F /* UIStackView + Init.swift */; };
+		9C6F3F8B2855E553009A1C4F /* UserSettingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3F8A2855E553009A1C4F /* UserSettingContentView.swift */; };
+		9C6F3F8D2855EF35009A1C4F /* AppSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3F8C2855EF35009A1C4F /* AppSettingsView.swift */; };
+		9C6F3F902855EF71009A1C4F /* AppSettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3F8F2855EF71009A1C4F /* AppSettingsContentView.swift */; };
+		9C6F3F922856007A009A1C4F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3F912856007A009A1C4F /* GradientView.swift */; };
+		9C6F3F942856020D009A1C4F /* HeaderProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3F932856020D009A1C4F /* HeaderProfileView.swift */; };
+		9C6F3F9D2856199D009A1C4F /* AnimalPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3F9C2856199D009A1C4F /* AnimalPhotoView.swift */; };
+		9C6F3FB92859F2E6009A1C4F /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3FB82859F2E6009A1C4F /* GenderView.swift */; };
+		9C6F3FBB2859FBDD009A1C4F /* LanguageSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3FBA2859FBDD009A1C4F /* LanguageSetting.swift */; };
+		9C6F3FBD2859FE1F009A1C4F /* RecallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3FBC2859FE1F009A1C4F /* RecallView.swift */; };
+		9C6F3FBF285A0140009A1C4F /* SocialNetworksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3FBE285A0140009A1C4F /* SocialNetworksView.swift */; };
+		9C6F3FC1285A1943009A1C4F /* ExitAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3FC0285A1943009A1C4F /* ExitAccountView.swift */; };
+		9C6F3FC4285A1C90009A1C4F /* ExitAccountContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3FC3285A1C90009A1C4F /* ExitAccountContainerView.swift */; };
+		9CC906D9285BAB1A00BE8F06 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC906D8285BAB1A00BE8F06 /* ContentView.swift */; };
 		C4024EB427915A0A00248854 /* UserPetUserPetIdRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4024EB327915A0A00248854 /* UserPetUserPetIdRequest.swift */; };
 		C4024EB627915B5500248854 /* OkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4024EB527915B5500248854 /* OkResponse.swift */; };
 		C4024EB92791726200248854 /* RegisterStepsInputProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4024EB82791726200248854 /* RegisterStepsInputProvider.swift */; };
@@ -130,6 +147,23 @@
 
 /* Begin PBXFileReference section */
 		137E1A45FC5FB849D6E6C76A /* Pods_iPet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C6F3F6E2854D88B009A1C4F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9C6F3F6F2854D88B009A1C4F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		9C6F3F852855E226009A1C4F /* UserMetricView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMetricView.swift; sourceTree = "<group>"; };
+		9C6F3F872855E302009A1C4F /* UIStackView + Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Init.swift"; sourceTree = "<group>"; };
+		9C6F3F8A2855E553009A1C4F /* UserSettingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingContentView.swift; sourceTree = "<group>"; };
+		9C6F3F8C2855EF35009A1C4F /* AppSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsView.swift; sourceTree = "<group>"; };
+		9C6F3F8F2855EF71009A1C4F /* AppSettingsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsContentView.swift; sourceTree = "<group>"; };
+		9C6F3F912856007A009A1C4F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		9C6F3F932856020D009A1C4F /* HeaderProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderProfileView.swift; sourceTree = "<group>"; };
+		9C6F3F9C2856199D009A1C4F /* AnimalPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPhotoView.swift; sourceTree = "<group>"; };
+		9C6F3FB82859F2E6009A1C4F /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
+		9C6F3FBA2859FBDD009A1C4F /* LanguageSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSetting.swift; sourceTree = "<group>"; };
+		9C6F3FBC2859FE1F009A1C4F /* RecallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecallView.swift; sourceTree = "<group>"; };
+		9C6F3FBE285A0140009A1C4F /* SocialNetworksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworksView.swift; sourceTree = "<group>"; };
+		9C6F3FC0285A1943009A1C4F /* ExitAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitAccountView.swift; sourceTree = "<group>"; };
+		9C6F3FC3285A1C90009A1C4F /* ExitAccountContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitAccountContainerView.swift; sourceTree = "<group>"; };
+		9CC906D8285BAB1A00BE8F06 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B8BB7D5D564207E8E6D279EA /* Pods-iPet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPet.release.xcconfig"; path = "Target Support Files/Pods-iPet/Pods-iPet.release.xcconfig"; sourceTree = "<group>"; };
 		BCDB67425DC14DD1605A7426 /* Pods-iPet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPet.debug.xcconfig"; path = "Target Support Files/Pods-iPet/Pods-iPet.debug.xcconfig"; sourceTree = "<group>"; };
 		C4024EB327915A0A00248854 /* UserPetUserPetIdRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPetUserPetIdRequest.swift; sourceTree = "<group>"; };
@@ -268,6 +302,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C6F3F722854D8D3009A1C4F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9C6F3F732854D9F1009A1C4F /* View */,
+				9CC906D8285BAB1A00BE8F06 /* ContentView.swift */,
+				9C6F3F6E2854D88B009A1C4F /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		9C6F3F732854D9F1009A1C4F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9C6F3F6F2854D88B009A1C4F /* ProfileView.swift */,
+				9C6F3F892855E523009A1C4F /* UserSettingsSubview */,
+				9C6F3F8E2855EF4D009A1C4F /* AppSettingsSubview */,
+				9C6F3FC2285A1C56009A1C4F /* ExitAccountSubviews */,
+				9C6F3F9528560222009A1C4F /* HeaderSubviews */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9C6F3F892855E523009A1C4F /* UserSettingsSubview */ = {
+			isa = PBXGroup;
+			children = (
+				9C6F3F852855E226009A1C4F /* UserMetricView.swift */,
+				9C6F3FB82859F2E6009A1C4F /* GenderView.swift */,
+				9C6F3F8A2855E553009A1C4F /* UserSettingContentView.swift */,
+			);
+			path = UserSettingsSubview;
+			sourceTree = "<group>";
+		};
+		9C6F3F8E2855EF4D009A1C4F /* AppSettingsSubview */ = {
+			isa = PBXGroup;
+			children = (
+				9C6F3F8C2855EF35009A1C4F /* AppSettingsView.swift */,
+				9C6F3FBA2859FBDD009A1C4F /* LanguageSetting.swift */,
+				9C6F3FBC2859FE1F009A1C4F /* RecallView.swift */,
+				9C6F3FBE285A0140009A1C4F /* SocialNetworksView.swift */,
+				9C6F3F8F2855EF71009A1C4F /* AppSettingsContentView.swift */,
+			);
+			path = AppSettingsSubview;
+			sourceTree = "<group>";
+		};
+		9C6F3F9528560222009A1C4F /* HeaderSubviews */ = {
+			isa = PBXGroup;
+			children = (
+				9C6F3F932856020D009A1C4F /* HeaderProfileView.swift */,
+			);
+			path = HeaderSubviews;
+			sourceTree = "<group>";
+		};
+		9C6F3FC2285A1C56009A1C4F /* ExitAccountSubviews */ = {
+			isa = PBXGroup;
+			children = (
+				9C6F3FC0285A1943009A1C4F /* ExitAccountView.swift */,
+				9C6F3FC3285A1C90009A1C4F /* ExitAccountContainerView.swift */,
+			);
+			path = ExitAccountSubviews;
+			sourceTree = "<group>";
+		};
 		AD63C7E1DE7D155D0AB3F1F8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -628,6 +723,7 @@
 				C4A0E9A42782F2A3005D6662 /* Register */,
 				C4A0E98D2782E772005D6662 /* Onboarding */,
 				C4A0E97E2782DE94005D6662 /* Launch */,
+				9C6F3F722854D8D3009A1C4F /* Profile */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -767,9 +863,12 @@
 			children = (
 				C489F83E27A994D700354C1F /* UIDevice+Model.swift */,
 				C4A0E9AC2782F534005D6662 /* UIColor+Hex.swift */,
+				9C6F3F872855E302009A1C4F /* UIStackView + Init.swift */,
 				C48D2928278369DA00BC23F2 /* UIView+Underlined.swift */,
 				C48D292A278372BD00BC23F2 /* UIViewController+HideKeyboard.swift */,
 				C4FB55B827A53F91006CBFF7 /* UIButton+BackgroundColoroForState.swift */,
+				9C6F3F912856007A009A1C4F /* GradientView.swift */,
+				9C6F3F9C2856199D009A1C4F /* AnimalPhotoView.swift */,
 				C4B86BC328550C6C00D58863 /* UIStackView+Init.swift */,
 			);
 			path = UIKit;
@@ -1109,6 +1208,7 @@
 				C4242DC927900E5F002B99E9 /* RegisterPickPetProvider.swift in Sources */,
 				C4A0E9B42782F87D005D6662 /* RegisterUserInputView.swift in Sources */,
 				C4A0E9892782E0E4005D6662 /* RootView.swift in Sources */,
+				9C6F3F862855E226009A1C4F /* UserMetricView.swift in Sources */,
 				C4190F4627888B4200C005C7 /* RegisterInputView.swift in Sources */,
 				C42624B0285472FA001EF653 /* ActiveStatus.swift in Sources */,
 				C4A0E9DB2783516A005D6662 /* AuthAPI.swift in Sources */,
@@ -1132,9 +1232,11 @@
 				C41E1D8C27A27BA700AA773B /* GoogleSignInService.swift in Sources */,
 				C4B86BC428550C6C00D58863 /* UIStackView+Init.swift in Sources */,
 				C4A0E9CD2783505D005D6662 /* Models.swift in Sources */,
+				9CC906D9285BAB1A00BE8F06 /* ContentView.swift in Sources */,
 				C4A0E9D7278350E9005D6662 /* User.swift in Sources */,
 				C4242DDF279031B9002B99E9 /* PetResponse.swift in Sources */,
 				C4242DC327900B2A002B99E9 /* RegisterPickPetView.swift in Sources */,
+				9C6F3FBF285A0140009A1C4F /* SocialNetworksView.swift in Sources */,
 				C48D6FDE2844A4EA009D36EE /* AchivmentsView.swift in Sources */,
 				C4C618A327B951070009AA1C /* ImageLoader.swift in Sources */,
 				C49D40A4283DD0A800F42B2F /* StatsAPI.swift in Sources */,
@@ -1146,6 +1248,7 @@
 				C4242DD627902A9E002B99E9 /* RegisterPetSectionController.swift in Sources */,
 				C4A0E9662782DB48005D6662 /* AppDelegate.swift in Sources */,
 				C4A0E9CE2783505D005D6662 /* Extensions.swift in Sources */,
+				9C6F3FC1285A1943009A1C4F /* ExitAccountView.swift in Sources */,
 				C4190F412786E91300C005C7 /* ModelError.swift in Sources */,
 				C485FBF627BCB8CD0057C290 /* APIGeneralResponse.swift in Sources */,
 				C4A0E9802782DEA6005D6662 /* LaunchViewController.swift in Sources */,
@@ -1156,7 +1259,9 @@
 				C4A0E9D9278350FD005D6662 /* Pet.swift in Sources */,
 				C4190F4827888CF800C005C7 /* Animations.swift in Sources */,
 				C4024EB627915B5500248854 /* OkResponse.swift in Sources */,
+				9C6F3F902855EF71009A1C4F /* AppSettingsContentView.swift in Sources */,
 				C4190F3B2786E6DD00C005C7 /* RegisterUserInputProvider.swift in Sources */,
+				9C6F3F8D2855EF35009A1C4F /* AppSettingsView.swift in Sources */,
 				C4242DBA27900AA8002B99E9 /* RegisterStepsInputViewController.swift in Sources */,
 				C4190F4327888A8000C005C7 /* UserUsernameTranslitResponse.swift in Sources */,
 				C4242DC027900B10002B99E9 /* RegisterPickPetViewController.swift in Sources */,
@@ -1169,11 +1274,13 @@
 				C4242DD0279029BB002B99E9 /* LoadingState.swift in Sources */,
 				C4242DCB27900F83002B99E9 /* PetRandomNameResponse.swift in Sources */,
 				C4A0E9D32783505D005D6662 /* AlamofireImplementations.swift in Sources */,
+				9C6F3F702854D88B009A1C4F /* ProfileViewController.swift in Sources */,
 				C49D40B0283DD4A400F42B2F /* Date+Add.swift in Sources */,
 				C4C6189727B947380009AA1C /* GeneralProvider.swift in Sources */,
 				C4A0E9B12782F85D005D6662 /* RegisterUserInputViewController.swift in Sources */,
 				C4A0E9992782E93C005D6662 /* LaunchHelper.swift in Sources */,
 				C485FBFC27BCB9180057C290 /* GeneralAPI.swift in Sources */,
+				9C6F3F8B2855E553009A1C4F /* UserSettingContentView.swift in Sources */,
 				C4A0E99B2782E9BF005D6662 /* R.generated.swift in Sources */,
 				C41E1D8A27A27A5700AA773B /* AppleSignInService.swift in Sources */,
 				C41E1DA027A2802D00AA773B /* Constants.swift in Sources */,
@@ -1184,13 +1291,19 @@
 				C4E0D3FE28587513004CFD8D /* ModalPetStateView.swift in Sources */,
 				C41E1DA227A2805200AA773B /* Bundle+Current.swift in Sources */,
 				C4FB55B927A53F91006CBFF7 /* UIButton+BackgroundColoroForState.swift in Sources */,
+				9C6F3FBB2859FBDD009A1C4F /* LanguageSetting.swift in Sources */,
 				C4242DCD279025BE002B99E9 /* PetAnimation.swift in Sources */,
 				C4242DE4279095D5002B99E9 /* PagingFlowLayout.swift in Sources */,
+				9C6F3F882855E302009A1C4F /* UIStackView + Init.swift in Sources */,
 				C4024EBB27917C1B00248854 /* UserPet.swift in Sources */,
 				C41E1D9B27A27FBA00AA773B /* LoggerService.swift in Sources */,
 				C42624AB2854691A001EF653 /* String+Base64.swift in Sources */,
+				9C6F3F712854D88B009A1C4F /* ProfileView.swift in Sources */,
+				9C6F3F942856020D009A1C4F /* HeaderProfileView.swift in Sources */,
 				C41E1D9027A27F1300AA773B /* KeychainService.swift in Sources */,
+				9C6F3F922856007A009A1C4F /* GradientView.swift in Sources */,
 				C42624AE28547167001EF653 /* PetState.swift in Sources */,
+				9C6F3F9D2856199D009A1C4F /* AnimalPhotoView.swift in Sources */,
 				C4A0E9CF2783505D005D6662 /* APIs.swift in Sources */,
 				C4DD24462786E036006D2EE5 /* UserDefaults+SaveStruct.swift in Sources */,
 				C4242DBD27900AC3002B99E9 /* RegisterStepsInputView.swift in Sources */,
@@ -1199,12 +1312,15 @@
 				C48D292B278372BD00BC23F2 /* UIViewController+HideKeyboard.swift in Sources */,
 				C489F83F27A994D700354C1F /* UIDevice+Model.swift in Sources */,
 				C4A0E9952782E858005D6662 /* SwipeNavigationController.swift in Sources */,
+				9C6F3FC4285A1C90009A1C4F /* ExitAccountContainerView.swift in Sources */,
 				C4A0E9D5278350C7005D6662 /* AuthGoggleResponse.swift in Sources */,
 				C4242DC627900E0B002B99E9 /* PetAPI.swift in Sources */,
+				9C6F3FB92859F2E6009A1C4F /* GenderView.swift in Sources */,
 				C4A0E9D12783505D005D6662 /* CodableHelper.swift in Sources */,
 				C48D6FDC28449B37009D36EE /* UserConfig.swift in Sources */,
 				C41E1D9727A27F7F00AA773B /* ServiceLocator.swift in Sources */,
 				C42624A828546818001EF653 /* VisualEffectView.swift in Sources */,
+				9C6F3FBD2859FE1F009A1C4F /* RecallView.swift in Sources */,
 				C48D2929278369DA00BC23F2 /* UIView+Underlined.swift in Sources */,
 				C4A0E9922782E79F005D6662 /* OnboardingView.swift in Sources */,
 				C4242DE1279087CC002B99E9 /* RegisterPickPetCell.swift in Sources */,
