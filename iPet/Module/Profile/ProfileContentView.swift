@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-class ContentView: RootView {
+class ProfileContentView: RootView {
     
     private let containerView: UIView = {
         let view = UIView()

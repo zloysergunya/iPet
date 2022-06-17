@@ -24,7 +24,7 @@
 		9C6F3FBF285A0140009A1C4F /* SocialNetworksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3FBE285A0140009A1C4F /* SocialNetworksView.swift */; };
 		9C6F3FC1285A1943009A1C4F /* ExitAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3FC0285A1943009A1C4F /* ExitAccountView.swift */; };
 		9C6F3FC4285A1C90009A1C4F /* ExitAccountContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3FC3285A1C90009A1C4F /* ExitAccountContainerView.swift */; };
-		9CC906D9285BAB1A00BE8F06 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC906D8285BAB1A00BE8F06 /* ContentView.swift */; };
+		9CC906D9285BAB1A00BE8F06 /* ProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC906D8285BAB1A00BE8F06 /* ProfileContentView.swift */; };
 		C4024EB427915A0A00248854 /* UserPetUserPetIdRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4024EB327915A0A00248854 /* UserPetUserPetIdRequest.swift */; };
 		C4024EB627915B5500248854 /* OkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4024EB527915B5500248854 /* OkResponse.swift */; };
 		C4024EB92791726200248854 /* RegisterStepsInputProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4024EB82791726200248854 /* RegisterStepsInputProvider.swift */; };
@@ -160,7 +160,7 @@
 		9C6F3FBE285A0140009A1C4F /* SocialNetworksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworksView.swift; sourceTree = "<group>"; };
 		9C6F3FC0285A1943009A1C4F /* ExitAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitAccountView.swift; sourceTree = "<group>"; };
 		9C6F3FC3285A1C90009A1C4F /* ExitAccountContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitAccountContainerView.swift; sourceTree = "<group>"; };
-		9CC906D8285BAB1A00BE8F06 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9CC906D8285BAB1A00BE8F06 /* ProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentView.swift; sourceTree = "<group>"; };
 		B8BB7D5D564207E8E6D279EA /* Pods-iPet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPet.release.xcconfig"; path = "Target Support Files/Pods-iPet/Pods-iPet.release.xcconfig"; sourceTree = "<group>"; };
 		BCDB67425DC14DD1605A7426 /* Pods-iPet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPet.debug.xcconfig"; path = "Target Support Files/Pods-iPet/Pods-iPet.debug.xcconfig"; sourceTree = "<group>"; };
 		C4024EB327915A0A00248854 /* UserPetUserPetIdRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPetUserPetIdRequest.swift; sourceTree = "<group>"; };
@@ -300,7 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				9C6F3F732854D9F1009A1C4F /* View */,
-				9CC906D8285BAB1A00BE8F06 /* ContentView.swift */,
+				9CC906D8285BAB1A00BE8F06 /* ProfileContentView.swift */,
 				9C6F3F6E2854D88B009A1C4F /* ProfileViewController.swift */,
 			);
 			path = Profile;
@@ -1197,7 +1197,7 @@
 				C41E1D9927A27F8B00AA773B /* Autowired.swift in Sources */,
 				C41E1D8C27A27BA700AA773B /* GoogleSignInService.swift in Sources */,
 				C4A0E9CD2783505D005D6662 /* Models.swift in Sources */,
-				9CC906D9285BAB1A00BE8F06 /* ContentView.swift in Sources */,
+				9CC906D9285BAB1A00BE8F06 /* ProfileContentView.swift in Sources */,
 				C4A0E9D7278350E9005D6662 /* User.swift in Sources */,
 				C4242DDF279031B9002B99E9 /* PetResponse.swift in Sources */,
 				C4242DC327900B2A002B99E9 /* RegisterPickPetView.swift in Sources */,

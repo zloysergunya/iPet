@@ -11,14 +11,14 @@ class ProfileView: RootView {
         return scrollView
     }()
     
-    let contentView = ContentView()
+    let profileContentView = ProfileContentView()
     
     override func setup() {
         super.setup()
         
         addSubview(scrollView)
         
-        scrollView.addSubview(contentView)
+        scrollView.addSubview(profileContentView)
 
         scrollView.backgroundColor = R.color.background()
         
@@ -31,7 +31,7 @@ class ProfileView: RootView {
             make.edges.equalToSuperview()
         }
         
-        contentView.snp.makeConstraints { make in
+        profileContentView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
             make.width.equalToSuperview()
         }
