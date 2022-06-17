@@ -53,6 +53,7 @@ class GeneralView: RootView {
         label.font = R.font.sfuiTextMedium(size: 11.0)
         label.textColor = .black
         label.textAlignment = .center
+        label.isUserInteractionEnabled = true
         
         return label
     }()
@@ -155,7 +156,7 @@ class GeneralView: RootView {
         mainActivityProgressView.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(36.0)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-36.0)
-            make.height.equalTo(86.0)
+            make.height.equalTo(94.0)
         } 
     }
     
