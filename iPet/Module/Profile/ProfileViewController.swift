@@ -1,7 +1,7 @@
 import UIKit
 
 class ProfileViewController: ViewController<ProfileView> {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,22 +57,23 @@ class ProfileViewController: ViewController<ProfileView> {
     }
     
     @objc private func editProfileButtonPressed() {
-        print("Edit profile")
+        let profileSettingVC = ProfileSettingsViewController()
+        navigationController?.pushViewController(profileSettingVC, animated: true)
     }
     
     private func addTarget() {
-            mainView.profileContentView.appSettingsContentView.closedProfileView.settingSwitch.addTarget(
-                self,
-                action: #selector(closedProfileSwitchPressed),
-                for: .touchUpInside)
-            mainView.profileContentView.appSettingsContentView.notificationsView.settingSwitch.addTarget(
-                self,
-                action: #selector(notificationSwitchPressed),
-                for: .touchUpInside)
-            mainView.profileContentView.headerProfileView.editProfileButton.addTarget(
-                self,
-                action: #selector(editProfileButtonPressed),
-                for: .touchUpInside)
+        mainView.profileContentView.appSettingsContentView.closedProfileView.switcher.addTarget(
+            self,
+            action: #selector(closedProfileSwitchPressed),
+            for: .touchUpInside)
+        mainView.profileContentView.appSettingsContentView.notificationsView.switcher.addTarget(
+            self,
+            action: #selector(notificationSwitchPressed),
+            for: .touchUpInside)
+        mainView.profileContentView.headerProfileView.editProfileButton.addTarget(
+            self,
+            action: #selector(editProfileButtonPressed),
+            for: .touchUpInside)
     }
     
 }

@@ -1,23 +1,32 @@
 import UIKit
 import SnapKit
 
-class AnimalPhotoView: UIView {
+class UserImageView: UIView {
     
-    var circleImageView: UIImageView = {
-        let imageView = UIImageView(image: R.image.foxMascote())
+    private let circleImageView: UIImageView = {
+        let imageView = UIImageView(image: R.image.manPhoto())
         imageView.backgroundColor = .white
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.layer.borderColor = R.color.orangeAccent()?.cgColor
         imageView.layer.borderWidth = 3.0
         
         return imageView
+    }()
+    
+    private let addPhotoButton: UIButton = {
+        let button = UIButton()
+        button.setImage(R.image.addPhotoButton(), for: .normal)
+        
+        return button
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         addSubview(circleImageView)
+        addSubview(addPhotoButton)
+        
         setupConstraints()
     }
     
@@ -26,8 +35,15 @@ class AnimalPhotoView: UIView {
     }
     
     private func setupConstraints() {
+        
         circleImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        
+        addPhotoButton.snp.makeConstraints { make in
+            make.top.equalTo(circleImageView.snp.bottom).offset(-20.0)
+            make.left.equalTo(circleImageView.snp.right).offset(-37.0)
+            make.width.height.equalTo(24.0)
         }
     }
     

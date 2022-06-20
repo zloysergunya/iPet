@@ -3,10 +3,9 @@ import SnapKit
 
 class ExitContainerView: RootView {
 
-    let exitAccountView: ExitAccountView = {
-        let view = ExitAccountView()
-        view.exitAccountLabel.text = "Выйти из акаунта"
-        view.exitAccountImage.image = R.image.exitAccount()
+    let exitAccountView: AppSettingsView = {
+        let view = AppSettingsView(title: "Выйти из акаунта", type: .image(R.image.exitAccount()))
+        view.separator.isHidden = true
         
         return view
     }()
