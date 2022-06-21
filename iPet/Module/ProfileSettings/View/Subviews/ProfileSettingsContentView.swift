@@ -27,6 +27,7 @@ class ProfileSettingsContentView: RootView {
     }()
     
     override func setup() {
+        super.setup()
         
         backgroundColor = R.color.background()
         
