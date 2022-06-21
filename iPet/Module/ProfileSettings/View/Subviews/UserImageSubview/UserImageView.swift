@@ -52,5 +52,4 @@ class UserImageView: UIView {
         circleImageView.layer.masksToBounds = true
         circleImageView.layer.cornerRadius = circleImageView.frame.width / 2.0
     }
-    
 }

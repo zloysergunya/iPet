@@ -34,7 +34,6 @@ class GenderView: RootView {
     }
     
     private func setupConstraints() {
-        
         genderLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16.0)
             make.centerY.equalToSuperview()
@@ -46,7 +45,6 @@ class GenderView: RootView {
             make.width.height.equalTo(18.0)
         }
     }
-    
 }
     
 

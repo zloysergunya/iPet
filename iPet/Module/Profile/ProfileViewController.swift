@@ -75,6 +75,6 @@ class ProfileViewController: ViewController<ProfileView> {
             action: #selector(editProfileButtonPressed),
             for: .touchUpInside)
     }
-    
+
 }
 

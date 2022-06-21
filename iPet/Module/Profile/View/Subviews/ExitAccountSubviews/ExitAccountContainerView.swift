@@ -27,12 +27,10 @@ class ExitContainerView: RootView {
     }
     
     private func setupConstraints() {
-        
         exitAccountStackView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.left.right.equalToSuperview().inset(16.0)
             make.bottom.equalToSuperview()
         }
     }
-    
 }

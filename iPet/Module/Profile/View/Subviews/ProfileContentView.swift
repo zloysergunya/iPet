@@ -48,6 +48,7 @@ class ProfileContentView: RootView {
     ], axis: .horizontal, spacing: 2.0, alignment: .center)
     
     override func setup() {
+        super.setup()
         
         backgroundColor = R.color.background()
         
@@ -64,7 +65,6 @@ class ProfileContentView: RootView {
     }
     
     private func setupConstraints() {
-        
         containerView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -100,5 +100,4 @@ class ProfileContentView: RootView {
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-10.0)
         }
     }
-
 }

@@ -26,7 +26,6 @@ class ProfileSettingsView: RootView {
     }
     
     private func setupConstraints() {
-        
         scrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -36,5 +35,4 @@ class ProfileSettingsView: RootView {
             make.width.equalToSuperview()
         }
     }
-    
 }

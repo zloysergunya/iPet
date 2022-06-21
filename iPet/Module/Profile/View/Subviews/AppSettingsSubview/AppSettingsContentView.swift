@@ -35,11 +35,9 @@ class AppSettingsContentView: RootView {
     }
     
     private func setupConstraints() {
-        
         appSettingsStackView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
             make.left.right.equalToSuperview().inset(16.0)
         }
     }
-    
 }

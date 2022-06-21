@@ -6,5 +6,4 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
         super.viewDidLoad()
         
     }
-    
 }

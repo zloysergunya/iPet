@@ -39,7 +39,6 @@ class ProfileSettingsContentView: RootView {
     }
     
     private func setupConstraints() {
-        
         containerView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -62,5 +61,4 @@ class ProfileSettingsContentView: RootView {
             make.height.equalTo(56.0)
         }
     }
-
 }

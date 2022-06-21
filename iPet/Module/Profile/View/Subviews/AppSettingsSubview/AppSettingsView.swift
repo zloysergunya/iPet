@@ -82,7 +82,6 @@ class AppSettingsView: RootView {
     }
     
     private func setupConstraints() {
-        
         titleLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16.0)
             make.centerY.equalToSuperview()
@@ -107,5 +106,4 @@ class AppSettingsView: RootView {
             make.height.equalTo(1.0)
         }
     }
-    
 }

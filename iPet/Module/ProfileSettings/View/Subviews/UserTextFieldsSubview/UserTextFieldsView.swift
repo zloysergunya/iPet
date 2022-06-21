@@ -62,7 +62,6 @@ class UserTextFieldsView: RootView {
     }
     
     private func setupConstraints() {
-        
         nameStack.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.left.right.equalToSuperview().inset(30.0)
@@ -79,5 +78,4 @@ class UserTextFieldsView: RootView {
             make.bottom.equalToSuperview()
         }
     }
-    
 }

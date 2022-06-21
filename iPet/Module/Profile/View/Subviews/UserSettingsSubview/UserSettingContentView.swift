@@ -67,12 +67,10 @@ class UserSettingsContentView: RootView {
     }
     
     private func setupConstraints() {
-        
         metricStackView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.left.right.equalToSuperview().inset(16.0)
             make.bottom.equalToSuperview()
         }
     }
-    
 }
