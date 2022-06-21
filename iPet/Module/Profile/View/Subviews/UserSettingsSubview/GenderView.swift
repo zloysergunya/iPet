@@ -1,9 +1,9 @@
 import UIKit
 import SnapKit
 
-class ExitAccountView: RootView {
+class GenderView: RootView {
     
-    let exitAccountLabel: UILabel = {
+    let genderLabel: UILabel = {
         let label = UILabel()
         label.font = R.font.sfuiTextRegular(size: 18.0)
         label.textColor = R.color.textPrimary()
@@ -11,7 +11,7 @@ class ExitAccountView: RootView {
         return label
     }()
     
-    let exitAccountImage: UIImageView = {
+    let genderImage: UIImageView = {
         let image = UIImageView()
         image.sizeToFit()
         
@@ -24,27 +24,27 @@ class ExitAccountView: RootView {
     
     override func setup() {
         super.setup()
-        
+
         backgroundColor = R.color.secondBackground()
         
-        addSubview(exitAccountLabel)
-        addSubview(exitAccountImage)
+        addSubview(genderLabel)
+        addSubview(genderImage)
         
         setupConstraints()
     }
     
     private func setupConstraints() {
-        
-        exitAccountLabel.snp.makeConstraints { make in
+        genderLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16.0)
             make.centerY.equalToSuperview()
         }
         
-        exitAccountImage.snp.makeConstraints { make in
+        genderImage.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-16.0)
             make.centerY.equalToSuperview()
-            make.width.height.equalTo(19.0)
+            make.width.height.equalTo(18.0)
         }
     }
-    
 }
+    
+

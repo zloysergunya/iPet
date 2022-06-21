@@ -1,9 +1,9 @@
 import UIKit
 import SnapKit
 
-class ProfileView: RootView {
-        
-    let scrollView: UIScrollView = {
+class ProfileSettingsView: RootView {
+
+    private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.alwaysBounceVertical = true
         scrollView.showsVerticalScrollIndicator = false
@@ -11,7 +11,7 @@ class ProfileView: RootView {
         return scrollView
     }()
     
-    let profileContentView = ProfileContentView()
+    private let profileContentView = ProfileSettingsContentView()
     
     override func setup() {
         super.setup()

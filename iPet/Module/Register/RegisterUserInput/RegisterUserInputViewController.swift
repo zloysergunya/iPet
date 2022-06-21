@@ -178,7 +178,7 @@ class RegisterUserInputViewController: ViewController<RegisterUserInputView> {
         }
     }
     
-    @objc private func save(_ sender: UIButton) {        
+    @objc private func save(_ sender: UIButton) {
         sendMe()
         uploadUserPhoto()
     }
