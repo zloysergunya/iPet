@@ -58,7 +58,7 @@ class ProfileViewController: ViewController<ProfileView> {
     
     @objc private func editProfileButtonPressed() {
         let profileSettingVC = ProfileSettingsViewController()
-        navigationController?.pushViewController(profileSettingVC, animated: true)
+        present(profileSettingVC, animated: true)
     }
     
     private func addTarget() {
