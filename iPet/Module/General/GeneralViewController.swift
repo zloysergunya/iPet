@@ -7,6 +7,7 @@ class GeneralViewController: ViewController<GeneralView> {
     private let healthService: HealthService? = ServiceLocator.getService()
     
     private var petAnimation: PetAnimation?
+    private var awards: [Award] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +68,14 @@ class GeneralViewController: ViewController<GeneralView> {
     
     private func updateLvlAwards() {
         provider.generalLvlAwards { [weak self] result in
-            
+            switch result {
+            case .success(let awards):
+                let completed = awards.filter({ $0.completed }).count
+                self?.mainView.achivmentsView.drawFilledLayer(completed: completed)
+                self?.awards = awards.sorted(by: { $0.completed == $1.completed })
+                
+            case .failure(let error): break
+            }
         }
     }
     
@@ -111,9 +119,7 @@ class GeneralViewController: ViewController<GeneralView> {
             let grayStyle = Style("gray").foregroundColor(.init(hex: 0x5A5856))
             mainView.petStateLabel.attributedText = "<gray>состояние:</gray> \(state.name.lowercased())".style(tags: grayStyle).attributedString
         }
-        
-        mainView.achivmentsView.drawFilledLayer(completed: 3)
-        
+                
         updateProgress(for: stats)
     }
 

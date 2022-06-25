@@ -17,11 +17,10 @@ class GeneralProvider {
         }
     }
     
-    func generalLvlAwards(completion: @escaping(Result<Stats, ModelError>) -> Void) {
+    func generalLvlAwards(completion: @escaping(Result<[Award], ModelError>) -> Void) {
         GeneralAPI.generalLvlAwardsGet { response, error in
             if let response = response {
-                UserSettings.user = response.user
-                completion(.success(response.stats))
+                completion(.success(response.items))
             } else if let error = error {
                 log.error(ModelError(err: error).message())
                 completion(.failure(ModelError(err: error)))

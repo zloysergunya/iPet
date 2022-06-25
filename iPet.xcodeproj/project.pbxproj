@@ -75,6 +75,8 @@
 		C42624AE28547167001EF653 /* PetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42624AD28547167001EF653 /* PetState.swift */; };
 		C42624B0285472FA001EF653 /* ActiveStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42624AF285472FA001EF653 /* ActiveStatus.swift */; };
 		C42B9AC427BD03FE0095E795 /* AnimatedPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42B9AC327BD03FE0095E795 /* AnimatedPetView.swift */; };
+		C4763B7C28676EDB001B1F27 /* APIAwards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4763B7B28676EDB001B1F27 /* APIAwards.swift */; };
+		C4763B7E28676EEC001B1F27 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4763B7D28676EEC001B1F27 /* Award.swift */; };
 		C485FBF627BCB8CD0057C290 /* APIGeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485FBF527BCB8CD0057C290 /* APIGeneralResponse.swift */; };
 		C485FBF827BCB8E70057C290 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485FBF727BCB8E70057C290 /* Stats.swift */; };
 		C485FBFA27BCB8FA0057C290 /* HoursStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485FBF927BCB8FA0057C290 /* HoursStat.swift */; };
@@ -218,6 +220,8 @@
 		C42624AD28547167001EF653 /* PetState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetState.swift; sourceTree = "<group>"; };
 		C42624AF285472FA001EF653 /* ActiveStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveStatus.swift; sourceTree = "<group>"; };
 		C42B9AC327BD03FE0095E795 /* AnimatedPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedPetView.swift; sourceTree = "<group>"; };
+		C4763B7B28676EDB001B1F27 /* APIAwards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAwards.swift; sourceTree = "<group>"; };
+		C4763B7D28676EEC001B1F27 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
 		C485FBF527BCB8CD0057C290 /* APIGeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIGeneralResponse.swift; sourceTree = "<group>"; };
 		C485FBF727BCB8E70057C290 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		C485FBF927BCB8FA0057C290 /* HoursStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursStat.swift; sourceTree = "<group>"; };
@@ -676,6 +680,8 @@
 				C485FBF527BCB8CD0057C290 /* APIGeneralResponse.swift */,
 				C485FBF727BCB8E70057C290 /* Stats.swift */,
 				C485FBF927BCB8FA0057C290 /* HoursStat.swift */,
+				C4763B7B28676EDB001B1F27 /* APIAwards.swift */,
+				C4763B7D28676EEC001B1F27 /* Award.swift */,
 			);
 			path = GeneralAPI;
 			sourceTree = "<group>";
@@ -1260,6 +1266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4C618AC27B95C850009AA1C /* ActivityProgressView.swift in Sources */,
+				C4763B7E28676EEC001B1F27 /* Award.swift in Sources */,
 				C4242DC927900E5F002B99E9 /* RegisterPickPetProvider.swift in Sources */,
 				C4A0E9B42782F87D005D6662 /* RegisterUserInputView.swift in Sources */,
 				C4A0E9892782E0E4005D6662 /* RootView.swift in Sources */,
@@ -1284,6 +1291,7 @@
 				C4E0D3FD28587513004CFD8D /* ModalPetStateViewController.swift in Sources */,
 				C49D40AC283DD1C800F42B2F /* HealthServiceProvider.swift in Sources */,
 				C485FBFA27BCB8FA0057C290 /* HoursStat.swift in Sources */,
+				C4763B7C28676EDB001B1F27 /* APIAwards.swift in Sources */,
 				C41E1D9927A27F8B00AA773B /* Autowired.swift in Sources */,
 				C41E1D8C27A27BA700AA773B /* GoogleSignInService.swift in Sources */,
 				C4A0E9CD2783505D005D6662 /* Models.swift in Sources */,

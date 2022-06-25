@@ -21,20 +21,20 @@ class GeneralAPI {
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
     
-    class func generalLvlAwardsGet(completion: @escaping ((_ data: APIGeneralResponse?,_ error: ErrorResponse?) -> Void)) {
+    class func generalLvlAwardsGet(completion: @escaping ((_ data: APIAwards?,_ error: ErrorResponse?) -> Void)) {
         generalLvlAwardsGetWithRequestBuilder().execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
 
-    private class func generalLvlAwardsGetWithRequestBuilder() -> RequestBuilder<APIGeneralResponse> {
+    private class func generalLvlAwardsGetWithRequestBuilder() -> RequestBuilder<APIAwards> {
         let path = "/general/lvl/awards"
         let URLString = iPetAPI.basePath + path
         let parameters: [String:Any]? = nil
         
         let url = URLComponents(string: URLString)
 
-        let requestBuilder: RequestBuilder<APIGeneralResponse>.Type = iPetAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<APIAwards>.Type = iPetAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }

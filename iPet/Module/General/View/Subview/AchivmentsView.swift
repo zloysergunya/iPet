@@ -77,8 +77,8 @@ class AchivmentsView: UIView {
             let x = arcCenter.x + radius * cos(-angle)
             let y = arcCenter.y + radius * sin(-angle)
             
-            images[i].image = i <= completed ? R.image.completedAchivment() : R.image.missedAchivment()
-            images[i].backgroundColor = i <= completed ? completedColor : color
+            images[i].image = i < completed ? R.image.completedAchivment() : R.image.missedAchivment()
+            images[i].backgroundColor = i < completed ? completedColor : color
             addSubview(images[i])
             images[i].center = CGPoint(x: abs(x), y: abs(y))
         }
