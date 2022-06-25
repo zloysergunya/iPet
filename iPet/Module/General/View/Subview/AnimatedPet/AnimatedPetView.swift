@@ -14,7 +14,6 @@ class AnimatedPetView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         addSubview(animationView)
         
         setupConstraints()

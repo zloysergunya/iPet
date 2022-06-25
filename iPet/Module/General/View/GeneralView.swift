@@ -65,6 +65,7 @@ class GeneralView: RootView {
         let blurView = VisualEffectView()
         blurView.blurRadius = 1.0
         blurView.colorTint = UIColor.white.withAlphaComponent(0.05)
+        blurView.isUserInteractionEnabled = false
         
         return blurView
     }()

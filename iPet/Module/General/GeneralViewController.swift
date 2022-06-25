@@ -15,6 +15,8 @@ class GeneralViewController: ViewController<GeneralView> {
         mainView.animatedPetView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapOnPet)))
         mainView.petStateLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openModalPetState)))
         
+        mainView.achivmentsView.images.forEach({ $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openAwardInfo))) })
+        
         healthService?.output = self
         healthService?.requestAccess()
         
@@ -77,7 +79,7 @@ class GeneralViewController: ViewController<GeneralView> {
                                                                   completedColor: state.colors.first)
                 }
                 
-                self?.awards = awards.sorted(by: { $0.completed == $1.completed })
+                self?.awards = awards.sorted(by: { $0.completed && !$1.completed })
                 
             case .failure(let error): break
             }
@@ -193,6 +195,12 @@ class GeneralViewController: ViewController<GeneralView> {
         }
         
         let viewController = ModalPetStateViewController(petState: petState)
+        present(viewController, animated: true)
+    }
+    
+    @objc private func openAwardInfo(_ gestureRecognizer: UIGestureRecognizer) {
+        guard let index = gestureRecognizer.view?.tag else { return }
+        let viewController = AwardInfoViewController(award: awards[index])
         present(viewController, animated: true)
     }
     

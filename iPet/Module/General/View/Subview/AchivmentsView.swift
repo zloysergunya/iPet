@@ -6,6 +6,21 @@ class AchivmentsView: UIView {
     var baseShapeLayer: CAShapeLayer?
     var filledShapeLayer: CAShapeLayer?
     
+    let images: [UIImageView] = {
+        var array: [UIImageView] = []
+        for i in 0..<5 {
+            let side = 34.0
+            let imageView = UIImageView()
+            imageView.tag = i
+            imageView.layer.cornerRadius = side / 2
+            imageView.frame.size = CGSize(width: side, height: side)
+            imageView.isUserInteractionEnabled = true
+            array.append(imageView)
+        }
+        
+        return array
+    }()
+    
     private let color: UIColor = .init(hex: 0xDADADA)
     private let lineSize: CGFloat = 7.0
     
@@ -17,27 +32,6 @@ class AchivmentsView: UIView {
     private var radius: CGFloat {
         return frame.width / 2
     }
-    
-    private let blurView: VisualEffectView = {
-        let blurView = VisualEffectView()
-        blurView.blurRadius = 3.0
-        blurView.tintColor = UIColor.white.withAlphaComponent(0.95)
-        
-        return blurView
-    }()
-    
-    private let images: [UIImageView] = {
-        var array: [UIImageView] = []
-        for i in 1...5 {
-            let side = 34.0
-            let imageView = UIImageView()
-            imageView.layer.cornerRadius = side / 2
-            imageView.frame.size = CGSize(width: side, height: side)
-            array.append(imageView)
-        }
-        
-        return array
-    }()
     
     private func drawBaseLayer() {
         let half = min(arcCenter.x, arcCenter.y)

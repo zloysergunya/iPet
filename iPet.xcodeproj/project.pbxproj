@@ -77,6 +77,8 @@
 		C42B9AC427BD03FE0095E795 /* AnimatedPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42B9AC327BD03FE0095E795 /* AnimatedPetView.swift */; };
 		C4763B7C28676EDB001B1F27 /* APIAwards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4763B7B28676EDB001B1F27 /* APIAwards.swift */; };
 		C4763B7E28676EEC001B1F27 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4763B7D28676EEC001B1F27 /* Award.swift */; };
+		C4763B822867810C001B1F27 /* AwardInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4763B802867810C001B1F27 /* AwardInfoViewController.swift */; };
+		C4763B832867810C001B1F27 /* AwardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4763B812867810C001B1F27 /* AwardInfoView.swift */; };
 		C485FBF627BCB8CD0057C290 /* APIGeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485FBF527BCB8CD0057C290 /* APIGeneralResponse.swift */; };
 		C485FBF827BCB8E70057C290 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485FBF727BCB8E70057C290 /* Stats.swift */; };
 		C485FBFA27BCB8FA0057C290 /* HoursStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485FBF927BCB8FA0057C290 /* HoursStat.swift */; };
@@ -222,6 +224,8 @@
 		C42B9AC327BD03FE0095E795 /* AnimatedPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedPetView.swift; sourceTree = "<group>"; };
 		C4763B7B28676EDB001B1F27 /* APIAwards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAwards.swift; sourceTree = "<group>"; };
 		C4763B7D28676EEC001B1F27 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
+		C4763B802867810C001B1F27 /* AwardInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardInfoViewController.swift; sourceTree = "<group>"; };
+		C4763B812867810C001B1F27 /* AwardInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardInfoView.swift; sourceTree = "<group>"; };
 		C485FBF527BCB8CD0057C290 /* APIGeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIGeneralResponse.swift; sourceTree = "<group>"; };
 		C485FBF727BCB8E70057C290 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		C485FBF927BCB8FA0057C290 /* HoursStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursStat.swift; sourceTree = "<group>"; };
@@ -674,6 +678,23 @@
 			path = AnimatedPet;
 			sourceTree = "<group>";
 		};
+		C4763B7F28677743001B1F27 /* AwardInfo */ = {
+			isa = PBXGroup;
+			children = (
+				C4763B8428678110001B1F27 /* View */,
+				C4763B802867810C001B1F27 /* AwardInfoViewController.swift */,
+			);
+			path = AwardInfo;
+			sourceTree = "<group>";
+		};
+		C4763B8428678110001B1F27 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C4763B812867810C001B1F27 /* AwardInfoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C485FBF427BCB89F0057C290 /* GeneralAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -777,6 +798,7 @@
 		C4A0E97C2782DE4F005D6662 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C4763B7F28677743001B1F27 /* AwardInfo */,
 				C4E0D3F9285874A9004CFD8D /* Modals */,
 				C41E1DA327A284DA00AA773B /* TabBar */,
 				C41E1D8D27A27DA300AA773B /* General */,
@@ -1269,6 +1291,7 @@
 				C4763B7E28676EEC001B1F27 /* Award.swift in Sources */,
 				C4242DC927900E5F002B99E9 /* RegisterPickPetProvider.swift in Sources */,
 				C4A0E9B42782F87D005D6662 /* RegisterUserInputView.swift in Sources */,
+				C4763B832867810C001B1F27 /* AwardInfoView.swift in Sources */,
 				C4A0E9892782E0E4005D6662 /* RootView.swift in Sources */,
 				9C6F3F862855E226009A1C4F /* UserMetricView.swift in Sources */,
 				C4190F4627888B4200C005C7 /* RegisterInputView.swift in Sources */,
@@ -1357,6 +1380,7 @@
 				C4242DCD279025BE002B99E9 /* PetAnimation.swift in Sources */,
 				9CC906DC285C954500BE8F06 /* ProfileSettingsViewController.swift in Sources */,
 				C4242DE4279095D5002B99E9 /* PagingFlowLayout.swift in Sources */,
+				C4763B822867810C001B1F27 /* AwardInfoViewController.swift in Sources */,
 				9C6F3F882855E302009A1C4F /* UIStackView + Init.swift in Sources */,
 				C4024EBB27917C1B00248854 /* UserPet.swift in Sources */,
 				C41E1D9B27A27FBA00AA773B /* LoggerService.swift in Sources */,

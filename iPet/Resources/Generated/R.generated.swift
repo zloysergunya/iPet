@@ -581,7 +581,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 23 images.
+  /// This `R.image` struct is generated, and contains static references to 25 images.
   struct image {
     /// Image `addPhotoButton`.
     static let addPhotoButton = Rswift.ImageResource(bundle: R.hostingBundle, name: "addPhotoButton")
@@ -589,6 +589,8 @@ struct R: Rswift.Validatable {
     static let add_30 = Rswift.ImageResource(bundle: R.hostingBundle, name: "add_30")
     /// Image `appleLogo`.
     static let appleLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "appleLogo")
+    /// Image `completedAchivment118`.
+    static let completedAchivment118 = Rswift.ImageResource(bundle: R.hostingBundle, name: "completedAchivment118")
     /// Image `completedAchivment`.
     static let completedAchivment = Rswift.ImageResource(bundle: R.hostingBundle, name: "completedAchivment")
     /// Image `editButton`.
@@ -605,6 +607,8 @@ struct R: Rswift.Validatable {
     static let manPhoto = Rswift.ImageResource(bundle: R.hostingBundle, name: "manPhoto")
     /// Image `minusButton`.
     static let minusButton = Rswift.ImageResource(bundle: R.hostingBundle, name: "minusButton")
+    /// Image `missedAchivment118`.
+    static let missedAchivment118 = Rswift.ImageResource(bundle: R.hostingBundle, name: "missedAchivment118")
     /// Image `missedAchivment`.
     static let missedAchivment = Rswift.ImageResource(bundle: R.hostingBundle, name: "missedAchivment")
     /// Image `petPageContollStep1`.
@@ -655,6 +659,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "completedAchivment", bundle: ..., traitCollection: ...)`
     static func completedAchivment(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.completedAchivment, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "completedAchivment118", bundle: ..., traitCollection: ...)`
+    static func completedAchivment118(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.completedAchivment118, compatibleWith: traitCollection)
     }
     #endif
 
@@ -711,6 +722,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "missedAchivment", bundle: ..., traitCollection: ...)`
     static func missedAchivment(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.missedAchivment, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "missedAchivment118", bundle: ..., traitCollection: ...)`
+    static func missedAchivment118(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.missedAchivment118, compatibleWith: traitCollection)
     }
     #endif
 
