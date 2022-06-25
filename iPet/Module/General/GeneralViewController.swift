@@ -70,8 +70,13 @@ class GeneralViewController: ViewController<GeneralView> {
         provider.generalLvlAwards { [weak self] result in
             switch result {
             case .success(let awards):
-                let completed = awards.filter({ $0.completed }).count
-                self?.mainView.achivmentsView.drawFilledLayer(completed: completed)
+                if let activeStatus = UserSettings.user?.pet?.activeStatus,
+                   let state = ActiveStatus(rawValue: activeStatus) {
+                    let completed = awards.filter({ $0.completed }).count
+                    self?.mainView.achivmentsView.drawFilledLayer(completed: completed,
+                                                                  completedColor: state.colors.first)
+                }
+                
                 self?.awards = awards.sorted(by: { $0.completed == $1.completed })
                 
             case .failure(let error): break

@@ -7,9 +7,9 @@ class AchivmentsView: UIView {
     var filledShapeLayer: CAShapeLayer?
     
     private let color: UIColor = .init(hex: 0xDADADA)
-    private let completedColor: UIColor = .init(hex: 0xAFF68D)
     private let lineSize: CGFloat = 7.0
     
+    private var completedColor: UIColor = .init(hex: 0xAFF68D)
     private var maxValue: CGFloat = 1.0
     private var arcCenter: CGPoint {
         return CGPoint(x: frame.width / 2, y: frame.height / 2)
@@ -84,7 +84,8 @@ class AchivmentsView: UIView {
         }
     }
     
-    func drawFilledLayer(completed: Int) {
+    func drawFilledLayer(completed: Int, completedColor: UIColor?) {
+        setColor(completedColor: completedColor)
         drawBaseLayer()
         setupCompletedAchivments(completed: completed)
         
@@ -116,8 +117,16 @@ class AchivmentsView: UIView {
         filledShapeLayer?.path = circlePath.cgPath
         filledShapeLayer?.lineWidth = lineSize
         filledShapeLayer?.fillColor = UIColor.clear.cgColor
-        filledShapeLayer?.strokeColor = completedColor.cgColor
+        filledShapeLayer?.strokeColor = self.completedColor.cgColor
         layer.insertSublayer(filledShapeLayer!, above: baseShapeLayer)
+    }
+    
+    func setColor(completedColor: UIColor?) {
+        if let completedColor = completedColor {
+            self.completedColor = completedColor
+        }
+        
+        filledShapeLayer?.strokeColor = self.completedColor.cgColor
     }
     
 }
