@@ -3,7 +3,7 @@ import SnapKit
 
 class UserImageView: UIView {
     
-    private let circleImageView: UIImageView = {
+    let circleImageView: UIImageView = {
         let imageView = UIImageView(image: R.image.manPhoto())
         imageView.backgroundColor = .white
         imageView.contentMode = .scaleAspectFill
@@ -14,11 +14,11 @@ class UserImageView: UIView {
         return imageView
     }()
     
-    private let addPhotoButton: UIButton = {
-        let button = UIButton()
-        button.setImage(R.image.addPhotoButton(), for: .normal)
+    private let addPhotoButton: UIImageView = {
+        let view = UIImageView()
+        view.image = R.image.addPhotoButton()
         
-        return button
+        return view
     }()
     
     override init(frame: CGRect) {

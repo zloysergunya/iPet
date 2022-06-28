@@ -4,7 +4,7 @@ import SnapKit
 class AppSettingsView: RootView {
     
     enum AppSettingsType: Equatable {
-        case switcher(isOn: Bool), button(title: String), image(UIImage?)
+        case switcher(isOn: Bool), propertyLabel(title: String), image(UIImage?)
     }
     
     let titleLabel: UILabel = {
@@ -24,18 +24,19 @@ class AppSettingsView: RootView {
     }()
     
     private let imageView = UIImageView()
-    private let button: UIButton = {
-        let button = UIButton()
-        button.setTitleColor(R.color.orangeAccent(), for: .normal)
-        button.titleLabel?.font = R.font.sfuiTextSemibold(size: 18.0)
+    
+    let propertyLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = R.color.orangeAccent()
+        label.font = R.font.sfuiTextSemibold(size: 18.0)
         
-        return button
+        return label
     }()
     
     private lazy var actionStack = UIStackView(views: [
         switcher,
         imageView,
-        button
+        propertyLabel
     ], alignment: .trailing)
     
     let separator: UIView = {
@@ -65,17 +66,17 @@ class AppSettingsView: RootView {
             switcher.isOn = isOn
             switcher.isHidden = false
             imageView.isHidden = true
-            button.isHidden = true
-        case .button(title: let title):
-            button.setTitle(title, for: .normal)
+            propertyLabel.isHidden = true
+        case .propertyLabel(title: let title):
+            propertyLabel.text = title
             switcher.isHidden = true
             imageView.isHidden = true
-            button.isHidden = false
+            propertyLabel.isHidden = false
         case .image(let image):
             imageView.image = image
             switcher.isHidden = true
             imageView.isHidden = false
-            button.isHidden = true
+            propertyLabel.isHidden = true
         }
         
         setupConstraints()
@@ -92,7 +93,7 @@ class AppSettingsView: RootView {
             make.centerY.equalToSuperview()
         }
         
-        button.snp.makeConstraints { make in
+        propertyLabel.snp.makeConstraints { make in
             make.width.equalTo(80.0)
         }
         

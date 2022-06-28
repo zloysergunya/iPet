@@ -10,10 +10,10 @@ class ProfileSettingsContentView: RootView {
         return view
     }()
     
-    private let userImageView = UserImageView()
-    private let userTextFieldsView = UserTextFieldsView()
+    let userImageView = UserImageView()
+    let userTextFieldsView = UserTextFieldsView()
     
-    private let saveButton: UIButton = {
+    let saveButton: UIButton = {
         let button = UIButton()
         button.setTitle("Сохранить", for: .normal)
         button.setTitleColor(R.color.background(), for: .normal)
@@ -45,7 +45,7 @@ class ProfileSettingsContentView: RootView {
         }
         
         userImageView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(18.0)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20.0)
             make.centerX.equalToSuperview()
             make.width.height.equalTo(117.0)
         }
@@ -53,13 +53,13 @@ class ProfileSettingsContentView: RootView {
         userTextFieldsView.snp.makeConstraints { make in
             make.top.equalTo(userImageView.snp.bottom).offset(20.0)
             make.width.equalToSuperview()
-            make.bottom.equalToSuperview()
         }
         
         saveButton.snp.makeConstraints { make in
-            make.top.equalTo(userTextFieldsView.snp.bottom).offset(19.0)
+            make.top.equalTo(userTextFieldsView.snp.bottom).offset(20.0)
             make.left.right.equalToSuperview().inset(16.0)
             make.height.equalTo(56.0)
+            make.bottom.equalToSuperview()
         }
     }
 }

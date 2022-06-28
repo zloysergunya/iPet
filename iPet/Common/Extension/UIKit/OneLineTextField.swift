@@ -3,9 +3,10 @@ import SnapKit
 
 class OneLineTextField: UITextField {
     
-    convenience init(font: UIFont = R.font.sfuiDisplayLight(size: 16.0) ?? .systemFont(ofSize: 16.0), placeholder: String?) {
+    convenience init(text: String? = nil, font: UIFont = R.font.sfuiDisplayLight(size: 16.0) ?? .systemFont(ofSize: 16.0), placeholder: String?) {
         self.init()
     
+        self.text = text
         self.font = font
         self.placeholder = placeholder
         self.borderStyle = .none
