@@ -7,7 +7,7 @@ class AnimalPhotoView: UIImageView {
         super.init(frame: .zero)
         
         backgroundColor = .white
-        contentMode = .scaleAspectFit
+        contentMode = .scaleAspectFill
         clipsToBounds = true
         layer.borderColor = R.color.background()?.cgColor
         layer.borderWidth = 3.0

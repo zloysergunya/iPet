@@ -74,24 +74,23 @@ class ProfileViewController: ViewController<ProfileView> {
     }
     
     @objc private func recallTapGesture() {
-        print("Click recall")
+        
     }
     
     @objc private func socialNetworksTapGesture() {
-        print("Click socialNetworks")
+        
     }
     
     @objc private func exitTapGesture() {
-        print("Click exit")
         authService?.deauthorize()
     }
     
     @objc private func closedProfileSwitchPressed() {
-        print("Close profile switch pressed")
+        
     }
     
     @objc private func notificationSwitchPressed() {
-        print("Notification switch pressed")
+        
     }
     
     @objc private func editProfileButtonPressed() {
@@ -126,16 +125,5 @@ class ProfileViewController: ViewController<ProfileView> {
         guard mainView.profileContentView.headerProfileView.imageView.image != nil else {
             return
         }
-    }
-}
-
-// MARK: - CapitalizingFirstLetter
-extension String {
-    func capitalizingFirstLetter() -> String {
-        return prefix(1).capitalized + dropFirst()
-    }
-
-    mutating func capitalizeFirstLetter() {
-        self = self.capitalizingFirstLetter()
     }
 }

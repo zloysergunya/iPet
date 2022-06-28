@@ -1,6 +1,6 @@
 import Foundation
 
-class ChangeProfileProvider {
+class ProfileSettingsProvider {
     
     func patchUser(userMe: UserMeRequest, completion: @escaping(Result<User, Error>) -> Void) {
         UserAPI.userMePatch(userMe: userMe) { user, error in

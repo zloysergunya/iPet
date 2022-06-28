@@ -3,7 +3,7 @@ import UIKit
 class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
     
     private let usernameRegularExpression = "^[a-z0-9_.-]*$"
-    private let provider = ChangeProfileProvider()
+    private let provider = ProfileSettingsProvider()
     
     private var pendingCheckAvailabilityNicknameRequestWorkItem: DispatchWorkItem?
     private var pendingTranslitNameRequestWorkItem: DispatchWorkItem?
