@@ -5,7 +5,7 @@ class AppSettingsContentView: RootView {
     
     let closedProfileView = AppSettingsView(title: "Зыкрытый профиль", type: .switcher(isOn: false))
     let notificationsView = AppSettingsView(title: "Уведомления", type: .switcher(isOn: false))
-    let languageSetting = AppSettingsView(title: "Язык:", type: .button(title: "Русский"))
+    let languageSetting = AppSettingsView(title: "Язык:", type: .propertyLabel(title: "Русский"))
     let recallView = AppSettingsView(title: "Оставить отзыв", type: .image(R.image.recall()))
     let socialNetworksView = AppSettingsView(title: "Наши соцсети", type: .image(R.image.socialNetworks()))
     

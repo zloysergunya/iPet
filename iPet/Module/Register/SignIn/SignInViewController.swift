@@ -51,7 +51,7 @@ class SignInViewController: ViewController<SignInView> {
                 self.authorize(token: authResponse.token, currentUserId: authResponse.user.id)
                 
                 let launchService: LaunchService? = ServiceLocator.getService()
-                launchService?.selectViewController()
+                launchService?.openModule()
                 
             case .failure(let error):
                 if let error = error as? ModelError {
@@ -73,7 +73,7 @@ class SignInViewController: ViewController<SignInView> {
                 self.authorize(token: authResponse.token, currentUserId: authResponse.user.id)
                 
                 let launchService: LaunchService? = ServiceLocator.getService()
-                launchService?.selectViewController()
+                launchService?.openModule()
                 
             case .failure(let error):
                 if let error = error as? ModelError {

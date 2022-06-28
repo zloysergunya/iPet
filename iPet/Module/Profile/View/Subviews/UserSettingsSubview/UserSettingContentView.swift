@@ -3,7 +3,7 @@ import SnapKit
 
 class UserSettingsContentView: RootView {
 
-    private let dailyGoalMetricView: UserMetricView = {
+    let dailyGoalMetricView: UserMetricView = {
         let view = UserMetricView()
         view.titleLabel.text = "Ежедневная цель:"
         view.metricLabel.text = "\(UserSettings.user?.stepsCount ?? 0)"
@@ -12,7 +12,7 @@ class UserSettingsContentView: RootView {
         return view
     }()
     
-    private let ageMetricView: UserMetricView = {
+    let ageMetricView: UserMetricView = {
         let view = UserMetricView()
         view.titleLabel.text = "Возраст:"
         view.metricLabel.text = "\(UserSettings.user?.age ?? 0)"
@@ -21,7 +21,7 @@ class UserSettingsContentView: RootView {
         return view
     }()
     
-    private let heightMetricView: UserMetricView = {
+    let heightMetricView: UserMetricView = {
         let view = UserMetricView()
         view.titleLabel.text = "Рост:"
         view.metricLabel.text = "\(UserSettings.user?.height ?? 0)"
@@ -30,7 +30,7 @@ class UserSettingsContentView: RootView {
         return view
     }()
     
-    private let weightMetricView: UserMetricView = {
+    let weightMetricView: UserMetricView = {
         let view = UserMetricView()
         view.titleLabel.text = "Вес:"
         view.metricLabel.text = "\(UserSettings.user?.weight ?? 0)"
@@ -39,7 +39,7 @@ class UserSettingsContentView: RootView {
         return view
     }()
     
-    private let sexView: GenderView = {
+    let sexView: GenderView = {
         let view = GenderView()
         view.genderLabel.text = "Пол:"
         view.genderImage.image = R.image.manGender()

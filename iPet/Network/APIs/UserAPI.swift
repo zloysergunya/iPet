@@ -57,6 +57,24 @@ class UserAPI {
         return requestBuilder.init(method: "PATCH", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }
     
+    class func userMeGet(completion: @escaping ((_ data: User?,_ error: ErrorResponse?) -> Void)) {
+        userMeGetWithRequestBuilder().execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+    private class func userMeGetWithRequestBuilder() -> RequestBuilder<User> {
+        let path = "/user/me"
+        let URLString = iPetAPI.basePath + path
+        let parameters: [String:Any]? = nil
+
+        let url = URLComponents(string: URLString)
+
+        let requestBuilder: RequestBuilder<User>.Type = iPetAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+    
     class func userAvatarPost(photo: URL? = nil, completion: @escaping ((_ data: UserAvatarResponse?,_ error: ErrorResponse?) -> Void)) {
         userAvatarPostWithRequestBuilder(photo: photo).execute { (response, error) -> Void in
             completion(response?.body, error)

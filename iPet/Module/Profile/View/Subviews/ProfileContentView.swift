@@ -11,7 +11,7 @@ class ProfileContentView: RootView {
     }()
     
     let headerProfileView = HeaderProfileView()
-    private let userSettingsContentView = UserSettingsContentView()
+    let userSettingsContentView = UserSettingsContentView()
     let appSettingsContentView = AppSettingsContentView()
     let exitAccountContainerView = ExitContainerView()
     
@@ -33,7 +33,7 @@ class ProfileContentView: RootView {
         return label
     }()
     
-    private let distanceNumberLabel: UILabel = {
+    let distanceNumberLabel: UILabel = {
         let label = UILabel()
         label.text =  "\(230) км"
         label.font = R.font.sfuiTextMedium(size: 14.0)

@@ -1,7 +1,7 @@
 import Foundation
 
 struct UserPet: Codable {
-    let name: String
+    var name: String
     let pet: Pet
     let activeStatus: Int
     let petObesityLevel: Int

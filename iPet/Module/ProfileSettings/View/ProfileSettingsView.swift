@@ -11,7 +11,7 @@ class ProfileSettingsView: RootView {
         return scrollView
     }()
     
-    private let profileContentView = ProfileSettingsContentView()
+    let profileContentView = ProfileSettingsContentView()
     
     override func setup() {
         super.setup()

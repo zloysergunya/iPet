@@ -2,7 +2,7 @@ import UIKit
 
 class HeaderProfileView: RootView {
     
-    private let imageView = AnimalPhotoView()
+    let imageView = AnimalPhotoView()
     
     private let gradientView = GradientView(
         from: .top,
@@ -11,7 +11,7 @@ class HeaderProfileView: RootView {
         endColor: .init(hex: 0xFF0003)
     )
     
-    private let nameLabel: UILabel = {
+    let nameLabel: UILabel = {
         let label = UILabel()
         label.text = UserSettings.user?.name
         label.font = R.font.sfuiTextBold(size: 24.0)
@@ -20,7 +20,7 @@ class HeaderProfileView: RootView {
         return label
     }()
     
-    private let userNameLabel: UILabel = {
+    let userNameLabel: UILabel = {
         let label = UILabel()
         label.text = UserSettings.user?.username
         label.font = R.font.sfuiTextSemibold(size: 18.0)
@@ -29,7 +29,7 @@ class HeaderProfileView: RootView {
         return label
     }()
     
-    private let petNameLabel: UILabel = {
+    let petNameLabel: UILabel = {
         let label = UILabel()
         label.text = UserSettings.user?.pet?.name
         label.font = R.font.sfuiTextSemibold(size: 18.0)
@@ -103,5 +103,4 @@ class HeaderProfileView: RootView {
             make.width.height.equalTo(20.0)
         }
     }
-    
 }
