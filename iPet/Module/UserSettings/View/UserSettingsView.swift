@@ -1,9 +1,9 @@
 import UIKit
 import SnapKit
 
-class ProfileSettingsView: RootView {
-        
-    let scrollView: UIScrollView = {
+class UserSettingsView: RootView {
+
+    private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.alwaysBounceVertical = true
         scrollView.showsVerticalScrollIndicator = false
@@ -11,14 +11,14 @@ class ProfileSettingsView: RootView {
         return scrollView
     }()
     
-    let profileSettingsContentView = ProfileSettingsContentView()
+    let userContentView = UserContentView()
     
     override func setup() {
         super.setup()
         
         addSubview(scrollView)
         
-        scrollView.addSubview(profileSettingsContentView)
+        scrollView.addSubview(userContentView)
 
         scrollView.backgroundColor = R.color.background()
         
@@ -30,7 +30,7 @@ class ProfileSettingsView: RootView {
             make.edges.equalToSuperview()
         }
         
-        profileSettingsContentView.snp.makeConstraints { make in
+        userContentView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
             make.width.equalToSuperview()
         }

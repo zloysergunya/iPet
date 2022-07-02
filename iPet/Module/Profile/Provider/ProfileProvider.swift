@@ -1,11 +1,11 @@
 import Foundation
 
 class ProfileProvider {
-    
-    func updateMe( completion: @escaping(Result<User, Error>) -> Void) {
-        UserAPI.userMeGet() { user, error in
-            if let user = user {
-                completion(.success(user))
+   
+    func uploadUserPhoto(photo: URL?, completion: @escaping(Result<String, Error>) -> Void) {
+        UserAPI.userAvatarPost(photo: photo) { response, error in
+            if let url = response?.url {
+                completion(.success(url))
             } else if let error = error {
                 completion(.failure(ModelError(err: error)))
             } else {
@@ -13,5 +13,5 @@ class ProfileProvider {
             }
         }
     }
+    
 }
-

@@ -111,19 +111,19 @@ class SignInView: RootView {
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(maskotImageView.snp.bottom).offset(76.0)
+            make.top.equalTo(maskotImageView.snp.bottom).offset(32.0)
             make.left.equalToSuperview().offset(16.0)
             make.right.equalToSuperview().offset(-16.0)
         }
         
         subtitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(16.0)
+            make.top.equalTo(titleLabel.snp.bottom).offset(17.0)
             make.left.equalToSuperview().offset(16.0)
             make.right.equalToSuperview().offset(-16.0)
         }
         
         petPageContoll.snp.makeConstraints { make in
-            make.top.equalTo(subtitleLabel.snp.bottom).offset(16.0)
+            make.top.equalTo(subtitleLabel.snp.bottom).offset(17.0)
             make.bottom.equalToSuperview()
             make.centerX.equalToSuperview()
             make.height.equalTo(26.0)
@@ -131,7 +131,7 @@ class SignInView: RootView {
         }
         
         containerView.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
+            make.centerY.equalToSuperview().offset(-26.0)
             make.left.right.equalToSuperview()
         }
         
@@ -142,12 +142,12 @@ class SignInView: RootView {
         stackView.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16.0)
             make.right.equalToSuperview().offset(-16.0)
-            make.bottom.equalToSuperview().offset(-56.0)
         }
         
         privacyLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
             make.top.equalTo(stackView.snp.bottom).offset(20.0)
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-20.0)
         }
     }
 

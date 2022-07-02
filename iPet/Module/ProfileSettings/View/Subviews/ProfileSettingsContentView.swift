@@ -10,21 +10,42 @@ class ProfileSettingsContentView: RootView {
         return view
     }()
     
-    let userImageView = UserImageView()
-    let userTextFieldsView = UserTextFieldsView()
+    let headerProfileSettingsView = HeaderProfileSettingsView()
+    let userSettingsContentView = UserSettingsContentView()
+    let appSettingsContentView = AppSettingsContentView()
+    let exitAccountContainerView = ExitContainerView()
     
-    let saveButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Сохранить", for: .normal)
-        button.setTitleColor(R.color.background(), for: .normal)
-        button.titleLabel?.font = R.font.sfuiTextSemibold(size: 17.0)
-        button.setBackgroundColor(R.color.blueAccent(), for: .normal)
-        button.setBackgroundColor(R.color.blueAccentDarker(), for: .highlighted)
-        button.layer.masksToBounds = true
-        button.layer.cornerRadius = 10.0
+    private let appLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Приложение"
+        label.font = R.font.sfuiTextBold(size: 17.0)
+        label.textColor = R.color.textPrimary()
         
-        return button
+        return label
     }()
+
+    private lazy var allDistanceLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Всего пройдено:"
+        label.font = R.font.sfuiTextMedium(size: 14.0)
+        label.textColor = R.color.darkGray()
+        
+        return label
+    }()
+    
+    let distanceNumberLabel: UILabel = {
+        let label = UILabel()
+        label.text =  "\(230) км"
+        label.font = R.font.sfuiTextMedium(size: 14.0)
+        label.textColor = R.color.orangeAccent()
+        
+        return label
+    }()
+    
+    private(set) lazy var totalDistanceStack = UIStackView(views: [
+        allDistanceLabel,
+        distanceNumberLabel
+    ], axis: .horizontal, spacing: 2.0, alignment: .center)
     
     override func setup() {
         super.setup()
@@ -32,9 +53,13 @@ class ProfileSettingsContentView: RootView {
         backgroundColor = R.color.background()
         
         addSubview(containerView)
-        containerView.addSubview(userImageView)
-        containerView.addSubview(userTextFieldsView)
-        containerView.addSubview(saveButton)
+        
+        containerView.addSubview(headerProfileSettingsView)
+        containerView.addSubview(userSettingsContentView)
+        containerView.addSubview(appLabel)
+        containerView.addSubview(appSettingsContentView)
+        containerView.addSubview(totalDistanceStack)
+        containerView.addSubview(exitAccountContainerView)
         
         setupConstraints()
     }
@@ -44,22 +69,36 @@ class ProfileSettingsContentView: RootView {
             make.edges.equalToSuperview()
         }
         
-        userImageView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20.0)
-            make.centerX.equalToSuperview()
-            make.width.height.equalTo(117.0)
-        }
-        
-        userTextFieldsView.snp.makeConstraints { make in
-            make.top.equalTo(userImageView.snp.bottom).offset(20.0)
+        headerProfileSettingsView.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(18.0)
             make.width.equalToSuperview()
         }
         
-        saveButton.snp.makeConstraints { make in
-            make.top.equalTo(userTextFieldsView.snp.bottom).offset(20.0)
-            make.left.right.equalToSuperview().inset(16.0)
-            make.height.equalTo(56.0)
-            make.bottom.equalToSuperview()
+        userSettingsContentView.snp.makeConstraints { make in
+            make.top.equalTo(headerProfileSettingsView.snp.bottom).offset(20.0)
+            make.width.equalToSuperview()
+        }
+        
+        appLabel.snp.makeConstraints { make in
+            make.top.equalTo(userSettingsContentView.snp.bottom).offset(20.0)
+            make.centerX.equalToSuperview()
+        }
+        
+        appSettingsContentView.snp.makeConstraints { make in
+            make.top.equalTo(appLabel.snp.bottom).offset(20.0)
+            make.width.equalToSuperview()
+        }
+        
+        totalDistanceStack.snp.makeConstraints { make in
+            make.top.equalTo(appSettingsContentView.snp.bottom).offset(20.0)
+            make.centerX.equalToSuperview().offset(35.0)
+        }
+        
+        exitAccountContainerView.snp.makeConstraints { make in
+            make.top.equalTo(totalDistanceStack.snp.bottom).offset(20.0)
+            make.width.equalToSuperview()
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-10.0)
         }
     }
+    
 }

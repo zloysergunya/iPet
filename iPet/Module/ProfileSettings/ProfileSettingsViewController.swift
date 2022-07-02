@@ -1,308 +1,131 @@
 import UIKit
 
 class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
-    
-    private let usernameRegularExpression = "^[a-z0-9_.-]*$"
+
+    private let locale = NSLocale.autoupdatingCurrent
     private let provider = ProfileSettingsProvider()
     
-    private var pendingCheckAvailabilityNicknameRequestWorkItem: DispatchWorkItem?
-    private var pendingTranslitNameRequestWorkItem: DispatchWorkItem?
-    private var selectedPet: Pet?
+    @Autowired
+    private var authService: AuthService?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainView.profileContentView.saveButton.addTarget(self, action: #selector(save), for: .touchUpInside)
+        let languageTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(setLanguageTapGesture))
+        mainView.profileSettingsContentView.appSettingsContentView.languageSetting.addGestureRecognizer(languageTapRecognizer)
+
+        let recallTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(recallTapGesture))
+        mainView.profileSettingsContentView.appSettingsContentView.recallView.addGestureRecognizer(recallTapRecognizer)
+
+        let socialNetworksTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(socialNetworksTapGesture))
+        mainView.profileSettingsContentView.appSettingsContentView.socialNetworksView.addGestureRecognizer(socialNetworksTapRecognizer)
+
+        let exitAccountTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(exitTapGesture))
+        mainView.profileSettingsContentView.exitAccountContainerView.exitAccountView.addGestureRecognizer(exitAccountTapRecognizer)
         
-        mainView.profileContentView.userTextFieldsView.nameTextField.delegate = self
-        mainView.profileContentView.userTextFieldsView.userNameTextField.delegate = self
-        mainView.profileContentView.userTextFieldsView.petNameTextField.delegate = self
-        
-        imageTapRecognize()
+        mainView.profileSettingsContentView.appSettingsContentView.closedProfileView.switcher.addTarget(self, action: #selector(closedProfileSwitchPressed), for: .touchUpInside)
+        mainView.profileSettingsContentView.appSettingsContentView.notificationsView.switcher.addTarget(self, action: #selector(notificationSwitchPressed), for: .touchUpInside)
+        mainView.profileSettingsContentView.headerProfileSettingsView.editProfileButton.addTarget(self, action: #selector(editProfileButtonPressed), for: .touchUpInside)
+
+        appLanguage()
+        uploadUserPhoto()
         configure()
     }
     
-    private func configure() {
-        guard let user = UserSettings.user else { return }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        mainView.profileContentView.userTextFieldsView.nameTextField.text = user.name
-        mainView.profileContentView.userTextFieldsView.userNameTextField.text = user.username
-        mainView.profileContentView.userTextFieldsView.petNameTextField.text = user.pet?.name
-        ImageLoader.setImage(url: user.avatarURL, imageView: mainView.profileContentView.userImageView.circleImageView)
+        updateMe()
     }
     
-    private func imageTapRecognize() {
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(setImageTapGesture))
-        mainView.profileContentView.userImageView.addGestureRecognizer(tapRecognizer)
-    }
-    
-    @objc private func setImageTapGesture() {
-        let picker = UIImagePickerController()
-        picker.sourceType = .photoLibrary
-        picker.delegate = self
-        picker.allowsEditing = true
-        present(picker, animated: true)
-    }
-    
-    @objc private func save(_ sender: UIButton) {
-        sendMe()
-        uploadUserPhoto()
-        updateUserPet()
-    }
-            
-    private func uploadUserPhoto() {
-        guard let image = mainView.profileContentView.userImageView.circleImageView.image else {
-            return
-        }
-        
-        let data = image.jpegData(compressionQuality: 0.8)
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let filename = paths[0].appendingPathComponent("image.jpg")
-        try? data?.write(to: filename)
-        
-        provider.uploadUserPhoto(photo: filename) { result in
-            switch result {
-            case .success(let url):
-                UserSettings.user?.avatarURL = url
-                
-            case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
-            }
-        }
-    }
-    
-    private func updateUserPet() {
-        guard let userPetId = UserSettings.user?.pet?.pet.id else { return }
-        
-        guard let petName = mainView.profileContentView.userTextFieldsView.petNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !petName.isEmpty else {
-            Animations.shake(view: mainView.profileContentView.userTextFieldsView.petNameTextField)
-            UINotificationFeedbackGenerator().notificationOccurred(.error)
-            
-            return
-        }
-        
-        provider.updateUserPet(userPetId: userPetId, userPetUserPetIdRequest: UserPetUserPetIdRequest(name: petName)) { [weak self] result in
-            switch result {
-            case .success:
-                UserSettings.user?.pet?.name = petName
-                
-            case .failure(let error):
-                break
-            }
-        }
-    }
-    
-    private func sendMe() {
-        guard mainView.profileContentView.userTextFieldsView.errorLabel.text != "Никнейм уже занят" else {
-            Animations.shake(view: mainView.profileContentView.userTextFieldsView.errorLabel)
-            UINotificationFeedbackGenerator().notificationOccurred(.error)
-            
-            return
-        }
-        
-        guard let name = mainView.profileContentView.userTextFieldsView.nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !name.isEmpty else {
-            Animations.shake(view: mainView.profileContentView.userTextFieldsView.nameTextField)
-            UINotificationFeedbackGenerator().notificationOccurred(.error)
-            
-            return
-        }
-        
-        guard let username = mainView.profileContentView.userTextFieldsView.userNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !username.isEmpty else {
-            Animations.shake(view: mainView.profileContentView.userTextFieldsView.userNameTextField)
-            UINotificationFeedbackGenerator().notificationOccurred(.error)
-            
-            return
-        }
-        
-        var userMe = UserMeRequest()
-        userMe.name = name
-        userMe.username = username
-        
-        provider.patchUser(userMe: userMe) { [weak self] result in
+    private func updateMe() {
+        provider.updateMe { [weak self] result in
             switch result {
             case .success(let user):
                 UserSettings.user = user
-                self?.dismiss(animated: true)
+                self?.configure()
                 
-            case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+            case .failure(let error): break
             }
         }
     }
     
-    private func choicePet() {
-        guard let petId = selectedPet?.id else {
+    private func configure() {
+        let user = UserSettings.user
+        
+        mainView.profileSettingsContentView.headerProfileSettingsView.nameLabel.text = user?.name
+        mainView.profileSettingsContentView.headerProfileSettingsView.userNameLabel.text = user?.username
+        mainView.profileSettingsContentView.headerProfileSettingsView.petNameLabel.text = user?.pet?.name
+        ImageLoader.setImage(url: user?.avatarURL, imageView: mainView.profileSettingsContentView.headerProfileSettingsView.imageView)
+        
+        mainView.profileSettingsContentView.userSettingsContentView.dailyGoalMetricView.metricLabel.text = "\(user?.stepsCount ?? 0)"
+        mainView.profileSettingsContentView.userSettingsContentView.ageMetricView.metricLabel.text = "\(user?.age ?? 0)"
+        mainView.profileSettingsContentView.userSettingsContentView.heightMetricView.metricLabel.text = "\(user?.height ?? 0)"
+        mainView.profileSettingsContentView.userSettingsContentView.weightMetricView.metricLabel.text = "\(user?.weight ?? 0)"
+        if user?.gender == "male" {
+            mainView.profileSettingsContentView.userSettingsContentView.sexView.genderImage.image = R.image.manGender()
+        } else {
+            mainView.profileSettingsContentView.userSettingsContentView.sexView.genderImage.image = R.image.foxMascote()
+        }
+        mainView.profileSettingsContentView.distanceNumberLabel.text = "\(user?.totalDistance ?? 0)"
+    }
+    
+    @objc private func setLanguageTapGesture() { 
+        showAlert()
+    }
+    
+    @objc private func recallTapGesture() {
+        
+    }
+    
+    @objc private func socialNetworksTapGesture() {
+        
+    }
+    
+    @objc private func exitTapGesture() {
+        authService?.deauthorize()
+    }
+    
+    @objc private func closedProfileSwitchPressed() {
+        
+    }
+    
+    @objc private func notificationSwitchPressed() {
+        
+    }
+    
+    @objc private func editProfileButtonPressed() {
+        let profileSettingVC = UserSettingsViewController()
+        profileSettingVC.modalTransitionStyle = .flipHorizontal
+        profileSettingVC.modalPresentationStyle = .overFullScreen
+        present(profileSettingVC, animated: true)
+    }
+    
+    private func showAlert() {
+        let alertController = UIAlertController(title: "Чтобы изменить язык приложения, перейдите в настройки устройства.", message: "", preferredStyle: .alert)
+        let settingsAction = UIAlertAction(title: "Настройки", style: .default) { (_) -> Void in
+            let settingsURL = URL(string: UIApplication.openSettingsURLString)
+            UIApplication.shared.open(settingsURL!) { (success) in
+                print("Settings opened: \(success)")
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Закрыть", style: .default, handler: nil)
+        alertController.addAction(cancelAction)
+        alertController.addAction(settingsAction)
+        present(alertController, animated: true)
+    }
+    
+    private func appLanguage() {
+        guard let code = locale.languageCode else { return }
+        let language = locale.localizedString(forLanguageCode: code)
+        mainView.profileSettingsContentView.appSettingsContentView.languageSetting.propertyLabel.text = language?.capitalizingFirstLetter()
+    }
+    
+    private func uploadUserPhoto() {
+        guard mainView.profileSettingsContentView.headerProfileSettingsView.imageView.image != nil else {
             return
         }
-        
-        provider.choicePet(petId: petId) { [weak self] result in
-            switch result {
-            case .success:
-                self?.changePetName()
-                
-            case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
-            }
-        }
     }
     
-    private func changePetName() {
-        guard let petId = selectedPet?.id else {
-            return
-        }
-        
-        guard let name = mainView.profileContentView.userTextFieldsView.petNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !name.isEmpty else {
-            Animations.shake(view: mainView.profileContentView.userTextFieldsView.petNameTextField)
-            UINotificationFeedbackGenerator().notificationOccurred(.error)
-            
-            return
-        }
-        
-        provider.changePetName(petId: petId, name: name) { [weak self] result in
-            switch result {
-            case .success:
-                self?.dismiss(animated: true)
-                
-            case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
-            }
-        }
-    }
-    
-    private func checkAvailabilityNickname(_ username: String) {
-        provider.checkAvailabilityNickname(username) { [weak self] result in
-            guard let self = self else {
-                return
-            }
-            switch result {
-            case .success(let used):
-                if used, let text = self.mainView.profileContentView.userTextFieldsView.userNameTextField.text, username == text {
-                    self.mainView.profileContentView.userTextFieldsView.errorLabel.text = "Никнейм уже занят"
-                }
-                
-            case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
-            }
-        }
-    }
-    
-    private func translitName(_ name: String) {
-        provider.translitName(name) { [weak self] result in
-            switch result {
-            case .success(let username):
-                self?.mainView.profileContentView.userTextFieldsView.userNameTextField.text = username
-                
-            case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
-            }
-        }
-    }
-    
-    @discardableResult
-    private func validateUsername(_ username: String) -> Bool {
-        let minCount = 5
-        let maxCount = 20
-        let match = NSPredicate(format:"SELF MATCHES %@", usernameRegularExpression).evaluate(with: username)
-        
-        mainView.profileContentView.userTextFieldsView.errorLabel.text?.removeAll()
-        
-        if username.count < minCount {
-            if match {
-                mainView.profileContentView.userTextFieldsView.errorLabel.text = "Слишком короткий. Минимум \(minCount) символов"
-            } else {
-                mainView.profileContentView.userTextFieldsView.errorLabel.text = "Используй латинские буквы и цифры"
-            }
-        }
-
-        if username.count > maxCount {
-            mainView.profileContentView.userTextFieldsView.errorLabel.text = "Слишком длинный. Максимум \(maxCount) символов"
-            
-            return false
-        }
-
-        if match, username.count >= minCount, username.count <= maxCount, username != UserSettings.user?.username {
-            pendingCheckAvailabilityNicknameRequestWorkItem?.cancel()
-
-            let requestWorkItem = DispatchWorkItem { [weak self] in
-                guard let self = self else {
-                    return
-                }
-
-                if !username.isEmpty {
-                    self.checkAvailabilityNickname(username)
-                }
-            }
-
-            pendingCheckAvailabilityNicknameRequestWorkItem = requestWorkItem
-            DispatchQueue.main.async(execute: requestWorkItem)
-        }
-        
-        return match
-    }
-}
-
-// MARK: - UITextFieldDelegate
-extension ProfileSettingsViewController: UITextFieldDelegate {
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let replacedText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
-        
-        switch textField {
-        case mainView.profileContentView.userTextFieldsView.nameTextField:
-            mainView.profileContentView.userTextFieldsView.errorLabel.text?.removeAll()
-            
-            let maxCount = 30
-            if replacedText.count > maxCount {
-                mainView.profileContentView.userTextFieldsView.errorLabel.text = "Слишком длинный. Максимум \(maxCount) символов"
-                
-                return false
-            } else if replacedText.count > 2 {
-                pendingTranslitNameRequestWorkItem?.cancel()
-
-                let requestWorkItem = DispatchWorkItem { [weak self] in
-                    if !replacedText.isEmpty {
-                        self?.translitName(replacedText)
-                    }
-                }
-
-                pendingTranslitNameRequestWorkItem = requestWorkItem
-                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: requestWorkItem)
-            }
-            
-        case mainView.profileContentView.userTextFieldsView.userNameTextField:
-            mainView.profileContentView.userTextFieldsView.errorLabel.text?.removeAll()
-            
-            return validateUsername(replacedText)
-        default:
-            break
-        }
-
-        return true
-    }
-}
-
-// MARK: - UIImagePicker
-extension ProfileSettingsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-            mainView.profileContentView.userImageView.circleImageView.image = image
-        }
-        picker.dismiss(animated: true)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true)
-    }
 }

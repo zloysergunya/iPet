@@ -11,6 +11,7 @@ struct User: Codable {
     var age: Int
     var weight: Int
     var chillDay: Int
+    var totalDistance: Int
     var inviteLink: String
     var countInvited: Int
     var countFollowers: Int
@@ -31,6 +32,7 @@ struct User: Codable {
         case age
         case weight
         case chillDay = "chill_day"
+        case totalDistance = "total_distance"
         case inviteLink = "invite_link"
         case countInvited = "count_invited"
         case countFollowers = "count_followers"
