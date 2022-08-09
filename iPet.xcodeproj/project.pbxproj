@@ -339,7 +339,6 @@
 			children = (
 				9CAAF61F286B15F600D35BFE /* Provider */,
 				9CAAF621286B15F600D35BFE /* View */,
-				9CAAF631286B15F600D35BFE /* ProfileSettingsViewController.swift */,
 			);
 			path = ProfileSettings;
 			sourceTree = "<group>";
@@ -356,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				9CAAF622286B15F600D35BFE /* ProfileSettingsView.swift */,
+				9CAAF631286B15F600D35BFE /* ProfileSettingsViewController.swift */,
 				9CAAF623286B15F600D35BFE /* Subviews */,
 			);
 			path = View;
@@ -365,10 +365,10 @@
 			isa = PBXGroup;
 			children = (
 				9CAAF624286B15F600D35BFE /* ProfileSettingsContentView.swift */,
-				9CAAF625286B15F600D35BFE /* ExitAccountSubviews */,
-				9CAAF627286B15F600D35BFE /* AppSettingsSubview */,
 				9CAAF62A286B15F600D35BFE /* HeaderSubviews */,
 				9CAAF62D286B15F600D35BFE /* UserSettingsSubview */,
+				9CAAF627286B15F600D35BFE /* AppSettingsSubview */,
+				9CAAF625286B15F600D35BFE /* ExitAccountSubviews */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -467,8 +467,8 @@
 			children = (
 				9CD7A9E1286DB6FF00D55947 /* Provider */,
 				9CD7A9D9286D95D400D55947 /* ProfileView.swift */,
-				9CD7A9DC286D97A700D55947 /* Subviews */,
 				9CD7A9D8286D95D400D55947 /* ProfileViewController.swift */,
+				9CD7A9DC286D97A700D55947 /* Subviews */,
 			);
 			path = Profile;
 			sourceTree = "<group>";

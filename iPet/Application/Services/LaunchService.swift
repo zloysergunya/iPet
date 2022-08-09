@@ -29,7 +29,7 @@ class LaunchService {
     }
     
     private func openAuth() {
-        setWindowRoot(viewController: OnboardingViewController())
+        setWindowRoot(viewController: ProfileViewController())
     }
     
     private func openAccountSetup() {

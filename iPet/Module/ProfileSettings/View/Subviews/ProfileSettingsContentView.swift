@@ -91,7 +91,7 @@ class ProfileSettingsContentView: RootView {
         
         totalDistanceStack.snp.makeConstraints { make in
             make.top.equalTo(appSettingsContentView.snp.bottom).offset(20.0)
-            make.centerX.equalToSuperview().offset(35.0)
+            make.centerX.equalToSuperview().offset(50.0)
         }
         
         exitAccountContainerView.snp.makeConstraints { make in
@@ -100,5 +100,5 @@ class ProfileSettingsContentView: RootView {
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-10.0)
         }
     }
-    
+
 }

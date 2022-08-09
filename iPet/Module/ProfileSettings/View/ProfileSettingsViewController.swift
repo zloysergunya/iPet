@@ -23,9 +23,9 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
         let exitAccountTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(exitTapGesture))
         mainView.profileSettingsContentView.exitAccountContainerView.exitAccountView.addGestureRecognizer(exitAccountTapRecognizer)
         
-        mainView.profileSettingsContentView.appSettingsContentView.closedProfileView.switcher.addTarget(self, action: #selector(closedProfileSwitchPressed), for: .touchUpInside)
-        mainView.profileSettingsContentView.appSettingsContentView.notificationsView.switcher.addTarget(self, action: #selector(notificationSwitchPressed), for: .touchUpInside)
         mainView.profileSettingsContentView.headerProfileSettingsView.editProfileButton.addTarget(self, action: #selector(editProfileButtonPressed), for: .touchUpInside)
+        mainView.profileSettingsContentView.appSettingsContentView.notificationsView.switcher.addTarget(self, action: #selector(notificationSwitchPressed), for: .touchUpInside)
+        mainView.profileSettingsContentView.appSettingsContentView.closedProfileView.switcher.addTarget(self, action: #selector(closedProfileSwitchPressed), for: .touchUpInside)
 
         appLanguage()
         uploadUserPhoto()
@@ -44,8 +44,9 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
             case .success(let user):
                 UserSettings.user = user
                 self?.configure()
-                
-            case .failure(let error): break
+            case .failure(let error):
+                error.localizedDescription
+                break
             }
         }
     }
@@ -53,20 +54,19 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
     private func configure() {
         let user = UserSettings.user
         
-        mainView.profileSettingsContentView.headerProfileSettingsView.nameLabel.text = user?.name
-        mainView.profileSettingsContentView.headerProfileSettingsView.userNameLabel.text = user?.username
-        mainView.profileSettingsContentView.headerProfileSettingsView.petNameLabel.text = user?.pet?.name
         ImageLoader.setImage(url: user?.avatarURL, imageView: mainView.profileSettingsContentView.headerProfileSettingsView.imageView)
         
+        mainView.profileSettingsContentView.headerProfileSettingsView.imageView.image = UIImage(named: "\(user?.avatarURL ?? "")") ?? UIImage(named: "foxMascote")
+        mainView.profileSettingsContentView.headerProfileSettingsView.nameLabel.text = "\(user?.name ?? "Иван")"
+        mainView.profileSettingsContentView.headerProfileSettingsView.userNameLabel.text = "\(user?.username ?? "coala")"
+        mainView.profileSettingsContentView.headerProfileSettingsView.petNameLabel.text = "\(user?.pet?.name ?? "Пуфик")"
         mainView.profileSettingsContentView.userSettingsContentView.dailyGoalMetricView.metricLabel.text = "\(user?.stepsCount ?? 0)"
         mainView.profileSettingsContentView.userSettingsContentView.ageMetricView.metricLabel.text = "\(user?.age ?? 0)"
         mainView.profileSettingsContentView.userSettingsContentView.heightMetricView.metricLabel.text = "\(user?.height ?? 0)"
         mainView.profileSettingsContentView.userSettingsContentView.weightMetricView.metricLabel.text = "\(user?.weight ?? 0)"
-        if user?.gender == "male" {
-            mainView.profileSettingsContentView.userSettingsContentView.sexView.genderImage.image = R.image.manGender()
-        } else {
-            mainView.profileSettingsContentView.userSettingsContentView.sexView.genderImage.image = R.image.foxMascote()
-        }
+        mainView.profileSettingsContentView.userSettingsContentView.sexView.genderImage.image = user?.gender == "male"
+        ? R.image.manGender()
+        : R.image.femaleGender()
         mainView.profileSettingsContentView.distanceNumberLabel.text = "\(user?.totalDistance ?? 0)"
     }
     
