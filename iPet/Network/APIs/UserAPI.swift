@@ -158,4 +158,45 @@ class UserAPI {
         return requestBuilder.init(method: "PATCH", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }
     
+    class func userFollowersGet(completion: @escaping ((_ data: UserFollowersResponce?,_ error: ErrorResponse?) -> Void)) {
+        userFollowersGetWithRequestBuilder().execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+    
+    private class func userFollowersGetWithRequestBuilder() -> RequestBuilder<UserFollowersResponce> {
+        let path = "/user/followers"
+        let URLString = iPetAPI.basePath + path
+        let parameters: [String:Any]? = nil
+
+        let url = URLComponents(string: URLString)
+
+        let requestBuilder: RequestBuilder<UserFollowersResponce>.Type = iPetAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+    
+    class func userUserIdFollowPost(userId: Int, completion: @escaping ((_ data: OkResponse?,_ error: ErrorResponse?) -> Void)) {
+        userPetChoicePetIdPatchWithRequestBuilder(petId: userId).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+    private class func userUserIdFollowPostWithRequestBuilder(userId: Int) -> RequestBuilder<OkResponse> {
+        var path = "/user/pet/choice/{user_id}"
+        let _idPreEscape = "\(userId)"
+        let _idPostEscape = _idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{user_id}", with: _idPostEscape, options: .literal, range: nil)
+        let URLString = iPetAPI.basePath + path
+        let parameters: [String:Any]? = nil
+
+        let url = URLComponents(string: URLString)
+
+        let requestBuilder: RequestBuilder<OkResponse>.Type = iPetAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+    
+    
+
 }

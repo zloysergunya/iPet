@@ -1,6 +1,7 @@
 import Foundation
 
 struct User: Codable {
+    
     var id: Int
     var name: String
     var username: String
@@ -11,7 +12,7 @@ struct User: Codable {
     var age: Int
     var weight: Int
     var chillDay: Int
-    var totalDistance: Int
+    var totalDistance: Double
     var inviteLink: String
     var countInvited: Int
     var countFollowers: Int
@@ -42,4 +43,13 @@ struct User: Codable {
         case avatarURL = "avatar_url"
         case lastVisit = "last_visit"
     }
+    
+}
+
+extension User: Equatable {
+    
+    static func == (lhs: User, rhs: User) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
 }

@@ -4,6 +4,17 @@ class ProfileViewController: ViewController<ProfileView> {
 
     private let provider = ProfileProvider()
     
+    private var user: User
+    
+    init(user: User) {
+        self.user = user
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -15,22 +26,25 @@ class ProfileViewController: ViewController<ProfileView> {
     private func configure() {
         guard let user = UserSettings.user else { return }
         
-        ImageLoader.setImage(url: user.avatarURL, imageView: mainView.userData.photoPlaceholderImageView)
+        ImageLoader.setImage(url: user.avatarURL, imageView: mainView.userDataView.photoPlaceholderImageView)
         
-        mainView.userData.nameLabel.text = user.name
-        mainView.userData.userNameLabel.text = user.username
-        mainView.userData.petNameLabel.text = user.pet?.name
+        mainView.userDataView.nameLabel.text = user.name
+        mainView.userDataView.userNameLabel.text = user.username
+        mainView.userDataView.petNameLabel.text = user.pet?.name
         
-        mainView.userMetrics.countStepsLabel.text = "\(user.stepsCount)/\(user.stepsCount)"
-        mainView.userMetrics.countDaysLabel.text = "\(user.age)/\(user.weight)"
+        mainView.physicalMetricView.countStepsLabel.text = "\(user.stepsCount)/\(user.stepsCount)"
+        mainView.physicalMetricView.countDaysLabel.text = "\(user.age)/\(user.weight)"
         
         let intiteFriendsTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(inviteFriendsTapGesture))
         mainView.inviteFriendsView.addGestureRecognizer(intiteFriendsTapRecognizer)
+
+        let showProgressTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(showProgressTapGesture))
+        mainView.physicalMetricView.addGestureRecognizer(showProgressTapRecognizer)
     }
     
     private func imageTapRecognize() {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(setImageTapGesture))
-        mainView.userData.photoPlaceholderImageView.addGestureRecognizer(tapRecognizer)
+        mainView.userDataView.photoPlaceholderImageView.addGestureRecognizer(tapRecognizer)
     }
     
     @objc private func setImageTapGesture() {
@@ -40,6 +54,16 @@ class ProfileViewController: ViewController<ProfileView> {
         picker.allowsEditing = true
         
         present(picker, animated: true)
+    }
+
+    @objc private func showProgressTapGesture() {
+        guard let petObesityLevel = UserSettings.user?.pet?.petObesityLevel,
+              let petState = PetState(rawValue: petObesityLevel) else {
+            return
+        }
+        
+        let viewController = ModalPhysicalStateViewController(petState: petState)
+        present(viewController, animated: true)
     }
     
     @objc private func inviteFriendsTapGesture() {
@@ -63,7 +87,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-            mainView.userData.photoPlaceholderImageView.image = image
+            mainView.userDataView.photoPlaceholderImageView.image = image
             loadImage()
         }
         picker.dismiss(animated: true)
@@ -74,7 +98,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
     
     private func loadImage() {
-        guard let image = mainView.userData.photoPlaceholderImageView.image else {
+        guard let image = mainView.userDataView.photoPlaceholderImageView.image else {
             return
         }
         
@@ -95,6 +119,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             }
         }
     }
+    
 }
 
 

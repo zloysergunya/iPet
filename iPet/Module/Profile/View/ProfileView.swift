@@ -11,8 +11,8 @@ class ProfileView: RootView {
         return scrollView
     }()
 
-    let userData = UserDataView()
-    let userMetrics = PhysicalMetricView()
+    let userDataView = UserDataView()
+    let physicalMetricView = PhysicalMetricView()
     let subscribersView = SubscribersView()
     let inviteFriendsView = IntiveFriendsView()
     
@@ -36,9 +36,9 @@ class ProfileView: RootView {
         
         addSubview(scrollView)
         
-        scrollView.addSubview(userData)
+        scrollView.addSubview(userDataView)
         scrollView.addSubview(view)
-        scrollView.addSubview(userMetrics)
+        scrollView.addSubview(physicalMetricView)
         scrollView.addSubview(subscribersView)
         scrollView.addSubview(inviteFriendsView)
         
@@ -50,32 +50,33 @@ class ProfileView: RootView {
             make.edges.equalToSuperview()
         }
         
-        userData.snp.makeConstraints { make in
+        userDataView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(18.0)
             make.centerX.equalToSuperview()
             make.left.right.equalToSuperview().inset(36.0)
         }
         
         view.snp.makeConstraints { make in
-            make.top.equalTo(userData.snp.bottom)
-            make.centerX.equalTo(userData.photoPlaceholderImageView.snp.centerX)
+            make.top.equalTo(userDataView.snp.bottom)
+            make.centerX.equalTo(userDataView.photoPlaceholderImageView.snp.centerX)
             make.width.equalTo(2.0)
             make.height.equalTo(16.0)
         }
         
-        userMetrics.snp.makeConstraints { make in
+        physicalMetricView.snp.makeConstraints { make in
             make.top.equalTo(view.snp.bottom)
             make.left.right.equalToSuperview().inset(36.0)
         }
         
         subscribersView.snp.makeConstraints { make in
-            make.top.equalTo(userMetrics.snp.bottom).offset(20.0)
+            make.top.equalTo(physicalMetricView.snp.bottom).offset(20.0)
             make.left.right.equalToSuperview().inset(26.0)
         }
         
         inviteFriendsView.snp.makeConstraints { make in
             make.top.equalTo(subscribersView.snp.bottom).offset(20.0)
             make.left.right.equalToSuperview().inset(16.0)
+            make.bottom.equalToSuperview()
         }
     }
     

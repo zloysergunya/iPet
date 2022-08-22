@@ -32,6 +32,7 @@ class TabBarController: UITabBarController {
         
         viewControllers = [UINavigationController(rootViewController: generalViewController)]
         
+        tabBar.shadowImage = nil
         tabBar.backgroundColor = .white
         tabBar.tintColor = .black
         tabBar.unselectedItemTintColor = .init(hex: 0x979797)

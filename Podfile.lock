@@ -32,6 +32,7 @@ PODS:
     - SPPermissions/Core
   - SPPermissions/Notification (7.1.4):
     - SPPermissions/Core
+  - SwiftLoader (1.0.0)
   - SwiftyBeaver (1.9.5)
 
 DEPENDENCIES:
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - Atributika (~> 4.9.0)
   - GoogleSignIn
   - IGListKit (~> 4.0)
+  - IGListKit (~> 4.0.0)
   - IQKeyboardManagerSwift
   - KeychainAccess
   - Kingfisher
@@ -49,6 +51,7 @@ DEPENDENCIES:
   - SnapKit (~> 5.0.0)
   - SPPermissions/Health
   - SPPermissions/Notification
+  - SwiftLoader
   - SwiftyBeaver
 
 SPEC REPOS:
@@ -71,6 +74,7 @@ SPEC REPOS:
     - R.swift.Library
     - SnapKit
     - SPPermissions
+    - SwiftLoader
     - SwiftyBeaver
 
 SPEC CHECKSUMS:
@@ -92,8 +96,9 @@ SPEC CHECKSUMS:
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SPPermissions: 2998578132f05b0093028a1fad193ad086b63188
+  SwiftLoader: f12f3a6fb42576862a3a5eb80c7e59fc881b6982
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
 
-PODFILE CHECKSUM: 51c3c202840d5adf971758e448bff0a5f78ea8d5
+PODFILE CHECKSUM: e88478a75994d3d136e6b45cc83eb3750ca420bb
 
 COCOAPODS: 1.11.3

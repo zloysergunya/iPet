@@ -14,7 +14,7 @@ class ImageLoader {
         
         let options: KingfisherOptionsInfo = [
             .loadDiskFileSynchronously,
-            .transition(.fade(0.2)),
+            .transition(.fade(0.2))
         ]
 
         return imageView.kf.setImage(with: URL(string: url), placeholder: placeholderImage, options: options, completionHandler: completionHandler)

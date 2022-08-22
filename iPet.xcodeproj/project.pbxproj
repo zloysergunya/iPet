@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1B927F87CA22CD5C025E3F72 /* Pods_iPet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137E1A45FC5FB849D6E6C76A /* Pods_iPet.framework */; };
+		9C20B75428A431E000AA0530 /* UserFollowersResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C20B75328A431E000AA0530 /* UserFollowersResponce.swift */; };
+		9C20B75928A4450000AA0530 /* FollowersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C20B75828A4450000AA0530 /* FollowersListView.swift */; };
+		9C20B75B28A4452200AA0530 /* FollowersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C20B75A28A4452200AA0530 /* FollowersListViewController.swift */; };
+		9C20B76028A8F8BC00AA0530 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C20B75F28A8F8BC00AA0530 /* SearchBarView.swift */; };
+		9C20B76328A9040A00AA0530 /* FollowersListSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C20B76228A9040A00AA0530 /* FollowersListSectionController.swift */; };
+		9C20B76628A9045700AA0530 /* FollowerListSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C20B76528A9045700AA0530 /* FollowerListSectionModel.swift */; };
+		9C20B76928A9070500AA0530 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C20B76828A9070500AA0530 /* UserCell.swift */; };
+		9C20B76C28A9109F00AA0530 /* CGSize+InsetBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C20B76B28A9109F00AA0530 /* CGSize+InsetBy.swift */; };
+		9C20B76E28A914F000AA0530 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C20B76D28A914F000AA0530 /* EmptyView.swift */; };
+		9C20B77028A920EB00AA0530 /* FollowersListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C20B76F28A920EB00AA0530 /* FollowersListProvider.swift */; };
 		9C6F3F882855E302009A1C4F /* UIStackView + Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3F872855E302009A1C4F /* UIStackView + Init.swift */; };
 		9C6F3F922856007A009A1C4F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3F912856007A009A1C4F /* GradientView.swift */; };
 		9CAAF63E286B15F600D35BFE /* ProfileSettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAF620286B15F600D35BFE /* ProfileSettingsProvider.swift */; };
@@ -32,6 +42,9 @@
 		9CAAF653286B7B8F00D35BFE /* String+CapitalizingFirstLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAF652286B7B8F00D35BFE /* String+CapitalizingFirstLetter.swift */; };
 		9CC906E8285CB36D00BE8F06 /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC906E7285CB36D00BE8F06 /* OneLineTextField.swift */; };
 		9CC906EA285CB50600BE8F06 /* SFUIDisplay-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CC906E9285CB50600BE8F06 /* SFUIDisplay-Light.ttf */; };
+		9CCBE0F028B23216008D1B46 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBE0EF28B23216008D1B46 /* UIViewController+Alerts.swift */; };
+		9CCBE0F428B4041F008D1B46 /* ModalPhysicalStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBE0F328B4041F008D1B46 /* ModalPhysicalStateViewController.swift */; };
+		9CCBE0F628B4047B008D1B46 /* ModalPhysicalStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBE0F528B4047B008D1B46 /* ModalPhysicalStateView.swift */; };
 		9CD7A9DA286D95D400D55947 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD7A9D8286D95D400D55947 /* ProfileViewController.swift */; };
 		9CD7A9DB286D95D400D55947 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD7A9D9286D95D400D55947 /* ProfileView.swift */; };
 		9CD7A9DE286D980600D55947 /* UserDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD7A9DD286D980600D55947 /* UserDataView.swift */; };
@@ -163,6 +176,16 @@
 
 /* Begin PBXFileReference section */
 		137E1A45FC5FB849D6E6C76A /* Pods_iPet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C20B75328A431E000AA0530 /* UserFollowersResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowersResponce.swift; sourceTree = "<group>"; };
+		9C20B75828A4450000AA0530 /* FollowersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListView.swift; sourceTree = "<group>"; };
+		9C20B75A28A4452200AA0530 /* FollowersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListViewController.swift; sourceTree = "<group>"; };
+		9C20B75F28A8F8BC00AA0530 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		9C20B76228A9040A00AA0530 /* FollowersListSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListSectionController.swift; sourceTree = "<group>"; };
+		9C20B76528A9045700AA0530 /* FollowerListSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListSectionModel.swift; sourceTree = "<group>"; };
+		9C20B76828A9070500AA0530 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		9C20B76B28A9109F00AA0530 /* CGSize+InsetBy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+InsetBy.swift"; sourceTree = "<group>"; };
+		9C20B76D28A914F000AA0530 /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		9C20B76F28A920EB00AA0530 /* FollowersListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListProvider.swift; sourceTree = "<group>"; };
 		9C6F3F872855E302009A1C4F /* UIStackView + Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Init.swift"; sourceTree = "<group>"; };
 		9C6F3F912856007A009A1C4F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		9CAAF620286B15F600D35BFE /* ProfileSettingsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingsProvider.swift; sourceTree = "<group>"; };
@@ -187,6 +210,9 @@
 		9CAAF652286B7B8F00D35BFE /* String+CapitalizingFirstLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CapitalizingFirstLetter.swift"; sourceTree = "<group>"; };
 		9CC906E7285CB36D00BE8F06 /* OneLineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
 		9CC906E9285CB50600BE8F06 /* SFUIDisplay-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Light.ttf"; sourceTree = "<group>"; };
+		9CCBE0EF28B23216008D1B46 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		9CCBE0F328B4041F008D1B46 /* ModalPhysicalStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPhysicalStateViewController.swift; sourceTree = "<group>"; };
+		9CCBE0F528B4047B008D1B46 /* ModalPhysicalStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPhysicalStateView.swift; sourceTree = "<group>"; };
 		9CD7A9D8286D95D400D55947 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9CD7A9D9286D95D400D55947 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		9CD7A9DD286D980600D55947 /* UserDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataView.swift; sourceTree = "<group>"; };
@@ -334,11 +360,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C20B75728A444B900AA0530 /* FollowersList */ = {
+			isa = PBXGroup;
+			children = (
+				9C20B77128A9212900AA0530 /* Provider */,
+				9C20B76728A9059800AA0530 /* Model */,
+				9C20B76428A9043200AA0530 /* Section */,
+				9C20B75E28A8F2BB00AA0530 /* View */,
+				9C20B75A28A4452200AA0530 /* FollowersListViewController.swift */,
+			);
+			path = FollowersList;
+			sourceTree = "<group>";
+		};
+		9C20B75E28A8F2BB00AA0530 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9C20B75828A4450000AA0530 /* FollowersListView.swift */,
+				9C20B76A28A9088400AA0530 /* Cell */,
+				9C20B76128A902AF00AA0530 /* Subview */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9C20B76128A902AF00AA0530 /* Subview */ = {
+			isa = PBXGroup;
+			children = (
+				9C20B75F28A8F8BC00AA0530 /* SearchBarView.swift */,
+			);
+			path = Subview;
+			sourceTree = "<group>";
+		};
+		9C20B76428A9043200AA0530 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				9C20B76228A9040A00AA0530 /* FollowersListSectionController.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		9C20B76728A9059800AA0530 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9C20B76528A9045700AA0530 /* FollowerListSectionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9C20B76A28A9088400AA0530 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9C20B76828A9070500AA0530 /* UserCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		9C20B77128A9212900AA0530 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				9C20B76F28A920EB00AA0530 /* FollowersListProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
 		9CAAF61E286B15F600D35BFE /* ProfileSettings */ = {
 			isa = PBXGroup;
 			children = (
 				9CAAF61F286B15F600D35BFE /* Provider */,
 				9CAAF621286B15F600D35BFE /* View */,
+				9CAAF631286B15F600D35BFE /* ProfileSettingsViewController.swift */,
 			);
 			path = ProfileSettings;
 			sourceTree = "<group>";
@@ -355,7 +444,6 @@
 			isa = PBXGroup;
 			children = (
 				9CAAF622286B15F600D35BFE /* ProfileSettingsView.swift */,
-				9CAAF631286B15F600D35BFE /* ProfileSettingsViewController.swift */,
 				9CAAF623286B15F600D35BFE /* Subviews */,
 			);
 			path = View;
@@ -462,13 +550,39 @@
 			path = UserImageSubview;
 			sourceTree = "<group>";
 		};
+		9CCBE0F128B2326F008D1B46 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9CD7A9D9286D95D400D55947 /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9CCBE0F228B26A1A008D1B46 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				9CCBE0F728B40489008D1B46 /* View */,
+				9CCBE0F328B4041F008D1B46 /* ModalPhysicalStateViewController.swift */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		9CCBE0F728B40489008D1B46 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9CCBE0F528B4047B008D1B46 /* ModalPhysicalStateView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9CD7A9D7286D905900D55947 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				9CCBE0F228B26A1A008D1B46 /* Modals */,
+				9CCBE0F128B2326F008D1B46 /* View */,
 				9CD7A9E1286DB6FF00D55947 /* Provider */,
-				9CD7A9D9286D95D400D55947 /* ProfileView.swift */,
-				9CD7A9D8286D95D400D55947 /* ProfileViewController.swift */,
 				9CD7A9DC286D97A700D55947 /* Subviews */,
+				9CD7A9D8286D95D400D55947 /* ProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -536,6 +650,9 @@
 				C4242DB6279000BA002B99E9 /* UserAvatarResponse.swift */,
 				C4024EB327915A0A00248854 /* UserPetUserPetIdRequest.swift */,
 				C48D6FDB28449B37009D36EE /* UserConfig.swift */,
+				9C20B75328A431E000AA0530 /* UserFollowersResponce.swift */,
+				C4A0E9D6278350E9005D6662 /* User.swift */,
+				C4024EBA27917C1B00248854 /* UserPet.swift */,
 			);
 			path = UserAPI;
 			sourceTree = "<group>";
@@ -545,8 +662,6 @@
 			children = (
 				C4A0E9D8278350FD005D6662 /* Pet.swift */,
 				C4A0E9D4278350C7005D6662 /* AuthGoggleResponse.swift */,
-				C4A0E9D6278350E9005D6662 /* User.swift */,
-				C4024EBA27917C1B00248854 /* UserPet.swift */,
 			);
 			path = AuthAPI;
 			sourceTree = "<group>";
@@ -717,6 +832,7 @@
 		C42624A62854680E001EF653 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9C20B76D28A914F000AA0530 /* EmptyView.swift */,
 				C42624A928546827001EF653 /* VisualEffectView */,
 			);
 			path = Views;
@@ -877,6 +993,7 @@
 				9CD7A9D7286D905900D55947 /* Profile */,
 				9CAAF61E286B15F600D35BFE /* ProfileSettings */,
 				9CAAF632286B15F600D35BFE /* UserSettings */,
+				9C20B75728A444B900AA0530 /* FollowersList */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -1021,6 +1138,8 @@
 				C4FB55B827A53F91006CBFF7 /* UIButton+BackgroundColoroForState.swift */,
 				9C6F3F912856007A009A1C4F /* GradientView.swift */,
 				9CC906E7285CB36D00BE8F06 /* OneLineTextField.swift */,
+				9C20B76B28A9109F00AA0530 /* CGSize+InsetBy.swift */,
+				9CCBE0EF28B23216008D1B46 /* UIViewController+Alerts.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1367,12 +1486,15 @@
 				C4190F4627888B4200C005C7 /* RegisterInputView.swift in Sources */,
 				C42624B0285472FA001EF653 /* ActiveStatus.swift in Sources */,
 				C4A0E9DB2783516A005D6662 /* AuthAPI.swift in Sources */,
+				9C20B76C28A9109F00AA0530 /* CGSize+InsetBy.swift in Sources */,
 				C4A0E9BA27834BBE005D6662 /* SignInProvider.swift in Sources */,
 				C4242DDD27902BB7002B99E9 /* ListCollectionContext+Dequeue.swift in Sources */,
 				C4A0E9A62782F2B3005D6662 /* SignInViewController.swift in Sources */,
 				C4A0E98F2782E783005D6662 /* OnboardingViewController.swift in Sources */,
 				9CAAF647286B15F600D35BFE /* GenderView.swift in Sources */,
 				C49D40AE283DD49000F42B2F /* Date+EndOfDate.swift in Sources */,
+				9C20B75928A4450000AA0530 /* FollowersListView.swift in Sources */,
+				9C20B77028A920EB00AA0530 /* FollowersListProvider.swift in Sources */,
 				C4190F4E2788947500C005C7 /* UserUsernameTranslitRequest.swift in Sources */,
 				C42B9AC427BD03FE0095E795 /* AnimatedPetView.swift in Sources */,
 				9CAAF64F286B15F600D35BFE /* UserSettingsViewController.swift in Sources */,
@@ -1383,7 +1505,9 @@
 				C4A0E9D02783505D005D6662 /* Configuration.swift in Sources */,
 				C4C618A727B95BBB0009AA1C /* RadialGradientView.swift in Sources */,
 				C4190F50278899AB00C005C7 /* UserMeRequest.swift in Sources */,
+				9CCBE0F628B4047B008D1B46 /* ModalPhysicalStateView.swift in Sources */,
 				C41E1D9D27A27FEE00AA773B /* Bundle+Version.swift in Sources */,
+				9C20B76928A9070500AA0530 /* UserCell.swift in Sources */,
 				9CAAF648286B15F600D35BFE /* UserSettingContentView.swift in Sources */,
 				9CD7A9E5286DCE9500D55947 /* SubscribersView.swift in Sources */,
 				C4E0D3FD28587513004CFD8D /* ModalPetStateViewController.swift in Sources */,
@@ -1401,14 +1525,17 @@
 				9CAAF646286B15F600D35BFE /* UserMetricView.swift in Sources */,
 				9CAAF64D286B15F600D35BFE /* UserSettingsContentView.swift in Sources */,
 				C48D6FDE2844A4EA009D36EE /* AchivmentsView.swift in Sources */,
+				9C20B75B28A4452200AA0530 /* FollowersListViewController.swift in Sources */,
 				C4C618A327B951070009AA1C /* ImageLoader.swift in Sources */,
 				9CAAF64A286B15F600D35BFE /* UserSettingsProvider.swift in Sources */,
 				C49D40A4283DD0A800F42B2F /* StatsAPI.swift in Sources */,
+				9C20B76328A9040A00AA0530 /* FollowersListSectionController.swift in Sources */,
 				9CC906E8285CB36D00BE8F06 /* OneLineTextField.swift in Sources */,
 				C4C618AA27B95C210009AA1C /* MainActivityProgressView.swift in Sources */,
 				C4A0E98B2782E144005D6662 /* LaunchView.swift in Sources */,
 				C49D40AA283DD19100F42B2F /* HealthService.swift in Sources */,
 				C4190F4C2788944400C005C7 /* UserCheckUsernameRequest.swift in Sources */,
+				9CCBE0F428B4041F008D1B46 /* ModalPhysicalStateViewController.swift in Sources */,
 				C4024EB92791726200248854 /* RegisterStepsInputProvider.swift in Sources */,
 				C4242DD627902A9E002B99E9 /* RegisterPetSectionController.swift in Sources */,
 				C4A0E9662782DB48005D6662 /* AppDelegate.swift in Sources */,
@@ -1448,13 +1575,16 @@
 				C4C6189727B947380009AA1C /* GeneralProvider.swift in Sources */,
 				C4A0E9B12782F85D005D6662 /* RegisterUserInputViewController.swift in Sources */,
 				C485FBFC27BCB9180057C290 /* GeneralAPI.swift in Sources */,
+				9CCBE0F028B23216008D1B46 /* UIViewController+Alerts.swift in Sources */,
 				9CAAF641286B15F600D35BFE /* ExitAccountContainerView.swift in Sources */,
 				C4A0E99B2782E9BF005D6662 /* R.generated.swift in Sources */,
 				C41E1D8A27A27A5700AA773B /* AppleSignInService.swift in Sources */,
 				C41E1DA027A2802D00AA773B /* Constants.swift in Sources */,
+				9C20B76E28A914F000AA0530 /* EmptyView.swift in Sources */,
 				9CAAF643286B15F600D35BFE /* AppSettingsView.swift in Sources */,
 				C4A0E9AD2782F534005D6662 /* UIColor+Hex.swift in Sources */,
 				C4024EB427915A0A00248854 /* UserPetUserPetIdRequest.swift in Sources */,
+				9C20B75428A431E000AA0530 /* UserFollowersResponce.swift in Sources */,
 				C4A0E9CA2783505D005D6662 /* JSONEncodingHelper.swift in Sources */,
 				C4A0E9D22783505D005D6662 /* JSONEncodableEncoding.swift in Sources */,
 				C4E0D3FE28587513004CFD8D /* ModalPetStateView.swift in Sources */,
@@ -1467,6 +1597,7 @@
 				C4763B822867810C001B1F27 /* AwardInfoViewController.swift in Sources */,
 				9C6F3F882855E302009A1C4F /* UIStackView + Init.swift in Sources */,
 				C4024EBB27917C1B00248854 /* UserPet.swift in Sources */,
+				9C20B76628A9045700AA0530 /* FollowerListSectionModel.swift in Sources */,
 				C41E1D9B27A27FBA00AA773B /* LoggerService.swift in Sources */,
 				C42624AB2854691A001EF653 /* String+Base64.swift in Sources */,
 				C41E1D9027A27F1300AA773B /* KeychainService.swift in Sources */,
@@ -1492,6 +1623,7 @@
 				C4A0E9922782E79F005D6662 /* OnboardingView.swift in Sources */,
 				C4242DE1279087CC002B99E9 /* RegisterPickPetCell.swift in Sources */,
 				C4242DB7279000BA002B99E9 /* UserAvatarResponse.swift in Sources */,
+				9C20B76028A8F8BC00AA0530 /* SearchBarView.swift in Sources */,
 				9CAAF64E286B15F600D35BFE /* UserImageView.swift in Sources */,
 				C49D40A7283DD12700F42B2F /* StatsPostRequest.swift in Sources */,
 				C4DD24432786DF03006D2EE5 /* UserSettings.swift in Sources */,
@@ -1626,7 +1758,7 @@
 				CODE_SIGN_ENTITLEMENTS = iPet/iPet.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = EU9TQLF5BQ;
+				DEVELOPMENT_TEAM = Q5RV2AMVQ8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iPet/Resource/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Steppy;
@@ -1661,7 +1793,7 @@
 				CODE_SIGN_ENTITLEMENTS = iPet/iPet.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = EU9TQLF5BQ;
+				DEVELOPMENT_TEAM = Q5RV2AMVQ8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iPet/Resource/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Steppy;

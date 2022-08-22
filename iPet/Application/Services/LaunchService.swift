@@ -29,15 +29,15 @@ class LaunchService {
     }
     
     private func openAuth() {
-        setWindowRoot(viewController: OnboardingViewController())
+        setWindowRoot(viewController: SignInViewController())
     }
     
     private func openAccountSetup() {
-        setWindowRoot(viewController: ProfileSettingsViewController())
+        setWindowRoot(viewController: RegisterUserInputViewController())
     }
-    
+        
     private func openMain() {
-        setWindowRoot(viewController: ProfileViewController())
+        setWindowRoot(viewController: TabBarController())
     }
     
     func openModule() {

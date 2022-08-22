@@ -65,7 +65,7 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
         mainView.profileSettingsContentView.userSettingsContentView.heightMetricView.metricLabel.text = "\(user?.height ?? 0)"
         mainView.profileSettingsContentView.userSettingsContentView.weightMetricView.metricLabel.text = "\(user?.weight ?? 0)"
         mainView.profileSettingsContentView.userSettingsContentView.sexView.genderImage.image = user?.gender == "male"
-        ? R.image.manGender()
+        ? R.image.maleGender()
         : R.image.femaleGender()
         mainView.profileSettingsContentView.distanceNumberLabel.text = "\(user?.totalDistance ?? 0)"
     }

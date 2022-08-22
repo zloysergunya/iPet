@@ -42,7 +42,7 @@ class UserSettingsContentView: RootView {
     let sexView: GenderView = {
         let view = GenderView()
         view.genderLabel.text = "Пол:"
-        view.genderImage.image = R.image.manGender()
+        view.genderImage.image = R.image.maleGender()
         
         return view
     }()
