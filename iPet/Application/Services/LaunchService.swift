@@ -33,7 +33,7 @@ class LaunchService {
     }
     
     private func openAccountSetup() {
-        setWindowRoot(viewController: RegisterUserInputViewController())
+        setWindowRoot(viewController: ProfileSettingsViewController())
     }
         
     private func openMain() {
