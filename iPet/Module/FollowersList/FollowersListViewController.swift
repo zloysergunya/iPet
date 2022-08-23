@@ -27,9 +27,7 @@ class FollowersListViewController: ViewController<FollowersListView> {
         
         adapter.collectionView = mainView.collectionView
         adapter.dataSource = self
-        
-        mainView.globalSearchButton.addTarget(self, action: #selector(globalSearchButtonPressed), for: .touchUpInside)
-        
+
         mainView.searchBar.delegate = self
         mainView.backgroundColor = R.color.background()
     }
