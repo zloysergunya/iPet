@@ -619,7 +619,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 29 images.
+  /// This `R.image` struct is generated, and contains static references to 30 images.
   struct image {
     /// Image `addPhotoButton`.
     static let addPhotoButton = Rswift.ImageResource(bundle: R.hostingBundle, name: "addPhotoButton")
@@ -635,6 +635,8 @@ struct R: Rswift.Validatable {
     static let editButton = Rswift.ImageResource(bundle: R.hostingBundle, name: "editButton")
     /// Image `exitAccount`.
     static let exitAccount = Rswift.ImageResource(bundle: R.hostingBundle, name: "exitAccount")
+    /// Image `femaleGender`.
+    static let femaleGender = Rswift.ImageResource(bundle: R.hostingBundle, name: "femaleGender")
     /// Image `foxMascote`.
     static let foxMascote = Rswift.ImageResource(bundle: R.hostingBundle, name: "foxMascote")
     /// Image `googleLogo`.
@@ -726,6 +728,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "exitAccount", bundle: ..., traitCollection: ...)`
     static func exitAccount(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.exitAccount, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "femaleGender", bundle: ..., traitCollection: ...)`
+    static func femaleGender(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.femaleGender, compatibleWith: traitCollection)
     }
     #endif
 

@@ -13,7 +13,7 @@ class GenderView: RootView {
     
     let genderImage: UIImageView = {
         let image = UIImageView()
-        image.sizeToFit()
+        image.contentMode = .scaleAspectFit
         
         return image
     }()
