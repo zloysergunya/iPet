@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "femaleGender.png",
+      "filename" : "gender_woman.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "femaleGender-1.png",
+      "filename" : "gender_woman@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "femaleGender-2.png",
+      "filename" : "gender_woman@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
