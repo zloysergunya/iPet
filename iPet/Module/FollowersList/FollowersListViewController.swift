@@ -3,7 +3,6 @@ import IGListKit
 
 class FollowersListViewController: ViewController<FollowersListView> {
     
-    private let isGLobalList: Bool
     private let provider = FollowersListProvider()
     
     private lazy var adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 0)
@@ -13,8 +12,7 @@ class FollowersListViewController: ViewController<FollowersListView> {
     private var pendingRequestWorkItem: DispatchWorkItem?
 
     
-    init(isGlobalList: Bool) {
-        self.isGLobalList = isGlobalList
+    init() {
         super.init(nibName: nil, bundle: nil)
         
         title = "Подписчики"
@@ -50,24 +48,12 @@ class FollowersListViewController: ViewController<FollowersListView> {
             if flush {
                 objects.removeAll()
             }
-            
-            // Пример загрузки коллекции
-            mainView.stackView.arrangedSubviews.forEach({  $0.removeFromSuperview()  })
-            users.prefix(5).forEach { user in
-                let imageView = UIImageView()
-                
-                ImageLoader.setImage(url: user.avatarURL, imageView: imageView)
-                mainView.stackView.addArrangedSubview(imageView)
-            }
-            //
-            
             objects.append(contentsOf: users.map({ FollowerListSectionModel(user: $0) }))
             loadingState = .loaded
         case .failure(let error):
             showError(text: error.localizedDescription)
             loadingState = .failed
         }
-        
         adapter.performUpdates(animated: true)
     }
 

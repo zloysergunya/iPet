@@ -63,7 +63,7 @@ class FollowersListSectionController: ListSectionController {
         // TODO: НАстроить кнопку исходя из статуса
 //        cell.userStatus.image =
         
-        let userStatus = UIImage(named: "addUser")
+        let userStatus = R.image.addUser()
         cell.userStatus.image = userStatus
         
         return cell

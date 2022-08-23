@@ -55,8 +55,8 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
         let user = UserSettings.user
         
         ImageLoader.setImage(url: user?.avatarURL, imageView: mainView.profileSettingsContentView.headerProfileSettingsView.imageView)
+        ImageLoader.setImage(url: user?.avatarURL, imageView: mainView.profileSettingsContentView.headerProfileSettingsView.imageView)
         
-        mainView.profileSettingsContentView.headerProfileSettingsView.imageView.image = UIImage(named: "\(user?.avatarURL ?? "")") ?? UIImage(named: "foxMascote")
         mainView.profileSettingsContentView.headerProfileSettingsView.nameLabel.text = "\(user?.name ?? "Иван")"
         mainView.profileSettingsContentView.headerProfileSettingsView.userNameLabel.text = "\(user?.username ?? "coala")"
         mainView.profileSettingsContentView.headerProfileSettingsView.petNameLabel.text = "\(user?.pet?.name ?? "Пуфик")"

@@ -12,8 +12,6 @@ class FollowersListView: RootView {
         
         return button
     }()
-
-    let stackView = UIStackView()
         
     let collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())

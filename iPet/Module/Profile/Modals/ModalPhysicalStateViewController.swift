@@ -28,7 +28,7 @@ class ModalPhysicalStateViewController: ViewController<ModalPhysicalStateView> {
         mainView.titleLabel.text = petState.name
         mainView.subtitleLabel.text = petState.stateDescription
         
-        mainView.actionButton.setTitle("BLYA®", for: .normal)
+        mainView.actionButton.setTitle("OK", for: .normal)
         mainView.actionButton.addTarget(self, action: #selector(close), for: .touchUpInside)
         
     }
