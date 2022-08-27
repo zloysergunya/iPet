@@ -45,6 +45,9 @@
 		9CCBE0F028B23216008D1B46 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBE0EF28B23216008D1B46 /* UIViewController+Alerts.swift */; };
 		9CCBE0F428B4041F008D1B46 /* ModalPhysicalStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBE0F328B4041F008D1B46 /* ModalPhysicalStateViewController.swift */; };
 		9CCBE0F628B4047B008D1B46 /* ModalPhysicalStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBE0F528B4047B008D1B46 /* ModalPhysicalStateView.swift */; };
+		9CCBE0FA28B556CE008D1B46 /* FriendProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBE0F828B556CE008D1B46 /* FriendProfileViewController.swift */; };
+		9CCBE0FB28B556CE008D1B46 /* FriendProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBE0F928B556CE008D1B46 /* FriendProfileView.swift */; };
+		9CCBE0FF28B55843008D1B46 /* FriendHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBE0FE28B55843008D1B46 /* FriendHeaderView.swift */; };
 		9CD7A9DA286D95D400D55947 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD7A9D8286D95D400D55947 /* ProfileViewController.swift */; };
 		9CD7A9DB286D95D400D55947 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD7A9D9286D95D400D55947 /* ProfileView.swift */; };
 		9CD7A9DE286D980600D55947 /* UserDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD7A9DD286D980600D55947 /* UserDataView.swift */; };
@@ -213,6 +216,9 @@
 		9CCBE0EF28B23216008D1B46 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		9CCBE0F328B4041F008D1B46 /* ModalPhysicalStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPhysicalStateViewController.swift; sourceTree = "<group>"; };
 		9CCBE0F528B4047B008D1B46 /* ModalPhysicalStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPhysicalStateView.swift; sourceTree = "<group>"; };
+		9CCBE0F828B556CE008D1B46 /* FriendProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileViewController.swift; sourceTree = "<group>"; };
+		9CCBE0F928B556CE008D1B46 /* FriendProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileView.swift; sourceTree = "<group>"; };
+		9CCBE0FE28B55843008D1B46 /* FriendHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendHeaderView.swift; sourceTree = "<group>"; };
 		9CD7A9D8286D95D400D55947 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9CD7A9D9286D95D400D55947 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		9CD7A9DD286D980600D55947 /* UserDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataView.swift; sourceTree = "<group>"; };
@@ -573,6 +579,32 @@
 				9CCBE0F528B4047B008D1B46 /* ModalPhysicalStateView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9CCBE0FC28B556D9008D1B46 /* FriendProfile */ = {
+			isa = PBXGroup;
+			children = (
+				9CCBE0FD28B556E6008D1B46 /* View */,
+				9CCBE0F828B556CE008D1B46 /* FriendProfileViewController.swift */,
+			);
+			path = FriendProfile;
+			sourceTree = "<group>";
+		};
+		9CCBE0FD28B556E6008D1B46 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9CCBE0F928B556CE008D1B46 /* FriendProfileView.swift */,
+				9CCBE10028B5584C008D1B46 /* Subviews */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9CCBE10028B5584C008D1B46 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				9CCBE0FE28B55843008D1B46 /* FriendHeaderView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		9CD7A9D7286D905900D55947 /* Profile */ = {
@@ -990,6 +1022,7 @@
 				C4A0E9A42782F2A3005D6662 /* Register */,
 				C4A0E98D2782E772005D6662 /* Onboarding */,
 				C4A0E97E2782DE94005D6662 /* Launch */,
+				9CCBE0FC28B556D9008D1B46 /* FriendProfile */,
 				9CD7A9D7286D905900D55947 /* Profile */,
 				9CAAF61E286B15F600D35BFE /* ProfileSettings */,
 				9CAAF632286B15F600D35BFE /* UserSettings */,
@@ -1478,6 +1511,7 @@
 			files = (
 				C4C618AC27B95C850009AA1C /* ActivityProgressView.swift in Sources */,
 				C4763B7E28676EEC001B1F27 /* Award.swift in Sources */,
+				9CCBE0FB28B556CE008D1B46 /* FriendProfileView.swift in Sources */,
 				C4242DC927900E5F002B99E9 /* RegisterPickPetProvider.swift in Sources */,
 				C4A0E9B42782F87D005D6662 /* RegisterUserInputView.swift in Sources */,
 				C4763B832867810C001B1F27 /* AwardInfoView.swift in Sources */,
@@ -1536,6 +1570,7 @@
 				C49D40AA283DD19100F42B2F /* HealthService.swift in Sources */,
 				C4190F4C2788944400C005C7 /* UserCheckUsernameRequest.swift in Sources */,
 				9CCBE0F428B4041F008D1B46 /* ModalPhysicalStateViewController.swift in Sources */,
+				9CCBE0FA28B556CE008D1B46 /* FriendProfileViewController.swift in Sources */,
 				C4024EB92791726200248854 /* RegisterStepsInputProvider.swift in Sources */,
 				C4242DD627902A9E002B99E9 /* RegisterPetSectionController.swift in Sources */,
 				C4A0E9662782DB48005D6662 /* AppDelegate.swift in Sources */,
@@ -1591,6 +1626,7 @@
 				9CD7A9E7286F452300D55947 /* InviteFriendsView.swift in Sources */,
 				C41E1DA227A2805200AA773B /* Bundle+Current.swift in Sources */,
 				9CAAF653286B7B8F00D35BFE /* String+CapitalizingFirstLetter.swift in Sources */,
+				9CCBE0FF28B55843008D1B46 /* FriendHeaderView.swift in Sources */,
 				C4FB55B927A53F91006CBFF7 /* UIButton+BackgroundColoroForState.swift in Sources */,
 				C4242DCD279025BE002B99E9 /* PetAnimation.swift in Sources */,
 				C4242DE4279095D5002B99E9 /* PagingFlowLayout.swift in Sources */,

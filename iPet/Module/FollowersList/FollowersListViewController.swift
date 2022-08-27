@@ -134,7 +134,7 @@ extension FollowersListViewController: ListAdapterDataSource {
 // MARK: - UserListSectionControllerDelegate
 extension FollowersListViewController: FollowersListSectionControllerDelegate {
     func followersListSectionController(didSelect user: User) {
-        navigationController?.pushViewController(ProfileViewController(user: user), animated: true)
+        navigationController?.pushViewController(FriendProfileViewController(user: user), animated: true)
     }
 
     func followerListSectionController(willDisplay cell: UICollectionViewCell, at section: Int) {
