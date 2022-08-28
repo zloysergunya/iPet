@@ -3,7 +3,8 @@ import UIKit
 class ProfileViewController: ViewController<ProfileView> {
 
     private let provider = ProfileProvider()
-    
+    private let petObesityLevel = UserSettings.user?.pet?.petObesityLevel
+
     private var user: User
     
     init(user: User) {
@@ -30,13 +31,27 @@ class ProfileViewController: ViewController<ProfileView> {
         
         mainView.userDataView.nameLabel.text = user.name
         mainView.userDataView.userNameLabel.text = user.username
-        mainView.userDataView.petNameLabel.text = user.pet?.name
+        mainView.userDataView.petNameLabel.text = "Питомец: \(user.pet?.name ?? "")"
         
-        mainView.physicalMetricView.countStepsLabel.text = "\(user.stepsCount)/\(user.stepsCount)"
-        mainView.physicalMetricView.countDaysLabel.text = "\(user.age)/\(user.weight)"
+        // TODO: - Доделать статус
+        mainView.physicalMetricView.physicalStatusLabel.text = "\(PetState(rawValue: petObesityLevel ?? 0))"
+        mainView.physicalMetricView.progressView.progress = Float(Double(user.stepsCount) / 8000.0)
+        mainView.physicalMetricView.countStepsLabel.text = "\(Int(user.stepsCount))/8000"
         
-        let intiteFriendsTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(inviteFriendsTapGesture))
-        mainView.inviteFriendsView.addGestureRecognizer(intiteFriendsTapRecognizer)
+        mainView.socialView.followersLabel.text = "Подписчики (\(user.countFollowers))"
+        mainView.socialView.followingLabel.text = "Подписки (\(user.countFollowing))"
+        
+        // TODO: - Доделать дни
+//        mainView.physicalMetricView.countDaysLabel.text = "\(user.age)/\(user.weight)"
+        
+        let showFollowersTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(showFollowersTapGesture))
+        mainView.socialView.followersImageView.addGestureRecognizer(showFollowersTapRecognizer)
+        
+        let showFollowingTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(showFollowingTapGesture))
+        mainView.socialView.followersImageView.addGestureRecognizer(showFollowingTapRecognizer)
+        
+        let searchFriendsTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(inviteFriendsTapGesture))
+        mainView.searchBar.addGestureRecognizer(searchFriendsTapRecognizer)
 
         let showProgressTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(showProgressTapGesture))
         mainView.physicalMetricView.addGestureRecognizer(showProgressTapRecognizer)
@@ -57,13 +72,23 @@ class ProfileViewController: ViewController<ProfileView> {
     }
 
     @objc private func showProgressTapGesture() {
-        guard let petObesityLevel = UserSettings.user?.pet?.petObesityLevel,
-              let petState = PetState(rawValue: petObesityLevel) else {
+        guard let petState = PetState(rawValue: petObesityLevel ?? 0) else {
             return
         }
         
         let viewController = ModalPhysicalStateViewController(petState: petState)
         present(viewController, animated: true)
+    }
+    
+    @objc private func showFollowersTapGesture() {
+        let viewController = FollowersListViewController()
+        present(viewController, animated: true)
+        print("tap")
+    }
+    
+    @objc private func showFollowingTapGesture() {
+//        let viewController = FollowersListViewController()
+//        present(viewController, animated: true)
     }
     
     @objc private func inviteFriendsTapGesture() {

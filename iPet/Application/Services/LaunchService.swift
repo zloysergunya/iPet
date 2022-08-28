@@ -37,10 +37,11 @@ class LaunchService {
     }
         
     private func openMain() {
-//        setWindowRoot(viewController: TabBarController())
+        setWindowRoot(viewController: TabBarController())
 //        setWindowRoot(viewController: FollowersListViewController())
-        setWindowRoot(viewController: FriendProfileViewController(user: UserSettings.user!))
-//        setWindowRoot(viewController: ProfileViewController(user: UserSettings.user!))
+//        setWindowRoot(viewController: FriendProfileViewController(user: UserSettings.user!))
+        setWindowRoot(viewController: ProfileViewController(user: UserSettings.user!))
+//        setWindowRoot(viewController: ProfileSettingsViewController())
     }
     
     func openModule() {

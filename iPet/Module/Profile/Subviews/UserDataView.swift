@@ -72,17 +72,19 @@ class UserDataView: RootView {
         ], axis: .horizontal, spacing: 3.0)
     
     override func setup() {
-         
-        backgroundColor = R.color.background()
         
-        addSubview(photoPlaceholderImageView)
-        addSubview(addImageView)
-        addSubview(userDataStackView)
+        backgroundColor = R.color.background()
 
         setupConstraints()
     }
     
     private func setupConstraints() {
+        addSubview(photoPlaceholderImageView)
+        addSubview(addImageView)
+        addSubview(nameLabel)
+        addSubview(userNameLabel)
+        addSubview(petNameLabel)
+        
         addImageView.snp.makeConstraints { make in
             make.right.equalTo(photoPlaceholderImageView.snp.right).offset(-8.0)
             make.bottom.equalTo(photoPlaceholderImageView.snp.bottom).offset(4.0)
@@ -94,8 +96,20 @@ class UserDataView: RootView {
             make.size.equalTo(70.0)
         }
         
-        userDataStackView.snp.makeConstraints { make in
-            make.top.right.bottom.equalToSuperview()
+        nameLabel.snp.makeConstraints { make in
+            make.top.right.equalToSuperview()
+            make.left.equalTo(photoPlaceholderImageView.snp.right).offset(21.0)
+        }
+        
+        userNameLabel.snp.makeConstraints { make in
+            make.top.equalTo(nameLabel.snp.bottom).offset(4.0)
+            make.right.equalToSuperview()
+            make.left.equalTo(photoPlaceholderImageView.snp.right).offset(21.0)
+        }
+        
+        petNameLabel.snp.makeConstraints { make in
+            make.top.equalTo(userNameLabel.snp.bottom).offset(3.0)
+            make.right.equalToSuperview()
             make.left.equalTo(photoPlaceholderImageView.snp.right).offset(21.0)
         }
     }

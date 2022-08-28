@@ -1,26 +1,24 @@
 import UIKit
 
-class SubscribersView: RootView {
+class SocialView: RootView {
 
-    let subscribersLabel: UILabel = {
+    let followersLabel: UILabel = {
         let label = UILabel()
-        label.text = "Подписчики (85)"
         label.font = R.font.sfuiTextBold(size: 13.0)
         label.textColor = R.color.grayText()
         
         return label
     }()
     
-    let subscriptionsLabel: UILabel = {
+    let followingLabel: UILabel = {
         let label = UILabel()
-        label.text = "Подписки (15)"
         label.font = R.font.sfuiTextBold(size: 13.0)
         label.textColor = R.color.grayText()
 
         return label
     }()
     
-    let subscribersImageView: UIImageView = {
+    let followersImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = R.image.subscribers()
         imageView.contentMode = .scaleAspectFill
@@ -28,7 +26,7 @@ class SubscribersView: RootView {
         return imageView
     }()
     
-    let subscriptionsImageView: UIImageView = {
+    let followingImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = R.image.subscribers()
         imageView.contentMode = .scaleAspectFill
@@ -54,10 +52,10 @@ class SubscribersView: RootView {
          
         backgroundColor = R.color.background()
         
-        addSubview(subscribersLabel)
-        addSubview(subscriptionsLabel)
-        addSubview(subscribersImageView)
-        addSubview(subscriptionsImageView)
+        addSubview(followersLabel)
+        addSubview(followingLabel)
+        addSubview(followersImageView)
+        addSubview(followingImageView)
         addSubview(verticalView)
         addSubview(horizontalView)
 
@@ -65,25 +63,25 @@ class SubscribersView: RootView {
     }
     
     private func setupConstraints() {
-        subscribersLabel.snp.makeConstraints { make in
+        followersLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.left.equalToSuperview()
         }
         
-        subscriptionsLabel.snp.makeConstraints { make in
+        followingLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.right.equalToSuperview()
         }
         
-        subscribersImageView.snp.makeConstraints { make in
-            make.top.equalTo(subscribersLabel.snp.bottom).offset(16.0)
+        followersImageView.snp.makeConstraints { make in
+            make.top.equalTo(followersLabel.snp.bottom).offset(16.0)
             make.left.equalToSuperview()
             make.width.equalTo(118.0)
             make.height.equalTo(31.0)
         }
         
-        subscriptionsImageView.snp.makeConstraints { make in
-            make.top.equalTo(subscriptionsLabel.snp.bottom).offset(16.0)
+        followingImageView.snp.makeConstraints { make in
+            make.top.equalTo(followingLabel.snp.bottom).offset(16.0)
             make.right.equalToSuperview()
             make.width.equalTo(118.0)
             make.height.equalTo(31.0)
@@ -96,7 +94,7 @@ class SubscribersView: RootView {
         }
         
         horizontalView.snp.makeConstraints { make in
-            make.top.equalTo(subscribersImageView.snp.bottom).offset(12.0)
+            make.top.equalTo(followersImageView.snp.bottom).offset(12.0)
             make.left.right.equalToSuperview()
             make.bottom.equalToSuperview()
             make.height.equalTo(1.0)
