@@ -34,6 +34,33 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
         mainView.friendHeaderView.usernameLabel.text = user.username
         mainView.friendHeaderView.userLevelLabel.text = "Уровень: \(user.lvlActivity)"
         mainView.friendHeaderView.petNameLabel.text = "Питомец: \(petName)"
+        
+        mainView.friendSegmentedControll.segmentedControll.addTarget(self, action: #selector(segmentControl(_:)), for: .valueChanged)
+        
+        
+    }
+    
+    @objc func segmentControl(_ segmentedControl: UISegmentedControl) {
+        switch (segmentedControl.selectedSegmentIndex) {
+        case 0:
+            DispatchQueue.main.async { [self] in
+                mainView.dateData.isHidden = false
+                mainView.weekData.isHidden = true
+                mainView.monthData.isHidden = true
+            }
+        case 1:
+            DispatchQueue.main.async { [self] in
+                mainView.dateData.isHidden = true
+                mainView.weekData.isHidden = false
+                mainView.monthData.isHidden = true
+            }
+        default:
+            DispatchQueue.main.async { [self] in
+                mainView.dateData.isHidden = true
+                mainView.weekData.isHidden = true
+                mainView.monthData.isHidden = false
+            }
+        }
     }
     
     private func setTarget() {

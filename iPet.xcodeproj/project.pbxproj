@@ -48,6 +48,10 @@
 		9CCBE0FA28B556CE008D1B46 /* FriendProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBE0F828B556CE008D1B46 /* FriendProfileViewController.swift */; };
 		9CCBE0FB28B556CE008D1B46 /* FriendProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBE0F928B556CE008D1B46 /* FriendProfileView.swift */; };
 		9CCBE0FF28B55843008D1B46 /* FriendHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBE0FE28B55843008D1B46 /* FriendHeaderView.swift */; };
+		9CCBE10228BA32F5008D1B46 /* FriendSegmentedControllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBE10128BA32F5008D1B46 /* FriendSegmentedControllView.swift */; };
+		9CCBE10428BA370A008D1B46 /* SFUIDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CCBE10328BA3698008D1B46 /* SFUIDisplay-Regular.ttf */; };
+		9CCBE10628BA6DD5008D1B46 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBE10528BA6DD5008D1B46 /* DataView.swift */; };
+		9CCBE10828BA6E60008D1B46 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBE10728BA6E60008D1B46 /* StateView.swift */; };
 		9CD7A9DA286D95D400D55947 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD7A9D8286D95D400D55947 /* ProfileViewController.swift */; };
 		9CD7A9DB286D95D400D55947 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD7A9D9286D95D400D55947 /* ProfileView.swift */; };
 		9CD7A9DE286D980600D55947 /* UserDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD7A9DD286D980600D55947 /* UserDataView.swift */; };
@@ -219,6 +223,10 @@
 		9CCBE0F828B556CE008D1B46 /* FriendProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileViewController.swift; sourceTree = "<group>"; };
 		9CCBE0F928B556CE008D1B46 /* FriendProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileView.swift; sourceTree = "<group>"; };
 		9CCBE0FE28B55843008D1B46 /* FriendHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendHeaderView.swift; sourceTree = "<group>"; };
+		9CCBE10128BA32F5008D1B46 /* FriendSegmentedControllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendSegmentedControllView.swift; sourceTree = "<group>"; };
+		9CCBE10328BA3698008D1B46 /* SFUIDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		9CCBE10528BA6DD5008D1B46 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
+		9CCBE10728BA6E60008D1B46 /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		9CD7A9D8286D95D400D55947 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9CD7A9D9286D95D400D55947 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		9CD7A9DD286D980600D55947 /* UserDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataView.swift; sourceTree = "<group>"; };
@@ -603,6 +611,9 @@
 			isa = PBXGroup;
 			children = (
 				9CCBE0FE28B55843008D1B46 /* FriendHeaderView.swift */,
+				9CCBE10128BA32F5008D1B46 /* FriendSegmentedControllView.swift */,
+				9CCBE10728BA6E60008D1B46 /* StateView.swift */,
+				9CCBE10528BA6DD5008D1B46 /* DataView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -1008,6 +1019,7 @@
 				C4A0E99E2782EC0F005D6662 /* MontserratRegular.ttf */,
 				C4A0E99F2782EC0F005D6662 /* MontserratSemiBold.ttf */,
 				9CC906E9285CB50600BE8F06 /* SFUIDisplay-Light.ttf */,
+				9CCBE10328BA3698008D1B46 /* SFUIDisplay-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -1419,6 +1431,7 @@
 				C4A0E9A32782EC0F005D6662 /* MontserratSemiBold.ttf in Resources */,
 				C4C6189D27B948BC0009AA1C /* SFUIText-Semibold.ttf in Resources */,
 				C4A0E9B727834617005D6662 /* GoogleService-Info.plist in Resources */,
+				9CCBE10428BA370A008D1B46 /* SFUIDisplay-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1560,6 +1573,7 @@
 				9CAAF64D286B15F600D35BFE /* UserSettingsContentView.swift in Sources */,
 				C48D6FDE2844A4EA009D36EE /* AchivmentsView.swift in Sources */,
 				9C20B75B28A4452200AA0530 /* FollowersListViewController.swift in Sources */,
+				9CCBE10628BA6DD5008D1B46 /* DataView.swift in Sources */,
 				C4C618A327B951070009AA1C /* ImageLoader.swift in Sources */,
 				9CAAF64A286B15F600D35BFE /* UserSettingsProvider.swift in Sources */,
 				C49D40A4283DD0A800F42B2F /* StatsAPI.swift in Sources */,
@@ -1599,6 +1613,7 @@
 				9CAAF64B286B15F600D35BFE /* UserSettingsView.swift in Sources */,
 				C4242DD427902A1F002B99E9 /* PetSectionModel.swift in Sources */,
 				C4C6189327B947170009AA1C /* GeneralView.swift in Sources */,
+				9CCBE10828BA6E60008D1B46 /* StateView.swift in Sources */,
 				C49D40B2283DD64F00F42B2F /* Date+DatesBetweenTwoDates.swift in Sources */,
 				C4190F3F2786E89E00C005C7 /* UserCheckUsernameResponse.swift in Sources */,
 				C4242DD0279029BB002B99E9 /* LoadingState.swift in Sources */,
@@ -1638,6 +1653,7 @@
 				C42624AB2854691A001EF653 /* String+Base64.swift in Sources */,
 				C41E1D9027A27F1300AA773B /* KeychainService.swift in Sources */,
 				9C6F3F922856007A009A1C4F /* GradientView.swift in Sources */,
+				9CCBE10228BA32F5008D1B46 /* FriendSegmentedControllView.swift in Sources */,
 				C42624AE28547167001EF653 /* PetState.swift in Sources */,
 				C4A0E9CF2783505D005D6662 /* APIs.swift in Sources */,
 				C4DD24462786E036006D2EE5 /* UserDefaults+SaveStruct.swift in Sources */,
