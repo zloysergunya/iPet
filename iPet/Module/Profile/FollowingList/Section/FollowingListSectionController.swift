@@ -1,18 +1,18 @@
 import IGListKit
 import UIKit
 
-protocol FollowersListSectionControllerDelegate: AnyObject {
+protocol FollowingListSectionControllerDelegate: AnyObject {
     func followersListSectionController(didSelect user: User)
     func followerListSectionController(willDisplay cell: UICollectionViewCell, at section: Int)
 }
 
-class FollowersListSectionController: ListSectionController {
+class FollowingListSectionController: ListSectionController {
     
-    private let provider = FollowersListProvider()
+    private let provider = FollowingProvider()
     
-    weak var delegate: FollowersListSectionControllerDelegate?
+    weak var delegate: FollowingListSectionControllerDelegate?
     
-    private var sectionModel: FollowerListSectionModel!
+    private var sectionModel: FollowingListSectionModel!
     
     override init() {
         super.init()
@@ -40,8 +40,8 @@ class FollowersListSectionController: ListSectionController {
     }
     
     override func didUpdate(to object: Any) {
-        precondition(object is FollowerListSectionModel)
-        sectionModel = object as? FollowerListSectionModel
+        precondition(object is FollowingListSectionModel)
+        sectionModel = object as? FollowingListSectionModel
     }
     
     override func didSelectItem(at index: Int) {
@@ -58,20 +58,18 @@ class FollowersListSectionController: ListSectionController {
         let userPetName = sectionModel.user.pet?.name
         cell.userPetName.text = userPetName
         
-        let userImage = ImageLoader.setImage(url: sectionModel.user.avatarURL, imageView: cell.userImage)
+        ImageLoader.setImage(url: sectionModel.user.avatarURL, imageView: cell.userImage)
         
         // TODO: НАстроить кнопку исходя из статуса
-//        cell.userStatus.image =
-        
-        let userStatus = R.image.addUser()
+        let userStatus = sectionModel.user.follow ? R.image.removeUser() : R.image.addUser()
         cell.userStatus.image = userStatus
-        
+
         return cell
     }
 }
 
 // MARK: - ListDisplayDelegate
-extension FollowersListSectionController: ListDisplayDelegate {
+extension FollowingListSectionController: ListDisplayDelegate {
     
     func listAdapter(_ listAdapter: ListAdapter, willDisplay sectionController: ListSectionController) {}
     func listAdapter(_ listAdapter: ListAdapter, didEndDisplaying sectionController: ListSectionController) {}

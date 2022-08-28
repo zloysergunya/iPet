@@ -1,5 +1,5 @@
 import Foundation
 
-struct UserFollowersResponce: Codable {
+struct UserFollowingResponce: Codable {
     let items: [User]
 }
