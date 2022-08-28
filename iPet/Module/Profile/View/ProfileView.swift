@@ -13,8 +13,8 @@ class ProfileView: RootView {
 
     let userDataView = UserDataView()
     let physicalMetricView = PhysicalMetricView()
-    let subscribersView = SubscribersView()
-    let inviteFriendsView = IntiveFriendsView()
+    let socialView = SocialView()
+    let searchBar = SearchBarView()
     
     private let navigationBar: UINavigationBar = {
         let navigationBar = UINavigationBar()
@@ -39,8 +39,8 @@ class ProfileView: RootView {
         scrollView.addSubview(userDataView)
         scrollView.addSubview(view)
         scrollView.addSubview(physicalMetricView)
-        scrollView.addSubview(subscribersView)
-        scrollView.addSubview(inviteFriendsView)
+        scrollView.addSubview(socialView)
+        scrollView.addSubview(searchBar)
         
         setupConstraints()
     }
@@ -53,7 +53,7 @@ class ProfileView: RootView {
         userDataView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(18.0)
             make.centerX.equalToSuperview()
-            make.left.right.equalToSuperview().inset(36.0)
+            make.left.right.equalToSuperview().inset(26.0)
         }
         
         view.snp.makeConstraints { make in
@@ -65,18 +65,19 @@ class ProfileView: RootView {
         
         physicalMetricView.snp.makeConstraints { make in
             make.top.equalTo(view.snp.bottom)
-            make.left.right.equalToSuperview().inset(36.0)
+            make.left.right.equalToSuperview().inset(26.0)
         }
         
-        subscribersView.snp.makeConstraints { make in
+        socialView.snp.makeConstraints { make in
             make.top.equalTo(physicalMetricView.snp.bottom).offset(20.0)
             make.left.right.equalToSuperview().inset(26.0)
         }
         
-        inviteFriendsView.snp.makeConstraints { make in
-            make.top.equalTo(subscribersView.snp.bottom).offset(20.0)
-            make.left.right.equalToSuperview().inset(16.0)
+        searchBar.snp.makeConstraints { make in
+            make.top.equalTo(socialView.snp.bottom).offset(20.0)
+            make.left.right.equalToSuperview().inset(26.0)
             make.bottom.equalToSuperview()
+            make.height.equalTo(43.0)
         }
     }
     

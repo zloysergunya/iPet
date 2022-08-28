@@ -75,11 +75,18 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
     }
     
     @objc private func recallTapGesture() {
-        
+        if let url = URL(string: "https://apps.apple.com/us/app/pokemon-go/id1094591345") {
+            UIApplication.shared.open(url)
+        }
     }
     
     @objc private func socialNetworksTapGesture() {
-        
+        let viewController = PlugPopUpViewController(
+            image: R.image.plug(),
+            title: "Скоро",
+            text: "Еще немного и сделаем"
+        )
+        present(viewController, animated: true)
     }
     
     @objc private func exitTapGesture() {

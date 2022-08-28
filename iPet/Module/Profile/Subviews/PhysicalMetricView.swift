@@ -29,18 +29,16 @@ class PhysicalMetricView: RootView {
         return label
     }()
     
-    let progressView: UIProgressView = {
+    var progressView: UIProgressView = {
         let progressView = UIProgressView()
         progressView.progressTintColor = R.color.orangeAccent()
         progressView.layer.cornerRadius = 10.0
-        progressView.progress = 0.55
         
         return  progressView
     }()
     
     let countStepsLabel: UILabel = {
         let label = UILabel()
-        label.text = "10300/62000 шагов"
         label.font = R.font.sfuiTextRegular(size: 11.0)
         label.textColor = R.color.textPrimary()
         
@@ -49,7 +47,6 @@ class PhysicalMetricView: RootView {
     
     let countDaysLabel: UILabel = {
         let label = UILabel()
-        label.text = "2/7 дней"
         label.font = R.font.sfuiTextRegular(size: 11.0)
         label.textColor = R.color.textPrimary()
         
