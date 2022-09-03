@@ -20,11 +20,11 @@ enum ActiveStatus: Int {
     
     var colors: [UIColor] {
         switch self {
-        case .activeAsPossible: return [R.color.activityGreenColor() ?? .green, .white]
-        case .active: return [R.color.activityGreenColor() ?? .green, .white]
-        case .moderatelyActive: return [R.color.activityOrangeColor() ?? .orange, .white]
-        case .sedentary: return [R.color.activityOrangeColor() ?? .orange, .white]
-        case .heavyOnTheRise: return [R.color.activityRedColor() ?? .red, .white]
+        case .activeAsPossible: return [R.color.activityGreenColor()!.withAlphaComponent(0.4), .white]
+        case .active: return [R.color.activityGreenColor()!.withAlphaComponent(0.4), .white]
+        case .moderatelyActive: return [R.color.activityOrangeColor()!.withAlphaComponent(0.4), .white]
+        case .sedentary: return [R.color.activityOrangeColor()!.withAlphaComponent(0.4), .white]
+        case .heavyOnTheRise: return [R.color.activityRedColor()!.withAlphaComponent(0.4), .white]
         }
     }
     

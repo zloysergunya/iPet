@@ -34,7 +34,8 @@ class GeneralView: RootView {
     let profileButton: UIButton = {
         let button = UIButton()
         button.setImage(R.image.photoPlaceholder(), for: .normal)
-        button.imageView?.contentMode = .scaleAspectFill
+//        button.imageView?.contentMode = .scaleAspectFill
+        button.layer.masksToBounds = true
         
         return button
     }()
@@ -114,19 +115,13 @@ class GeneralView: RootView {
         }
         
         shopButton.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(16.0)
-            make.left.equalToSuperview().offset(16.0)
-            make.height.equalTo(40.0)
-            make.width.greaterThanOrEqualTo(44.0)
-        }
-        
-        shopButton.imageView?.snp.makeConstraints { make in
-            make.height.equalTo(40.0)
-            make.width.equalTo(44.0)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(18.0)
+            make.left.equalToSuperview().offset(21.0)
+            make.size.equalTo(40.0)
         }
         
         petNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(14.0)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(16.0)
             make.centerX.equalToSuperview()
         }
         
@@ -136,7 +131,7 @@ class GeneralView: RootView {
         }
         
         profileButton.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(16.0)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(18.0)
             make.right.equalToSuperview().offset(-16.0)
             make.size.equalTo(40.0)
         }
@@ -170,7 +165,7 @@ class GeneralView: RootView {
         
         mainActivityProgressView.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(36.0)
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-36.0)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-30.0)
             make.height.equalTo(94.0)
         } 
     }

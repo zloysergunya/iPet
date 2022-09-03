@@ -30,7 +30,7 @@ class TabBarController: UITabBarController {
         generalViewController.tabBarItem.image = R.image.tabBarActivity()
         generalViewController.tabBarItem.title = "Активность"
         
-        viewControllers = [UINavigationController(rootViewController: generalViewController)]
+        viewControllers = [SwipeNavigationController(rootViewController: generalViewController)]
         
         tabBar.backgroundColor = .white
         tabBar.tintColor = .black

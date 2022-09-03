@@ -111,9 +111,10 @@ class GeneralViewController: ViewController<GeneralView> {
         mainView.petNameLabel.text = user?.pet?.name
         mainView.petLevelLabel.text = "Уровень: \(user?.lvlActivity ?? 1)"
         
-        ImageLoader.setImage(url: user?.avatarURL, imageView: UIImageView(), placeholderImage: nil) { result in
+        ImageLoader.setImage(url: user?.avatarURL, imageView: UIImageView(), side: 40.0) { result in
             switch result {
-            case .success(let image): self.mainView.profileButton.setImage(image.image, for: .normal)
+            case .success(let image):
+                self.mainView.profileButton.setImage(image.image, for: .normal)
             case .failure(let error): log.error(error.localizedDescription)
             }
         }
