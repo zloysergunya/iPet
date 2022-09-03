@@ -37,7 +37,7 @@ class LaunchService {
     }
     
     private func openMain() {
-        setWindowRoot(viewController: ProfileViewController())
+        setWindowRoot(viewController: TabBarController())
     }
     
     func openModule() {

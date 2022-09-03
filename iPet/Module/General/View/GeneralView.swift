@@ -39,6 +39,13 @@ class GeneralView: RootView {
         return button
     }()
     
+    let petStatusView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 4.0
+        
+        return view
+    }()
+    
     let petStatusLabel: UILabel = {
         let label = UILabel()
         label.font = R.font.sfuiTextMedium(size: 13.0)
@@ -87,6 +94,7 @@ class GeneralView: RootView {
         addSubview(profileButton)
         addSubview(animatedPetView)
         addSubview(petStatusLabel)
+        addSubview(petStatusView)
         addSubview(petStateLabel)
         addSubview(mainActivityProgressView)
         
@@ -144,8 +152,14 @@ class GeneralView: RootView {
         }
         
         petStatusLabel.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(36.0)
+            make.centerX.equalToSuperview()
             make.bottom.equalTo(petStateLabel.snp.top).offset(-4.0)
+        }
+        
+        petStatusView.snp.makeConstraints { make in
+            make.centerY.equalTo(petStatusLabel.snp.centerY)
+            make.right.equalTo(petStatusLabel.snp.left).offset(-10.0)
+            make.size.equalTo(8.0)
         }
         
         achivmentsView.snp.makeConstraints { make in

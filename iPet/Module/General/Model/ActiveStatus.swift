@@ -28,4 +28,12 @@ enum ActiveStatus: Int {
         }
     }
     
+    var accentColor: UIColor {
+        switch self {
+        case .activeAsPossible, .active: return .init(hex: 0x5DF545)
+        case .moderatelyActive, .sedentary: return .init(hex: 0xFF6B00)
+        case .heavyOnTheRise: return .init(hex: 0xFF0000)
+        }
+    }
+    
 }

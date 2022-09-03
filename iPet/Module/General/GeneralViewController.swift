@@ -119,6 +119,7 @@ class GeneralViewController: ViewController<GeneralView> {
         
         if let activeStatus = user?.pet?.activeStatus, let state = ActiveStatus(rawValue: activeStatus) {
             mainView.petStatusLabel.text = state.description
+            mainView.petStatusView.backgroundColor = state.accentColor
             mainView.radialGradientView.colors = state.colors
         }
         
