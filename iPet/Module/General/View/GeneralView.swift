@@ -56,6 +56,8 @@ class GeneralView: RootView {
         return label
     }()
     
+    private let petStateHelpImageView = UIImageView(image: R.image.petStateHelp())
+    
     let petStateLabel: UILabel = {
         let label = UILabel()
         label.font = R.font.sfuiTextMedium(size: 11.0)
@@ -97,6 +99,7 @@ class GeneralView: RootView {
         addSubview(petStatusLabel)
         addSubview(petStatusView)
         addSubview(petStateLabel)
+        addSubview(petStateHelpImageView)
         addSubview(mainActivityProgressView)
         
         setupConstraints()
@@ -142,8 +145,14 @@ class GeneralView: RootView {
         }
         
         petStateLabel.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(36.0)
+            make.centerX.equalToSuperview()
             make.bottom.equalTo(mainActivityProgressView.snp.top).offset(-50.0)
+        }
+        
+        petStateHelpImageView.snp.makeConstraints { make in
+            make.left.equalTo(petStateLabel.snp.right).offset(2.0)
+            make.centerY.equalTo(petStateLabel.snp.centerY)
+            make.size.equalTo(12.0)
         }
         
         petStatusLabel.snp.makeConstraints { make in
