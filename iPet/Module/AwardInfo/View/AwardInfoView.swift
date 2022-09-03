@@ -67,7 +67,9 @@ class AwardInfoView: RootView {
         button.titleLabel?.font = R.font.sfuiTextSemibold(size: 17.0)
         button.setTitleColor(R.color.background(), for: .normal)
         button.layer.cornerRadius = 10.0
-        button.backgroundColor = R.color.blueAccent()
+        button.layer.masksToBounds = true
+        button.setBackgroundColor(R.color.blueAccent(), for: .normal)
+        button.setBackgroundColor(R.color.blueAccentDarker(), for: .highlighted)
         
         return button
     }()

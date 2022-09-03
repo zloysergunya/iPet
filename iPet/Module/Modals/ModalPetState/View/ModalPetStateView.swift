@@ -50,6 +50,7 @@ class ModalPetStateView: RootView {
         button.titleLabel?.font = R.font.sfuiTextSemibold(size: 17.0)
         button.setTitleColor(R.color.background(), for: .normal)
         button.layer.cornerRadius = 10.0
+        button.layer.masksToBounds = true
         
         return button
     }()

@@ -29,11 +29,13 @@ class ModalPetStateViewController: ViewController<ModalPetStateView> {
         mainView.subtitleLabel.text = petState.stateDescription
         
         if petState == .excellentBody {
-            mainView.actionButton.backgroundColor = R.color.blueAccent()
+            mainView.actionButton.setBackgroundColor(R.color.blueAccent(), for: .normal)
+            mainView.actionButton.setBackgroundColor(R.color.blueAccentDarker(), for: .highlighted)
             mainView.actionButton.setTitle("ОК", for: .normal)
             mainView.actionButton.addTarget(self, action: #selector(close), for: .touchUpInside)
         } else {
-            mainView.actionButton.backgroundColor = R.color.orangeAccent()
+            mainView.actionButton.setBackgroundColor(R.color.orangeAccent(), for: .normal)
+            mainView.actionButton.setBackgroundColor(R.color.orangeAccentDarker(), for: .highlighted)
             mainView.actionButton.setTitle("Билетик в спортзал", for: .normal)
             // TODO: - Add action button target
         }
