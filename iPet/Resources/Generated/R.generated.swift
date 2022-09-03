@@ -619,7 +619,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 30 images.
+  /// This `R.image` struct is generated, and contains static references to 32 images.
   struct image {
     /// Image `addPhotoButton`.
     static let addPhotoButton = Rswift.ImageResource(bundle: R.hostingBundle, name: "addPhotoButton")
@@ -681,6 +681,10 @@ struct R: Rswift.Validatable {
     static let subscribers = Rswift.ImageResource(bundle: R.hostingBundle, name: "subscribers")
     /// Image `tabBarActivity`.
     static let tabBarActivity = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabBarActivity")
+    /// Image `tabBarAwards`.
+    static let tabBarAwards = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabBarAwards")
+    /// Image `tabBarStats`.
+    static let tabBarStats = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabBarStats")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "addPhotoButton", bundle: ..., traitCollection: ...)`
@@ -889,6 +893,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "tabBarActivity", bundle: ..., traitCollection: ...)`
     static func tabBarActivity(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.tabBarActivity, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tabBarAwards", bundle: ..., traitCollection: ...)`
+    static func tabBarAwards(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabBarAwards, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tabBarStats", bundle: ..., traitCollection: ...)`
+    static func tabBarStats(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabBarStats, compatibleWith: traitCollection)
     }
     #endif
 

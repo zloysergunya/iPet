@@ -26,11 +26,22 @@ class TabBarController: UITabBarController {
     }
     
     private func configure() {
+        let statsViewController = StatsViewController()
+        statsViewController.tabBarItem.image = R.image.tabBarStats()
+        statsViewController.tabBarItem.title = "Статистика"
+        
         let generalViewController = GeneralViewController()
         generalViewController.tabBarItem.image = R.image.tabBarActivity()
         generalViewController.tabBarItem.title = "Активность"
         
-        viewControllers = [SwipeNavigationController(rootViewController: generalViewController)]
+        let awardsViewController = AwardsViewController()
+        awardsViewController.tabBarItem.image = R.image.tabBarAwards()
+        awardsViewController.tabBarItem.title = "Награды"
+        
+        viewControllers = [SwipeNavigationController(rootViewController: statsViewController),
+                           SwipeNavigationController(rootViewController: generalViewController),
+                           SwipeNavigationController(rootViewController: awardsViewController)]
+        selectedIndex = 1
         
         tabBar.backgroundColor = .white
         tabBar.tintColor = .black

@@ -142,6 +142,10 @@
 		C4A0E9D7278350E9005D6662 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9D6278350E9005D6662 /* User.swift */; };
 		C4A0E9D9278350FD005D6662 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9D8278350FD005D6662 /* Pet.swift */; };
 		C4A0E9DB2783516A005D6662 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0E9DA2783516A005D6662 /* AuthAPI.swift */; };
+		C4B5AC0928C3903A00B79120 /* AwardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B5AC0728C3903A00B79120 /* AwardsViewController.swift */; };
+		C4B5AC0A28C3903A00B79120 /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B5AC0828C3903A00B79120 /* AwardsView.swift */; };
+		C4B5AC0E28C390DD00B79120 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B5AC0C28C390DD00B79120 /* StatsViewController.swift */; };
+		C4B5AC0F28C390DD00B79120 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B5AC0D28C390DD00B79120 /* StatsView.swift */; };
 		C4C6189227B947170009AA1C /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C6189027B947170009AA1C /* GeneralViewController.swift */; };
 		C4C6189327B947170009AA1C /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C6189127B947170009AA1C /* GeneralView.swift */; };
 		C4C6189727B947380009AA1C /* GeneralProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C6189627B947380009AA1C /* GeneralProvider.swift */; };
@@ -302,6 +306,10 @@
 		C4A0E9D6278350E9005D6662 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C4A0E9D8278350FD005D6662 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		C4A0E9DA2783516A005D6662 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
+		C4B5AC0728C3903A00B79120 /* AwardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsViewController.swift; sourceTree = "<group>"; };
+		C4B5AC0828C3903A00B79120 /* AwardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
+		C4B5AC0C28C390DD00B79120 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		C4B5AC0D28C390DD00B79120 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		C4C6189027B947170009AA1C /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
 		C4C6189127B947170009AA1C /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		C4C6189627B947380009AA1C /* GeneralProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralProvider.swift; sourceTree = "<group>"; };
@@ -867,6 +875,8 @@
 		C4A0E97C2782DE4F005D6662 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C4B5AC0B28C390CD00B79120 /* Stats */,
+				C4B5AC0628C3902900B79120 /* Awards */,
 				C4763B7F28677743001B1F27 /* AwardInfo */,
 				C4E0D3F9285874A9004CFD8D /* Modals */,
 				C41E1DA327A284DA00AA773B /* TabBar */,
@@ -1105,6 +1115,24 @@
 				C49D40A3283DD0A800F42B2F /* StatsAPI.swift */,
 			);
 			path = APIs;
+			sourceTree = "<group>";
+		};
+		C4B5AC0628C3902900B79120 /* Awards */ = {
+			isa = PBXGroup;
+			children = (
+				C4B5AC0728C3903A00B79120 /* AwardsViewController.swift */,
+				C4B5AC0828C3903A00B79120 /* AwardsView.swift */,
+			);
+			path = Awards;
+			sourceTree = "<group>";
+		};
+		C4B5AC0B28C390CD00B79120 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				C4B5AC0C28C390DD00B79120 /* StatsViewController.swift */,
+				C4B5AC0D28C390DD00B79120 /* StatsView.swift */,
+			);
+			path = Stats;
 			sourceTree = "<group>";
 		};
 		C4C6189427B9471D0009AA1C /* View */ = {
@@ -1377,6 +1405,7 @@
 				C42B9AC427BD03FE0095E795 /* AnimatedPetView.swift in Sources */,
 				9CAAF64F286B15F600D35BFE /* UserSettingsViewController.swift in Sources */,
 				9CAAF63F286B15F600D35BFE /* ProfileSettingsView.swift in Sources */,
+				C4B5AC0F28C390DD00B79120 /* StatsView.swift in Sources */,
 				C4A0E9CB2783505D005D6662 /* APIHelper.swift in Sources */,
 				C4190F3D2786E7B300C005C7 /* UserAPI.swift in Sources */,
 				9CD7A9E0286DA76900D55947 /* PhysicalMetricView.swift in Sources */,
@@ -1409,6 +1438,7 @@
 				C4A0E98B2782E144005D6662 /* LaunchView.swift in Sources */,
 				C49D40AA283DD19100F42B2F /* HealthService.swift in Sources */,
 				C4190F4C2788944400C005C7 /* UserCheckUsernameRequest.swift in Sources */,
+				C4B5AC0928C3903A00B79120 /* AwardsViewController.swift in Sources */,
 				C4024EB92791726200248854 /* RegisterStepsInputProvider.swift in Sources */,
 				C4242DD627902A9E002B99E9 /* RegisterPetSectionController.swift in Sources */,
 				C4A0E9662782DB48005D6662 /* AppDelegate.swift in Sources */,
@@ -1462,6 +1492,7 @@
 				C41E1DA227A2805200AA773B /* Bundle+Current.swift in Sources */,
 				9CAAF653286B7B8F00D35BFE /* String+CapitalizingFirstLetter.swift in Sources */,
 				C4FB55B927A53F91006CBFF7 /* UIButton+BackgroundColoroForState.swift in Sources */,
+				C4B5AC0E28C390DD00B79120 /* StatsViewController.swift in Sources */,
 				C4242DCD279025BE002B99E9 /* PetAnimation.swift in Sources */,
 				C4242DE4279095D5002B99E9 /* PagingFlowLayout.swift in Sources */,
 				C4763B822867810C001B1F27 /* AwardInfoViewController.swift in Sources */,
@@ -1488,6 +1519,7 @@
 				C41E1D9727A27F7F00AA773B /* ServiceLocator.swift in Sources */,
 				C42624A828546818001EF653 /* VisualEffectView.swift in Sources */,
 				C48D2929278369DA00BC23F2 /* UIView+Underlined.swift in Sources */,
+				C4B5AC0A28C3903A00B79120 /* AwardsView.swift in Sources */,
 				9CAAF63E286B15F600D35BFE /* ProfileSettingsProvider.swift in Sources */,
 				C4A0E9922782E79F005D6662 /* OnboardingView.swift in Sources */,
 				C4242DE1279087CC002B99E9 /* RegisterPickPetCell.swift in Sources */,
