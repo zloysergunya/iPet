@@ -24,7 +24,7 @@ class AchivmentsView: UIView {
     private let color: UIColor = .init(hex: 0xDADADA)
     private let lineSize: CGFloat = 7.0
     
-    private var completedColor: UIColor = .init(hex: 0xAFF68D)
+    private var completedColor: UIColor = .init(hex: 0xAFF68D).withAlphaComponent(0.1)
     private var maxValue: CGFloat = 1.0
     private var arcCenter: CGPoint {
         return CGPoint(x: frame.width / 2, y: frame.height / 2)

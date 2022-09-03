@@ -36,4 +36,12 @@ enum ActiveStatus: Int {
         }
     }
     
+    var achievementColor: UIColor {
+        switch self {
+        case .activeAsPossible, .active: return .init(hex: 0xAFF68D)
+        case .moderatelyActive, .sedentary: return .init(hex: 0xFFA722)
+        case .heavyOnTheRise: return .init(hex: 0xF94646)
+        }
+    }
+    
 }

@@ -76,7 +76,7 @@ class GeneralViewController: ViewController<GeneralView> {
                    let state = ActiveStatus(rawValue: activeStatus) {
                     let completed = awards.filter({ $0.completed }).count
                     self?.mainView.achivmentsView.drawFilledLayer(completed: completed,
-                                                                  completedColor: state.colors.first)
+                                                                  completedColor: state.achievementColor)
                 }
                 
                 self?.awards = awards.sorted(by: { $0.completed && !$1.completed })

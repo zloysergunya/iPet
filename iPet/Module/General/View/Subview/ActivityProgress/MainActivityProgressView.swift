@@ -34,11 +34,9 @@ class MainActivityProgressView: UIView {
     }
     
     private func setupConstraints() {
-        
         stackView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
     }
     
 }

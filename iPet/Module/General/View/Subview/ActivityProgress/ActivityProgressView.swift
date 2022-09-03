@@ -38,6 +38,8 @@ class ActivityProgressView: UIView {
         self.color = color
         super.init(frame: .zero)
         
+        backgroundColor = .white
+        
         addSubview(titleLabel)
         addSubview(subtitleLabel)
         
@@ -48,8 +50,14 @@ class ActivityProgressView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        layer.cornerRadius = frame.height / 2
+    }
+    
     func draw(with title: String, subtitle: String, currentValue: CGFloat, maxValue: CGFloat = 100.0) {
-        self.currentValue = currentValue
+        self.currentValue = max(maxValue / self.maxValue, currentValue)
         self.maxValue = maxValue
         
         titleLabel.text = title
@@ -59,7 +67,6 @@ class ActivityProgressView: UIView {
     }
     
     private func setupConstraints() {
-        
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(26.0)
             make.left.right.equalToSuperview()
@@ -70,7 +77,6 @@ class ActivityProgressView: UIView {
             make.top.equalTo(titleLabel.snp.bottom).offset(6.0)
             make.left.right.equalToSuperview()
         }
-        
     }
     
     private func drawLayer() {
