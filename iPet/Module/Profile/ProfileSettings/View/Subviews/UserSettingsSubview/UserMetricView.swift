@@ -43,7 +43,7 @@ class UserMetricView: RootView {
     override func setup() {
         super.setup()
         
-        backgroundColor = R.color.secondBackground()
+        backgroundColor = R.color.background()
         
         addSubview(titleLabel)
         addSubview(metricLabel)
@@ -55,7 +55,7 @@ class UserMetricView: RootView {
     
     private func setupConstraints() {
         titleLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(16.0)
+            make.left.equalToSuperview()
             make.centerY.equalToSuperview()
         }
         
@@ -65,14 +65,12 @@ class UserMetricView: RootView {
         }
         
         unitLabel.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-16.0)
+            make.right.equalToSuperview()
             make.centerY.equalToSuperview()
         }
         
         borderView.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(16.0)
-            make.right.equalToSuperview().offset(-16.0)
-            make.bottom.equalToSuperview()
+            make.left.right.bottom.equalToSuperview()
             make.height.equalTo(1.0)
         }
     }

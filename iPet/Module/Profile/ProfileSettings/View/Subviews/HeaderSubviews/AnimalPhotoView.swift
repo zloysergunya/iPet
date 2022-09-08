@@ -10,7 +10,7 @@ class AnimalPhotoView: UIImageView {
         contentMode = .scaleAspectFill
         clipsToBounds = true
         layer.borderColor = R.color.background()?.cgColor
-        layer.borderWidth = 3.0
+        layer.borderWidth = 2.0
         layer.masksToBounds = true
     }
     

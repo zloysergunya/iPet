@@ -3,7 +3,12 @@ import SnapKit
 
 class ExitContainerView: RootView {
 
-    let exitAccountView = AppSettingsView(title: "Выйти из акаунта", type: .image(R.image.exitAccount()))
+    let exitAccountView: AppSettingsView = {
+        let view = AppSettingsView(title: "Выйти из акаунта", type: .image(R.image.exitAccount()))
+        view.backgroundColor = .init(hex: 0xE3E3E3)
+        
+        return view
+    }()
 
     private(set) lazy var exitAccountStackView = UIStackView(views: [
         exitAccountView
@@ -31,6 +36,16 @@ class ExitContainerView: RootView {
             make.top.equalToSuperview()
             make.left.right.equalToSuperview().inset(16.0)
             make.bottom.equalToSuperview()
+        }
+        
+        exitAccountView.titleLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(16.0)
+        }
+        
+        exitAccountView.imageView.snp.makeConstraints { make in
+            make.right.equalToSuperview().offset(-16.0)
+            make.width.equalTo(20.0)
+            make.height.equalTo(18.5)
         }
     }
     

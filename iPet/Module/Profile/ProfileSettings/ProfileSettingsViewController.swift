@@ -58,7 +58,7 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
         
         mainView.profileSettingsContentView.headerProfileSettingsView.nameLabel.text = "\(user?.name ?? "Иван")"
         mainView.profileSettingsContentView.headerProfileSettingsView.userNameLabel.text = "\(user?.username ?? "coala")"
-        mainView.profileSettingsContentView.headerProfileSettingsView.petNameLabel.text = "\(user?.pet?.name ?? "Пуфик")"
+        mainView.profileSettingsContentView.headerProfileSettingsView.petNameLabel.text = "Питомец: \(user?.pet?.name ?? "Пуфик")"
         mainView.profileSettingsContentView.userSettingsContentView.dailyGoalMetricView.metricLabel.text = "\(user?.stepsCount ?? 0)"
         mainView.profileSettingsContentView.userSettingsContentView.ageMetricView.metricLabel.text = "\(user?.age ?? 0)"
         mainView.profileSettingsContentView.userSettingsContentView.heightMetricView.metricLabel.text = "\(user?.height ?? 0)"
@@ -66,7 +66,7 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
         mainView.profileSettingsContentView.userSettingsContentView.sexView.genderImage.image = user?.gender == "male"
         ? R.image.maleGender()
         : R.image.femaleGender()
-        mainView.profileSettingsContentView.distanceNumberLabel.text = "\(user?.totalDistance ?? 0)"
+        mainView.profileSettingsContentView.distanceNumberLabel.text = "\(Int(user?.totalDistance ?? 0)) км"
     }
     
     @objc private func setLanguageTapGesture() { 

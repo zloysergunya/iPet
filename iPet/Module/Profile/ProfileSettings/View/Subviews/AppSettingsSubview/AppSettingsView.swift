@@ -23,7 +23,7 @@ class AppSettingsView: RootView {
         return switcher
     }()
     
-    private let imageView = UIImageView()
+    let imageView = UIImageView()
     
     let propertyLabel: UILabel = {
         let label = UILabel()
@@ -53,7 +53,7 @@ class AppSettingsView: RootView {
     convenience init(title: String, type: AppSettingsType) {
         self.init(frame: .zero)
         
-        backgroundColor = R.color.secondBackground()
+        backgroundColor = R.color.background()
         
         addSubview(separator)
         addSubview(titleLabel)
@@ -84,12 +84,11 @@ class AppSettingsView: RootView {
     
     private func setupConstraints() {
         titleLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(16.0)
             make.centerY.equalToSuperview()
         }
         
         actionStack.snp.makeConstraints { make in
-            make.right.equalToSuperview().inset(16.0)
+            make.right.equalToSuperview().offset(-2.0)
             make.centerY.equalToSuperview()
         }
         
@@ -98,11 +97,11 @@ class AppSettingsView: RootView {
         }
         
         imageView.snp.makeConstraints { make in
-            make.size.equalTo(24.0)
+            make.size.equalTo(22.0)
         }
         
         separator.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(16.0)
+            make.left.right.equalToSuperview()
             make.bottom.equalToSuperview()
             make.height.equalTo(1.0)
         }

@@ -4,17 +4,17 @@ class HeaderProfileSettingsView: RootView {
     
     let imageView = AnimalPhotoView()
     
-    private let gradientView = GradientView(
-        from: .top,
-        to: .bottom,
-        startColor: .init(hex: 0xFF5C00),
-        endColor: .init(hex: 0xFF0003)
-    )
+    private let backgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .init(hex: 0xFF6B00)
+        
+        return view
+    }()
     
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = UserSettings.user?.name
-        label.font = R.font.sfuiTextBold(size: 24.0)
+        label.font = R.font.sfuiTextBold(size: 20.0)
         label.textColor = R.color.textSecondary()
         
         return label
@@ -23,8 +23,8 @@ class HeaderProfileSettingsView: RootView {
     let userNameLabel: UILabel = {
         let label = UILabel()
         label.text = UserSettings.user?.username
-        label.font = R.font.sfuiTextSemibold(size: 18.0)
-        label.textColor = R.color.textSecondary()
+        label.font = R.font.sfuiTextSemibold(size: 12.0)
+        label.textColor = .init(hex: 0xE3E3E3)
         
         return label
     }()
@@ -32,7 +32,7 @@ class HeaderProfileSettingsView: RootView {
     let petNameLabel: UILabel = {
         let label = UILabel()
         label.text = UserSettings.user?.pet?.name
-        label.font = R.font.sfuiTextSemibold(size: 18.0)
+        label.font = R.font.sfuiTextSemibold(size: 14.0)
         label.textColor = R.color.textSecondary()
         
         return label
@@ -45,27 +45,12 @@ class HeaderProfileSettingsView: RootView {
         return button
     }()
     
-    private(set) lazy var rootStackView = UIStackView(views: [
-        nameLabel,
-        userNameLabel,
-        petNameLabel
-    ], axis: .vertical, spacing: 7.0, distribution: .fillProportionally)
-    
     override func setup() {
         super.setup()
         
-        addSubview(gradientView)
-        
-        gradientView.addSubview(editProfileButton)
-        gradientView.addSubview(nameLabel)
-        gradientView.addSubview(imageView)
-        gradientView.addSubview(rootStackView)
-        
-        gradientView.clipsToBounds = true
-        gradientView.layer.cornerRadius = 10.0
-        
-        rootStackView.setCustomSpacing(10.0, after: nameLabel)
-        
+        backgroundView.clipsToBounds = true
+        backgroundView.layer.cornerRadius = 10.0
+                
         setupConstraints()
     }
     
@@ -74,8 +59,15 @@ class HeaderProfileSettingsView: RootView {
     }
     
     private func setupConstraints() {
+        addSubview(backgroundView)
         
-        gradientView.snp.makeConstraints { make in
+        backgroundView.addSubview(editProfileButton)
+        backgroundView.addSubview(imageView)
+        backgroundView.addSubview(nameLabel)
+        backgroundView.addSubview(userNameLabel)
+        backgroundView.addSubview(petNameLabel)
+        
+        backgroundView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.left.right.equalToSuperview().inset(16.0)
             make.bottom.equalToSuperview()
@@ -87,11 +79,22 @@ class HeaderProfileSettingsView: RootView {
             make.width.height.equalTo(87.0)
         }
         
-        rootStackView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(16.0)
+        nameLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(22.0)
             make.left.equalTo(imageView.snp.right).offset(16.0)
-            make.right.equalToSuperview().offset(-16.0)
-            make.bottom.equalToSuperview().offset(-16.0)
+            make.right.equalTo(editProfileButton.snp.left).offset(-10.0)
+        }
+        
+        userNameLabel.snp.makeConstraints { make in
+            make.top.equalTo(nameLabel.snp.bottom).offset(2.0)
+            make.left.equalTo(imageView.snp.right).offset(16.0)
+            make.right.equalTo(editProfileButton.snp.left).offset(-10.0)
+        }
+        
+        petNameLabel.snp.makeConstraints { make in
+            make.top.equalTo(userNameLabel.snp.bottom).offset(8.0)
+            make.left.equalTo(imageView.snp.right).offset(16.0)
+            make.right.equalTo(editProfileButton.snp.left).offset(-10.0)
         }
         
         editProfileButton.snp.makeConstraints { make in

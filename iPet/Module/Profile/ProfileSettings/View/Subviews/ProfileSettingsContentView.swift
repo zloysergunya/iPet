@@ -15,10 +15,19 @@ class ProfileSettingsContentView: RootView {
     let appSettingsContentView = AppSettingsContentView()
     let exitAccountContainerView = ExitContainerView()
     
+    private let userDataLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Личные данные"
+        label.font = R.font.sfuiTextBold(size: 24.0)
+        label.textColor = R.color.textPrimary()
+        
+        return label
+    }()
+    
     private let appLabel: UILabel = {
         let label = UILabel()
         label.text = "Приложение"
-        label.font = R.font.sfuiTextBold(size: 17.0)
+        label.font = R.font.sfuiTextBold(size: 24.0)
         label.textColor = R.color.textPrimary()
         
         return label
@@ -55,6 +64,7 @@ class ProfileSettingsContentView: RootView {
         addSubview(containerView)
         
         containerView.addSubview(headerProfileSettingsView)
+        containerView.addSubview(userDataLabel)
         containerView.addSubview(userSettingsContentView)
         containerView.addSubview(appLabel)
         containerView.addSubview(appSettingsContentView)
@@ -74,28 +84,33 @@ class ProfileSettingsContentView: RootView {
             make.width.equalToSuperview()
         }
         
+        userDataLabel.snp.makeConstraints { make in
+            make.top.equalTo(headerProfileSettingsView.snp.bottom).offset(30.0)
+            make.left.right.equalToSuperview().inset(16.0)
+        }
+        
         userSettingsContentView.snp.makeConstraints { make in
-            make.top.equalTo(headerProfileSettingsView.snp.bottom).offset(20.0)
+            make.top.equalTo(userDataLabel.snp.bottom).offset(30.0)
             make.width.equalToSuperview()
         }
         
         appLabel.snp.makeConstraints { make in
-            make.top.equalTo(userSettingsContentView.snp.bottom).offset(20.0)
-            make.centerX.equalToSuperview()
+            make.top.equalTo(userSettingsContentView.snp.bottom).offset(30.0)
+            make.left.right.equalToSuperview().inset(16.0)
         }
         
         appSettingsContentView.snp.makeConstraints { make in
-            make.top.equalTo(appLabel.snp.bottom).offset(20.0)
+            make.top.equalTo(appLabel.snp.bottom).offset(30.0)
             make.width.equalToSuperview()
         }
         
         totalDistanceStack.snp.makeConstraints { make in
-            make.top.equalTo(appSettingsContentView.snp.bottom).offset(20.0)
-            make.centerX.equalToSuperview().offset(50.0)
+            make.top.equalTo(appSettingsContentView.snp.bottom).offset(30.0)
+            make.centerX.equalToSuperview().offset(40.0)
         }
         
         exitAccountContainerView.snp.makeConstraints { make in
-            make.top.equalTo(totalDistanceStack.snp.bottom).offset(20.0)
+            make.top.equalTo(totalDistanceStack.snp.bottom).offset(41.0)
             make.width.equalToSuperview()
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-10.0)
         }

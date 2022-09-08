@@ -25,7 +25,7 @@ class GenderView: RootView {
     override func setup() {
         super.setup()
 
-        backgroundColor = R.color.secondBackground()
+        backgroundColor = R.color.background()
         
         addSubview(genderLabel)
         addSubview(genderImage)
@@ -35,12 +35,12 @@ class GenderView: RootView {
     
     private func setupConstraints() {
         genderLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(16.0)
+            make.left.equalToSuperview()
             make.centerY.equalToSuperview()
         }
         
         genderImage.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-16.0)
+            make.right.equalToSuperview()
             make.centerY.equalToSuperview()
             make.width.height.equalTo(18.0)
         }

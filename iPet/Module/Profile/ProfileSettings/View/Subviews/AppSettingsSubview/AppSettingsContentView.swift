@@ -22,9 +22,7 @@ class AppSettingsContentView: RootView {
         
         appSettingsStackView.layer.cornerRadius = 10.0
         appSettingsStackView.clipsToBounds = true
-        
-        addSubview(appSettingsStackView)
-        
+                
         appSettingsStackView.arrangedSubviews.enumerated().forEach { element in
             if let view = element.element as? AppSettingsView {
                 view.separator.isHidden = element.offset == appSettingsStackView.arrangedSubviews.count - 1
@@ -35,6 +33,8 @@ class AppSettingsContentView: RootView {
     }
     
     private func setupConstraints() {
+        addSubview(appSettingsStackView)
+        
         appSettingsStackView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
             make.left.right.equalToSuperview().inset(16.0)
