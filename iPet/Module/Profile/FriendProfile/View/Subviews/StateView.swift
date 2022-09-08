@@ -6,7 +6,6 @@ class StateView: UIView {
         let label = UILabel()
         label.font = R.font.sfuiTextBold(size: 24.0)
         label.textColor = .init(hex: 0x00000)
-        label.text = "11111111"
         
         return label
     }()
@@ -16,7 +15,6 @@ class StateView: UIView {
         label.font = R.font.sfuiTextBold(size: 13.0)
         label.textColor = .init(hex: 0x2B2A29)
         label.numberOfLines = 2
-        label.text = "11111111"
         
         return label
     }()

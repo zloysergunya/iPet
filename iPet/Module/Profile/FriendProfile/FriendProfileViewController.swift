@@ -1,9 +1,14 @@
 import UIKit
 import Atributika
 
+enum UserStatisticPeriod: Int {
+    case day, week, month
+}
+
 class FriendProfileViewController: ViewController<FriendProfileView> {
     
-    private var user: User
+    private let user: User
+    private var userFull: UserMeResponce?
     
     init(user: User) {
         self.user = user
@@ -17,48 +22,46 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mainView.friendSegmentedControll.segmentedControll.addTarget(self, action: #selector(changeSegmentControl), for: .valueChanged)
+        
         view.backgroundColor = R.color.background()
         configure()
         setTarget()
     }
     
-    private func configure() {
-        guard let user = UserSettings.user else { return }
-        
-        let petName = String(user.pet?.name ?? "Имя питомца")
-            .styleHashtags(Style.font(R.font.sfuiTextBold(size: 13.0) ?? .boldSystemFont(ofSize: 13.0)))
-            .attributedString
+    private func configure() {        
+        if let petName = user.pet?.name {
+            let text = "Питомец: <bold>\(petName)</bold>"
+            let bold = Style("bold").font(R.font.sfuiTextBold(size: 13.0)!)
+            mainView.friendHeaderView.petNameLabel.attributedText = text.style(tags: bold).attributedString
+        }
         
         ImageLoader.setImage(url: user.avatarURL, imageView: mainView.friendHeaderView.animalPhotoView)
         mainView.friendHeaderView.friendNameLabel.text = user.name
         mainView.friendHeaderView.usernameLabel.text = user.username
         mainView.friendHeaderView.userLevelLabel.text = "Уровень: \(user.lvlActivity)"
-        mainView.friendHeaderView.petNameLabel.text = "Питомец: \(petName)"
         
-        mainView.friendSegmentedControll.segmentedControll.addTarget(self, action: #selector(segmentControl(_:)), for: .valueChanged)
-        
-        
+        if let period = UserStatisticPeriod(rawValue: mainView.friendSegmentedControll.segmentedControll.selectedSegmentIndex) {
+            switch period {
+            case .day:
+                mainView.dateData.distanceCount.stateLabel.text = "day"
+            case .week:
+                mainView.dateData.distanceCount.stateLabel.text = "week"
+            case .month:
+                mainView.dateData.distanceCount.stateLabel.text = "month"
+            }
+        }
     }
     
-    @objc func segmentControl(_ segmentedControl: UISegmentedControl) {
-        switch (segmentedControl.selectedSegmentIndex) {
-        case 0:
-            DispatchQueue.main.async { [self] in
-                mainView.dateData.isHidden = false
-                mainView.weekData.isHidden = true
-                mainView.monthData.isHidden = true
-            }
-        case 1:
-            DispatchQueue.main.async { [self] in
-                mainView.dateData.isHidden = true
-                mainView.weekData.isHidden = false
-                mainView.monthData.isHidden = true
-            }
-        default:
-            DispatchQueue.main.async { [self] in
-                mainView.dateData.isHidden = true
-                mainView.weekData.isHidden = true
-                mainView.monthData.isHidden = false
+    @objc func changeSegmentControl(_ segmentedControl: UISegmentedControl) {
+        if let period = UserStatisticPeriod(rawValue: segmentedControl.selectedSegmentIndex) {
+            switch period {
+            case .day:
+                mainView.dateData.distanceCount.stateLabel.text = "day"
+            case .week:
+                mainView.dateData.distanceCount.stateLabel.text = "week"
+            case .month:
+                mainView.dateData.distanceCount.stateLabel.text = "month"
             }
         }
     }

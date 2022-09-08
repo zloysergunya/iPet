@@ -57,20 +57,20 @@ class UserAPI {
         return requestBuilder.init(method: "PATCH", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }
     
-    class func userMeGet(completion: @escaping ((_ data: User?,_ error: ErrorResponse?) -> Void)) {
+    class func userMeGet(completion: @escaping ((_ data: UserMeResponce?,_ error: ErrorResponse?) -> Void)) {
         userMeGetWithRequestBuilder().execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
 
-    private class func userMeGetWithRequestBuilder() -> RequestBuilder<User> {
+    private class func userMeGetWithRequestBuilder() -> RequestBuilder<UserMeResponce> {
         let path = "/user/me"
         let URLString = iPetAPI.basePath + path
         let parameters: [String:Any]? = nil
 
         let url = URLComponents(string: URLString)
 
-        let requestBuilder: RequestBuilder<User>.Type = iPetAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<UserMeResponce>.Type = iPetAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }
@@ -193,7 +193,6 @@ class UserAPI {
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }
-
     
 //    class func userUserIdFollowPost(userId: Int, completion: @escaping ((_ data: OkResponse?,_ error: ErrorResponse?) -> Void)) {
 //        userPetChoicePetIdPatchWithRequestBuilder(petId: userId).execute { (response, error) -> Void in

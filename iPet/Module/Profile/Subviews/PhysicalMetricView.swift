@@ -12,7 +12,7 @@ class PhysicalMetricView: RootView {
         return view
     }()
     
-    private let petImage: UIImageView = {
+    let petImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.image = R.image.foxMascote()

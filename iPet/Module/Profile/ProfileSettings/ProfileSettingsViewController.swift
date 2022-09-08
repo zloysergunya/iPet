@@ -41,12 +41,11 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
     private func updateMe() {
         provider.updateMe { [weak self] result in
             switch result {
-            case .success(let user):
-                UserSettings.user = user
+            case .success(let responce):
+                UserSettings.user = responce.user
                 self?.configure()
             case .failure(let error):
                 error.localizedDescription
-                break
             }
         }
     }

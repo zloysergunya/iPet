@@ -34,9 +34,12 @@ class ProfileViewController: ViewController<ProfileView> {
         mainView.userDataView.petNameLabel.text = "Питомец: \(user.pet?.name ?? "")"
         
         // TODO: - Доделать статус
-        mainView.physicalMetricView.physicalStatusLabel.text = "\(PetState(rawValue: petObesityLevel ?? 0))"
+//        mainView.physicalMetricView.physicalStatusLabel.text = "\(PetState(rawValue: petObesityLevel ?? 0))"
         mainView.physicalMetricView.progressView.progress = Float(Double(user.stepsCount) / 8000.0)
         mainView.physicalMetricView.countStepsLabel.text = "\(Int(user.stepsCount))/8000"
+//        ImageLoader.setImage(url: user.pet?.pet.staticPhoto, imageView: mainView.physicalMetricView.petImage)
+
+//        \(stats.steps_goal)"
         
         mainView.socialView.followersLabel.text = "Подписчики (\(user.countFollowers))"
         mainView.socialView.followingLabel.text = "Подписки (\(user.countFollowing))"

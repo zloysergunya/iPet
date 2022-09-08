@@ -1,7 +1,7 @@
 import Foundation
 
 struct User: Codable {
-    
+
     var id: Int
     var name: String
     var username: String
@@ -45,7 +45,7 @@ struct User: Codable {
         case lastVisit = "last_visit"
         case follow
     }
-    
+
 }
 
 extension User: Equatable {

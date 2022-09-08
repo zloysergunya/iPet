@@ -24,6 +24,8 @@
 		9C5BFA1C28BBCB7B006FD942 /* FollowingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BFA1B28BBCB7B006FD942 /* FollowingProvider.swift */; };
 		9C5BFA1F28BBCC1A006FD942 /* FollowingListSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BFA1E28BBCC1A006FD942 /* FollowingListSectionController.swift */; };
 		9C5BFA2228BBCE58006FD942 /* UserFollowingResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BFA2128BBCE58006FD942 /* UserFollowingResponce.swift */; };
+		9C5BFA2428BD3546006FD942 /* UserMeResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BFA2328BD3546006FD942 /* UserMeResponce.swift */; };
+		9C5BFA2628BD3788006FD942 /* FrriendProfileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BFA2528BD3788006FD942 /* FrriendProfileProvider.swift */; };
 		9C6F3F882855E302009A1C4F /* UIStackView + Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3F872855E302009A1C4F /* UIStackView + Init.swift */; };
 		9C6F3F922856007A009A1C4F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F3F912856007A009A1C4F /* GradientView.swift */; };
 		9CAAF63E286B15F600D35BFE /* ProfileSettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAF620286B15F600D35BFE /* ProfileSettingsProvider.swift */; };
@@ -206,6 +208,8 @@
 		9C5BFA1B28BBCB7B006FD942 /* FollowingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingProvider.swift; sourceTree = "<group>"; };
 		9C5BFA1E28BBCC1A006FD942 /* FollowingListSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingListSectionController.swift; sourceTree = "<group>"; };
 		9C5BFA2128BBCE58006FD942 /* UserFollowingResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowingResponce.swift; sourceTree = "<group>"; };
+		9C5BFA2328BD3546006FD942 /* UserMeResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMeResponce.swift; sourceTree = "<group>"; };
+		9C5BFA2528BD3788006FD942 /* FrriendProfileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrriendProfileProvider.swift; sourceTree = "<group>"; };
 		9C6F3F872855E302009A1C4F /* UIStackView + Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Init.swift"; sourceTree = "<group>"; };
 		9C6F3F912856007A009A1C4F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		9CAAF620286B15F600D35BFE /* ProfileSettingsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingsProvider.swift; sourceTree = "<group>"; };
@@ -659,6 +663,7 @@
 		9CCBE0FC28B556D9008D1B46 /* FriendProfile */ = {
 			isa = PBXGroup;
 			children = (
+				9C5BFA2528BD3788006FD942 /* FrriendProfileProvider.swift */,
 				9CCBE0FD28B556E6008D1B46 /* View */,
 				9CCBE0F828B556CE008D1B46 /* FriendProfileViewController.swift */,
 			);
@@ -690,9 +695,9 @@
 			children = (
 				9CCBE0F228B26A1A008D1B46 /* Modals */,
 				9CCBE0F128B2326F008D1B46 /* View */,
+				9CD7A9D8286D95D400D55947 /* ProfileViewController.swift */,
 				9CD7A9E1286DB6FF00D55947 /* Provider */,
 				9CD7A9DC286D97A700D55947 /* Subviews */,
-				9CD7A9D8286D95D400D55947 /* ProfileViewController.swift */,
 				9CAAF61E286B15F600D35BFE /* ProfileSettings */,
 				9CAAF632286B15F600D35BFE /* UserSettings */,
 				9C20B75728A444B900AA0530 /* FollowersList */,
@@ -768,6 +773,7 @@
 				9C5BFA2128BBCE58006FD942 /* UserFollowingResponce.swift */,
 				C4A0E9D6278350E9005D6662 /* User.swift */,
 				C4024EBA27917C1B00248854 /* UserPet.swift */,
+				9C5BFA2328BD3546006FD942 /* UserMeResponce.swift */,
 			);
 			path = UserAPI;
 			sourceTree = "<group>";
@@ -1632,6 +1638,7 @@
 				C485FBFA27BCB8FA0057C290 /* HoursStat.swift in Sources */,
 				C4763B7C28676EDB001B1F27 /* APIAwards.swift in Sources */,
 				C41E1D9927A27F8B00AA773B /* Autowired.swift in Sources */,
+				9C5BFA2428BD3546006FD942 /* UserMeResponce.swift in Sources */,
 				C41E1D8C27A27BA700AA773B /* GoogleSignInService.swift in Sources */,
 				C4A0E9CD2783505D005D6662 /* Models.swift in Sources */,
 				9CAAF644286B15F600D35BFE /* AnimalPhotoView.swift in Sources */,
@@ -1697,6 +1704,7 @@
 				C49D40B0283DD4A400F42B2F /* Date+Add.swift in Sources */,
 				C4C6189727B947380009AA1C /* GeneralProvider.swift in Sources */,
 				C4A0E9B12782F85D005D6662 /* RegisterUserInputViewController.swift in Sources */,
+				9C5BFA2628BD3788006FD942 /* FrriendProfileProvider.swift in Sources */,
 				C485FBFC27BCB9180057C290 /* GeneralAPI.swift in Sources */,
 				9CCBE0F028B23216008D1B46 /* UIViewController+Alerts.swift in Sources */,
 				9CAAF641286B15F600D35BFE /* ExitAccountContainerView.swift in Sources */,
