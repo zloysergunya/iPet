@@ -48,6 +48,9 @@
 		9CAAF64F286B15F600D35BFE /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAF63D286B15F600D35BFE /* UserSettingsViewController.swift */; };
 		9CAAF651286B161500D35BFE /* LaunchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAF650286B161500D35BFE /* LaunchService.swift */; };
 		9CAAF653286B7B8F00D35BFE /* String+CapitalizingFirstLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAF652286B7B8F00D35BFE /* String+CapitalizingFirstLetter.swift */; };
+		9CB9C54D28CA6D30003213EF /* PhysicalMetricView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB9C54A28CA6D30003213EF /* PhysicalMetricView.swift */; };
+		9CB9C54E28CA6D30003213EF /* UserDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB9C54B28CA6D30003213EF /* UserDataView.swift */; };
+		9CB9C54F28CA6D30003213EF /* SocialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB9C54C28CA6D30003213EF /* SocialView.swift */; };
 		9CC1ED4A28BB99B400D0FB39 /* PlugPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC1ED4928BB99B400D0FB39 /* PlugPopUpView.swift */; };
 		9CC1ED4E28BB9B0400D0FB39 /* PlugPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC1ED4D28BB9B0400D0FB39 /* PlugPopUpViewController.swift */; };
 		9CC906E8285CB36D00BE8F06 /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC906E7285CB36D00BE8F06 /* OneLineTextField.swift */; };
@@ -64,10 +67,7 @@
 		9CCBE10828BA6E60008D1B46 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBE10728BA6E60008D1B46 /* StateView.swift */; };
 		9CD7A9DA286D95D400D55947 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD7A9D8286D95D400D55947 /* ProfileViewController.swift */; };
 		9CD7A9DB286D95D400D55947 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD7A9D9286D95D400D55947 /* ProfileView.swift */; };
-		9CD7A9DE286D980600D55947 /* UserDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD7A9DD286D980600D55947 /* UserDataView.swift */; };
-		9CD7A9E0286DA76900D55947 /* PhysicalMetricView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD7A9DF286DA76900D55947 /* PhysicalMetricView.swift */; };
 		9CD7A9E3286DB71F00D55947 /* ProfileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD7A9E2286DB71F00D55947 /* ProfileProvider.swift */; };
-		9CD7A9E5286DCE9500D55947 /* SocialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD7A9E4286DCE9500D55947 /* SocialView.swift */; };
 		C4024EB427915A0A00248854 /* UserPetUserPetIdRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4024EB327915A0A00248854 /* UserPetUserPetIdRequest.swift */; };
 		C4024EB627915B5500248854 /* OkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4024EB527915B5500248854 /* OkResponse.swift */; };
 		C4024EB92791726200248854 /* RegisterStepsInputProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4024EB82791726200248854 /* RegisterStepsInputProvider.swift */; };
@@ -232,6 +232,9 @@
 		9CAAF63D286B15F600D35BFE /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		9CAAF650286B161500D35BFE /* LaunchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchService.swift; sourceTree = "<group>"; };
 		9CAAF652286B7B8F00D35BFE /* String+CapitalizingFirstLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CapitalizingFirstLetter.swift"; sourceTree = "<group>"; };
+		9CB9C54A28CA6D30003213EF /* PhysicalMetricView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicalMetricView.swift; path = Subviews/PhysicalMetricView.swift; sourceTree = "<group>"; };
+		9CB9C54B28CA6D30003213EF /* UserDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDataView.swift; path = Subviews/UserDataView.swift; sourceTree = "<group>"; };
+		9CB9C54C28CA6D30003213EF /* SocialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocialView.swift; path = Subviews/SocialView.swift; sourceTree = "<group>"; };
 		9CC1ED4928BB99B400D0FB39 /* PlugPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlugPopUpView.swift; sourceTree = "<group>"; };
 		9CC1ED4D28BB9B0400D0FB39 /* PlugPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlugPopUpViewController.swift; sourceTree = "<group>"; };
 		9CC906E7285CB36D00BE8F06 /* OneLineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
@@ -248,10 +251,7 @@
 		9CCBE10728BA6E60008D1B46 /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		9CD7A9D8286D95D400D55947 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9CD7A9D9286D95D400D55947 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		9CD7A9DD286D980600D55947 /* UserDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataView.swift; sourceTree = "<group>"; };
-		9CD7A9DF286DA76900D55947 /* PhysicalMetricView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalMetricView.swift; sourceTree = "<group>"; };
 		9CD7A9E2286DB71F00D55947 /* ProfileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProvider.swift; sourceTree = "<group>"; };
-		9CD7A9E4286DCE9500D55947 /* SocialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialView.swift; sourceTree = "<group>"; };
 		B8BB7D5D564207E8E6D279EA /* Pods-iPet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPet.release.xcconfig"; path = "Target Support Files/Pods-iPet/Pods-iPet.release.xcconfig"; sourceTree = "<group>"; };
 		BCDB67425DC14DD1605A7426 /* Pods-iPet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPet.debug.xcconfig"; path = "Target Support Files/Pods-iPet/Pods-iPet.debug.xcconfig"; sourceTree = "<group>"; };
 		C4024EB327915A0A00248854 /* UserPetUserPetIdRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPetUserPetIdRequest.swift; sourceTree = "<group>"; };
@@ -626,6 +626,18 @@
 			path = UserImageSubview;
 			sourceTree = "<group>";
 		};
+		9CB9C54328CA6C71003213EF /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				9CCBE0F228B26A1A008D1B46 /* Modals */,
+				9CCBE0F128B2326F008D1B46 /* View */,
+				9CD7A9D8286D95D400D55947 /* ProfileViewController.swift */,
+				9CD7A9E1286DB6FF00D55947 /* Provider */,
+				9CD7A9DC286D97A700D55947 /* Subviews */,
+			);
+			name = MyProfile;
+			sourceTree = "<group>";
+		};
 		9CC1ED4C28BB9A9100D0FB39 /* Plug */ = {
 			isa = PBXGroup;
 			children = (
@@ -693,11 +705,7 @@
 		9CD7A9D7286D905900D55947 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				9CCBE0F228B26A1A008D1B46 /* Modals */,
-				9CCBE0F128B2326F008D1B46 /* View */,
-				9CD7A9D8286D95D400D55947 /* ProfileViewController.swift */,
-				9CD7A9E1286DB6FF00D55947 /* Provider */,
-				9CD7A9DC286D97A700D55947 /* Subviews */,
+				9CB9C54328CA6C71003213EF /* MyProfile */,
 				9CAAF61E286B15F600D35BFE /* ProfileSettings */,
 				9CAAF632286B15F600D35BFE /* UserSettings */,
 				9C20B75728A444B900AA0530 /* FollowersList */,
@@ -710,9 +718,9 @@
 		9CD7A9DC286D97A700D55947 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				9CD7A9DD286D980600D55947 /* UserDataView.swift */,
-				9CD7A9DF286DA76900D55947 /* PhysicalMetricView.swift */,
-				9CD7A9E4286DCE9500D55947 /* SocialView.swift */,
+				9CB9C54A28CA6D30003213EF /* PhysicalMetricView.swift */,
+				9CB9C54C28CA6D30003213EF /* SocialView.swift */,
+				9CB9C54B28CA6D30003213EF /* UserDataView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -1623,7 +1631,7 @@
 				9CAAF63F286B15F600D35BFE /* ProfileSettingsView.swift in Sources */,
 				C4A0E9CB2783505D005D6662 /* APIHelper.swift in Sources */,
 				C4190F3D2786E7B300C005C7 /* UserAPI.swift in Sources */,
-				9CD7A9E0286DA76900D55947 /* PhysicalMetricView.swift in Sources */,
+				9CB9C54E28CA6D30003213EF /* UserDataView.swift in Sources */,
 				C4A0E9D02783505D005D6662 /* Configuration.swift in Sources */,
 				9C5BFA1C28BBCB7B006FD942 /* FollowingProvider.swift in Sources */,
 				C4C618A727B95BBB0009AA1C /* RadialGradientView.swift in Sources */,
@@ -1632,7 +1640,6 @@
 				C41E1D9D27A27FEE00AA773B /* Bundle+Version.swift in Sources */,
 				9C20B76928A9070500AA0530 /* UserCell.swift in Sources */,
 				9CAAF648286B15F600D35BFE /* UserSettingContentView.swift in Sources */,
-				9CD7A9E5286DCE9500D55947 /* SocialView.swift in Sources */,
 				C4E0D3FD28587513004CFD8D /* ModalPetStateViewController.swift in Sources */,
 				C49D40AC283DD1C800F42B2F /* HealthServiceProvider.swift in Sources */,
 				C485FBFA27BCB8FA0057C290 /* HoursStat.swift in Sources */,
@@ -1662,6 +1669,7 @@
 				C4190F4C2788944400C005C7 /* UserCheckUsernameRequest.swift in Sources */,
 				9CCBE0F428B4041F008D1B46 /* ModalPhysicalStateViewController.swift in Sources */,
 				9CCBE0FA28B556CE008D1B46 /* FriendProfileViewController.swift in Sources */,
+				9CB9C54D28CA6D30003213EF /* PhysicalMetricView.swift in Sources */,
 				C4024EB92791726200248854 /* RegisterStepsInputProvider.swift in Sources */,
 				C4242DD627902A9E002B99E9 /* RegisterPetSectionController.swift in Sources */,
 				C4A0E9662782DB48005D6662 /* AppDelegate.swift in Sources */,
@@ -1700,7 +1708,6 @@
 				C4242DCB27900F83002B99E9 /* PetRandomNameResponse.swift in Sources */,
 				9CAAF649286B15F600D35BFE /* ProfileSettingsViewController.swift in Sources */,
 				C4A0E9D32783505D005D6662 /* AlamofireImplementations.swift in Sources */,
-				9CD7A9DE286D980600D55947 /* UserDataView.swift in Sources */,
 				C49D40B0283DD4A400F42B2F /* Date+Add.swift in Sources */,
 				C4C6189727B947380009AA1C /* GeneralProvider.swift in Sources */,
 				C4A0E9B12782F85D005D6662 /* RegisterUserInputViewController.swift in Sources */,
@@ -1733,6 +1740,7 @@
 				9C20B76628A9045700AA0530 /* FollowerListSectionModel.swift in Sources */,
 				C41E1D9B27A27FBA00AA773B /* LoggerService.swift in Sources */,
 				C42624AB2854691A001EF653 /* String+Base64.swift in Sources */,
+				9CB9C54F28CA6D30003213EF /* SocialView.swift in Sources */,
 				C41E1D9027A27F1300AA773B /* KeychainService.swift in Sources */,
 				9C6F3F922856007A009A1C4F /* GradientView.swift in Sources */,
 				9CCBE10228BA32F5008D1B46 /* FriendSegmentedControllView.swift in Sources */,

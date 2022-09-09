@@ -5,15 +5,15 @@ class StateView: UIView {
     let stateCount: UILabel = {
         let label = UILabel()
         label.font = R.font.sfuiTextBold(size: 24.0)
-        label.textColor = .init(hex: 0x00000)
+        label.textColor = .init(hex: 0x222323)
         
         return label
     }()
     
     let stateLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.sfuiTextBold(size: 13.0)
-        label.textColor = .init(hex: 0x2B2A29)
+        label.font = R.font.sfuiTextSemibold(size: 12.0)
+        label.textColor = .init(hex: 0x979797)
         label.numberOfLines = 2
         
         return label

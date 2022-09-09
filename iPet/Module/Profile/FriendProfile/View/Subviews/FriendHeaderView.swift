@@ -4,11 +4,27 @@ class FriendHeaderView: UIView {
     
     let animalPhotoView: AnimalPhotoView = {
         let imageView = AnimalPhotoView()
-        imageView.layer.borderColor = R.color.pinkAccent()?.cgColor
+        imageView.layer.borderColor = R.color.orangeAccent()?.cgColor
         imageView.layer.borderWidth = 2.0
         imageView.image = R.image.lama()
         
         return imageView
+    }()
+    
+    let levelView: UIView = {
+        let view = UIView()
+        view.backgroundColor = R.color.orangeAccent()
+        
+        return view
+    }()
+    
+    let levelLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.sfuiTextBold(size: 14.0)
+        label.textColor = R.color.textSecondary()
+        label.text = "2"
+        
+        return label
     }()
     
     let removeFriendButton: UIButton = {
@@ -41,14 +57,6 @@ class FriendHeaderView: UIView {
         return label
     }()
     
-    let userLevelLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.sfuiTextBold(size: 12.0)
-        label.textColor = R.color.grayText()
-        
-        return label
-    }()
-    
     let petNameLabel: UILabel = {
         let label = UILabel()
         label.font = R.font.sfuiTextRegular(size: 13.0)
@@ -57,15 +65,11 @@ class FriendHeaderView: UIView {
         return label
     }()
     
-    private lazy var stackView = UIStackView(views: [
-        usernameLabel,
-        userLevelLabel
-    ],axis: .horizontal, spacing: 23.0, alignment: .center)
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
         animalPhotoView.layer.cornerRadius = animalPhotoView.frame.height / 2
+        levelView.layer.cornerRadius = levelView.frame.height / 2
     }
 
     override init(frame: CGRect) {
@@ -80,11 +84,14 @@ class FriendHeaderView: UIView {
     
     private func setupConstraints() {
         addSubview(animalPhotoView)
+        addSubview(levelView)
         addSubview(removeFriendButton)
         addSubview(challengeButton)
         addSubview(friendNameLabel)
-        addSubview(stackView)
+        addSubview(usernameLabel)
         addSubview(petNameLabel)
+        
+        levelView.addSubview(levelLabel)
         
         animalPhotoView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -92,11 +99,20 @@ class FriendHeaderView: UIView {
             make.size.equalTo(98.0)
         }
         
+        levelView.snp.makeConstraints { make in
+            make.center.equalTo(animalPhotoView).offset(35.0)
+            make.size.equalTo(24.0)
+        }
+        
+        levelLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+        
         removeFriendButton.snp.makeConstraints { make in
             make.centerY.equalTo(animalPhotoView)
             make.right.equalTo(animalPhotoView.snp.left).offset(-47.0)
-            make.width.equalTo(31.0)
-            make.height.equalTo(27.0)
+            make.width.equalTo(38.0)
+            make.height.equalTo(37.0)
         }
         
         challengeButton.snp.makeConstraints { make in
@@ -107,18 +123,13 @@ class FriendHeaderView: UIView {
         }
         
         friendNameLabel.snp.makeConstraints { make in
+            make.top.equalTo(animalPhotoView.snp.bottom).offset(20.0)
             make.centerX.equalToSuperview()
-            make.top.equalTo(animalPhotoView.snp.bottom).offset(21.0)
         }
         
-        stackView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
+        usernameLabel.snp.makeConstraints { make in
             make.top.equalTo(friendNameLabel.snp.bottom).offset(7.0)
-        }
-        
-        petNameLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(stackView.snp.bottom).offset(7.0)
             make.bottom.equalToSuperview()
         }
     }

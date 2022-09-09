@@ -39,7 +39,7 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
         ImageLoader.setImage(url: user.avatarURL, imageView: mainView.friendHeaderView.animalPhotoView)
         mainView.friendHeaderView.friendNameLabel.text = user.name
         mainView.friendHeaderView.usernameLabel.text = user.username
-        mainView.friendHeaderView.userLevelLabel.text = "Уровень: \(user.lvlActivity)"
+        mainView.friendHeaderView.levelLabel.text = "\(user.lvlActivity)"
         
         if let period = UserStatisticPeriod(rawValue: mainView.friendSegmentedControll.segmentedControll.selectedSegmentIndex) {
             switch period {

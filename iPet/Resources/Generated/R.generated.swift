@@ -702,8 +702,6 @@ struct R: Rswift.Validatable {
     static let add_30 = Rswift.ImageResource(bundle: R.hostingBundle, name: "add_30")
     /// Image `appleLogo`.
     static let appleLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "appleLogo")
-    /// Image `bigLama`.
-    static let bigLama = Rswift.ImageResource(bundle: R.hostingBundle, name: "bigLama")
     /// Image `challenge`.
     static let challenge = Rswift.ImageResource(bundle: R.hostingBundle, name: "challenge")
     /// Image `completedAchivment118`.
@@ -724,6 +722,8 @@ struct R: Rswift.Validatable {
     static let googleLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "googleLogo")
     /// Image `lama`.
     static let lama = Rswift.ImageResource(bundle: R.hostingBundle, name: "lama")
+    /// Image `lemur`.
+    static let lemur = Rswift.ImageResource(bundle: R.hostingBundle, name: "lemur")
     /// Image `maleGender`.
     static let maleGender = Rswift.ImageResource(bundle: R.hostingBundle, name: "maleGender")
     /// Image `manPhoto`.
@@ -804,13 +804,6 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "bigLama", bundle: ..., traitCollection: ...)`
-    static func bigLama(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.bigLama, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "challenge", bundle: ..., traitCollection: ...)`
     static func challenge(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.challenge, compatibleWith: traitCollection)
@@ -877,6 +870,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "lama", bundle: ..., traitCollection: ...)`
     static func lama(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.lama, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "lemur", bundle: ..., traitCollection: ...)`
+    static func lemur(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.lemur, compatibleWith: traitCollection)
     }
     #endif
 
