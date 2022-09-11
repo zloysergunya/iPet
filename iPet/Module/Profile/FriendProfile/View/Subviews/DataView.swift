@@ -11,9 +11,7 @@ class DataView: UIView {
 
     let stepCount = StateView()
     let distanceCount = StateView()
-    
     let averageDistanceCount = StateView()
-    
     let caloriesCount = StateView()
     
     let petImage: UIImageView = {
