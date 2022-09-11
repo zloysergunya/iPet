@@ -207,8 +207,8 @@ class GeneralViewController: ViewController<GeneralView> {
     }
     
     @objc private func openProfile() {
-//        let viewController = ProfileViewController(user: )
-//        present(viewController, animated: true)
+        let viewController = MyProfileViewController()
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
 }

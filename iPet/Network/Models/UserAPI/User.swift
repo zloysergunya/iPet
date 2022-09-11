@@ -1,7 +1,7 @@
 import Foundation
 
 struct User: Codable {
-    
+
     var id: Int
     var name: String
     var username: String
@@ -21,6 +21,7 @@ struct User: Codable {
     var lvlActivity: Int
     var avatarURL: String
     var lastVisit: Int
+    var follow: Bool
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -42,8 +43,9 @@ struct User: Codable {
         case lvlActivity = "lvl_activity"
         case avatarURL = "avatar_url"
         case lastVisit = "last_visit"
+        case follow
     }
-    
+
 }
 
 extension User: Equatable {
