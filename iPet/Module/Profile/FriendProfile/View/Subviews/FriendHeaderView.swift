@@ -57,14 +57,6 @@ class FriendHeaderView: UIView {
         return label
     }()
     
-    let petNameLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.sfuiTextRegular(size: 13.0)
-        label.textColor = .black
-        
-        return label
-    }()
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -89,7 +81,6 @@ class FriendHeaderView: UIView {
         addSubview(challengeButton)
         addSubview(friendNameLabel)
         addSubview(usernameLabel)
-        addSubview(petNameLabel)
         
         levelView.addSubview(levelLabel)
         

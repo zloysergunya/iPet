@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-class ProfileView: RootView {
+class MyProfileView: RootView {
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -13,7 +13,7 @@ class ProfileView: RootView {
 
     let userDataView = UserDataView()
     let physicalMetricView = PhysicalMetricView()
-    let socialView = SocialView()
+    let followView = FollowView()
     let searchBar = SearchBarView()
     
     private let navigationBar: UINavigationBar = {
@@ -39,7 +39,7 @@ class ProfileView: RootView {
         scrollView.addSubview(userDataView)
         scrollView.addSubview(view)
         scrollView.addSubview(physicalMetricView)
-        scrollView.addSubview(socialView)
+        scrollView.addSubview(followView)
         scrollView.addSubview(searchBar)
         
         setupConstraints()
@@ -68,13 +68,13 @@ class ProfileView: RootView {
             make.left.right.equalToSuperview().inset(26.0)
         }
         
-        socialView.snp.makeConstraints { make in
+        followView.snp.makeConstraints { make in
             make.top.equalTo(physicalMetricView.snp.bottom).offset(20.0)
             make.left.right.equalToSuperview().inset(26.0)
         }
         
         searchBar.snp.makeConstraints { make in
-            make.top.equalTo(socialView.snp.bottom).offset(20.0)
+            make.top.equalTo(followView.snp.bottom).offset(20.0)
             make.left.right.equalToSuperview().inset(26.0)
             make.bottom.equalToSuperview()
             make.height.equalTo(43.0)

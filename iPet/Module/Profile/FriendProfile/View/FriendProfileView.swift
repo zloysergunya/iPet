@@ -13,6 +13,15 @@ class FriendProfileView: RootView {
     
     let friendHeaderView = FriendHeaderView()
     let friendSegmentedControll = FriendSegmentedControllView()
+    let followView = FollowView()
+    
+    let petNameLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.sfuiTextSemibold(size: 12.0)
+        label.textColor = R.color.mainGray()
+        
+        return label
+    }()
     
     let dateData = DataView()
     
@@ -26,8 +35,10 @@ class FriendProfileView: RootView {
         addSubview(scrollView)
         
         scrollView.addSubview(friendHeaderView)
+        scrollView.addSubview(followView)
         scrollView.addSubview(friendSegmentedControll)
         
+        scrollView.addSubview(petNameLabel)
         scrollView.addSubview(dateData)
         
         scrollView.snp.makeConstraints { make in
@@ -39,13 +50,23 @@ class FriendProfileView: RootView {
             make.left.top.right.equalToSuperview()
         }
         
-        friendSegmentedControll.snp.makeConstraints { make in
-            make.top.equalTo(friendHeaderView.snp.bottom).offset(21.0)
+        followView.snp.makeConstraints { make in
+            make.top.equalTo(friendHeaderView.snp.bottom).offset(20.0)
             make.left.right.equalToSuperview().inset(16.0)
+        }
+        
+        friendSegmentedControll.snp.makeConstraints { make in
+            make.top.equalTo(followView.snp.bottom).offset(21.0)
+            make.left.right.equalToSuperview().inset(16.0)
+        }
+        
+        petNameLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(friendSegmentedControll.snp.bottom).offset(14.0)
         }
 
         dateData.snp.makeConstraints { make in
-            make.top.equalTo(friendSegmentedControll.snp.bottom).offset(21.0)
+            make.top.equalTo(petNameLabel.snp.bottom).offset(21.0)
             make.left.right.equalToSuperview().inset(26.0)
             make.bottom.equalToSuperview()
         }

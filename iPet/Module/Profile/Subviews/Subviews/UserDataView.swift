@@ -35,16 +35,7 @@ class UserDataView: RootView {
         let label = UILabel()
         label.text = "coala_034"
         label.font = R.font.sfuiTextMedium(size: 12.0)
-        label.textColor = R.color.darkGray()
-        
-        return label
-    }()
-    
-    let petLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Питомец:"
-        label.font = R.font.sfuiTextRegular(size: 13.0)
-        label.textColor = R.color.textPrimary()
+        label.textColor = R.color.mainGray()
         
         return label
     }()
@@ -52,7 +43,7 @@ class UserDataView: RootView {
     let petNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Пуфик"
-        label.font = R.font.sfuiTextBold(size: 13.0)
+        label.font = R.font.sfuiTextRegular(size: 13.0)
         label.textColor = R.color.textPrimary()
         
         return label
@@ -62,14 +53,8 @@ class UserDataView: RootView {
         views: [
             nameLabel,
             userNameLabel,
-            petNameStackView
-        ], spacing: 3.0, alignment: .leading)
-    
-    private lazy var petNameStackView = UIStackView(
-        views: [
-            petLabel,
             petNameLabel
-        ], axis: .horizontal, spacing: 3.0)
+        ], spacing: 3.0, alignment: .leading)
     
     override func setup() {
         
@@ -98,19 +83,19 @@ class UserDataView: RootView {
         
         nameLabel.snp.makeConstraints { make in
             make.top.right.equalToSuperview()
-            make.left.equalTo(photoPlaceholderImageView.snp.right).offset(21.0)
+            make.left.equalTo(photoPlaceholderImageView.snp.right).offset(25.0)
         }
         
         userNameLabel.snp.makeConstraints { make in
             make.top.equalTo(nameLabel.snp.bottom).offset(4.0)
             make.right.equalToSuperview()
-            make.left.equalTo(photoPlaceholderImageView.snp.right).offset(21.0)
+            make.left.equalTo(photoPlaceholderImageView.snp.right).offset(25.0)
         }
         
         petNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(userNameLabel.snp.bottom).offset(3.0)
+            make.top.equalTo(userNameLabel.snp.bottom).offset(9.0)
             make.right.equalToSuperview()
-            make.left.equalTo(photoPlaceholderImageView.snp.right).offset(21.0)
+            make.left.equalTo(photoPlaceholderImageView.snp.right).offset(25.0)
         }
     }
     

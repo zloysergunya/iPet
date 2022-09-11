@@ -1,6 +1,7 @@
 import UIKit
+import Atributika
 
-class ProfileViewController: ViewController<ProfileView> {
+class MyProfileViewController: ViewController<MyProfileView> {
 
     private let provider = ProfileProvider()
     private let petObesityLevel = UserSettings.user?.pet?.petObesityLevel
@@ -31,7 +32,12 @@ class ProfileViewController: ViewController<ProfileView> {
         
         mainView.userDataView.nameLabel.text = user.name
         mainView.userDataView.userNameLabel.text = user.username
-        mainView.userDataView.petNameLabel.text = "Питомец: \(user.pet?.name ?? "")"
+        
+        if let petName = user.pet?.name {
+            let text = "Питомец: <bold>\(petName)</bold>"
+            let bold = Style("bold").font(R.font.sfuiTextBold(size: 13.0) ?? .systemFont(ofSize: 13.0, weight: .bold))
+            mainView.userDataView.petNameLabel.attributedText = text.style(tags: bold).attributedString
+        }
         
         // TODO: - Доделать статус
 //        mainView.physicalMetricView.physicalStatusLabel.text = "\(PetState(rawValue: petObesityLevel ?? 0))"
@@ -41,17 +47,17 @@ class ProfileViewController: ViewController<ProfileView> {
 
 //        \(stats.steps_goal)"
         
-        mainView.socialView.followersLabel.text = "Подписчики (\(user.countFollowers))"
-        mainView.socialView.followingLabel.text = "Подписки (\(user.countFollowing))"
+        mainView.followView.followers.titleLabel.text = "Подписчики (\(user.countFollowers))"
+        mainView.followView.following.titleLabel.text = "Подписки (\(user.countFollowing))"
         
         // TODO: - Доделать дни
 //        mainView.physicalMetricView.countDaysLabel.text = "\(user.age)/\(user.weight)"
         
         let showFollowersTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(showFollowersTapGesture))
-        mainView.socialView.followersImageView.addGestureRecognizer(showFollowersTapRecognizer)
+        mainView.followView.followers.addGestureRecognizer(showFollowersTapRecognizer)
         
         let showFollowingTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(showFollowingTapGesture))
-        mainView.socialView.followersImageView.addGestureRecognizer(showFollowingTapRecognizer)
+        mainView.followView.following.addGestureRecognizer(showFollowingTapRecognizer)
         
         let searchFriendsTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(inviteFriendsTapGesture))
         mainView.searchBar.addGestureRecognizer(searchFriendsTapRecognizer)
@@ -84,14 +90,15 @@ class ProfileViewController: ViewController<ProfileView> {
     }
     
     @objc private func showFollowersTapGesture() {
-        let viewController = FollowersListViewController()
-        present(viewController, animated: true)
-        print("tap")
+//        let viewController = FollowersListViewController()
+//        present(viewController, animated: true)
+        print("followers")
     }
     
     @objc private func showFollowingTapGesture() {
 //        let viewController = FollowersListViewController()
 //        present(viewController, animated: true)
+        print("following")
     }
     
     @objc private func inviteFriendsTapGesture() {
@@ -111,7 +118,7 @@ class ProfileViewController: ViewController<ProfileView> {
 }
 
 // MARK: - UIImagePicker
-extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension MyProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {

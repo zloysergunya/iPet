@@ -89,7 +89,7 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
 
-  /// This `R.color` struct is generated, and contains static references to 20 colors.
+  /// This `R.color` struct is generated, and contains static references to 21 colors.
   struct color {
     /// Color `AccentColor`.
     static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
@@ -113,6 +113,8 @@ struct R: Rswift.Validatable {
     static let grayColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayColor")
     /// Color `grayText`.
     static let grayText = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayText")
+    /// Color `mainGray`.
+    static let mainGray = Rswift.ColorResource(bundle: R.hostingBundle, name: "mainGray")
     /// Color `orangeAccentDarker`.
     static let orangeAccentDarker = Rswift.ColorResource(bundle: R.hostingBundle, name: "orangeAccentDarker")
     /// Color `orangeAccentLight`.
@@ -228,6 +230,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func grayText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.grayText, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "mainGray", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func mainGray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.mainGray, compatibleWith: traitCollection)
     }
     #endif
 
@@ -397,6 +408,14 @@ struct R: Rswift.Validatable {
     @available(watchOSApplicationExtension 4.0, *)
     static func grayText(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.grayText.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "mainGray", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func mainGray(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.mainGray.name)
     }
     #endif
 

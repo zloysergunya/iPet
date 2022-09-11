@@ -58,7 +58,7 @@ class RegisterStepsInputView: RootView {
     
     let aboutKilometersLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor(hex: 0x979797)
+        label.textColor = R.color.mainGray()
         label.font = R.font.montserratRegular(size: 16.0)
         label.textAlignment = .center
         

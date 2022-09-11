@@ -13,7 +13,7 @@ class StateView: UIView {
     let stateLabel: UILabel = {
         let label = UILabel()
         label.font = R.font.sfuiTextSemibold(size: 12.0)
-        label.textColor = .init(hex: 0x979797)
+        label.textColor = R.color.mainGray()
         label.numberOfLines = 2
         
         return label

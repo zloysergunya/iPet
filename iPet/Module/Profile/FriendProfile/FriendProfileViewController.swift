@@ -29,17 +29,22 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
         setTarget()
     }
     
-    private func configure() {        
-        if let petName = user.pet?.name {
-            let text = "Питомец: <bold>\(petName)</bold>"
-            let bold = Style("bold").font(R.font.sfuiTextBold(size: 13.0)!)
-            mainView.friendHeaderView.petNameLabel.attributedText = text.style(tags: bold).attributedString
-        }
+    private func configure() {
         
         ImageLoader.setImage(url: user.avatarURL, imageView: mainView.friendHeaderView.animalPhotoView)
         mainView.friendHeaderView.friendNameLabel.text = user.name
         mainView.friendHeaderView.usernameLabel.text = user.username
         mainView.friendHeaderView.levelLabel.text = "\(user.lvlActivity)"
+        
+        // TODO: - доделать
+        mainView.followView.followers.titleLabel.text = "Награды(0)"
+        mainView.followView.following.titleLabel.text = "Подписки(150)"
+        
+        if let petName = user.pet?.name {
+            let text = "Питомец: <bold>\(petName)</bold>"
+            let bold = Style("bold").font(R.font.sfuiTextSemibold(size: 13.0) ?? .systemFont(ofSize: 13.0, weight: .bold))
+            mainView.petNameLabel.attributedText = text.style(tags: bold).attributedString
+        }
         
         if let period = UserStatisticPeriod(rawValue: mainView.friendSegmentedControll.segmentedControll.selectedSegmentIndex) {
             switch period {
