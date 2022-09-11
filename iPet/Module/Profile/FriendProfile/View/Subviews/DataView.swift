@@ -1,10 +1,3 @@
-//
-//  DayDataView.swift
-//  iPet
-//
-//  Created by Олейник Богдан on 27.08.2022.
-//
-
 import UIKit
 
 class DataView: UIView {
@@ -25,6 +18,12 @@ class DataView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        addSubview(stepCount)
+        addSubview(distanceCount)
+        addSubview(petImage)
+        addSubview(averageDistanceCount)
+        addSubview(caloriesCount)
+        
         setupConstraints()
     }
     
@@ -33,11 +32,6 @@ class DataView: UIView {
     }
     
     private func setupConstraints() {
-        addSubview(stepCount)
-        addSubview(distanceCount)
-        addSubview(petImage)
-        addSubview(averageDistanceCount)
-        addSubview(caloriesCount)
         
         averageDistanceCount.stateStackView.alignment = .trailing
         caloriesCount.stateStackView.alignment = .trailing

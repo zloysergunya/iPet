@@ -194,6 +194,30 @@ class UserAPI {
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }
     
+    class func userSearchGet(userSearchRequest: UserSearchRequest, completion: @escaping ((_ data: [User]?,_ error: ErrorResponse?) -> Void)) {
+        userSearchGetWithRequestBuilder(userSearchRequest: userSearchRequest).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+    
+    private class func userSearchGetWithRequestBuilder(userSearchRequest: UserSearchRequest) -> RequestBuilder<[User]> {
+        let path = "/user/search"
+        let URLString = iPetAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "username": userSearchRequest.username,
+            "param": userSearchRequest.param.rawValue,
+            "limit": userSearchRequest.limit,
+            "offset": userSearchRequest.offset
+        ])
+
+        let requestBuilder: RequestBuilder<[User]>.Type = iPetAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+    
 //    class func userUserIdFollowPost(userId: Int, completion: @escaping ((_ data: OkResponse?,_ error: ErrorResponse?) -> Void)) {
 //        userPetChoicePetIdPatchWithRequestBuilder(petId: userId).execute { (response, error) -> Void in
 //            completion(response?.body, error)
@@ -214,7 +238,5 @@ class UserAPI {
 //
 //        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
 //    }
-    
-    
 
 }

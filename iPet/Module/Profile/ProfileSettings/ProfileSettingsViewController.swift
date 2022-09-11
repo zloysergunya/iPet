@@ -30,6 +30,7 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
         appLanguage()
         uploadUserPhoto()
         configure()
+        navigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,9 +103,7 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
     
     @objc private func editProfileButtonPressed() {
         let profileSettingVC = UserSettingsViewController()
-        profileSettingVC.modalTransitionStyle = .flipHorizontal
-        profileSettingVC.modalPresentationStyle = .overFullScreen
-        present(profileSettingVC, animated: true)
+        navigationController?.pushViewController(profileSettingVC, animated: true)
     }
     
     private func showAlert() {
@@ -132,6 +131,10 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
         guard mainView.profileSettingsContentView.headerProfileSettingsView.imageView.image != nil else {
             return
         }
+    }
+    
+    private func navigationBar() {
+        title = "Настройки"
     }
     
 }

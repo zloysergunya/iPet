@@ -5,17 +5,6 @@ class MyProfileViewController: ViewController<MyProfileView> {
 
     private let provider = ProfileProvider()
     private let petObesityLevel = UserSettings.user?.pet?.petObesityLevel
-
-    private var user: User
-    
-    init(user: User) {
-        self.user = user
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +12,12 @@ class MyProfileViewController: ViewController<MyProfileView> {
         imageTapRecognize()
         configure()
         navigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     private func configure() {
@@ -71,6 +66,11 @@ class MyProfileViewController: ViewController<MyProfileView> {
         mainView.userDataView.photoPlaceholderImageView.addGestureRecognizer(tapRecognizer)
     }
     
+    private func navigationBar() {
+        title = "Профиль"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.settingsButton(), style: .done, target: self, action: #selector(showProfileSettingsVC))
+    }
+    
     @objc private func setImageTapGesture() {
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
@@ -90,29 +90,22 @@ class MyProfileViewController: ViewController<MyProfileView> {
     }
     
     @objc private func showFollowersTapGesture() {
-//        let viewController = FollowersListViewController()
-//        present(viewController, animated: true)
-        print("followers")
+        let viewController = FollowersListViewController(type: .followers)
+        present(viewController, animated: true)
     }
     
     @objc private func showFollowingTapGesture() {
-//        let viewController = FollowersListViewController()
-//        present(viewController, animated: true)
-        print("following")
+        let viewController = FollowersListViewController(type: .following)
+        present(viewController, animated: true)
     }
     
     @objc private func inviteFriendsTapGesture() {
         
     }
     
-    private func navigationBar() {
-        title = "Профиль"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(settingsButton))
-    }
-    
-    @objc func settingsButton() {
+    @objc func showProfileSettingsVC() {
         let profileSerttingsVC = ProfileSettingsViewController()
-        present(profileSerttingsVC, animated: true)
+        navigationController?.pushViewController(profileSerttingsVC, animated: true)
     }
     
 }

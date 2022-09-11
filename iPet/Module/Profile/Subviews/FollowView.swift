@@ -1,10 +1,3 @@
-//
-//  FollowView.swift
-//  iPet
-//
-//  Created by Олейник Богдан on 11.09.2022.
-//
-
 import UIKit
 
 class FollowView: UIView {

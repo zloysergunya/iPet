@@ -30,7 +30,10 @@ class TabBarController: UITabBarController {
         generalViewController.tabBarItem.image = R.image.tabBarActivity()
         generalViewController.tabBarItem.title = "Активность"
         
-        viewControllers = [UINavigationController(rootViewController: generalViewController)]
+        viewControllers = [UINavigationController(rootViewController: generalViewController),
+//                           UINavigationController(rootViewController: FriendProfileViewController(user: UserSettings.user!)),
+                           UINavigationController(rootViewController: FollowersListViewController(type: .following)),
+        ]
         
         tabBar.shadowImage = nil
         tabBar.backgroundColor = .white

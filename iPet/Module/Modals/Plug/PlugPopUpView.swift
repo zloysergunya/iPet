@@ -85,13 +85,8 @@ class PlugPopUpView: RootView {
         addSubview(viewForClose)
         addSubview(rootStack)
         
-        containerStack.layoutMargins = UIEdgeInsets(top: -1.0, left: 28.0, bottom: 28.0, right: 28.0)
-        containerStack.isLayoutMarginsRelativeArrangement = true
-        containerStack.backgroundColor = .white
-        containerStack.layer.cornerRadius = 10.0
-        containerStack.layer.masksToBounds = true
-        
         setupConstraints()
+        container()
     }
     
     private func setupConstraints() {
@@ -115,6 +110,14 @@ class PlugPopUpView: RootView {
         imageView.snp.makeConstraints { make in
             make.size.equalTo(118.0)
         }
+    }
+    
+    private func container() {
+        containerStack.layoutMargins = UIEdgeInsets(top: -1.0, left: 28.0, bottom: 28.0, right: 28.0)
+        containerStack.isLayoutMarginsRelativeArrangement = true
+        containerStack.backgroundColor = .white
+        containerStack.layer.cornerRadius = 10.0
+        containerStack.layer.masksToBounds = true
     }
     
 }

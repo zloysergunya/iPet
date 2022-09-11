@@ -3,19 +3,29 @@ import IGListKit
 
 class FollowersListViewController: ViewController<FollowersListView> {
     
+    private let type: UserSearchRequestParam
     private let provider = FollowersListProvider()
     
     private lazy var adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 0)
     private var loadingState: LoadingState = .none
     private var objects: [FollowerListSectionModel] = []
-    private var query: String = ""
+    private var query: String?
     private var pendingRequestWorkItem: DispatchWorkItem?
 
     
-    init() {
+    init(type: UserSearchRequestParam) {
+        self.type = type
         super.init(nibName: nil, bundle: nil)
         
-        title = "Подписчики"
+        switch type {
+        case .following:
+            title = "Подписки"
+        case .followers:
+            title = "Подписчики"
+        case .all:
+            title = "Поиск"
+        }
+        
     }
     
     required init?(coder: NSCoder) {
@@ -65,12 +75,30 @@ class FollowersListViewController: ViewController<FollowersListView> {
         if flush {
             provider.page = 1
         }
-        loadFriends(flush: flush)
+        if let query = query {
+            searchFriends(query: query.lowercased(), flush: flush)
+        } else if type == .following {
+            loadFollowing(flush: flush)
+        } else if type == .followers {
+            loadFollowers(flush: flush)
+        }
     }
     
-    private func loadFriends(flush: Bool) {
+    private func loadFollowers(flush: Bool) {
         provider.userFollowersGet() { [weak self] result in
             self?.handleResult(flush: flush, result: result)
+        }
+    }
+    
+    private func loadFollowing(flush: Bool) {
+        provider.userFollowingGet() { [weak self] result in
+            self?.handleResult(flush: flush, result: result)
+        }
+    }
+    
+    private func searchFriends(query: String, flush: Bool) {
+        provider.userSearchGet(username: query, param: type) { result in
+            self.handleResult(flush: flush, result: result)
         }
     }
     

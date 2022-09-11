@@ -1,6 +1,6 @@
 import Foundation
 
-class FrriendProfileProvider {
+class FriendProfileProvider {
     
     
     

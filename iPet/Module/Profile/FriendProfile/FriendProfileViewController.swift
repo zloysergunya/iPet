@@ -42,7 +42,10 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
         
         if let petName = user.pet?.name {
             let text = "Питомец: <bold>\(petName)</bold>"
-            let bold = Style("bold").font(R.font.sfuiTextSemibold(size: 13.0) ?? .systemFont(ofSize: 13.0, weight: .bold))
+            let bold = Style("bold")
+                .font(R.font.sfuiTextSemibold(size: 13.0) ?? .systemFont(ofSize: 13.0, weight: .bold))
+                .foregroundColor(R.color.textTF() ?? .black)
+                        
             mainView.petNameLabel.attributedText = text.style(tags: bold).attributedString
         }
         

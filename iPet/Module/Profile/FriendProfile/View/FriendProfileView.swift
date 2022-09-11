@@ -28,10 +28,6 @@ class FriendProfileView: RootView {
     override func setup() {
         super.setup()
         
-        setupConstraints()
-    }
-    
-    private func setupConstraints() {
         addSubview(scrollView)
         
         scrollView.addSubview(friendHeaderView)
@@ -40,6 +36,11 @@ class FriendProfileView: RootView {
         
         scrollView.addSubview(petNameLabel)
         scrollView.addSubview(dateData)
+        
+        setupConstraints()
+    }
+    
+    private func setupConstraints() {
         
         scrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
