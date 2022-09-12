@@ -25,7 +25,7 @@ class FollowersListViewController: ViewController<FollowersListView> {
         case .all:
             title = "Поиск"
         }
-        
+        hidesBottomBarWhenPushed = true
     }
     
     required init?(coder: NSCoder) {

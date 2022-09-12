@@ -10,16 +10,14 @@ class SocialView: UIView {
         return label
     }()
     
-    let followImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = R.image.subscribers()
-        imageView.contentMode = .scaleAspectFill
-        
-        return imageView
-    }()
+    lazy var userStackView = UIStackView(
+        views: [],
+        axis: .horizontal,
+        spacing: -12.0
+    )
     
-    lazy var stackView = UIStackView(
-        views: [titleLabel, followImageView],
+    lazy var rootView = UIStackView(
+        views: [titleLabel, userStackView],
         axis: .vertical,
         spacing: 8.0
     )
@@ -37,15 +35,10 @@ class SocialView: UIView {
     }
     
     private func setupConstraints() {
-        addSubview(stackView)
+        addSubview(rootView)
         
-        stackView.snp.makeConstraints { make in
+        rootView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
-        }
-        
-        followImageView.snp.makeConstraints { make in
-            make.width.equalTo(121.0)
-            make.height.equalTo(31.0)
         }
     }
     

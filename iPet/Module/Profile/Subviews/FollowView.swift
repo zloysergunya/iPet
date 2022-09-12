@@ -35,8 +35,8 @@ class FollowView: UIView {
         addSubview(horizontalView)
         addSubview(verticalView)
         
-        followers.stackView.alignment = .leading
-        following.stackView.alignment = .trailing
+        followers.rootView.alignment = .leading
+        following.rootView.alignment = .trailing
         
         horizontalView.snp.makeConstraints { make in
             make.left.bottom.right.equalToSuperview()

@@ -450,6 +450,14 @@
 			path = Provider;
 			sourceTree = "<group>";
 		};
+		9C9D78B228CFC6E9003D85D0 /* FriendProfileProvider */ = {
+			isa = PBXGroup;
+			children = (
+				9C5BFA2528BD3788006FD942 /* FriendProfileProvider.swift */,
+			);
+			path = FriendProfileProvider;
+			sourceTree = "<group>";
+		};
 		9CAAF61E286B15F600D35BFE /* ProfileSettings */ = {
 			isa = PBXGroup;
 			children = (
@@ -627,7 +635,7 @@
 		9CCBE0FC28B556D9008D1B46 /* FriendProfile */ = {
 			isa = PBXGroup;
 			children = (
-				9C5BFA2528BD3788006FD942 /* FriendProfileProvider.swift */,
+				9C9D78B228CFC6E9003D85D0 /* FriendProfileProvider */,
 				9CCBE0FD28B556E6008D1B46 /* View */,
 				9CCBE0F828B556CE008D1B46 /* FriendProfileViewController.swift */,
 			);

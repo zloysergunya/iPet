@@ -12,6 +12,8 @@ class MyProfileViewController: ViewController<MyProfileView> {
         imageTapRecognize()
         configure()
         navigationBar()
+        getFollowers()
+        getFollowing()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,6 +73,45 @@ class MyProfileViewController: ViewController<MyProfileView> {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.settingsButton(), style: .done, target: self, action: #selector(showProfileSettingsVC))
     }
     
+    private func getFollowers() {
+        provider.userFollowersGet { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let users):
+                self.setupSocialView(users: users, view: self.mainView.followView.followers)
+            case .failure(let error):
+                log.error(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func getFollowing() {
+        provider.userFollowingGet { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let users):
+                self.setupSocialView(users: users, view: self.mainView.followView.following)
+            case .failure(let error):
+                log.error(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func setupSocialView(users: [User], view: SocialView) {
+        view.userStackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })
+        users.prefix(6).forEach { user in
+            let imageView = UIImageView()
+            let side = 31.0
+            imageView.layer.cornerRadius = side / 2
+            imageView.snp.makeConstraints { make in
+                make.size.equalTo(side)
+            }
+            imageView.contentMode = .scaleAspectFill
+            ImageLoader.setImage(url: user.avatarURL, imageView: imageView)
+            view.userStackView.addArrangedSubview(imageView)
+        }
+    }
+    
     @objc private func setImageTapGesture() {
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
@@ -91,12 +132,12 @@ class MyProfileViewController: ViewController<MyProfileView> {
     
     @objc private func showFollowersTapGesture() {
         let viewController = FollowersListViewController(type: .followers)
-        present(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc private func showFollowingTapGesture() {
         let viewController = FollowersListViewController(type: .following)
-        present(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc private func inviteFriendsTapGesture() {

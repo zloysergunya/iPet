@@ -8,7 +8,9 @@ enum UserStatisticPeriod: Int {
 class FriendProfileViewController: ViewController<FriendProfileView> {
     
     private let user: User
+    private let provider = FriendProfileProvider()
     private var userFull: UserMeResponce?
+
     
     init(user: User) {
         self.user = user
@@ -27,6 +29,8 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
         view.backgroundColor = R.color.background()
         configure()
         setTarget()
+        showContent()
+        getFollowing()
     }
     
     private func configure() {
@@ -38,7 +42,7 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
         
         // TODO: - доделать
         mainView.followView.followers.titleLabel.text = "Награды(0)"
-        mainView.followView.following.titleLabel.text = "Подписки(150)"
+        mainView.followView.following.titleLabel.text = "Подписки (\(user.countFollowing))"
         
         if let petName = user.pet?.name {
             let text = "Питомец: <bold>\(petName)</bold>"
@@ -46,8 +50,12 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
                 .font(R.font.sfuiTextSemibold(size: 13.0) ?? .systemFont(ofSize: 13.0, weight: .bold))
                 .foregroundColor(R.color.textTF() ?? .black)
                         
-            mainView.petNameLabel.attributedText = text.style(tags: bold).attributedString
+            mainView.petNameUnsubscribeLabel.attributedText = text.style(tags: bold).attributedString
+            mainView.petNameSubscribeLabel.attributedText = text.style(tags: bold).attributedString
         }
+        
+        let showFollowingTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(showFollowingTapGesture))
+        mainView.followView.following.addGestureRecognizer(showFollowingTapRecognizer)
         
         if let period = UserStatisticPeriod(rawValue: mainView.friendSegmentedControll.segmentedControll.selectedSegmentIndex) {
             switch period {
@@ -59,6 +67,19 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
                 mainView.dateData.distanceCount.stateLabel.text = "month"
             }
         }
+    }
+    
+    private func showContent() {
+        mainView.friendHeaderView.removeFriendButton.isHidden = user.follow
+        mainView.friendHeaderView.challengeButton.isHidden = user.follow
+        mainView.friendSegmentedControll.isHidden = user.follow
+        mainView.statistic.isHidden = user.follow
+        mainView.petNameSubscribeLabel.isHidden = user.follow
+        mainView.dateData.isHidden = user.follow
+        
+        mainView.subscribeButton.isHidden = !user.follow
+        mainView.petNameUnsubscribeLabel.isHidden = !user.follow
+        mainView.userPetImageView.isHidden = !user.follow
     }
     
     @objc func changeSegmentControl(_ segmentedControl: UISegmentedControl) {
@@ -79,12 +100,44 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
         mainView.friendHeaderView.challengeButton.addTarget(self, action: #selector(startChallengeTap), for: .touchUpInside)
     }
     
+    private func getFollowing() {
+        provider.userFollowingGet { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let users):
+                self.setupSocialView(users: users, view: self.mainView.followView.following)
+            case .failure(let error):
+                log.error(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func setupSocialView(users: [User], view: SocialView) {
+        view.userStackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })
+        users.prefix(6).forEach { user in
+            let imageView = UIImageView()
+            let side = 31.0
+            imageView.layer.cornerRadius = side / 2
+            imageView.snp.makeConstraints { make in
+                make.size.equalTo(side)
+            }
+            imageView.contentMode = .scaleAspectFill
+            ImageLoader.setImage(url: user.avatarURL, imageView: imageView)
+            view.userStackView.addArrangedSubview(imageView)
+        }
+    }
+    
     @objc private func removeFriendTap() {
         print("remove friend")
     }
     
     @objc private func startChallengeTap() {
         print("start challenge")
+    }
+    
+    @objc private func showFollowingTapGesture() {
+        let viewController = FollowersListViewController(type: .following)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
 }

@@ -711,8 +711,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 41 images.
+  /// This `R.image` struct is generated, and contains static references to 42 images.
   struct image {
+    /// Image `Lama`.
+    static let lama = Rswift.ImageResource(bundle: R.hostingBundle, name: "Lama")
     /// Image `addPhotoButton`.
     static let addPhotoButton = Rswift.ImageResource(bundle: R.hostingBundle, name: "addPhotoButton")
     /// Image `addUser`.
@@ -739,8 +741,6 @@ struct R: Rswift.Validatable {
     static let globalSearch = Rswift.ImageResource(bundle: R.hostingBundle, name: "globalSearch")
     /// Image `googleLogo`.
     static let googleLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "googleLogo")
-    /// Image `lama`.
-    static let lama = Rswift.ImageResource(bundle: R.hostingBundle, name: "lama")
     /// Image `lemur`.
     static let lemur = Rswift.ImageResource(bundle: R.hostingBundle, name: "lemur")
     /// Image `maleGender`.
@@ -787,6 +787,8 @@ struct R: Rswift.Validatable {
     static let shopBags = Rswift.ImageResource(bundle: R.hostingBundle, name: "shopBags")
     /// Image `socialNetworks`.
     static let socialNetworks = Rswift.ImageResource(bundle: R.hostingBundle, name: "socialNetworks")
+    /// Image `statistic`.
+    static let statistic = Rswift.ImageResource(bundle: R.hostingBundle, name: "statistic")
     /// Image `stepCountFox`.
     static let stepCountFox = Rswift.ImageResource(bundle: R.hostingBundle, name: "stepCountFox")
     /// Image `storeGoods`.
@@ -795,6 +797,13 @@ struct R: Rswift.Validatable {
     static let subscribers = Rswift.ImageResource(bundle: R.hostingBundle, name: "subscribers")
     /// Image `tabBarActivity`.
     static let tabBarActivity = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabBarActivity")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Lama", bundle: ..., traitCollection: ...)`
+    static func lama(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.lama, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "addPhotoButton", bundle: ..., traitCollection: ...)`
@@ -884,13 +893,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "googleLogo", bundle: ..., traitCollection: ...)`
     static func googleLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.googleLogo, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "lama", bundle: ..., traitCollection: ...)`
-    static func lama(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.lama, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1052,6 +1054,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "socialNetworks", bundle: ..., traitCollection: ...)`
     static func socialNetworks(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.socialNetworks, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "statistic", bundle: ..., traitCollection: ...)`
+    static func statistic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.statistic, compatibleWith: traitCollection)
     }
     #endif
 
