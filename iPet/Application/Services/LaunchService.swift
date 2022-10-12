@@ -14,7 +14,7 @@ class LaunchService {
             NotificationCenter.default.removeObserver($0)
         }
     }
-    
+
     private func setWindowRoot(viewController: UIViewController) {
         let root = navController(viewController)
         

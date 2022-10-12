@@ -29,12 +29,13 @@ class UserCell: UICollectionViewCell {
         return label
     }()
     
-    let userStatus: UIImageView = {
-        let imageView = UIImageView()
-        imageView.backgroundColor = R.color.background()
-        imageView.contentMode = .scaleAspectFill
+    let userStatus: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = R.color.background()
+        button.contentMode = .scaleAspectFill
+        button.contentEdgeInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
         
-        return imageView
+        return button
     }()
     
     override init(frame: CGRect) {
@@ -68,7 +69,7 @@ class UserCell: UICollectionViewCell {
         username.snp.makeConstraints { make in
             make.centerY.equalToSuperview().offset(-9.0)
             make.left.equalTo(userImage.snp.right).offset(10.0)
-            make.right.equalTo(userStatus.snp.left).offset(10.0)
+            make.right.equalTo(userStatus.snp.left).offset(-10.0)
         }
         
         userPetName.snp.makeConstraints { make in
@@ -80,8 +81,7 @@ class UserCell: UICollectionViewCell {
         userStatus.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.right.equalToSuperview().inset(16.0)
-            make.width.equalTo(22.0)
-            make.height.equalTo(18.0)
+            make.size.equalTo(40)
         }
     }
     

@@ -11,7 +11,6 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
     private let provider = FriendProfileProvider()
     private var userFull: UserMeResponce?
 
-    
     init(user: User) {
         self.user = user
         super.init(nibName: nil, bundle: nil)
@@ -70,16 +69,16 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
     }
     
     private func showContent() {
-        mainView.friendHeaderView.removeFriendButton.isHidden = user.follow
-        mainView.friendHeaderView.challengeButton.isHidden = user.follow
-        mainView.friendSegmentedControll.isHidden = user.follow
-        mainView.statistic.isHidden = user.follow
-        mainView.petNameSubscribeLabel.isHidden = user.follow
-        mainView.dateData.isHidden = user.follow
+        mainView.friendHeaderView.removeFriendButton.isHidden = !user.follow
+        mainView.friendHeaderView.challengeButton.isHidden = !user.follow
+        mainView.friendSegmentedControll.isHidden = !user.follow
+        mainView.statistic.isHidden = !user.follow
+        mainView.petNameSubscribeLabel.isHidden = !user.follow
+        mainView.dateData.isHidden = !user.follow
         
-        mainView.subscribeButton.isHidden = !user.follow
-        mainView.petNameUnsubscribeLabel.isHidden = !user.follow
-        mainView.userPetImageView.isHidden = !user.follow
+        mainView.subscribeButton.isHidden = user.follow
+        mainView.petNameUnsubscribeLabel.isHidden = user.follow
+        mainView.userPetImageView.isHidden = user.follow
     }
     
     @objc func changeSegmentControl(_ segmentedControl: UISegmentedControl) {
@@ -98,6 +97,7 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
     private func setTarget() {
         mainView.friendHeaderView.removeFriendButton.addTarget(self, action: #selector(removeFriendTap), for: .touchUpInside)
         mainView.friendHeaderView.challengeButton.addTarget(self, action: #selector(startChallengeTap), for: .touchUpInside)
+        mainView.subscribeButton.addTarget(self, action: #selector(subscribeFriendTap), for: .touchUpInside)
     }
     
     private func getFollowing() {
@@ -128,7 +128,32 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
     }
     
     @objc private func removeFriendTap() {
+        provider.unfollowUser(userId: user.id) { result in
+            switch result {
+            case .success:
+                print("Success unfollow")
+            case .failure(let error):
+                if let error = error as? ModelError {
+                    print(error.message())
+                }
+            }
+        }
         print("remove friend")
+    }
+    
+    @objc private func subscribeFriendTap() {
+        provider.followUser(userId: user.id) { result in
+            switch result {
+            case .success:
+                self.viewDidLoad()
+                print("Success subscribe")
+            case .failure(let error):
+                if let error = error as? ModelError {
+                    print(error.message())
+                }
+            }
+        }
+        print("subscribe")
     }
     
     @objc private func startChallengeTap() {

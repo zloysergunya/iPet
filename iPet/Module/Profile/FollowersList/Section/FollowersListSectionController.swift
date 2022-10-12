@@ -60,14 +60,12 @@ class FollowersListSectionController: ListSectionController {
         
         ImageLoader.setImage(url: sectionModel.user.avatarURL, imageView: cell.userImage)
         
-        // TODO: НАстроить кнопку исходя из статуса
-//        cell.userStatus.image =
-        
-        let userStatus = R.image.addUser()
-        cell.userStatus.image = userStatus
+        let userStatus = sectionModel.user.follow ? R.image.removeUser() : R.image.addUser()
+        cell.userStatus.setImage(userStatus, for: .normal)
         
         return cell
     }
+    
 }
 
 // MARK: - ListDisplayDelegate
