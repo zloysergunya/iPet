@@ -16,7 +16,6 @@ target 'iPet' do
   # Interface
   pod 'IQKeyboardManagerSwift'
   pod 'OverlayContainer'
-  pod 'IGListKit', '~> 4.0'
   pod 'PinLayout', '~> 1.8'
   pod 'SnapKit', '~> 5.0.0'
   pod 'Atributika', '~> 4.9.0'

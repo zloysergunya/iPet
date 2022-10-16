@@ -40,7 +40,6 @@ DEPENDENCIES:
   - Alamofire (~> 4.9.0)
   - Atributika (~> 4.9.0)
   - GoogleSignIn
-  - IGListKit (~> 4.0)
   - IGListKit (~> 4.0.0)
   - IQKeyboardManagerSwift
   - KeychainAccess
@@ -100,6 +99,6 @@ SPEC CHECKSUMS:
   SwiftLoader: f12f3a6fb42576862a3a5eb80c7e59fc881b6982
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
 
-PODFILE CHECKSUM: e88478a75994d3d136e6b45cc83eb3750ca420bb
+PODFILE CHECKSUM: 7e16c0a913657153c49b7bb92e710984b91090cf
 
 COCOAPODS: 1.11.3
