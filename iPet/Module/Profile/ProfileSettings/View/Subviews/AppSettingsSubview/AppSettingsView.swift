@@ -29,6 +29,7 @@ class AppSettingsView: RootView {
         let label = UILabel()
         label.textColor = R.color.orangeAccent()
         label.font = R.font.sfuiTextSemibold(size: 18.0)
+        label.textAlignment = .right
         
         return label
     }()
@@ -67,11 +68,13 @@ class AppSettingsView: RootView {
             switcher.isHidden = false
             imageView.isHidden = true
             propertyLabel.isHidden = true
+            
         case .propertyLabel(title: let title):
             propertyLabel.text = title
             switcher.isHidden = true
             imageView.isHidden = true
             propertyLabel.isHidden = false
+            
         case .image(let image):
             imageView.image = image
             switcher.isHidden = true
