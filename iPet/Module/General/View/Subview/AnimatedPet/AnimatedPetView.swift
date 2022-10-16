@@ -23,14 +23,6 @@ class AnimatedPetView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupConstraints() {
-        
-        animationView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        
-    }
-    
     func setAnimation(_ url: URL, loopMode: LottieLoopMode = .loop, completion: LottieCompletionBlock? = nil) {
         Animation.loadedFrom(url: url, closure: { [weak self] animation in
             guard let self = self else {
@@ -42,6 +34,15 @@ class AnimatedPetView: UIView {
             self.animationView.play(completion: completion)
             
         }, animationCache: LRUAnimationCache.sharedCache)
+    }
+    
+    
+    private func setupConstraints() {
+        
+        animationView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
     }
 
 }

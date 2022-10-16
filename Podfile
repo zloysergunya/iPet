@@ -23,6 +23,8 @@ target 'iPet' do
   pod 'lottie-ios', '~> 3.2.3'
   pod 'SPPermissions/Notification'
   pod 'SPPermissions/Health'
+  pod 'IGListKit', '~> 4.0.0'
+  pod 'SwiftLoader'
   
   # Utilities
   pod 'R.swift', '~> 5.4.0'

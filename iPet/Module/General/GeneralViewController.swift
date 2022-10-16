@@ -15,6 +15,8 @@ class GeneralViewController: ViewController<GeneralView> {
         mainView.animatedPetView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapOnPet)))
         mainView.petStateLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openModalPetState)))
         
+        mainView.profileButton.addTarget(self, action: #selector(openProfile), for: .touchUpInside)
+        
         mainView.achivmentsView.images.forEach({ $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openAwardInfo))) })
         
         healthService?.output = self
@@ -205,6 +207,11 @@ class GeneralViewController: ViewController<GeneralView> {
         guard let index = gestureRecognizer.view?.tag else { return }
         let viewController = AwardInfoViewController(award: awards[index])
         present(viewController, animated: true)
+    }
+    
+    @objc private func openProfile() {
+        let viewController = MyProfileViewController()
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
 }

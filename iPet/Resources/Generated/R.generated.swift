@@ -89,7 +89,7 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
 
-  /// This `R.color` struct is generated, and contains static references to 17 colors.
+  /// This `R.color` struct is generated, and contains static references to 21 colors.
   struct color {
     /// Color `AccentColor`.
     static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
@@ -113,18 +113,26 @@ struct R: Rswift.Validatable {
     static let grayColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayColor")
     /// Color `grayText`.
     static let grayText = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayText")
+    /// Color `mainGray`.
+    static let mainGray = Rswift.ColorResource(bundle: R.hostingBundle, name: "mainGray")
     /// Color `orangeAccentDarker`.
     static let orangeAccentDarker = Rswift.ColorResource(bundle: R.hostingBundle, name: "orangeAccentDarker")
     /// Color `orangeAccentLight`.
     static let orangeAccentLight = Rswift.ColorResource(bundle: R.hostingBundle, name: "orangeAccentLight")
     /// Color `orangeAccent`.
     static let orangeAccent = Rswift.ColorResource(bundle: R.hostingBundle, name: "orangeAccent")
+    /// Color `pinkAccent`.
+    static let pinkAccent = Rswift.ColorResource(bundle: R.hostingBundle, name: "pinkAccent")
     /// Color `secondBackground`.
     static let secondBackground = Rswift.ColorResource(bundle: R.hostingBundle, name: "secondBackground")
+    /// Color `segmentedControl`.
+    static let segmentedControl = Rswift.ColorResource(bundle: R.hostingBundle, name: "segmentedControl")
     /// Color `textPrimary`.
     static let textPrimary = Rswift.ColorResource(bundle: R.hostingBundle, name: "textPrimary")
     /// Color `textSecondary`.
     static let textSecondary = Rswift.ColorResource(bundle: R.hostingBundle, name: "textSecondary")
+    /// Color `textTF`.
+    static let textTF = Rswift.ColorResource(bundle: R.hostingBundle, name: "textTF")
 
     #if os(iOS) || os(tvOS)
     /// `UIColor(named: "AccentColor", bundle: ..., traitCollection: ...)`
@@ -226,6 +234,15 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "mainGray", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func mainGray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.mainGray, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "orangeAccent", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
@@ -253,11 +270,29 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "pinkAccent", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func pinkAccent(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.pinkAccent, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIColor(named: "secondBackground", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
     static func secondBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.secondBackground, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "segmentedControl", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func segmentedControl(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.segmentedControl, compatibleWith: traitCollection)
     }
     #endif
 
@@ -276,6 +311,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func textSecondary(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.textSecondary, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "textTF", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func textTF(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.textTF, compatibleWith: traitCollection)
     }
     #endif
 
@@ -368,6 +412,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
+    /// `UIColor(named: "mainGray", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func mainGray(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.mainGray.name)
+    }
+    #endif
+
+    #if os(watchOS)
     /// `UIColor(named: "orangeAccent", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
     static func orangeAccent(_: Void = ()) -> UIKit.UIColor? {
@@ -392,10 +444,26 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
+    /// `UIColor(named: "pinkAccent", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func pinkAccent(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.pinkAccent.name)
+    }
+    #endif
+
+    #if os(watchOS)
     /// `UIColor(named: "secondBackground", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
     static func secondBackground(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.secondBackground.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "segmentedControl", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func segmentedControl(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.segmentedControl.name)
     }
     #endif
 
@@ -412,6 +480,14 @@ struct R: Rswift.Validatable {
     @available(watchOSApplicationExtension 4.0, *)
     static func textSecondary(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.textSecondary.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "textTF", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func textTF(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.textTF.name)
     }
     #endif
 
@@ -436,7 +512,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 11 files.
+  /// This `R.file` struct is generated, and contains static references to 12 files.
   struct file {
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
@@ -450,6 +526,8 @@ struct R: Rswift.Validatable {
     static let montserratSemiBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "MontserratSemiBold", pathExtension: "ttf")
     /// Resource file `SFUIDisplay-Light.ttf`.
     static let sfuiDisplayLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFUIDisplay-Light", pathExtension: "ttf")
+    /// Resource file `SFUIDisplay-Regular.ttf`.
+    static let sfuiDisplayRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFUIDisplay-Regular", pathExtension: "ttf")
     /// Resource file `SFUIText-Bold.ttf`.
     static let sfuiTextBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SFUIText-Bold", pathExtension: "ttf")
     /// Resource file `SFUIText-Light.ttf`.
@@ -497,6 +575,12 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "SFUIDisplay-Regular", withExtension: "ttf")`
+    static func sfuiDisplayRegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sfuiDisplayRegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     /// `bundle.url(forResource: "SFUIText-Bold", withExtension: "ttf")`
     static func sfuiTextBoldTtf(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.sfuiTextBoldTtf
@@ -530,7 +614,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.font` struct is generated, and contains static references to 10 fonts.
+  /// This `R.font` struct is generated, and contains static references to 11 fonts.
   struct font: Rswift.Validatable {
     /// Font `Montserrat-Bold`.
     static let montserratBold = Rswift.FontResource(fontName: "Montserrat-Bold")
@@ -542,6 +626,8 @@ struct R: Rswift.Validatable {
     static let montserratSemiBold = Rswift.FontResource(fontName: "Montserrat-SemiBold")
     /// Font `SFUIDisplay-Light`.
     static let sfuiDisplayLight = Rswift.FontResource(fontName: "SFUIDisplay-Light")
+    /// Font `SFUIDisplay-Regular`.
+    static let sfuiDisplayRegular = Rswift.FontResource(fontName: "SFUIDisplay-Regular")
     /// Font `SFUIText-Bold`.
     static let sfuiTextBold = Rswift.FontResource(fontName: "SFUIText-Bold")
     /// Font `SFUIText-Light`.
@@ -578,6 +664,11 @@ struct R: Rswift.Validatable {
       return UIKit.UIFont(resource: sfuiDisplayLight, size: size)
     }
 
+    /// `UIFont(name: "SFUIDisplay-Regular", size: ...)`
+    static func sfuiDisplayRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: sfuiDisplayRegular, size: size)
+    }
+
     /// `UIFont(name: "SFUIText-Bold", size: ...)`
     static func sfuiTextBold(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: sfuiTextBold, size: size)
@@ -609,6 +700,7 @@ struct R: Rswift.Validatable {
       if R.font.montserratRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Montserrat-Regular' could not be loaded, is 'MontserratRegular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.montserratSemiBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Montserrat-SemiBold' could not be loaded, is 'MontserratSemiBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.sfuiDisplayLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFUIDisplay-Light' could not be loaded, is 'SFUIDisplay-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.sfuiDisplayRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFUIDisplay-Regular' could not be loaded, is 'SFUIDisplay-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.sfuiTextBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFUIText-Bold' could not be loaded, is 'SFUIText-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.sfuiTextLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFUIText-Light' could not be loaded, is 'SFUIText-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
       if R.font.sfuiTextMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SFUIText-Medium' could not be loaded, is 'SFUIText-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
@@ -619,14 +711,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 32 images.
+  /// This `R.image` struct is generated, and contains static references to 42 images.
   struct image {
+    /// Image `Lama`.
+    static let lama = Rswift.ImageResource(bundle: R.hostingBundle, name: "Lama")
     /// Image `addPhotoButton`.
     static let addPhotoButton = Rswift.ImageResource(bundle: R.hostingBundle, name: "addPhotoButton")
+    /// Image `addUser`.
+    static let addUser = Rswift.ImageResource(bundle: R.hostingBundle, name: "addUser")
     /// Image `add_30`.
     static let add_30 = Rswift.ImageResource(bundle: R.hostingBundle, name: "add_30")
     /// Image `appleLogo`.
     static let appleLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "appleLogo")
+    /// Image `challenge`.
+    static let challenge = Rswift.ImageResource(bundle: R.hostingBundle, name: "challenge")
     /// Image `completedAchivment118`.
     static let completedAchivment118 = Rswift.ImageResource(bundle: R.hostingBundle, name: "completedAchivment118")
     /// Image `completedAchivment`.
@@ -635,12 +733,18 @@ struct R: Rswift.Validatable {
     static let editButton = Rswift.ImageResource(bundle: R.hostingBundle, name: "editButton")
     /// Image `exitAccount`.
     static let exitAccount = Rswift.ImageResource(bundle: R.hostingBundle, name: "exitAccount")
+    /// Image `femaleGender`.
+    static let femaleGender = Rswift.ImageResource(bundle: R.hostingBundle, name: "femaleGender")
     /// Image `foxMascote`.
     static let foxMascote = Rswift.ImageResource(bundle: R.hostingBundle, name: "foxMascote")
+    /// Image `globalSearch`.
+    static let globalSearch = Rswift.ImageResource(bundle: R.hostingBundle, name: "globalSearch")
     /// Image `googleLogo`.
     static let googleLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "googleLogo")
-    /// Image `manGender`.
-    static let manGender = Rswift.ImageResource(bundle: R.hostingBundle, name: "manGender")
+    /// Image `lemur`.
+    static let lemur = Rswift.ImageResource(bundle: R.hostingBundle, name: "lemur")
+    /// Image `maleGender`.
+    static let maleGender = Rswift.ImageResource(bundle: R.hostingBundle, name: "maleGender")
     /// Image `manPhoto`.
     static let manPhoto = Rswift.ImageResource(bundle: R.hostingBundle, name: "manPhoto")
     /// Image `minusButton`.
@@ -649,6 +753,8 @@ struct R: Rswift.Validatable {
     static let missedAchivment118 = Rswift.ImageResource(bundle: R.hostingBundle, name: "missedAchivment118")
     /// Image `missedAchivment`.
     static let missedAchivment = Rswift.ImageResource(bundle: R.hostingBundle, name: "missedAchivment")
+    /// Image `petImage`.
+    static let petImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "petImage")
     /// Image `petPageContollStep1`.
     static let petPageContollStep1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "petPageContollStep1")
     /// Image `petPageContollStep2`.
@@ -659,20 +765,30 @@ struct R: Rswift.Validatable {
     static let petRandomNameIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "petRandomNameIcon")
     /// Image `petShop`.
     static let petShop = Rswift.ImageResource(bundle: R.hostingBundle, name: "petShop")
-    /// Image `petStateHelp`.
-    static let petStateHelp = Rswift.ImageResource(bundle: R.hostingBundle, name: "petStateHelp")
     /// Image `photoPlaceholder`.
     static let photoPlaceholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "photoPlaceholder")
+    /// Image `plug`.
+    static let plug = Rswift.ImageResource(bundle: R.hostingBundle, name: "plug")
     /// Image `plusButton`.
     static let plusButton = Rswift.ImageResource(bundle: R.hostingBundle, name: "plusButton")
     /// Image `recall`.
     static let recall = Rswift.ImageResource(bundle: R.hostingBundle, name: "recall")
+    /// Image `removeFriend`.
+    static let removeFriend = Rswift.ImageResource(bundle: R.hostingBundle, name: "removeFriend")
+    /// Image `removeUser`.
+    static let removeUser = Rswift.ImageResource(bundle: R.hostingBundle, name: "removeUser")
     /// Image `rightArrow`.
     static let rightArrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "rightArrow")
+    /// Image `search`.
+    static let search = Rswift.ImageResource(bundle: R.hostingBundle, name: "search")
+    /// Image `settingsButton`.
+    static let settingsButton = Rswift.ImageResource(bundle: R.hostingBundle, name: "settingsButton")
     /// Image `shopBags`.
     static let shopBags = Rswift.ImageResource(bundle: R.hostingBundle, name: "shopBags")
     /// Image `socialNetworks`.
     static let socialNetworks = Rswift.ImageResource(bundle: R.hostingBundle, name: "socialNetworks")
+    /// Image `statistic`.
+    static let statistic = Rswift.ImageResource(bundle: R.hostingBundle, name: "statistic")
     /// Image `stepCountFox`.
     static let stepCountFox = Rswift.ImageResource(bundle: R.hostingBundle, name: "stepCountFox")
     /// Image `storeGoods`.
@@ -681,15 +797,25 @@ struct R: Rswift.Validatable {
     static let subscribers = Rswift.ImageResource(bundle: R.hostingBundle, name: "subscribers")
     /// Image `tabBarActivity`.
     static let tabBarActivity = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabBarActivity")
-    /// Image `tabBarAwards`.
-    static let tabBarAwards = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabBarAwards")
-    /// Image `tabBarStats`.
-    static let tabBarStats = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabBarStats")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Lama", bundle: ..., traitCollection: ...)`
+    static func lama(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.lama, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "addPhotoButton", bundle: ..., traitCollection: ...)`
     static func addPhotoButton(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.addPhotoButton, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "addUser", bundle: ..., traitCollection: ...)`
+    static func addUser(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.addUser, compatibleWith: traitCollection)
     }
     #endif
 
@@ -704,6 +830,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "appleLogo", bundle: ..., traitCollection: ...)`
     static func appleLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.appleLogo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "challenge", bundle: ..., traitCollection: ...)`
+    static func challenge(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.challenge, compatibleWith: traitCollection)
     }
     #endif
 
@@ -736,9 +869,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "femaleGender", bundle: ..., traitCollection: ...)`
+    static func femaleGender(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.femaleGender, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "foxMascote", bundle: ..., traitCollection: ...)`
     static func foxMascote(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.foxMascote, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "globalSearch", bundle: ..., traitCollection: ...)`
+    static func globalSearch(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.globalSearch, compatibleWith: traitCollection)
     }
     #endif
 
@@ -750,9 +897,16 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "manGender", bundle: ..., traitCollection: ...)`
-    static func manGender(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.manGender, compatibleWith: traitCollection)
+    /// `UIImage(named: "lemur", bundle: ..., traitCollection: ...)`
+    static func lemur(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.lemur, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "maleGender", bundle: ..., traitCollection: ...)`
+    static func maleGender(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.maleGender, compatibleWith: traitCollection)
     }
     #endif
 
@@ -781,6 +935,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "missedAchivment118", bundle: ..., traitCollection: ...)`
     static func missedAchivment118(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.missedAchivment118, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "petImage", bundle: ..., traitCollection: ...)`
+    static func petImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.petImage, compatibleWith: traitCollection)
     }
     #endif
 
@@ -820,16 +981,16 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "petStateHelp", bundle: ..., traitCollection: ...)`
-    static func petStateHelp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.petStateHelp, compatibleWith: traitCollection)
+    /// `UIImage(named: "photoPlaceholder", bundle: ..., traitCollection: ...)`
+    static func photoPlaceholder(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.photoPlaceholder, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "photoPlaceholder", bundle: ..., traitCollection: ...)`
-    static func photoPlaceholder(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.photoPlaceholder, compatibleWith: traitCollection)
+    /// `UIImage(named: "plug", bundle: ..., traitCollection: ...)`
+    static func plug(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.plug, compatibleWith: traitCollection)
     }
     #endif
 
@@ -848,9 +1009,37 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "removeFriend", bundle: ..., traitCollection: ...)`
+    static func removeFriend(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.removeFriend, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "removeUser", bundle: ..., traitCollection: ...)`
+    static func removeUser(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.removeUser, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "rightArrow", bundle: ..., traitCollection: ...)`
     static func rightArrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.rightArrow, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "search", bundle: ..., traitCollection: ...)`
+    static func search(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.search, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "settingsButton", bundle: ..., traitCollection: ...)`
+    static func settingsButton(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.settingsButton, compatibleWith: traitCollection)
     }
     #endif
 
@@ -865,6 +1054,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "socialNetworks", bundle: ..., traitCollection: ...)`
     static func socialNetworks(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.socialNetworks, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "statistic", bundle: ..., traitCollection: ...)`
+    static func statistic(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.statistic, compatibleWith: traitCollection)
     }
     #endif
 
@@ -893,20 +1089,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "tabBarActivity", bundle: ..., traitCollection: ...)`
     static func tabBarActivity(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.tabBarActivity, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "tabBarAwards", bundle: ..., traitCollection: ...)`
-    static func tabBarAwards(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.tabBarAwards, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "tabBarStats", bundle: ..., traitCollection: ...)`
-    static func tabBarStats(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.tabBarStats, compatibleWith: traitCollection)
     }
     #endif
 

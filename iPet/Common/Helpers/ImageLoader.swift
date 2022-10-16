@@ -13,7 +13,7 @@ class ImageLoader {
         
         var options: KingfisherOptionsInfo = [
             .loadDiskFileSynchronously,
-            .transition(.fade(0.2)),
+            .transition(.fade(0.2))
         ]
         
         if let side = side {

@@ -43,9 +43,10 @@ class TabBarController: UITabBarController {
                            SwipeNavigationController(rootViewController: awardsViewController)]
         selectedIndex = 1
         
+        tabBar.shadowImage = nil
         tabBar.backgroundColor = .white
         tabBar.tintColor = .black
-        tabBar.unselectedItemTintColor = .init(hex: 0x979797)
+        tabBar.unselectedItemTintColor = R.color.mainGray()
     }
     
 }

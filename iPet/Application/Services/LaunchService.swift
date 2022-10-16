@@ -14,7 +14,7 @@ class LaunchService {
             NotificationCenter.default.removeObserver($0)
         }
     }
-    
+
     private func setWindowRoot(viewController: UIViewController) {
         let root = navController(viewController)
         
@@ -29,13 +29,13 @@ class LaunchService {
     }
     
     private func openAuth() {
-        setWindowRoot(viewController: OnboardingViewController())
+        setWindowRoot(viewController: SignInViewController())
     }
     
     private func openAccountSetup() {
-        setWindowRoot(viewController: RegisterUserInputViewController())
+        setWindowRoot(viewController: ProfileSettingsViewController())
     }
-    
+        
     private func openMain() {
         setWindowRoot(viewController: TabBarController())
     }
