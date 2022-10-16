@@ -5,7 +5,7 @@ class GeneralView: RootView {
     
     let shopButton: UIButton = {
         let button = UIButton()
-        button.setImage(R.image.petShop(), for: .normal)
+        button.setImage(UIImage(named: "petShop"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFill
         button.titleLabel?.font = R.font.sfuiTextSemibold(size: 12.0)
         button.setTitleColor(.black, for: .normal)

@@ -711,7 +711,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 42 images.
+  /// This `R.image` struct is generated, and contains static references to 44 images.
   struct image {
     /// Image `Lama`.
     static let lama = Rswift.ImageResource(bundle: R.hostingBundle, name: "Lama")
@@ -763,8 +763,8 @@ struct R: Rswift.Validatable {
     static let petPageContollStep4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "petPageContollStep4")
     /// Image `petRandomNameIcon`.
     static let petRandomNameIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "petRandomNameIcon")
-    /// Image `petShop`.
-    static let petShop = Rswift.ImageResource(bundle: R.hostingBundle, name: "petShop")
+    /// Image `petStateHelp`.
+    static let petStateHelp = Rswift.ImageResource(bundle: R.hostingBundle, name: "petStateHelp")
     /// Image `photoPlaceholder`.
     static let photoPlaceholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "photoPlaceholder")
     /// Image `plug`.
@@ -797,6 +797,10 @@ struct R: Rswift.Validatable {
     static let subscribers = Rswift.ImageResource(bundle: R.hostingBundle, name: "subscribers")
     /// Image `tabBarActivity`.
     static let tabBarActivity = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabBarActivity")
+    /// Image `tabBarAwards`.
+    static let tabBarAwards = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabBarAwards")
+    /// Image `tabBarStats`.
+    static let tabBarStats = Rswift.ImageResource(bundle: R.hostingBundle, name: "tabBarStats")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Lama", bundle: ..., traitCollection: ...)`
@@ -974,9 +978,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "petShop", bundle: ..., traitCollection: ...)`
-    static func petShop(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.petShop, compatibleWith: traitCollection)
+    /// `UIImage(named: "petStateHelp", bundle: ..., traitCollection: ...)`
+    static func petStateHelp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.petStateHelp, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1089,6 +1093,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "tabBarActivity", bundle: ..., traitCollection: ...)`
     static func tabBarActivity(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.tabBarActivity, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tabBarAwards", bundle: ..., traitCollection: ...)`
+    static func tabBarAwards(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabBarAwards, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tabBarStats", bundle: ..., traitCollection: ...)`
+    static func tabBarStats(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tabBarStats, compatibleWith: traitCollection)
     }
     #endif
 
