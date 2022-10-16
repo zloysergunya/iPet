@@ -60,15 +60,13 @@ class UserSettingsViewController: ViewController<UserSettingsView> {
         let filename = paths[0].appendingPathComponent("image.jpg")
         try? data?.write(to: filename)
         
-        provider.uploadUserPhoto(photo: filename) { result in
+        provider.uploadUserPhoto(photo: filename) { [weak self] result in
             switch result {
             case .success(let url):
                 UserSettings.user?.avatarURL = url
                 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self?.showError(text: error.localizedDescription)
             }
         }
     }
@@ -89,7 +87,7 @@ class UserSettingsViewController: ViewController<UserSettingsView> {
                 UserSettings.user?.pet?.name = petName
                 
             case .failure(let error):
-                break
+                self?.showError(text: error.localizedDescription)
             }
         }
     }
@@ -127,9 +125,7 @@ class UserSettingsViewController: ViewController<UserSettingsView> {
                 self?.close()
                 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self?.showError(text: error.localizedDescription)
             }
         }
     }
@@ -145,9 +141,7 @@ class UserSettingsViewController: ViewController<UserSettingsView> {
                 self?.changePetName()
                 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self?.showError(text: error.localizedDescription)
             }
         }
     }
@@ -170,28 +164,21 @@ class UserSettingsViewController: ViewController<UserSettingsView> {
                 self?.dismiss(animated: true)
                 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self?.showError(text: error.localizedDescription)
             }
         }
     }
     
     private func checkAvailabilityNickname(_ username: String) {
         provider.checkAvailabilityNickname(username) { [weak self] result in
-            guard let self = self else {
-                return
-            }
             switch result {
             case .success(let used):
-                if used, let text = self.mainView.userContentView.userTextFieldsView.userNameTextField.text, username == text {
-                    self.mainView.userContentView.userTextFieldsView.errorLabel.text = "Никнейм уже занят"
+                if used, let text = self?.mainView.userContentView.userTextFieldsView.userNameTextField.text, username == text {
+                    self?.mainView.userContentView.userTextFieldsView.errorLabel.text = "Никнейм уже занят"
                 }
                 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self?.showError(text: error.localizedDescription)
             }
         }
     }
@@ -203,9 +190,7 @@ class UserSettingsViewController: ViewController<UserSettingsView> {
                 self?.mainView.userContentView.userTextFieldsView.userNameTextField.text = username
                 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self?.showError(text: error.localizedDescription)
             }
         }
     }

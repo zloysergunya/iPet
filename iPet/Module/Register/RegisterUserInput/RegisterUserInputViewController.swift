@@ -41,20 +41,14 @@ class RegisterUserInputViewController: ViewController<RegisterUserInputView> {
     
     private func checkAvailabilityNickname(_ username: String) {
         provider.checkAvailabilityNickname(username) { [weak self] result in
-            guard let self = self else {
-                return
-            }
-            
             switch result {
             case .success(let used):
-                if used, let text = self.mainView.usernameInputView.textField.text, username == text {
-                    self.mainView.usernameInputView.errorLabel.text = "Никнейм уже занят"
+                if used, let text = self?.mainView.usernameInputView.textField.text, username == text {
+                    self?.mainView.usernameInputView.errorLabel.text = "Никнейм уже занят"
                 }
                 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self?.showError(text: error.localizedDescription)
             }
         }
     }
@@ -66,9 +60,7 @@ class RegisterUserInputViewController: ViewController<RegisterUserInputView> {
                 self?.mainView.usernameInputView.textField.text = username
                 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self?.showError(text: error.localizedDescription)
             }
         }
     }
@@ -148,9 +140,7 @@ class RegisterUserInputViewController: ViewController<RegisterUserInputView> {
                 self?.navigationController?.pushViewController(RegisterPickPetViewController(), animated: true)
                 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self?.showError(text: error.localizedDescription)
             }
         }
     }
@@ -165,15 +155,13 @@ class RegisterUserInputViewController: ViewController<RegisterUserInputView> {
         let filename = paths[0].appendingPathComponent("image.jpg")
         try? data?.write(to: filename)
         
-        provider.uploadUserPhoto(photo: filename) { result in
+        provider.uploadUserPhoto(photo: filename) { [weak self] result in
             switch result {
             case .success(let url):
                 UserSettings.user?.avatarURL = url
                 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self?.showError(text: error.localizedDescription)
             }
         }
     }
@@ -214,29 +202,25 @@ class RegisterUserInputViewController: ViewController<RegisterUserInputView> {
     }
     
     private func getPets() {
-        provider.getPets(free: true) { result in
+        provider.getPets(free: true) { [weak self] result in
             switch result {
             case .success(let pets):
                 UserSettings.pets = pets
                 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self?.showError(text: error.localizedDescription)
             }
         }
     }
     
     private func downloadPets() {
-        provider.downloadPets { result in
+        provider.downloadPets { [weak self] result in
             switch result {
             case .success(let petAnimations):
                 UserSettings.petAnimations = petAnimations
 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self?.showError(text: error.localizedDescription)
             }
         }
     }

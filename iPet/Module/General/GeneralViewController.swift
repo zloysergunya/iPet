@@ -52,7 +52,8 @@ class GeneralViewController: ViewController<GeneralView> {
                 UserSettings.stats = stats
                 self?.configure(with: stats)
                 
-            case .failure(let error): break
+            case .failure(let error):
+                self?.showError(text: error.localizedDescription)
             }
         }
     }
@@ -65,7 +66,8 @@ class GeneralViewController: ViewController<GeneralView> {
                 self?.provider.cacheAnimations(petAnimations)
                 self?.updatePet()
                 
-            case .failure(let error): break
+            case .failure(let error):
+                self?.showError(text: error.localizedDescription)
             }
         }
     }
@@ -83,16 +85,18 @@ class GeneralViewController: ViewController<GeneralView> {
                 
                 self?.awards = awards.sorted(by: { $0.completed && !$1.completed })
                 
-            case .failure(let error): break
+            case .failure(let error):
+                self?.showError(text: error.localizedDescription)
             }
         }
     }
     
     private func updateConfig() {
-        provider.updateConfig { result in
+        provider.updateConfig { [weak self] result in
             switch result {
             case .success: break
-            case .failure(let error): break
+            case .failure(let error):
+                self?.showError(text: error.localizedDescription)
             }
         }
     }
@@ -117,7 +121,10 @@ class GeneralViewController: ViewController<GeneralView> {
             switch result {
             case .success(let image):
                 self.mainView.profileButton.setImage(image.image, for: .normal)
-            case .failure(let error): log.error(error.localizedDescription)
+                
+            case .failure(let error):
+                self.showError(text: error.localizedDescription)
+                log.error(error.localizedDescription)
             }
         }
         
@@ -228,9 +235,9 @@ extension GeneralViewController: HealthServiceOutput {
     
     func failureHealthAccessRequest(error: Error) {
         if let error = error as? ModelError {
-//            showError(text: error.localizedDescription)
+            showError(text: error.localizedDescription)
         } else {
-//            showError(text: error.localizedDescription)
+            showError(text: error.localizedDescription)
         }
     }
     

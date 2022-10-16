@@ -107,7 +107,7 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
             case .success(let users):
                 self.setupSocialView(users: users, view: self.mainView.followView.following)
             case .failure(let error):
-                log.error(error.localizedDescription)
+                self.showError(text: error.localizedDescription)
             }
         }
     }
@@ -128,32 +128,23 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
     }
     
     @objc private func removeFriendTap() {
-        provider.unfollowUser(userId: user.id) { result in
+        provider.unfollowUser(userId: user.id) { [weak self] result in
             switch result {
-            case .success:
-                print("Success unfollow")
+            case .success: break
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self?.showError(text: error.localizedDescription)
             }
         }
-        print("remove friend")
     }
     
     @objc private func subscribeFriendTap() {
-        provider.followUser(userId: user.id) { result in
+        provider.followUser(userId: user.id) { [weak self] result in
             switch result {
-            case .success:
-                self.viewDidLoad()
-                print("Success subscribe")
+            case .success: break
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self?.showError(text: error.localizedDescription)
             }
         }
-        print("subscribe")
     }
     
     @objc private func startChallengeTap() {

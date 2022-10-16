@@ -47,7 +47,7 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
                 self?.configure()
                 
             case .failure(let error):
-                error.localizedDescription
+                self?.showError(text: error.localizedDescription)
             }
         }
     }

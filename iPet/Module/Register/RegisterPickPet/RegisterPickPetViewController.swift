@@ -79,9 +79,7 @@ class RegisterPickPetViewController: ViewController<RegisterPickPetView> {
                 self.updateObjects()
                 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self.showError(text: error.localizedDescription)
             }
         }
     }
@@ -103,9 +101,7 @@ class RegisterPickPetViewController: ViewController<RegisterPickPetView> {
                 self?.mainView.petNameInputView.textField.text = name
                 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self?.showError(text: error.localizedDescription)
             }
         }
     }
@@ -121,9 +117,7 @@ class RegisterPickPetViewController: ViewController<RegisterPickPetView> {
                 self?.changePetName()
                 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self?.showError(text: error.localizedDescription)
             }
         }
     }
@@ -146,9 +140,7 @@ class RegisterPickPetViewController: ViewController<RegisterPickPetView> {
                 self?.navigationController?.pushViewController(RegisterStepsInputViewController(), animated: true)
                 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self?.showError(text: error.localizedDescription)
             }
         }
     }

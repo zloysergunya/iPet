@@ -35,7 +35,7 @@ extension GoogleSignInService: GoogleSignInServiceInput {
             } else if let error = error {
                 self?.output?.googleSignIn(didFailWith: error)
             } else {
-                self?.output?.googleSignIn(didFailWith: NSError())
+                self?.output?.googleSignIn(didFailWith: ModelError())
             }
         }
     }

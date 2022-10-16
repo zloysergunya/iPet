@@ -68,9 +68,7 @@ class RegisterStepsInputViewController: ViewController<RegisterStepsInputView> {
                 self?.navigationController?.pushViewController(TabBarController(), animated: true)
                 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self?.showError(text: error.localizedDescription)
             }
         }
     }

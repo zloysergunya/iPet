@@ -54,9 +54,7 @@ class SignInViewController: ViewController<SignInView> {
                 launchService?.openModule()
                 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self.showError(text: error.localizedDescription)
             }
         }
     }
@@ -76,9 +74,7 @@ class SignInViewController: ViewController<SignInView> {
                 launchService?.openModule()
                 
             case .failure(let error):
-                if let error = error as? ModelError {
-                    print(error.message())
-                }
+                self.showError(text: error.localizedDescription)
             }
         }
     }
