@@ -16,12 +16,6 @@ class MyProfileView: RootView {
     let followView = FollowView()
     let searchBar = SearchBarView()
     
-    private let navigationBar: UINavigationBar = {
-        let navigationBar = UINavigationBar()
-        
-        return navigationBar
-    }()
-    
     private let view: UIView = {
         let view = UIView()
         view.backgroundColor = R.color.orangeAccentLight()

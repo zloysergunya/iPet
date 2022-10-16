@@ -80,7 +80,7 @@ class MyProfileViewController: ViewController<MyProfileView> {
             case .success(let users):
                 self.setupSocialView(users: users, view: self.mainView.followView.followers)
             case .failure(let error):
-                log.error(error.localizedDescription)
+                self.showError(text: error.localizedDescription)
             }
         }
     }
@@ -193,5 +193,3 @@ extension MyProfileViewController: UIImagePickerControllerDelegate, UINavigation
     }
     
 }
-
-
