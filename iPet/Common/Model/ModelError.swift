@@ -60,4 +60,8 @@ struct ModelError: Error {
         return message()
     }
     
+    static let HKHealthStoreNotAvailableOnDevice = ModelError(text: "Данные Apple Health недоступны на вашем устройстве")
+    static let HKHealthStoreDataTypeNotAvailable = ModelError(text: "Разрешите доступ к данным в приложении Здоровья\nЗдоровье -> Доступ -> Приложения -> Steppy -> Разрешить все")
+    static let HKHealthStoreRequestAuthorization = ModelError(text: "Ошибка авторизации. Проверьте разрешения в приложении Здоровья\nЗдоровье -> Доступ -> Приложения -> Steppy -> Разрешить все")
+    
 }

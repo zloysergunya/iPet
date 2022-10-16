@@ -2,7 +2,7 @@ import Foundation
 
 class HealthServiceProvider {
     
-    func sendUserActivity(statsPostRequest: StatsPostRequest, completion: @escaping(Result<OkResponse, ModelError>) -> Void) {
+    func sendUserActivity(statsPostRequest: [StatsPostRequest], completion: @escaping(Result<OkResponse, ModelError>) -> Void) {
         StatsAPI.statsPost(statsPostRequest: statsPostRequest) { response, error in
             if let response = response {
                 completion(.success(response))

@@ -96,11 +96,11 @@ class GeneralViewController: ViewController<GeneralView> {
     }
     
     private func syncUserActivity() {
-        let lastDate = UserSettings.lastSendActivityDate?.add(.day, value: -7) ?? Date()
+        let lastDate = UserSettings.lastSendActivityDate?.add(.day, value: -1) ?? Date()
         let toDate = Date()
         
-        Date.dates(from: lastDate, to: toDate).forEach { date in
-            healthService?.getUserActivity(date: date, completion: nil)
+        Date.dates(from: lastDate, to: toDate).forEach {
+            healthService?.updateUserActivity(date: $0)
         }
     }
     

@@ -3,7 +3,7 @@ import HealthKit
 
 protocol HealthServiceInput {
     func requestAccess()
-    func getUserActivity(date: Date, completion: ((Int, Int, Double) -> Void)?)
+    func updateUserActivity(date: Date)
 }
 
 protocol HealthServiceOutput: AnyObject {
@@ -46,7 +46,7 @@ class HealthService: NSObject {
             }
             
             let query = HKObserverQuery(sampleType: sampleType, predicate: nil) { [weak self] _, completionHandler,_ in
-                self?.getUserActivity(date: Date(), completion: nil)
+                self?.updateUserActivity(date: Date())
                 completionHandler()
             }
             
@@ -62,68 +62,7 @@ class HealthService: NSObject {
         }
     }
     
-    private func updateUserActivity(date: Date, calories: Int, steps: Int, distance: Double) {
-        let statsPostRequest = StatsPostRequest(date: Int64(date.timeIntervalSince1970), calories: calories + 1000, kilometers: distance + 10.12, steps: steps + 1000)
-        sendUserActivity(statsPostRequest: statsPostRequest)
-    }
-    
-    private func sendUserActivity(statsPostRequest: StatsPostRequest) {
-        guard authService?.authStatus == .authorized else {
-            return
-        }
-        
-        provider.sendUserActivity(statsPostRequest: statsPostRequest) { [weak self] result in
-            switch result {
-            case .success:
-                UserSettings.lastSendActivityDate = Date()
-                
-            case .failure(let error):
-                self?.output?.failureHealthAccessRequest(error: error)
-            }
-        }
-    }
-    
-}
-
-// MARK: - HealthServiceInput
-extension HealthService: HealthServiceInput {
-    
-    func requestAccess() {
-        guard HKHealthStore.isHealthDataAvailable() else {
-            log.error(log.error("NotAvailableOnDevice error: \(HealthkitSetupError.dataTypeNotAvailable)"))
-            output?.failureHealthAccessRequest(error: ModelError(text: "Данные Apple Health недоступны на вашем устройстве"))
-            
-            return
-        }
-        
-        guard let stepCount = stepsCountObject, let distance = distanceObject, let activeEnergy = activeEnergyObject else {
-            log.error("DataTypeNotAvailable error: \(HealthkitSetupError.dataTypeNotAvailable)")
-            output?.failureHealthAccessRequest(error: ModelError(text: "Разрешите доступ к данным в приложении Здоровья\nЗдоровье -> Доступ -> Приложения -> Steppy -> Разрешить все"))
-            
-            return
-        }
-        
-        let healthKitTypesToRead: Set<HKObjectType> = [stepCount, distance, activeEnergy]
-        
-        healthStore.requestAuthorization(toShare: nil, read: healthKitTypesToRead) { [weak self] granted, error in
-            guard let self = self else {
-                return
-            }
-            
-            DispatchQueue.main.async {
-                if let error = error {
-                    log.error("RequestAuthorization error: \(error.localizedDescription)")
-                    self.output?.failureHealthAccessRequest(error: ModelError(text: "Ошибка авторизации. Проверьте разрешения в приложении Здоровья\nЗдоровье -> Доступ -> Приложения -> Steppy -> Разрешить все"))
-                } else {
-                    self.output?.successHealthAccessRequest(granted: granted)
-                }
-            }
-            
-        }
-        
-    }
-    
-    func getUserActivity(date: Date, completion: ((Int, Int, Double) -> Void)?) {
+    private func activity(from: Date, to: Date, completion: ((Int, Int, Double) -> Void)?) {
         var calories = 0
         var stepsCount = 0
         var distance = 0.0
@@ -138,9 +77,8 @@ extension HealthService: HealthServiceInput {
         
         let dispatchGroup = DispatchGroup()
         
-        let startOfDay = Calendar.current.startOfDay(for: date)
-        let predicate = HKObserverQuery.predicateForSamples(withStart: startOfDay,
-                                                            end: date.endOfDate ?? date,
+        let predicate = HKObserverQuery.predicateForSamples(withStart: from,
+                                                            end: to,
                                                             options: .strictStartDate)
         
         dispatchGroup.enter()
@@ -188,11 +126,111 @@ extension HealthService: HealthServiceInput {
         }
         healthStore.execute(distanceQuery)
         
-        dispatchGroup.notify(queue: .main) { [weak self] in
-            self?.updateUserActivity(date: date, calories: calories, steps: stepsCount, distance: distance)
+        dispatchGroup.notify(queue: .main) {
             completion?(calories, stepsCount, distance)
         }
+    }
+    
+    private func sendUserActivity(statsPostRequest: [StatsPostRequest]) {
+        guard authService?.authStatus == .authorized else {
+            return
+        }
         
+        provider.sendUserActivity(statsPostRequest: statsPostRequest) { [weak self] result in
+            switch result {
+            case .success:
+                UserSettings.lastSendActivityDate = Date()
+                
+            case .failure(let error):
+                self?.output?.failureHealthAccessRequest(error: error)
+            }
+        }
+    }
+    
+    private func hoursInDayFor(date: Date) -> [Date] {
+        var dates: [Date] = []
+        let hoursInDayRange = Calendar.current.range(of: .hour, in: .day, for: date)
+        
+        if let hoursInDayRange = hoursInDayRange {
+            let year = Calendar.current.component(.year, from: date)
+            let month = Calendar.current.component(.month, from: date)
+            let weekOfMonth = Calendar.current.component(.weekOfMonth, from: date)
+            let day = Calendar.current.component(.day, from: date)
+            
+            for hourOfDay in (hoursInDayRange.lowerBound..<hoursInDayRange.upperBound) {
+                let components = DateComponents(year: year, month: month, day: day, hour: hourOfDay, weekOfMonth: weekOfMonth)
+                guard let date = Calendar.current.date(from: components) else { continue }
+                dates.append(date)
+            }
+        }
+        
+        return dates
+    }
+    
+}
+
+// MARK: - HealthServiceInput
+extension HealthService: HealthServiceInput {
+    
+    func requestAccess() {
+        guard HKHealthStore.isHealthDataAvailable() else {
+            log.error(log.error("NotAvailableOnDevice error: \(HealthkitSetupError.dataTypeNotAvailable)"))
+            output?.failureHealthAccessRequest(error: ModelError.HKHealthStoreNotAvailableOnDevice)
+            
+            return
+        }
+        
+        guard let stepCount = stepsCountObject, let distance = distanceObject, let activeEnergy = activeEnergyObject else {
+            log.error("DataTypeNotAvailable error: \(HealthkitSetupError.dataTypeNotAvailable)")
+            output?.failureHealthAccessRequest(error: ModelError.HKHealthStoreDataTypeNotAvailable)
+            
+            return
+        }
+        
+        let healthKitTypesToRead: Set<HKObjectType> = [stepCount, distance, activeEnergy]
+        
+        healthStore.requestAuthorization(toShare: nil, read: healthKitTypesToRead) { [weak self] granted, error in
+            guard let self = self else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                if let error = error {
+                    log.error("RequestAuthorization error: \(error.localizedDescription)")
+                    self.output?.failureHealthAccessRequest(error: ModelError.HKHealthStoreRequestAuthorization)
+                } else {
+                    self.output?.successHealthAccessRequest(granted: granted)
+                }
+            }
+            
+        }
+        
+    }
+    
+    func updateUserActivity(date: Date) {
+        let hours = hoursInDayFor(date: Calendar.current.startOfDay(for: date))
+        var activities: [StatsPostRequest] = []
+        
+        let dispatchGroup = DispatchGroup()
+        
+        print()
+        print("!!! hours", hours)
+        print()
+        for i in 0..<hours.count - 1 {
+            dispatchGroup.enter()
+            print("!!! activity(from: \(hours[i]), to: \(hours[i + 1])")
+            activity(from: hours[i], to: hours[i + 1]) { calories, stepsCount, distance in
+                activities.append(.init(date: Int64(hours[i].timeIntervalSince1970),
+                                        calories: calories,
+                                        kilometers: distance,
+                                        steps: stepsCount))
+                dispatchGroup.leave()
+            }
+        }
+        
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            self?.sendUserActivity(statsPostRequest: activities)
+        }
     }
     
 }
