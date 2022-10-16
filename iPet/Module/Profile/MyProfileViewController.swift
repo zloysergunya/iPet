@@ -132,11 +132,13 @@ class MyProfileViewController: ViewController<MyProfileView> {
     
     @objc private func showFollowersTapGesture() {
         let viewController = FollowersListViewController(type: .followers)
+        viewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc private func showFollowingTapGesture() {
         let viewController = FollowersListViewController(type: .following)
+        viewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -146,6 +148,7 @@ class MyProfileViewController: ViewController<MyProfileView> {
     
     @objc func showProfileSettingsVC() {
         let profileSerttingsVC = ProfileSettingsViewController()
+        viewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(profileSerttingsVC, animated: true)
     }
     

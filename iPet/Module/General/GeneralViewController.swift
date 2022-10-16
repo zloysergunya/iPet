@@ -211,6 +211,7 @@ class GeneralViewController: ViewController<GeneralView> {
     
     @objc private func openProfile() {
         let viewController = MyProfileViewController()
+        viewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(viewController, animated: true)
     }
     

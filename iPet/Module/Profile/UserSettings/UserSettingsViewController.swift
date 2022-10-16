@@ -47,7 +47,6 @@ class UserSettingsViewController: ViewController<UserSettingsView> {
     
     @objc private func save(_ sender: UIButton) {
         sendMe()
-        uploadUserPhoto()
         updateUserPet()
     }
             
@@ -125,7 +124,7 @@ class UserSettingsViewController: ViewController<UserSettingsView> {
             switch result {
             case .success(let user):
                 UserSettings.user = user
-                self?.dismiss(animated: true)
+                self?.close()
                 
             case .failure(let error):
                 if let error = error as? ModelError {
@@ -209,6 +208,10 @@ class UserSettingsViewController: ViewController<UserSettingsView> {
                 }
             }
         }
+    }
+    
+    private func close() {
+        navigationController?.popViewController(animated: true)
     }
     
     @discardableResult
@@ -302,6 +305,7 @@ extension UserSettingsViewController: UIImagePickerControllerDelegate, UINavigat
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
             mainView.userContentView.userImageView.circleImageView.image = image
+            uploadUserPhoto()
         }
         picker.dismiss(animated: true)
     }

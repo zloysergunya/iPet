@@ -11,6 +11,8 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Настройки"
+        
         let languageTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(setLanguageTapGesture))
         mainView.profileSettingsContentView.appSettingsContentView.languageSetting.addGestureRecognizer(languageTapRecognizer)
 
@@ -28,15 +30,13 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
         mainView.profileSettingsContentView.appSettingsContentView.closedProfileView.switcher.addTarget(self, action: #selector(closedProfileSwitchPressed), for: .touchUpInside)
 
         appLanguage()
-        uploadUserPhoto()
-        configure()
-        navigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         updateMe()
+        configure()
     }
     
     private func updateMe() {
@@ -45,6 +45,7 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
             case .success(let responce):
                 UserSettings.user = responce.user
                 self?.configure()
+                
             case .failure(let error):
                 error.localizedDescription
             }
@@ -54,7 +55,6 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
     private func configure() {
         let user = UserSettings.user
         
-        ImageLoader.setImage(url: user?.avatarURL, imageView: mainView.profileSettingsContentView.headerProfileSettingsView.imageView)
         ImageLoader.setImage(url: user?.avatarURL, imageView: mainView.profileSettingsContentView.headerProfileSettingsView.imageView)
         
         mainView.profileSettingsContentView.headerProfileSettingsView.nameLabel.text = "\(user?.name ?? "Иван")"
@@ -102,39 +102,23 @@ class ProfileSettingsViewController: ViewController<ProfileSettingsView> {
     }
     
     @objc private func editProfileButtonPressed() {
-        let profileSettingVC = UserSettingsViewController()
-        navigationController?.pushViewController(profileSettingVC, animated: true)
+        let viewController = UserSettingsViewController()
+        viewController.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     private func showAlert() {
-        let alertController = UIAlertController(title: "Чтобы изменить язык приложения, перейдите в настройки устройства.", message: "", preferredStyle: .alert)
-        let settingsAction = UIAlertAction(title: "Настройки", style: .default) { (_) -> Void in
-            let settingsURL = URL(string: UIApplication.openSettingsURLString)
-            UIApplication.shared.open(settingsURL!) { (success) in
-                print("Settings opened: \(success)")
-            }
-        }
-        
-        let cancelAction = UIAlertAction(title: "Закрыть", style: .default, handler: nil)
-        alertController.addAction(cancelAction)
-        alertController.addAction(settingsAction)
-        present(alertController, animated: true)
+        dialog(title: "Чтобы изменить язык приложения, перейдите в настройки устройства",
+               message: "",
+               accessText: "Настройки", onAgree: { _ in
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+        })
     }
     
     private func appLanguage() {
         guard let code = locale.languageCode else { return }
         let language = locale.localizedString(forLanguageCode: code)
         mainView.profileSettingsContentView.appSettingsContentView.languageSetting.propertyLabel.text = language?.capitalizingFirstLetter()
-    }
-    
-    private func uploadUserPhoto() {
-        guard mainView.profileSettingsContentView.headerProfileSettingsView.imageView.image != nil else {
-            return
-        }
-    }
-    
-    private func navigationBar() {
-        title = "Настройки"
     }
     
 }

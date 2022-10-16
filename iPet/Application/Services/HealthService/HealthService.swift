@@ -213,12 +213,8 @@ extension HealthService: HealthServiceInput {
         
         let dispatchGroup = DispatchGroup()
         
-        print()
-        print("!!! hours", hours)
-        print()
         for i in 0..<hours.count - 1 {
             dispatchGroup.enter()
-            print("!!! activity(from: \(hours[i]), to: \(hours[i + 1])")
             activity(from: hours[i], to: hours[i + 1]) { calories, stepsCount, distance in
                 activities.append(.init(date: Int64(hours[i].timeIntervalSince1970),
                                         calories: calories,
