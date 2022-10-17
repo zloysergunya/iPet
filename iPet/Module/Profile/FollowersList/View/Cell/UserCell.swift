@@ -33,7 +33,7 @@ class UserCell: UICollectionViewCell {
         let button = UIButton()
         button.backgroundColor = R.color.background()
         button.contentMode = .scaleAspectFill
-        button.contentEdgeInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+        button.increaseTouchArea(radius: 10)
         
         return button
     }()

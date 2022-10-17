@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B927F87CA22CD5C025E3F72 /* Pods_iPet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137E1A45FC5FB849D6E6C76A /* Pods_iPet.framework */; };
+		2DBAA19E28FDDBAD0097BE0B /* UIControl + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBAA19D28FDDBAD0097BE0B /* UIControl + extension.swift */; };
 		9C20B75428A431E000AA0530 /* UserFollowersResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C20B75328A431E000AA0530 /* UserFollowersResponce.swift */; };
 		9C20B75928A4450000AA0530 /* FollowersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C20B75828A4450000AA0530 /* FollowersListView.swift */; };
 		9C20B75B28A4452200AA0530 /* FollowersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C20B75A28A4452200AA0530 /* FollowersListViewController.swift */; };
@@ -194,6 +195,7 @@
 
 /* Begin PBXFileReference section */
 		137E1A45FC5FB849D6E6C76A /* Pods_iPet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DBAA19D28FDDBAD0097BE0B /* UIControl + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl + extension.swift"; sourceTree = "<group>"; };
 		9C20B75328A431E000AA0530 /* UserFollowersResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowersResponce.swift; sourceTree = "<group>"; };
 		9C20B75828A4450000AA0530 /* FollowersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListView.swift; sourceTree = "<group>"; };
 		9C20B75A28A4452200AA0530 /* FollowersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListViewController.swift; sourceTree = "<group>"; };
@@ -1239,6 +1241,7 @@
 				9CC906E7285CB36D00BE8F06 /* OneLineTextField.swift */,
 				9C20B76B28A9109F00AA0530 /* CGSize+InsetBy.swift */,
 				9CCBE0EF28B23216008D1B46 /* UIViewController+Alerts.swift */,
+				2DBAA19D28FDDBAD0097BE0B /* UIControl + extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1695,6 +1698,7 @@
 				9CCBE10828BA6E60008D1B46 /* StateView.swift in Sources */,
 				C49D40B2283DD64F00F42B2F /* Date+DatesBetweenTwoDates.swift in Sources */,
 				C4190F3F2786E89E00C005C7 /* UserCheckUsernameResponse.swift in Sources */,
+				2DBAA19E28FDDBAD0097BE0B /* UIControl + extension.swift in Sources */,
 				C4242DD0279029BB002B99E9 /* LoadingState.swift in Sources */,
 				C4242DCB27900F83002B99E9 /* PetRandomNameResponse.swift in Sources */,
 				9CAAF649286B15F600D35BFE /* ProfileSettingsViewController.swift in Sources */,

@@ -24,6 +24,7 @@ class MyProfileViewController: ViewController<MyProfileView> {
     
     private func configure() {
         guard let user = UserSettings.user else { return }
+        guard let stats = UserSettings.stats else { return }
         
         ImageLoader.setImage(url: user.avatarURL, imageView: mainView.userDataView.photoPlaceholderImageView)
         
@@ -36,13 +37,10 @@ class MyProfileViewController: ViewController<MyProfileView> {
             mainView.userDataView.petNameLabel.attributedText = text.style(tags: bold).attributedString
         }
         
-        // TODO: - Доделать статус
-//        mainView.physicalMetricView.physicalStatusLabel.text = "\(PetState(rawValue: petObesityLevel ?? 0))"
-        mainView.physicalMetricView.progressView.progress = Float(Double(user.stepsCount) / 8000.0)
-        mainView.physicalMetricView.countStepsLabel.text = "\(Int(user.stepsCount))/8000"
-//        ImageLoader.setImage(url: user.pet?.pet.staticPhoto, imageView: mainView.physicalMetricView.petImage)
-
-//        \(stats.steps_goal)"
+        mainView.physicalMetricView.physicalStatusLabel.text = "\(String(describing: PetState(rawValue: petObesityLevel ?? 0)))"
+        mainView.physicalMetricView.progressView.progress = Float(stats.steps / stats.stepsGoal)
+        mainView.physicalMetricView.countStepsLabel.text = "\(Int(stats.steps))/\(stats.stepsGoal)"
+        ImageLoader.setImage(url: user.pet?.pet.staticPhoto, imageView: mainView.physicalMetricView.petImage)
         
         mainView.followView.followers.titleLabel.text = "Подписчики (\(user.countFollowers))"
         mainView.followView.following.titleLabel.text = "Подписки (\(user.countFollowing))"
