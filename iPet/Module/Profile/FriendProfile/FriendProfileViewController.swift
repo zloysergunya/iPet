@@ -79,6 +79,7 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
         mainView.subscribeButton.isHidden = user.follow
         mainView.petNameUnsubscribeLabel.isHidden = user.follow
         mainView.userPetImageView.isHidden = user.follow
+        mainView.setupConstraints()
     }
     
     @objc func changeSegmentControl(_ segmentedControl: UISegmentedControl) {
@@ -118,6 +119,7 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
             let imageView = UIImageView()
             let side = 31.0
             imageView.layer.cornerRadius = side / 2
+            imageView.clipsToBounds = true
             imageView.snp.makeConstraints { make in
                 make.size.equalTo(side)
             }
@@ -130,7 +132,8 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
     @objc private func removeFriendTap() {
         provider.unfollowUser(userId: user.id) { [weak self] result in
             switch result {
-            case .success: break
+            case .success:
+                self?.showContent()
             case .failure(let error):
                 self?.showError(text: error.localizedDescription)
             }
@@ -140,7 +143,8 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
     @objc private func subscribeFriendTap() {
         provider.followUser(userId: user.id) { [weak self] result in
             switch result {
-            case .success: break
+            case .success:
+                self?.showContent()
             case .failure(let error):
                 self?.showError(text: error.localizedDescription)
             }
@@ -148,7 +152,12 @@ class FriendProfileViewController: ViewController<FriendProfileView> {
     }
     
     @objc private func startChallengeTap() {
-        print("start challenge")
+        let viewController = PlugPopUpViewController(
+            image: R.image.plug(),
+            title: "Скоро",
+            text: "Еще немного и сделаем"
+        )
+        present(viewController, animated: true)
     }
     
     @objc private func showFollowingTapGesture() {

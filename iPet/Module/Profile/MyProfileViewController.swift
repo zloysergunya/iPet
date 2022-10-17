@@ -56,8 +56,8 @@ class MyProfileViewController: ViewController<MyProfileView> {
         let showFollowingTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(showFollowingTapGesture))
         mainView.followView.following.addGestureRecognizer(showFollowingTapRecognizer)
         
-        let searchFriendsTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(inviteFriendsTapGesture))
-        mainView.searchBar.addGestureRecognizer(searchFriendsTapRecognizer)
+        let showAllUsersTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(showAllUsersTapGesture))
+        mainView.searchBar.addGestureRecognizer(showAllUsersTapRecognizer)
 
         let showProgressTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(showProgressTapGesture))
         mainView.physicalMetricView.addGestureRecognizer(showProgressTapRecognizer)
@@ -103,6 +103,7 @@ class MyProfileViewController: ViewController<MyProfileView> {
             let imageView = UIImageView()
             let side = 31.0
             imageView.layer.cornerRadius = side / 2
+            imageView.clipsToBounds = true
             imageView.snp.makeConstraints { make in
                 make.size.equalTo(side)
             }
@@ -142,8 +143,10 @@ class MyProfileViewController: ViewController<MyProfileView> {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    @objc private func inviteFriendsTapGesture() {
-        
+    @objc private func showAllUsersTapGesture() {
+        let viewController = FollowersListViewController(type: .all)
+        viewController.hidesBottomBarWhenPushed = true
+        navigationController?.present(viewController, animated: true)
     }
     
     @objc func showProfileSettingsVC() {
