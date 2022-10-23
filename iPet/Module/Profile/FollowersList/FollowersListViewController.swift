@@ -40,12 +40,34 @@ class FollowersListViewController: ViewController<FollowersListView> {
 
         mainView.searchBar.delegate = self
         mainView.backgroundColor = R.color.background()
+        setupItems()
+        setTarget()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         load(flush: true)
+    }
+    
+    private func setupItems() {
+        switch type {
+        case .all:
+            mainView.dismissView.isHidden = false
+            mainView.searchBar.searchImage.image = UIImage(named: "searchOrange")
+            mainView.setupConstraints()
+        case .following:
+            mainView.dismissView.isHidden = true
+            mainView.setupConstraints()
+        case .followers:
+            mainView.dismissView.isHidden = true
+            mainView.setupConstraints()
+        }
+    }
+    
+    private func setTarget() {
+        let dismissTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissTapGesture))
+        mainView.dismissView.addGestureRecognizer(dismissTapRecognizer)
     }
     
     private func handleResult(flush: Bool, result: Result<[User], ModelError>) {
@@ -75,11 +97,13 @@ class FollowersListViewController: ViewController<FollowersListView> {
         if flush {
             provider.page = 1
         }
-        if let query = query {
-            searchFriends(query: query.lowercased(), flush: flush)
-        } else if type == .following {
+        
+        switch type {
+        case .all:
+            searchFriends(query: query?.lowercased() ?? "", flush: flush)
+        case .following:
             loadFollowing(flush: flush)
-        } else if type == .followers {
+        case .followers:
             loadFollowers(flush: flush)
         }
     }
@@ -102,8 +126,8 @@ class FollowersListViewController: ViewController<FollowersListView> {
         }
     }
     
-    @objc private func globalSearchButtonPressed() {
-        
+    @objc private func dismissTapGesture() {
+        dismiss(animated: true)
     }
 }
 

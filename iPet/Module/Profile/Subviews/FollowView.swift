@@ -46,7 +46,7 @@ class FollowView: UIView {
         verticalView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.bottom.equalToSuperview()
-            make.height.equalTo(89)
+            make.height.equalTo(89.0)
             make.width.equalTo(1.0)
         }
         

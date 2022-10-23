@@ -2,7 +2,7 @@ import UIKit
 
 class SearchBarView: UITextField {
     
-    private let searchImage: UIImageView = {
+    let searchImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "search")
         imageView.contentMode = .scaleAspectFill

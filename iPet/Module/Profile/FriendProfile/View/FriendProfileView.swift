@@ -77,7 +77,7 @@ class FriendProfileView: RootView {
         setupConstraints()
     }
     
-    private func setupConstraints() {
+    func setupConstraints() {
         
         scrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()

@@ -89,7 +89,7 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
 
-  /// This `R.color` struct is generated, and contains static references to 21 colors.
+  /// This `R.color` struct is generated, and contains static references to 22 colors.
   struct color {
     /// Color `AccentColor`.
     static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
@@ -113,6 +113,8 @@ struct R: Rswift.Validatable {
     static let grayColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayColor")
     /// Color `grayText`.
     static let grayText = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayText")
+    /// Color `lightGray`.
+    static let lightGray = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightGray")
     /// Color `mainGray`.
     static let mainGray = Rswift.ColorResource(bundle: R.hostingBundle, name: "mainGray")
     /// Color `orangeAccentDarker`.
@@ -230,6 +232,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func grayText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.grayText, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "lightGray", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func lightGray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.lightGray, compatibleWith: traitCollection)
     }
     #endif
 
@@ -408,6 +419,14 @@ struct R: Rswift.Validatable {
     @available(watchOSApplicationExtension 4.0, *)
     static func grayText(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.grayText.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "lightGray", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func lightGray(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.lightGray.name)
     }
     #endif
 
@@ -711,7 +730,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 44 images.
+  /// This `R.image` struct is generated, and contains static references to 46 images.
   struct image {
     /// Image `Lama`.
     static let lama = Rswift.ImageResource(bundle: R.hostingBundle, name: "Lama")
@@ -763,6 +782,8 @@ struct R: Rswift.Validatable {
     static let petPageContollStep4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "petPageContollStep4")
     /// Image `petRandomNameIcon`.
     static let petRandomNameIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "petRandomNameIcon")
+    /// Image `petShop`.
+    static let petShop = Rswift.ImageResource(bundle: R.hostingBundle, name: "petShop")
     /// Image `petStateHelp`.
     static let petStateHelp = Rswift.ImageResource(bundle: R.hostingBundle, name: "petStateHelp")
     /// Image `photoPlaceholder`.
@@ -779,6 +800,8 @@ struct R: Rswift.Validatable {
     static let removeUser = Rswift.ImageResource(bundle: R.hostingBundle, name: "removeUser")
     /// Image `rightArrow`.
     static let rightArrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "rightArrow")
+    /// Image `searchOrange`.
+    static let searchOrange = Rswift.ImageResource(bundle: R.hostingBundle, name: "searchOrange")
     /// Image `search`.
     static let search = Rswift.ImageResource(bundle: R.hostingBundle, name: "search")
     /// Image `settingsButton`.
@@ -978,6 +1001,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "petShop", bundle: ..., traitCollection: ...)`
+    static func petShop(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.petShop, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "petStateHelp", bundle: ..., traitCollection: ...)`
     static func petStateHelp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.petStateHelp, compatibleWith: traitCollection)
@@ -1037,6 +1067,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "search", bundle: ..., traitCollection: ...)`
     static func search(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.search, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "searchOrange", bundle: ..., traitCollection: ...)`
+    static func searchOrange(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.searchOrange, compatibleWith: traitCollection)
     }
     #endif
 
